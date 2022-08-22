@@ -37,4 +37,6 @@
 #endif
 
 /* Unicode input mode */
-#define UNICODE_SELECTED_MODES UC_WINC
+// #define UNICODE_SELECTED_MODES UC_WINC
+ #define UNICODE_SELECTED_MODES UC_LNX
+// #define UNICODE_SELECTED_MODES UC_MAC
