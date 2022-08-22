@@ -1,3 +1,6 @@
+# Compilation folder
+firmware/compiled/
+
 # Prerequisites
 *.d
 

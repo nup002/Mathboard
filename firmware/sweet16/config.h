@@ -5,6 +5,9 @@
 /* USB Device descriptor parameter */
 #define PRODUCT_ID      0x0161
 #define DEVICE_VER      0x0001
+#define VENDOR_ID       0x0000
+#define MANUFACTURER    Magne Lauritzen
+#define PRODUCT         Mathboard
 
 /* key matrix pins */
 #define MATRIX_ROW_PINS { F4, F5, F6, F7 }

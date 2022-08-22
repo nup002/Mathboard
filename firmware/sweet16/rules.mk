@@ -1,6 +1,5 @@
 # Build Options
 #
-DEFAULT_FOLDER = mathboard/sweet16/v1
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes  # Mouse keys
 EXTRAKEY_ENABLE = yes  # Audio control and System control
@@ -11,3 +10,14 @@ AUDIO_ENABLE = no
 RGBLIGHT_ENABLE = no
 UNICODE_ENABLE = yes
 TAP_DANCE_ENABLE = yes
+
+# MCU name
+MCU = atmega32u4
+
+# Bootloader selection
+BOOTLOADER = caterina
+
+RGBLIGHT_ENABLE = yes
+BACKLIGHT_ENABLE = no # Enable keyboard backlight functionality
+
+LTO_ENABLE = yes
