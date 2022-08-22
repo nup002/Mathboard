@@ -1,6 +1,9 @@
 # Compilation folder
 firmware/compiled/
 
+#Visual studio code folder
+firmware/.vscode
+
 # Prerequisites
 *.d
 
@@ -37,7 +40,6 @@ firmware/compiled/
 *.app
 *.i*86
 *.x86_64
-*.hex
 
 # Debug files
 *.dSYM/
