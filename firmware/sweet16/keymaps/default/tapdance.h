@@ -3,6 +3,7 @@
 
 #define SIZEOF(arr) sizeof(arr) / sizeof(*arr)
 #include "unicode_symbols.h"
+#include "ml.h"
 
 enum tap_dance_keys {
     GAMMA_TD_UC = 0,
@@ -30,8 +31,19 @@ enum tap_dance_keys {
     UNCONDITIONALLY_TRUE_UC = 22,
     PROVES_UC = 23,
     PLUSMINUS_UC = 24,
-    LAMBDA_TD_UC = 25
+    LAMBDA_TD_UC = 25,
+    DOT_TD_ML = 26,
+    SUB_TD_ML = 27,
+    SUP_TD_ML = 28
 };
+
+void ml_dance(mlDefinition ml_defs[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
+    int index = state->count - 1;
+    if (index >= nelements) {
+        index = 0;
+    }
+    send_ml(ml_defs[index]);
+}
 
 void unicode_dance(int symbols[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
     int index = state->count - 1;
@@ -110,14 +122,29 @@ void dot_unicode_dance (qk_tap_dance_state_t *s, void *d){
     unicode_dance(symbols, 2, s, d);
 }
 
+void dot_ml_dance (qk_tap_dance_state_t *s, void *d){
+    mlDefinition ml_defs[] = {ACCENT_DOT_ML, ACCENT_2DOT_ML};
+    ml_dance(ml_defs, 2, s, d);
+}
+
 void sub_unicode_dance (qk_tap_dance_state_t *s, void *d){
     int symbols[] = {_sub_0, _sub_1, _sub_2, _sub_i, _sub_j, _sub_n};
     unicode_dance(symbols, 6, s, d);
 }
 
+void sub_ml_dance (qk_tap_dance_state_t *s, void *d){
+    mlDefinition ml_defs[] = {SUB_0_ML, SUB_1_ML, SUB_2_ML, SUB_i_ML, SUB_j_ML, SUB_n_ML};
+    ml_dance(ml_defs, 6, s, d);
+}
+
 void sup_unicode_dance (qk_tap_dance_state_t *s, void *d){
     int symbols[] = {_sup_0, _sup_1, _sup_2, _sup_i, _sup_j, _sup_n};
     unicode_dance(symbols, 6, s, d);
+}
+
+void sup_ml_dance (qk_tap_dance_state_t *s, void *d){
+    mlDefinition ml_defs[] = {SUP_0_ML, SUP_1_ML, SUP_2_ML, SUP_i_ML, SUP_j_ML, SUP_n_ML};
+    ml_dance(ml_defs, 6, s, d);
 }
 
 void integral_unicode_dance (qk_tap_dance_state_t *s, void *d){
@@ -190,8 +217,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [MGT_TD_UC] = ACTION_TAP_DANCE_FN (much_greater_than_unicode_dance),
   [MLT_TD_UC] = ACTION_TAP_DANCE_FN (much_less_than_unicode_dance),
   [DOT_UC] = ACTION_TAP_DANCE_FN (dot_unicode_dance),
+  [DOT_TD_ML] = ACTION_TAP_DANCE_FN (dot_ml_dance),
   [SUB_UC] = ACTION_TAP_DANCE_FN (sub_unicode_dance),
+  [SUB_TD_ML] = ACTION_TAP_DANCE_FN (sub_ml_dance),
   [SUP_UC] = ACTION_TAP_DANCE_FN (sup_unicode_dance),
+  [SUP_TD_ML] = ACTION_TAP_DANCE_FN (sup_ml_dance),
   [INTEGRAL_UC] = ACTION_TAP_DANCE_FN (integral_unicode_dance),
   [LINE_INTEGRAL_UC] = ACTION_TAP_DANCE_FN (line_integral_unicode_dance),
   [ROOT_UC] = ACTION_TAP_DANCE_FN (root_unicode_dance),

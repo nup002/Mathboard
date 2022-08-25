@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "unicode_symbols.h"
 #include "tapdance.h"
+#include "ml.h"
 
 #define _BASE 0
 #define _BASE_SHIFT 1
@@ -10,20 +11,27 @@
 #define _OPT_FRONT 5
 #define _BASE_ML 6
 #define _BASE_ML_SHIFT 7
+#define _OPT_ML 8
+#define _OPT_ML_SHIFT 9
+#define _BASE_ML_FRONT 10
+#define _OPT_ML_FRONT 11
 
 enum custom_keycodes {
-    SUM = SAFE_RANGE,
-    PRODUCT
+    KC_ACCENT_CIRCUMFLEX_ML = SAFE_RANGE,
+    KC_ACCENT_CHECK_ML,
+    KC_ACCENT_TILDE_ML,
+    KC_ACCENT_BAR_ML,
+    KC_ACCENT_ARROW_ML
 };
 
 const int key00[6] = {UC(_alpha), UC(_notequal), UC(_beta), UC(_almostequal), UC(_circumflex), UC(_check)};
-const int key00_ML[6] = {key00[0], key00[1], key00[2], key00[3], KC_NO, KC_NO};
+const int key00_ML[6] = {key00[0], key00[1], key00[2], key00[3], KC_ACCENT_CIRCUMFLEX_ML, KC_ACCENT_CHECK_ML};
 const int key01[6] = {TD(GAMMA_TD_UC), UC(_proportional), TD(DELTA_TD_UC), UC(_identicalto), UC(_combining_tilde), UC(_combining_bar)};
-const int key01_ML[6] = {key01[0], key01[1], key01[2], key01[3], KC_NO, KC_NO};
+const int key01_ML[6] = {key01[0], key01[1], key01[2], key01[3], KC_ACCENT_TILDE_ML, KC_ACCENT_BAR_ML};
 const int key02[6] = {UC(_epsilon), UC(_lessorequal), UC(_zeta), UC(_greaterorequal), UC(_combining_arrow), TD(DOT_UC)};
-const int key02_ML[6] = {key02[0], key02[1], key02[2], key02[3], KC_NO, KC_NO};
+const int key02_ML[6] = {key02[0], key02[1], key02[2], key02[3], KC_ACCENT_ARROW_ML, TD(DOT_TD_ML)};
 const int key03[6] = {UC(_eta), TD(MLT_TD_UC), TD(THETA_TD_UC), TD(MGT_TD_UC), TD(SUB_UC), TD(SUP_UC)};
-const int key03_ML[6] = {key03[0], key03[1], key03[2], key03[3], KC_NO, KC_NO};
+const int key03_ML[6] = {key03[0], key03[1], key03[2], key03[3], TD(SUB_TD_ML), TD(SUP_TD_ML)};
 const int key10[6] = {UC(_iota), UC(_sum), UC(_kappa), UC(_n_ary_product), UC(_union), UC(_intersection)};
 const int key10_ML[6] = {key10[0], key10[1], key10[2], key10[3], KC_NO, KC_NO};
 const int key11[6] = {TD(LAMBDA_TD_UC), TD(INTEGRAL_UC), UC(_mu), TD(LINE_INTEGRAL_UC), TD(ELEMENT_OF_UC), UC(_empty_set)};
@@ -42,20 +50,23 @@ const int key23[6] = {TD(PSI_TD_UC), UC(_not), TD(OMEGA_TD_UC), TD(PROVES_UC), K
 const int key23_ML[6] = {key23[0], key23[1], key23[2], key23[3], KC_NO, KC_NO};
 
 
-void send_string_on_press(keyrecord_t *record, const char *string) {
-    if (record->event.pressed) {
-        // when keycode sum is pressed
-        SEND_STRING("Sum");
-    } else {
-        // when keycode is released
-    }
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case SUM:
-        send_string_on_press(record, "Sum");
-    break;
+        case KC_ACCENT_CIRCUMFLEX_ML:
+            send_ml_on_keypress(ACCENT_HAT_ML, record);
+            break;
+        case KC_ACCENT_CHECK_ML:
+            send_ml_on_keypress(ACCENT_CHECK_ML, record);
+            break;
+        case KC_ACCENT_TILDE_ML:
+            send_ml_on_keypress(ACCENT_TILDE_ML, record);
+            break;
+        case KC_ACCENT_BAR_ML:
+            send_ml_on_keypress(ACCENT_BAR_ML, record);
+            break;
+        case KC_ACCENT_ARROW_ML:
+            send_ml_on_keypress(ACCENT_ARROW_ML, record);
+            break;
     }
     return true;
 };
@@ -66,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],
         key10[_BASE], key11[_BASE],   key12[_BASE],   key13[_BASE],
         key20[_BASE], key21[_BASE],   key22[_BASE],   key23[_BASE],
-        KC_NO,        MO(_BASE_FRONT),MO(_BASE_SHIFT),MO(_OPT)
+        DF(_BASE_ML), MO(_BASE_FRONT),MO(_BASE_SHIFT),MO(_OPT)
     ),
 	[_BASE_SHIFT] = LAYOUT_ortho_4x4(
         key00[_BASE_SHIFT], key01[_BASE_SHIFT],   key02[_BASE_SHIFT],   key03[_BASE_SHIFT],
@@ -102,13 +113,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key00_ML[_BASE], key01_ML[_BASE],   key02_ML[_BASE],   key03_ML[_BASE],
         key10_ML[_BASE], key11_ML[_BASE],   key12_ML[_BASE],   key13_ML[_BASE],
         key20_ML[_BASE], key21_ML[_BASE],   key22_ML[_BASE],   key23_ML[_BASE],
-        KC_NO,           TO(_BASE),      MO(_BASE_ML_SHIFT),   MO(_OPT)
+        DF(_BASE),       MO(_BASE_ML_FRONT),MO(_BASE_ML_SHIFT),MO(_OPT_ML)         
     ),
     [_BASE_ML_SHIFT] = LAYOUT_ortho_4x4(
         key00_ML[_BASE_SHIFT], key01_ML[_BASE_SHIFT],   key02_ML[_BASE_SHIFT],   key03_ML[_BASE_SHIFT],
         key10_ML[_BASE_SHIFT], key11_ML[_BASE_SHIFT],   key12_ML[_BASE_SHIFT],   key13_ML[_BASE_SHIFT],
         key20_ML[_BASE_SHIFT], key21_ML[_BASE_SHIFT],   key22_ML[_BASE_SHIFT],   key23_ML[_BASE_SHIFT],
-        KC_NO,           TO(_BASE),      MO(_BASE_ML_SHIFT),   MO(_OPT)
+        KC_NO,        KC_NO,          MO(_BASE_ML_SHIFT),MO(_OPT_ML_SHIFT)          
+    ),
+    [_OPT_ML] = LAYOUT_ortho_4x4(
+        key00_ML[_OPT], key01_ML[_OPT],   key02_ML[_OPT],   key03_ML[_OPT],
+        key10_ML[_OPT], key11_ML[_OPT],   key12_ML[_OPT],   key13_ML[_OPT],
+        key20_ML[_OPT], key21_ML[_OPT],   key22_ML[_OPT],   key23_ML[_OPT],
+        KC_NO,        MO(_OPT_ML_FRONT), MO(_OPT_ML_SHIFT), MO(_OPT_ML)      
+    ),
+    [_OPT_ML_SHIFT] = LAYOUT_ortho_4x4(
+        key00_ML[_OPT_SHIFT], key01_ML[_OPT_SHIFT],   key02_ML[_OPT_SHIFT],   key03_ML[_OPT_SHIFT],
+        key10_ML[_OPT_SHIFT], key11_ML[_OPT_SHIFT],   key12_ML[_OPT_SHIFT],   key13_ML[_OPT_SHIFT],
+        key20_ML[_OPT_SHIFT], key21_ML[_OPT_SHIFT],   key22_ML[_OPT_SHIFT],   key23_ML[_OPT_SHIFT],
+        KC_NO,        KC_NO,          MO(_OPT_ML_SHIFT), MO(_OPT_ML_SHIFT)         
+    ),
+    [_BASE_ML_FRONT] = LAYOUT_ortho_4x4(
+        key00_ML[_BASE_FRONT], key01_ML[_BASE_FRONT],   key02_ML[_BASE_FRONT],   key03_ML[_BASE_FRONT],
+        key10_ML[_BASE_FRONT], key11_ML[_BASE_FRONT],   key12_ML[_BASE_FRONT],   key13_ML[_BASE_FRONT],
+        key20_ML[_BASE_FRONT], key21_ML[_BASE_FRONT],   key22_ML[_BASE_FRONT],   key23_ML[_BASE_FRONT],
+        KC_NO,        MO(_BASE_ML_FRONT),          KC_NO, MO(_OPT_ML_FRONT)         
+    ),
+    [_OPT_ML_FRONT] = LAYOUT_ortho_4x4(
+        key00_ML[_OPT_FRONT], key01_ML[_OPT_FRONT],   key02_ML[_OPT_FRONT],   key03_ML[_OPT_FRONT],
+        key10_ML[_OPT_FRONT], key11_ML[_OPT_FRONT],   key12_ML[_OPT_FRONT],   key13_ML[_OPT_FRONT],
+        key20_ML[_OPT_FRONT], key21_ML[_OPT_FRONT],   key22_ML[_OPT_FRONT],   key23_ML[_OPT_FRONT],
+        KC_NO,        MO(_OPT_ML_FRONT),          KC_NO, MO(_OPT_ML_FRONT)         
     )
 };
 
