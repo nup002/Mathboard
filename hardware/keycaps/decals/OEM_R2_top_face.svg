@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="Math keyboard top face.svg"
+   sodipodi:docname="OEM_R2_top_face.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,14 +26,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.5877449"
-     inkscape:cx="72.263692"
-     inkscape:cy="142.98164"
+     inkscape:cx="30.528512"
+     inkscape:cy="143.36807"
      inkscape:window-width="2219"
      inkscape:window-height="1295"
-     inkscape:window-x="1000"
-     inkscape:window-y="98"
+     inkscape:window-x="158"
+     inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer2"
      showguides="true" />
   <defs
      id="defs2">
@@ -228,7 +228,7 @@
      id="layer4"
      inkscape:label="Undercolor">
     <rect
-       style="fill:#d9fdff;fill-opacity:1;stroke:none;stroke-width:0.116482;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#eafeff;fill-opacity:1;stroke:none;stroke-width:0.116482;stroke-dasharray:none;stroke-opacity:1"
        id="rect7120"
        width="6"
        height="14.5"
@@ -327,7 +327,7 @@
        transform="translate(66,44)"
        id="use14223" />
     <rect
-       style="fill:#d9fdff;fill-opacity:1;stroke:none;stroke-width:0.890291;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#eafeff;fill-opacity:1;stroke:none;stroke-width:0.890291;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect2012"
        width="3"
        height="14.5"
@@ -551,7 +551,7 @@
        transform="translate(-22.309186,-16.365103)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
          x="32.224159"
          y="21.979448"
          id="text168"
@@ -564,7 +564,7 @@
            y="21.979448">≈</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
          x="26.352251"
          y="21.944998"
          id="text5223"
@@ -575,6 +575,314 @@
            id="tspan6240"
            x="26.352251"
            y="21.944998">≠</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.079567"
+         y="22.30649"
+         id="text168-6"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(22.041979,-0.31877111)"><tspan
+           sodipodi:role="line"
+           id="tspan6246"
+           x="32.079567"
+           y="22.30649">≡</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.397526"
+         y="22.306488"
+         id="text5223-1"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(22.041979,-0.31877111)"><tspan
+           sodipodi:role="line"
+           id="tspan6244"
+           x="26.397526"
+           y="22.306488">∝</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.224159"
+         y="22.30649"
+         id="text168-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(44.165154,-0.680261)"><tspan
+           sodipodi:role="line"
+           id="tspan6250"
+           x="32.224159"
+           y="22.30649">≥</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.25293"
+         y="22.306488"
+         id="text5223-5"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(44.165154,-0.680261)"><tspan
+           sodipodi:role="line"
+           id="tspan6248"
+           x="26.25293"
+           y="22.306488">≤</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.224159"
+         y="22.30649"
+         id="text168-4"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(65.751015,-0.38004491)"><tspan
+           sodipodi:role="line"
+           id="tspan6254"
+           x="32.224159"
+           y="22.30649">≫</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.180632"
+         y="22.306488"
+         id="text5223-10"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(65.751015,-0.38004491)"><tspan
+           sodipodi:role="line"
+           id="tspan6252"
+           x="26.180632"
+           y="22.306488">≪</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.296455"
+         y="22.105993"
+         id="text168-1"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(-0.25749189,21.958468)"><tspan
+           sodipodi:role="line"
+           id="tspan6258"
+           x="32.296455"
+           y="22.105993">∏</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.546896"
+         y="22.105993"
+         id="text5223-0"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(-0.25749189,21.958468)"><tspan
+           sodipodi:role="line"
+           id="tspan6256"
+           x="26.546896"
+           y="22.105993">∑</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.608734"
+         y="22.306488"
+         id="text168-6-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(22.001382,22.273359)"><tspan
+           sodipodi:role="line"
+           id="tspan6262"
+           x="32.608734"
+           y="22.306488">∮</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.397526"
+         y="22.306488"
+         id="text5223-1-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(22.001382,22.273359)"><tspan
+           sodipodi:role="line"
+           id="tspan6260"
+           x="26.397526"
+           y="22.306488">∫</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.224159"
+         y="21.415833"
+         id="text168-8-1"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(43.690769,22.860403)"><tspan
+           sodipodi:role="line"
+           id="tspan6266"
+           x="32.224159"
+           y="21.415833">→</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="27.120506"
+         y="21.655806"
+         id="text5223-5-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(43.690769,22.860403)"><tspan
+           sodipodi:role="line"
+           id="tspan6264"
+           x="27.120506"
+           y="21.655806">√</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.391846"
+         y="22.30649"
+         id="text168-4-6"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(66.238108,22.192153)"><tspan
+           sodipodi:role="line"
+           id="tspan6270"
+           x="32.391846"
+           y="22.30649">∇</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.397526"
+         y="22.306488"
+         id="text5223-10-2"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(66.238108,22.192153)"><tspan
+           sodipodi:role="line"
+           id="tspan6268"
+           x="26.397526"
+           y="22.306488">∂</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="30.778204"
+         y="22.105995"
+         id="text168-88"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(0.39318996,44.012606)"><tspan
+           sodipodi:role="line"
+           id="tspan6274"
+           x="30.778204"
+           y="22.105995">⇔</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="25.68685"
+         y="22.105993"
+         id="text5223-7"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(0.39318996,44.012606)"><tspan
+           sodipodi:role="line"
+           id="tspan6272"
+           x="25.68685"
+           y="22.105993">⇒</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.608734"
+         y="22.30649"
+         id="text168-6-4"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(22.145978,43.927577)"><tspan
+           sodipodi:role="line"
+           id="tspan6278"
+           x="32.608734"
+           y="22.30649">∨</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.61442"
+         y="22.306488"
+         id="text5223-1-3"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(22.145978,43.927577)"><tspan
+           sodipodi:role="line"
+           id="tspan6276"
+           x="26.61442"
+           y="22.306488">∃</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.368752"
+         y="22.30649"
+         id="text168-8-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(44.269153,43.904495)"><tspan
+           sodipodi:role="line"
+           id="tspan6282"
+           x="32.368752"
+           y="22.30649">⊤</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.397526"
+         y="22.306488"
+         id="text5223-5-8"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(44.269153,43.904495)"><tspan
+           sodipodi:role="line"
+           id="tspan6280"
+           x="26.397526"
+           y="22.306488">∀</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.296455"
+         y="22.30649"
+         id="text168-4-7"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"
+         transform="translate(66.042771,43.7599)"><tspan
+           sodipodi:role="line"
+           id="tspan6286"
+           x="32.296455"
+           y="22.30649">⊢</tspan></text>
+      <text
+         xml:space="preserve"
+         style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#671d92;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.397526"
+         y="21.632725"
+         id="text5223-10-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"
+         transform="translate(66.042771,43.7599)"><tspan
+           sodipodi:role="line"
+           id="tspan6284"
+           x="26.397526"
+           y="21.632725">¬</tspan></text>
     </g>
     <g
        id="g5274-3"
@@ -620,37 +928,6 @@
            id="tspan6182" /></text>
     </g>
     <g
-       id="g5380-7"
-       inkscape:label="Top symbols"
-       transform="translate(-0.26720662,-16.683874)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.079567"
-         y="22.30649"
-         id="text168-6"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6246"
-           x="32.079567"
-           y="22.30649">≡</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.397526"
-         y="22.306488"
-         id="text5223-1"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6244"
-           x="26.397526"
-           y="22.306488">∝</tspan></text>
-    </g>
-    <g
        id="g5274-3-8"
        inkscape:label="Bottom symbols"
        transform="translate(-0.09722262,-17.766321)">
@@ -689,37 +966,6 @@
            id="tspan6186">δ</tspan></text>
     </g>
     <g
-       id="g5380-4"
-       inkscape:label="Top symbols"
-       transform="translate(21.855968,-17.045364)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.224159"
-         y="22.30649"
-         id="text168-8"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6250"
-           x="32.224159"
-           y="22.30649">≥</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.25293"
-         y="22.306488"
-         id="text5223-5"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6248"
-           x="26.25293"
-           y="22.306488">≤</tspan></text>
-    </g>
-    <g
        id="g5274-3-1"
        inkscape:label="Bottom symbols"
        transform="translate(21.833902,-17.029432)">
@@ -750,37 +996,6 @@
            id="tspan6204"
            x="33.241203"
            y="30.122126">ζ</tspan></text>
-    </g>
-    <g
-       id="g5380-1"
-       inkscape:label="Top symbols"
-       transform="translate(43.441828,-16.745148)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.224159"
-         y="22.30649"
-         id="text168-4"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6254"
-           x="32.224159"
-           y="22.30649">≫</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.180632"
-         y="22.306488"
-         id="text5223-10"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6252"
-           x="26.180632"
-           y="22.306488">≪</tspan></text>
     </g>
     <g
        id="g5274-3-10"
@@ -815,37 +1030,6 @@
            y="30.860029">θ</tspan></text>
     </g>
     <g
-       id="g5380-2"
-       inkscape:label="Top symbols"
-       transform="translate(-22.566678,5.5933648)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.296455"
-         y="22.105993"
-         id="text168-1"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6258"
-           x="32.296455"
-           y="22.105993">∏</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.546896"
-         y="22.105993"
-         id="text5223-0"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6256"
-           x="26.546896"
-           y="22.105993">∑</tspan></text>
-    </g>
-    <g
        id="g5274-3-0"
        inkscape:label="Bottom symbols"
        transform="translate(-22.276009,4.9133238)">
@@ -875,37 +1059,6 @@
            id="tspan6210"
            x="32.413517"
            y="30.041389">κ</tspan></text>
-    </g>
-    <g
-       id="g5380-7-8"
-       inkscape:label="Top symbols"
-       transform="translate(-0.30780362,5.9082558)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.608734"
-         y="22.306488"
-         id="text168-6-8"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6262"
-           x="32.608734"
-           y="22.306488">∮</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.397526"
-         y="22.306488"
-         id="text5223-1-6"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6260"
-           x="26.397526"
-           y="22.306488">∫</tspan></text>
     </g>
     <g
        id="g5274-3-8-0"
@@ -939,37 +1092,6 @@
            y="30.312124">μ</tspan></text>
     </g>
     <g
-       id="g5380-4-7"
-       inkscape:label="Top symbols"
-       transform="translate(21.381583,6.4952998)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.224159"
-         y="21.415833"
-         id="text168-8-1"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6266"
-           x="32.224159"
-           y="21.415833">→</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="27.120506"
-         y="21.655806"
-         id="text5223-5-6"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6264"
-           x="27.120506"
-           y="21.655806">√</tspan></text>
-    </g>
-    <g
        id="g5274-3-1-4"
        inkscape:label="Bottom symbols"
        transform="translate(21.946053,4.8406998)">
@@ -999,37 +1121,6 @@
            id="tspan6218"
            x="33.119751"
            y="30.233349">ξ</tspan></text>
-    </g>
-    <g
-       id="g5380-1-1"
-       inkscape:label="Top symbols"
-       transform="translate(43.928921,5.8270498)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.391846"
-         y="22.30649"
-         id="text168-4-6"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6270"
-           x="32.391846"
-           y="22.30649">∇</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.397526"
-         y="22.306488"
-         id="text5223-10-2"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6268"
-           x="26.397526"
-           y="22.306488">∂</tspan></text>
     </g>
     <g
        id="g5274-3-10-5"
@@ -1063,37 +1154,6 @@
            y="30.04274">π</tspan></text>
     </g>
     <g
-       id="g5380-43"
-       inkscape:label="Top symbols"
-       transform="translate(-21.915996,27.647504)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="30.778204"
-         y="22.105995"
-         id="text168-88"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6274"
-           x="30.778204"
-           y="22.105995">⇔</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="25.68685"
-         y="22.105993"
-         id="text5223-7"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6272"
-           x="25.68685"
-           y="22.105993">⇒</tspan></text>
-    </g>
-    <g
        id="g5274-3-3"
        inkscape:label="Bottom symbols"
        transform="translate(-22.18923,26.832009)">
@@ -1123,37 +1183,6 @@
            id="tspan6226"
            x="32.439079"
            y="30.061142">σ</tspan></text>
-    </g>
-    <g
-       id="g5380-7-0"
-       inkscape:label="Top symbols"
-       transform="translate(-0.16320762,27.562474)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.608734"
-         y="22.30649"
-         id="text168-6-4"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6278"
-           x="32.608734"
-           y="22.30649">∨</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.61442"
-         y="22.306488"
-         id="text5223-1-3"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6276"
-           x="26.61442"
-           y="22.306488">∃</tspan></text>
     </g>
     <g
        id="g5274-3-8-6"
@@ -1187,37 +1216,6 @@
            y="30.959745">υ</tspan></text>
     </g>
     <g
-       id="g5380-4-0"
-       inkscape:label="Top symbols"
-       transform="translate(21.959967,27.539392)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.368752"
-         y="22.30649"
-         id="text168-8-8"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6282"
-           x="32.368752"
-           y="22.30649">⊤</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.397526"
-         y="22.306488"
-         id="text5223-5-8"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6280"
-           x="26.397526"
-           y="22.306488">∀</tspan></text>
-    </g>
-    <g
        id="g5274-3-1-7"
        inkscape:label="Bottom symbols"
        transform="translate(21.50732,26.963873)">
@@ -1247,37 +1245,6 @@
            id="tspan6234"
            x="33.145275"
            y="29.819487">χ</tspan></text>
-    </g>
-    <g
-       id="g5380-1-0"
-       inkscape:label="Top symbols"
-       transform="translate(43.733584,27.394797)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.296455"
-         y="22.30649"
-         id="text168-4-7"
-         inkscape:transform-center-x="1.4825489"
-         inkscape:transform-center-y="2.044895"
-         inkscape:label="B-col"><tspan
-           sodipodi:role="line"
-           id="tspan6286"
-           x="32.296455"
-           y="22.30649">⊢</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#75008a;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
-         x="26.397526"
-         y="21.632725"
-         id="text5223-10-6"
-         inkscape:transform-center-x="1.8404055"
-         inkscape:transform-center-y="-2.1471397"
-         inkscape:label="A-col"><tspan
-           sodipodi:role="line"
-           id="tspan6284"
-           x="26.397526"
-           y="21.632725">¬</tspan></text>
     </g>
     <g
        id="g5274-3-10-3"
