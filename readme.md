@@ -3,7 +3,7 @@
 The Mathboard is a 4x4 macropad to make typing math on a computer easier for engineers and scientists. 
 Follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
 
-With the Matboard you can type special characters, superscripts, subscripts, arrows, greek letters, and much more. The following equations are a few examples of what you can type directly with the Matboard:
+With the Matboard you can type 75 of the most common symbols used in algebra, calculus, set theory and logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can type directly with the Matboard:
 
 <p style="text-align: center;"><font size="4"> 
 E = mc²<br>
@@ -11,8 +11,13 @@ E = mc²<br>
 (A⊂B) ∧ (A⊂C) ⇔ A ⊂ (B ∪ C)
 </font> </p>
 
-The Mathboard lets you type the most common symbols used in algebra, calculus, set theory and logic. It also 
-has common symbols of equivalence (≠, ≈, ∝, etc) and all greek letters, both lowercase and uppercase. 
+## Supported input methods
+| Input mode                         | Supported |
+|------------------------------------|-----------|
+| Unicode plaintext                  | ✅        |
+| LaTeX                              | ❌        |
+| Microsoft Office equation editor   | ✅        |
+| Apache Open Office equation editor | ❌        |
 
 ## Compatibility
 The mathboard works on Unix systems (including Apple Mac OS) and Windows.
