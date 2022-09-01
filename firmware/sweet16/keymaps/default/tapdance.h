@@ -3,7 +3,7 @@
 
 #define SIZEOF(arr) sizeof(arr) / sizeof(*arr)
 #include "unicode_symbols.h"
-#include "ml.h"
+#include "microsoft_office.h"
 
 enum tap_dance_keys {
     GAMMA_TD_UC = 0,
@@ -32,17 +32,20 @@ enum tap_dance_keys {
     PROVES_UC = 23,
     PLUSMINUS_UC = 24,
     LAMBDA_TD_UC = 25,
-    DOT_TD_ML = 26,
-    SUB_TD_ML = 27,
-    SUP_TD_ML = 28
+    DOT_TD_MOF = 26,
+    SUB_TD_MOF = 27,
+    SUP_TD_MOF = 28,
+    INTEGRAL_TD_MOF = 29,
+    LINE_INTEGRAL_TD_MOF = 30,
+    ROOT_TD_MOF = 31
 };
 
-void ml_dance(mlDefinition ml_defs[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
+void mof_dance(mofDefinition mof_defs[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
     int index = state->count - 1;
     if (index >= nelements) {
         index = 0;
     }
-    send_ml(ml_defs[index]);
+    send_mof(mof_defs[index]);
 }
 
 void unicode_dance(int symbols[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
@@ -122,9 +125,9 @@ void dot_unicode_dance (qk_tap_dance_state_t *s, void *d){
     unicode_dance(symbols, 2, s, d);
 }
 
-void dot_ml_dance (qk_tap_dance_state_t *s, void *d){
-    mlDefinition ml_defs[] = {ACCENT_DOT_ML, ACCENT_2DOT_ML};
-    ml_dance(ml_defs, 2, s, d);
+void dot_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {ACCENT_DOT_MOF, ACCENT_2DOT_MOF};
+    mof_dance(mof_defs, 2, s, d);
 }
 
 void sub_unicode_dance (qk_tap_dance_state_t *s, void *d){
@@ -132,9 +135,9 @@ void sub_unicode_dance (qk_tap_dance_state_t *s, void *d){
     unicode_dance(symbols, 6, s, d);
 }
 
-void sub_ml_dance (qk_tap_dance_state_t *s, void *d){
-    mlDefinition ml_defs[] = {SUB_0_ML, SUB_1_ML, SUB_2_ML, SUB_i_ML, SUB_j_ML, SUB_n_ML};
-    ml_dance(ml_defs, 6, s, d);
+void sub_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {SUB_0_MOF, SUB_1_MOF, SUB_2_MOF, SUB_i_MOF, SUB_j_MOF, SUB_n_MOF};
+    mof_dance(mof_defs, 6, s, d);
 }
 
 void sup_unicode_dance (qk_tap_dance_state_t *s, void *d){
@@ -142,9 +145,9 @@ void sup_unicode_dance (qk_tap_dance_state_t *s, void *d){
     unicode_dance(symbols, 6, s, d);
 }
 
-void sup_ml_dance (qk_tap_dance_state_t *s, void *d){
-    mlDefinition ml_defs[] = {SUP_0_ML, SUP_1_ML, SUP_2_ML, SUP_i_ML, SUP_j_ML, SUP_n_ML};
-    ml_dance(ml_defs, 6, s, d);
+void sup_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {SUP_0_MOF, SUP_1_MOF, SUP_2_MOF, SUP_i_MOF, SUP_j_MOF, SUP_n_MOF};
+    mof_dance(mof_defs, 6, s, d);
 }
 
 void integral_unicode_dance (qk_tap_dance_state_t *s, void *d){
@@ -152,14 +155,29 @@ void integral_unicode_dance (qk_tap_dance_state_t *s, void *d){
     unicode_dance(symbols, 3, s, d);
 }
 
+void integral_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {INTEGRAL_MOF, DOUBLE_INTEGRAL_MOF, TRIPLE_INTEGRAL_MOF};
+    mof_dance(mof_defs, 3, s, d);
+}
+
 void line_integral_unicode_dance (qk_tap_dance_state_t *s, void *d){
     int symbols[] = {_line_integral, _surface_integral, _volume_integral};
     unicode_dance(symbols, 3, s, d);
 }
 
+void line_integral_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {LINE_INTEGRAL_MOF, SURFACE_INTEGRAL_MOF, VOLUME_INTEGRAL_MOF};
+    mof_dance(mof_defs, 3, s, d);
+}
+
 void root_unicode_dance (qk_tap_dance_state_t *s, void *d){
     int symbols[] = {_square_root, _cube_root, _fourth_root};
     unicode_dance(symbols, 3, s, d);
+}
+
+void root_mof_dance (qk_tap_dance_state_t *s, void *d){
+    mofDefinition mof_defs[] = {ROOT_MOF, CUBE_ROOT_MOF, FOURTH_ROOT_MOF};
+    mof_dance(mof_defs, 3, s, d);
 }
 
 void element_of_unicode_dance (qk_tap_dance_state_t *s, void *d){
@@ -217,14 +235,17 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [MGT_TD_UC] = ACTION_TAP_DANCE_FN (much_greater_than_unicode_dance),
   [MLT_TD_UC] = ACTION_TAP_DANCE_FN (much_less_than_unicode_dance),
   [DOT_UC] = ACTION_TAP_DANCE_FN (dot_unicode_dance),
-  [DOT_TD_ML] = ACTION_TAP_DANCE_FN (dot_ml_dance),
+  [DOT_TD_MOF] = ACTION_TAP_DANCE_FN (dot_mof_dance),
   [SUB_UC] = ACTION_TAP_DANCE_FN (sub_unicode_dance),
-  [SUB_TD_ML] = ACTION_TAP_DANCE_FN (sub_ml_dance),
+  [SUB_TD_MOF] = ACTION_TAP_DANCE_FN (sub_mof_dance),
   [SUP_UC] = ACTION_TAP_DANCE_FN (sup_unicode_dance),
-  [SUP_TD_ML] = ACTION_TAP_DANCE_FN (sup_ml_dance),
+  [SUP_TD_MOF] = ACTION_TAP_DANCE_FN (sup_mof_dance),
   [INTEGRAL_UC] = ACTION_TAP_DANCE_FN (integral_unicode_dance),
+  [INTEGRAL_TD_MOF] = ACTION_TAP_DANCE_FN (integral_mof_dance),
   [LINE_INTEGRAL_UC] = ACTION_TAP_DANCE_FN (line_integral_unicode_dance),
+  [LINE_INTEGRAL_TD_MOF] = ACTION_TAP_DANCE_FN (line_integral_mof_dance),
   [ROOT_UC] = ACTION_TAP_DANCE_FN (root_unicode_dance),
+  [ROOT_TD_MOF] = ACTION_TAP_DANCE_FN (root_mof_dance),
   [ELEMENT_OF_UC] = ACTION_TAP_DANCE_FN (element_of_unicode_dance),
   [SUBSET_OF_UC] = ACTION_TAP_DANCE_FN (subset_of_unicode_dance),
   [SUBSET_OR_EQ_UC] = ACTION_TAP_DANCE_FN (subset_or_equal_unicode_dance),
