@@ -16,8 +16,17 @@
 #define _BASE_MOF_FRONT 10
 #define _OPT_MOF_FRONT 11
 
+
+enum modes {
+    UC,
+    MOF
+};
+enum modes MODE = UC;
+
 enum custom_keycodes {
-    KC_ACCENT_CIRCUMFLEX_MOF = SAFE_RANGE,
+    KC_SWITCH_MODE = SAFE_RANGE,
+    KC_ALPHA,
+    KC_ACCENT_CIRCUMFLEX_MOF,
     KC_ACCENT_CHECK_MOF,
     KC_ACCENT_TILDE_MOF,
     KC_ACCENT_BAR_MOF,
@@ -29,7 +38,7 @@ enum custom_keycodes {
     KC_MATRIX_MOF
 };
 
-const int key00[6] = {UC(_alpha), UC(_notequal), UC(_beta), UC(_almostequal), UC(_circumflex), UC(_check)};
+const int key00[6] = {KC_ALPHA, UC(_notequal), UC(_beta), UC(_almostequal), UC(_circumflex), UC(_check)};
 const int key00_MOF[6] = {key00[0], key00[1], key00[2], key00[3], KC_ACCENT_CIRCUMFLEX_MOF, KC_ACCENT_CHECK_MOF};
 const int key01[6] = {TD(GAMMA_TD_UC), UC(_proportional), TD(DELTA_TD_UC), UC(_identicalto), UC(_combining_tilde), UC(_combining_bar)};
 const int key01_MOF[6] = {key01[0], key01[1], key01[2], key01[3], KC_ACCENT_TILDE_MOF, KC_ACCENT_BAR_MOF};
@@ -57,6 +66,12 @@ const int key23_MOF[6] = {key23[0], key23[1], key23[2], key23[3], KC_MATRIX_MOF,
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case KC_SWITCH_MODE:
+            if (MODE == UC){MODE = MOF;} 
+            else if (MODE == MOF){MODE = UC;}
+        case KC_ALPHA:
+            if (MODE == UC){register_hex(_alpha);} 
+            else if (MODE == MOF){register_hex(_beta);} //Beta is just for testing if it works
         case KC_ACCENT_CIRCUMFLEX_MOF:
             send_mof_on_keypress(ACCENT_HAT_MOF, record);
             break;
@@ -97,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],
         key10[_BASE], key11[_BASE],   key12[_BASE],   key13[_BASE],
         key20[_BASE], key21[_BASE],   key22[_BASE],   key23[_BASE],
-        DF(_BASE_MOF), MO(_BASE_FRONT),MO(_BASE_SHIFT),MO(_OPT)
+        KC_SWITCH_MODE, MO(_BASE_FRONT),MO(_BASE_SHIFT),MO(_OPT)
     ),
 	[_BASE_SHIFT] = LAYOUT_ortho_4x4(
         key00[_BASE_SHIFT], key01[_BASE_SHIFT],   key02[_BASE_SHIFT],   key03[_BASE_SHIFT],
@@ -128,42 +143,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key10[_OPT_FRONT], key11[_OPT_FRONT],   key12[_OPT_FRONT],   key13[_OPT_FRONT],
         key20[_OPT_FRONT], key21[_OPT_FRONT],   key22[_OPT_FRONT],   key23[_OPT_FRONT],
         KC_NO,        MO(_OPT_FRONT),          KC_NO, MO(_OPT_FRONT)
-    ),
-    [_BASE_MOF] = LAYOUT_ortho_4x4(
-        key00_MOF[_BASE], key01_MOF[_BASE],   key02_MOF[_BASE],   key03_MOF[_BASE],
-        key10_MOF[_BASE], key11_MOF[_BASE],   key12_MOF[_BASE],   key13_MOF[_BASE],
-        key20_MOF[_BASE], key21_MOF[_BASE],   key22_MOF[_BASE],   key23_MOF[_BASE],
-        DF(_BASE),       MO(_BASE_MOF_FRONT),MO(_BASE_MOF_SHIFT),MO(_OPT_MOF)         
-    ),
-    [_BASE_MOF_SHIFT] = LAYOUT_ortho_4x4(
-        key00_MOF[_BASE_SHIFT], key01_MOF[_BASE_SHIFT],   key02_MOF[_BASE_SHIFT],   key03_MOF[_BASE_SHIFT],
-        key10_MOF[_BASE_SHIFT], key11_MOF[_BASE_SHIFT],   key12_MOF[_BASE_SHIFT],   key13_MOF[_BASE_SHIFT],
-        key20_MOF[_BASE_SHIFT], key21_MOF[_BASE_SHIFT],   key22_MOF[_BASE_SHIFT],   key23_MOF[_BASE_SHIFT],
-        KC_NO,        KC_NO,          MO(_BASE_MOF_SHIFT),MO(_OPT_MOF_SHIFT)          
-    ),
-    [_OPT_MOF] = LAYOUT_ortho_4x4(
-        key00_MOF[_OPT], key01_MOF[_OPT],   key02_MOF[_OPT],   key03_MOF[_OPT],
-        key10_MOF[_OPT], key11_MOF[_OPT],   key12_MOF[_OPT],   key13_MOF[_OPT],
-        key20_MOF[_OPT], key21_MOF[_OPT],   key22_MOF[_OPT],   key23_MOF[_OPT],
-        KC_NO,        MO(_OPT_MOF_FRONT), MO(_OPT_MOF_SHIFT), MO(_OPT_MOF)      
-    ),
-    [_OPT_MOF_SHIFT] = LAYOUT_ortho_4x4(
-        key00_MOF[_OPT_SHIFT], key01_MOF[_OPT_SHIFT],   key02_MOF[_OPT_SHIFT],   key03_MOF[_OPT_SHIFT],
-        key10_MOF[_OPT_SHIFT], key11_MOF[_OPT_SHIFT],   key12_MOF[_OPT_SHIFT],   key13_MOF[_OPT_SHIFT],
-        key20_MOF[_OPT_SHIFT], key21_MOF[_OPT_SHIFT],   key22_MOF[_OPT_SHIFT],   key23_MOF[_OPT_SHIFT],
-        KC_NO,        KC_NO,          MO(_OPT_MOF_SHIFT), MO(_OPT_MOF_SHIFT)         
-    ),
-    [_BASE_MOF_FRONT] = LAYOUT_ortho_4x4(
-        key00_MOF[_BASE_FRONT], key01_MOF[_BASE_FRONT],   key02_MOF[_BASE_FRONT],   key03_MOF[_BASE_FRONT],
-        key10_MOF[_BASE_FRONT], key11_MOF[_BASE_FRONT],   key12_MOF[_BASE_FRONT],   key13_MOF[_BASE_FRONT],
-        key20_MOF[_BASE_FRONT], key21_MOF[_BASE_FRONT],   key22_MOF[_BASE_FRONT],   key23_MOF[_BASE_FRONT],
-        KC_NO,        MO(_BASE_MOF_FRONT),          KC_NO, MO(_OPT_MOF_FRONT)         
-    ),
-    [_OPT_MOF_FRONT] = LAYOUT_ortho_4x4(
-        key00_MOF[_OPT_FRONT], key01_MOF[_OPT_FRONT],   key02_MOF[_OPT_FRONT],   key03_MOF[_OPT_FRONT],
-        key10_MOF[_OPT_FRONT], key11_MOF[_OPT_FRONT],   key12_MOF[_OPT_FRONT],   key13_MOF[_OPT_FRONT],
-        key20_MOF[_OPT_FRONT], key21_MOF[_OPT_FRONT],   key22_MOF[_OPT_FRONT],   key23_MOF[_OPT_FRONT],
-        KC_NO,        MO(_OPT_MOF_FRONT),          KC_NO, MO(_OPT_MOF_FRONT)         
     )
 };
 
