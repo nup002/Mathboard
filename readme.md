@@ -2,7 +2,9 @@
 
 The Mathboard is a 4x4 macropad to make typing math on a computer easier for engineers and scientists. 
 Follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
-
+<p align="center">
+<img src="https://cdn.hackaday.io/images/1746721664193689607.jpg" width="400">
+</p>
 With the Matboard you can type 75 of the most common symbols used in algebra, calculus, set theory and logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can type directly with the Matboard:
 
 <p style="text-align: center;"><font size="4"> 
