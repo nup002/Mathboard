@@ -1,7 +1,9 @@
 #include QMK_KEYBOARD_H
+#include "globs.h"
 #include "unicode_symbols.h"
 #include "tapdance.h"
 #include "microsoft_office.h"
+#include "key_definitions.h"
 
 #define _BASE 0
 #define _BASE_SHIFT 1
@@ -9,102 +11,234 @@
 #define _OPT_SHIFT 3
 #define _BASE_FRONT 4
 #define _OPT_FRONT 5
-#define _BASE_MOF 6
-#define _BASE_MOF_SHIFT 7
-#define _OPT_MOF 8
-#define _OPT_MOF_SHIFT 9
-#define _BASE_MOF_FRONT 10
-#define _OPT_MOF_FRONT 11
 
-
-enum modes {
-    UC,
-    MOF
-};
-enum modes MODE = UC;
-
+// The custom_keycodes define all the "normal", or non-tapdance, symbols of the Mathboard. These are the symbols that 
+// (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
+// Tapdance symbols are those symbols which have different behaviour depending on how many times you tap them. They have
+// red dots next to them on the Matboard. These symbols are defined in the file tapdance.h.
 enum custom_keycodes {
-    KC_SWITCH_MODE = SAFE_RANGE,
+    KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the Mathboard MODE variable.
     KC_ALPHA,
-    KC_ACCENT_CIRCUMFLEX_MOF,
-    KC_ACCENT_CHECK_MOF,
-    KC_ACCENT_TILDE_MOF,
-    KC_ACCENT_BAR_MOF,
-    KC_ACCENT_ARROW_MOF,
-    KC_SUM_MOF,
-    KC_N_ARY_PRODUCT_MOF,
-    KC_UNION_MOF,
-    KC_INTERSECTION_MOF,
-    KC_MATRIX_MOF
+    KC_NOTEQUAL,
+    KC_BETA,
+    KC_ALMOSTEQUAL,
+    KC_ACCENT_CIRCUMFLEX,
+    KC_ACCENT_CHECK,
+    KC_PROPORTIONAL,
+    KC_IDENTICALTO,
+    KC_COMBININGTILDE,
+    KC_COMBININGBAR,
+    KC_EPSILON,
+    KC_LESSOREQUAL,
+    KC_ZETA,
+    KC_GREATEROREQUAL,
+    KC_ACCENT_ARROW,
+    KC_ETA,
+    KC_IOTA,
+    KC_SUM,
+    KC_KAPPA,
+    KC_NARYPRODUCT,
+    KC_UNION,
+    KC_INTERSECTION,
+    KC_MU,
+    KC_EMPTYSET,
+    KC_NU,
+    KC_ARROW,
+    KC_SETDIFFERENCE,
+    KC_OMICRON,
+    KC_PARTIALDERIVATIVE,
+    KC_NABLA,
+    KC_DISJOINTUNION,
+    KC_RHO,
+    KC_ARROWIMPLIES,
+    KC_ARROWIFANDONLYIF,
+    KC_DOTPRODUCT,
+    KC_CROSSPRODUCT,
+    KC_TAU,
+    KC_UPSILON,
+    KC_PARALLEL,
+    KC_FORALL,
+    KC_CHI,
+    KC_DEGREE,
+    KC_INFINITY,
+    KC_NOT,
+    KC_MATRIX,
+    KC_FRACTION
 };
 
-const int key00[6] = {KC_ALPHA, UC(_notequal), UC(_beta), UC(_almostequal), UC(_circumflex), UC(_check)};
-const int key00_MOF[6] = {key00[0], key00[1], key00[2], key00[3], KC_ACCENT_CIRCUMFLEX_MOF, KC_ACCENT_CHECK_MOF};
-const int key01[6] = {TD(GAMMA_TD_UC), UC(_proportional), TD(DELTA_TD_UC), UC(_identicalto), UC(_combining_tilde), UC(_combining_bar)};
-const int key01_MOF[6] = {key01[0], key01[1], key01[2], key01[3], KC_ACCENT_TILDE_MOF, KC_ACCENT_BAR_MOF};
-const int key02[6] = {UC(_epsilon), UC(_lessorequal), UC(_zeta), UC(_greaterorequal), UC(_combining_arrow), TD(DOT_UC)};
-const int key02_MOF[6] = {key02[0], key02[1], key02[2], key02[3], KC_ACCENT_ARROW_MOF, TD(DOT_TD_MOF)};
-const int key03[6] = {UC(_eta), TD(MLT_TD_UC), TD(THETA_TD_UC), TD(MGT_TD_UC), TD(SUB_UC), TD(SUP_UC)};
-const int key03_MOF[6] = {key03[0], key03[1], key03[2], key03[3], TD(SUB_TD_MOF), TD(SUP_TD_MOF)};
-const int key10[6] = {UC(_iota), UC(_sum), UC(_kappa), UC(_n_ary_product), UC(_union), UC(_intersection)};
-const int key10_MOF[6] = {key10[0], KC_SUM_MOF, key10[2], KC_N_ARY_PRODUCT_MOF, KC_UNION_MOF, KC_INTERSECTION_MOF};
-const int key11[6] = {TD(LAMBDA_TD_UC), TD(INTEGRAL_UC), UC(_mu), TD(LINE_INTEGRAL_UC), TD(ELEMENT_OF_UC), UC(_empty_set)};
-const int key11_MOF[6] = {key11[0], TD(INTEGRAL_TD_MOF), key11[2], TD(LINE_INTEGRAL_TD_MOF), key11[4], key11[5]};
-const int key12[6] = {UC(_nu), TD(ROOT_UC), TD(XI_TD_UC), UC(_arrow), TD(SUBSET_OF_UC), UC(_set_difference)};
-const int key12_MOF[6] = {key12[0], TD(ROOT_TD_MOF), key12[2], key12[3], key12[4], key12[5]};
-const int key13[6] = {UC(_omicron), UC(_partial_derivative), TD(PI_TD_UC), UC(_nabla), TD(SUBSET_OR_EQ_UC), UC(_disjoint_union)};
-const int key13_MOF[6] = {key13[0], key13[1], key13[2], key13[3], key13[4], key13[5]};
-const int key20[6] = {UC(_rho), UC(_arrow_implies), TD(SIGMA_TD_UC), UC(_arrow_if_and_only_if), UC(_dotproduct), UC(_crossproduct)};
-const int key20_MOF[6] = {key20[0], key20[1], key20[2], key20[3], key20[4], key20[5]};
-const int key21[6] = {UC(_tau), TD(THERE_EXIST_UC), UC(_upsilon), TD(AND_UC), TD(PLUSMINUS_UC), UC(_parallel)};
-const int key21_MOF[6] = {key21[0], key21[1], key21[2], key21[3], key21[4], key21[5]};
-const int key22[6] = {TD(PHI_TD_UC), UC(_for_all), UC(_chi), TD(UNCONDITIONALLY_TRUE_UC), UC(_degree), UC(_infinity)};
-const int key22_MOF[6] = {key22[0], key22[1], key22[2], key22[3], key22[4], key22[5]};
-const int key23[6] = {TD(PSI_TD_UC), UC(_not), TD(OMEGA_TD_UC), TD(PROVES_UC), KC_NO, KC_NO};
-const int key23_MOF[6] = {key23[0], key23[1], key23[2], key23[3], KC_MATRIX_MOF, KC_NO};
+// Each physical symbolkey on the Mathboard is defined here. The upper rightmost key is 00. The bottommost key is 23:
+// 00 01 02 03 <- Top row
+// 10 11 12 13 <- Middle row
+// 20 21 22 23 <- Bottom row
+// The index of a symbol in key arrays defines its location on the physical key. It goes:
+// [top face left, top face upper left, top face right, top face upper right, front left, front right] 
+const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_ACCENT_CHECK};
+const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGTILDE, KC_COMBININGBAR};
+const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ZETA, KC_GREATEROREQUAL, KC_ACCENT_ARROW, TD(DOT_TD)};
+const int key03[6] = {KC_ETA, TD(MLT_TD), TD(THETA_TD), TD(MGT_TD), TD(SUB_TD), TD(SUP_TD)};
+const int key10[6] = {KC_IOTA, KC_SUM, KC_KAPPA, KC_NARYPRODUCT, KC_UNION, KC_INTERSECTION};
+const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), KC_MU, TD(LINE_INTEGRAL_TD), TD(ELEMENT_OF_TD), KC_EMPTYSET};
+const int key12[6] = {KC_NU, TD(ROOT_TD), TD(XI_TD), KC_ARROW, TD(SUBSET_OF_TD), KC_SETDIFFERENCE};
+const int key13[6] = {KC_OMICRON, KC_PARTIALDERIVATIVE, TD(PI_TD), KC_NABLA, TD(SUBSET_OR_EQ_TD), KC_DISJOINTUNION};
+const int key20[6] = {KC_RHO, KC_ARROWIMPLIES, TD(SIGMA_TD), KC_ARROWIFANDONLYIF, KC_DOTPRODUCT, KC_CROSSPRODUCT};
+const int key21[6] = {KC_TAU, TD(THERE_EXIST_TD), KC_UPSILON, TD(AND_TD), TD(PLUSMINUS_TD), KC_PARALLEL};
+const int key22[6] = {TD(PHI_TD), KC_FORALL, KC_CHI, TD(UNCONDITIONALLY_TRUE_TD), KC_DEGREE, KC_INFINITY};
+const int key23[6] = {TD(PSI_TD), KC_NOT, TD(OMEGA_TD), TD(PROVES_TD), KC_MATRIX, KC_FRACTION};
 
 
+// process_record_user handles keyclicks on "normal" (non-tapdance) symbols. Each normal symbol has a function defined in 
+// symbol_functions.h. For example, when the user clicks KC_NOTEQUAL, process_record_user() will call notequal_key(). 
+// The symbol functions defined in symbol_functions.h decides which action to take depending on the Mathboard MODE.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_SWITCH_MODE:
-            if (MODE == UC){MODE = MOF;} 
-            else if (MODE == MOF){MODE = UC;}
+            if (record->event.pressed) {
+                if (MODE == UC){MODE = MOF;} 
+                else if (MODE == MOF){MODE = UC;}
+            }
+            break;
         case KC_ALPHA:
-            if (MODE == UC){register_hex(_alpha);} 
-            else if (MODE == MOF){register_hex(_beta);} //Beta is just for testing if it works
-        case KC_ACCENT_CIRCUMFLEX_MOF:
-            send_mof_on_keypress(ACCENT_HAT_MOF, record);
+            alpha_key(record);
             break;
-        case KC_ACCENT_CHECK_MOF:
-            send_mof_on_keypress(ACCENT_CHECK_MOF, record);
+        case KC_NOTEQUAL:
+            notequal_key(record);
             break;
-        case KC_ACCENT_TILDE_MOF:
-            send_mof_on_keypress(ACCENT_TILDE_MOF, record);
+        case KC_BETA:
+            beta_key(record);
             break;
-        case KC_ACCENT_BAR_MOF:
-            send_mof_on_keypress(ACCENT_BAR_MOF, record);
+        case KC_ALMOSTEQUAL:
+            almostequal_key(record);
             break;
-        case KC_ACCENT_ARROW_MOF:
-            send_mof_on_keypress(ACCENT_ARROW_MOF, record);
+        case KC_ACCENT_CIRCUMFLEX:
+            circumflex_key(record);
             break;
-        case KC_SUM_MOF:
-            send_mof_on_keypress(SUM_MOF, record);
+        case KC_ACCENT_CHECK:
+            check_key(record);
             break;
-        case KC_N_ARY_PRODUCT_MOF:
-            send_mof_on_keypress(N_ARY_PRODUCT_MOF, record);
+        case KC_PROPORTIONAL:
+            proportional_key(record);
             break;
-        case KC_INTERSECTION_MOF:
-            send_mof_on_keypress(UNION_MOF, record);
+        case KC_IDENTICALTO:
+            identicalto_key(record);
             break;
-        case KC_UNION_MOF:
-            send_mof_on_keypress(INTERSECTION_MOF, record);
+        case KC_COMBININGTILDE:
+            combiningtilde_key(record);
             break;
-        case KC_MATRIX_MOF:
-            send_mof_on_keypress(MATRIX_MOF, record);
+        case KC_COMBININGBAR:
+            combiningbar_key(record);
+            break;
+        case KC_EPSILON:
+            epsilon_key(record);
+            break;
+        case KC_LESSOREQUAL:
+            lessorequal_key(record);
+            break;
+        case KC_ZETA:
+            zeta_key(record);
+            break;
+        case KC_GREATEROREQUAL:
+            greaterorequal_key(record);
+            break;
+        case KC_ACCENT_ARROW:
+            accent_arrow_key(record);
+            break;
+        case KC_ETA:
+            eta_key(record);
+            break;
+        case KC_IOTA:
+            iota_key(record);
+            break;
+        case KC_SUM:
+            sum_key(record);
+            break;
+        case KC_KAPPA:
+            kappa_key(record);
+            break;
+        case KC_NARYPRODUCT:
+            naryproduct_key(record);
+            break;
+        case KC_UNION:
+            union_key(record);
+            break;
+        case KC_INTERSECTION:
+            intersection_key(record);
+            break;
+        case KC_MU:
+            mu_key(record);
+            break;
+        case KC_EMPTYSET:
+            emptyset_key(record);
+            break;
+        case KC_NU:
+            nu_key(record);
+            break;
+        case KC_ARROW:
+            arrow_key(record);
+            break;
+        case KC_SETDIFFERENCE:
+            setdifference_key(record);
+            break;
+        case KC_OMICRON:
+            omicron_key(record);
+            break;
+        case KC_PARTIALDERIVATIVE:
+            partialderivative_key(record);
+            break;
+        case KC_NABLA:
+            nabla_key(record);
+            break;
+        case KC_DISJOINTUNION:
+            disjointunion_key(record);
+            break;
+        case KC_RHO:
+            rho_key(record);
+            break;
+        case KC_ARROWIMPLIES:
+            arrowimplies_key(record);
+            break;
+        case KC_ARROWIFANDONLYIF:
+            arrowifandonlyif_key(record);
+            break;
+        case KC_DOTPRODUCT:
+            dotproduct_key(record);
+            break;
+        case KC_CROSSPRODUCT:
+            crossproduct_key(record);
+            break;
+        case KC_TAU:
+            tau_key(record);
+            break;
+        case KC_UPSILON:
+            upsilon_key(record);
+            break;
+        case KC_PARALLEL:
+            parallel_key(record);
+            break;
+        case KC_FORALL:
+            forall_key(record);
+            break;
+        case KC_CHI:
+            chi_key(record);
+            break;
+        case KC_DEGREE:
+            degree_key(record);
+            break;
+        case KC_INFINITY:
+            infinity_key(record);
+            break;
+        case KC_NOT:
+            not_key(record);
+            break;
+        case KC_FRACTION:
+            fraction_key(record);
+            break;
+        case KC_MATRIX:
+            matrix_key(record);
             break;
     }
     return true;
 };
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

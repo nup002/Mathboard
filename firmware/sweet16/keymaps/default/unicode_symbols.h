@@ -1,6 +1,19 @@
 #ifndef UNICODE_SYMBOLS_H
 #define UNICODE_SYMBOLS_H
 
+
+void send_hex(int symbol){
+    unicode_input_start();
+    register_hex(symbol);
+    unicode_input_finish();
+};
+
+void send_hex_on_keypress(int symbol, keyrecord_t *record){
+    if (record->event.pressed) {
+        send_hex(symbol);
+    };
+};
+
 // Greek letters
 #define _alpha 0x03B1
 #define _beta 0x03B2
