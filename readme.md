@@ -39,8 +39,8 @@ You must find your own way of printing the keycaps. I have been using a UV print
 or draw the symbols with a pen and covering the keys with clear lacquer. 
 
 ## Building and flashing the firmware
-This repository contains the firmware for the Mathboard. You can download prebuilt binaries from the 
-`/firmware/binaries` folder and flash them to the Mathboard using [QMK Toolbox](https://github.com/qmk/qmk_toolbox).
+The newest firmware version can always be found in the [releases](https://github.com/nup002/Mathboard/releases). The releases also contain 
+instructions on how to flash your Mathboard with the firmware.
 
 If you wish to build the binaries yourself, for example after modifying the source files, you need to set up the 
 build environment for QMK. This is not very difficult if you follow the 
