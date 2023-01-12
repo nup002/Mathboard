@@ -7,7 +7,8 @@ enum mofTypes {
     AS_IS_1SPACE,
     AS_IS_2SPACE,
     MOVE_LEFT_1SPACE,
-    MOVE_LEFT_2SPACE
+    MOVE_LEFT_2SPACE,
+    SPACE_DELETE_PLACEHOLDER_LIMITS
 };
 
 typedef struct mofDefinition {
@@ -34,10 +35,10 @@ mofDefinition SUB_2_MOF = {.string = "_2", .type = AS_IS_1SPACE};
 mofDefinition SUB_i_MOF = {.string = "_i", .type = AS_IS_1SPACE};
 mofDefinition SUB_j_MOF = {.string = "_j", .type = AS_IS_1SPACE};
 mofDefinition SUB_n_MOF = {.string = "_n", .type = AS_IS_1SPACE};
-mofDefinition SUM_MOF = {.string = "\\sum", .type = AS_IS_2SPACE};
-mofDefinition N_ARY_PRODUCT_MOF = {.string = "\\prod", .type = AS_IS_2SPACE};
-mofDefinition UNION_MOF = {.string = "\\bigcup", .type = AS_IS_2SPACE};
-mofDefinition INTERSECTION_MOF = {.string = "\\bigcap", .type = AS_IS_2SPACE};
+mofDefinition SUM_MOF = {.string = "\\sum_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition N_ARY_PRODUCT_MOF = {.string = "\\prod_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition UNION_MOF = {.string = "\\bigcup_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition INTERSECTION_MOF = {.string = "\\bigcap_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
 mofDefinition INTEGRAL_MOF = {.string = "\\int", .type = AS_IS_2SPACE};
 mofDefinition DOUBLE_INTEGRAL_MOF = {.string = "\\iint", .type = AS_IS_2SPACE};
 mofDefinition TRIPLE_INTEGRAL_MOF = {.string = "\\iiint", .type = AS_IS_2SPACE};
@@ -48,6 +49,7 @@ mofDefinition ROOT_MOF = {.string = "\\sqrt", .type = MOVE_LEFT_2SPACE};
 mofDefinition CUBE_ROOT_MOF = {.string = "\\cbrt", .type = MOVE_LEFT_2SPACE};
 mofDefinition FOURTH_ROOT_MOF = {.string = "\\qdrt", .type = MOVE_LEFT_2SPACE};
 mofDefinition MATRIX_MOF = {.string = "[\\matrix(@&)]", .type = MOVE_LEFT_1SPACE};
+mofDefinition FRAC_MOF = {.string = " a/b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
 
 
 void send_space(void){
@@ -81,6 +83,15 @@ void send_with_left_mofve_2space(char *string){
     tap_code(KC_LEFT);
 };
 
+void send_with_delete_lims_1space(char *string){
+    send_string(string);
+    send_space();
+    tap_code(KC_LEFT);
+    tap_code(KC_BSPC);
+    tap_code(KC_LEFT);
+    tap_code(KC_BSPC);
+};
+
 void send_mof(struct mofDefinition mof_def){
     enum mofTypes mof_type = mof_def.type;
     char *string = mof_def.string;
@@ -96,6 +107,9 @@ void send_mof(struct mofDefinition mof_def){
             break;
         case MOVE_LEFT_2SPACE:
             send_with_left_mofve_2space(string);
+            break;
+        case SPACE_DELETE_PLACEHOLDER_LIMITS:
+            send_with_delete_lims_1space(string);
             break;
     };
 };

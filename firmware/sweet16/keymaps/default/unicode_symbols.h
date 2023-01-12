@@ -70,10 +70,10 @@ void send_hex_on_keypress(int symbol, keyrecord_t *record){
 #define _combining_arrow 0x20D7
 #define _combining_dot 0x0307
 #define _combining_2dot 0x0308
-#define _prime 0x2032
-#define _double_prime 0x2033
-#define _triple_prime 0x2034
-#define _quadruple_prime 0x2057
+#define _prime 0x2032 // not in use currently
+#define _double_prime 0x2033 // not in use currently
+#define _triple_prime 0x2034 // not in use currently
+#define _quadruple_prime 0x2057 // not in use currently
 #define _transposed 0x1D40
 #define _sup_0 0x2070
 #define _sup_1 0x00B9
