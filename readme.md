@@ -17,7 +17,7 @@ E = mc²<br>
 | Input mode                         | Supported |
 |------------------------------------|-----------|
 | Unicode plaintext                  | ✅        |
-| LaTeX                              | ❌        |
+| LaTeX                              | ✅        |
 | Microsoft Office equation editor   | ✅        |
 | Apache Open Office equation editor | ❌        |
 
