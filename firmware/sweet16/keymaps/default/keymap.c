@@ -3,7 +3,7 @@
 #include "unicode_symbols.h"
 #include "tapdance.h"
 #include "microsoft_office.h"
-#include "key_definitions.h"
+#include "symbol_functions.h"
 
 #define _BASE 0
 #define _BASE_SHIFT 1
@@ -94,7 +94,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_SWITCH_MODE:
             if (record->event.pressed) {
                 if (MODE == UC){MODE = MOF;} 
-                else if (MODE == MOF){MODE = UC;}
+                else if (MODE == MOF){MODE = LTX;}
+                else if (MODE == LTX){MODE = UC;}
             }
             break;
         case KC_ALPHA:
