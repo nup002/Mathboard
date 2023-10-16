@@ -129,17 +129,22 @@
 #define matrix_LTX  "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}" // Requires amsmath
 #define frac_LTX  "\\frac{}{}"
 
+#define LTX_FLAG "LATEX: "
+
 void send_and_backtrack_4(const char *string){
+    //send_string(string);
     send_string(string);
     for (int i = 0; i < 4; ++i){tap_code(KC_LEFT);}
 }
 
 void send_and_backtrack_3(const char *string){
+    //send_string(string);
     send_string(string);
     tap_code(KC_LEFT);
 }
 
 void send_and_backtrack_1(const char *string){
+    //send_string(string);
     send_string(string);
     tap_code(KC_LEFT);
 }
@@ -172,7 +177,8 @@ void send_latex(const char *string){
         // Send the final curly brace
         tap_code16(KC_RIGHT_CURLY_BRACE);
     } else {
-        send_string(string);
+        send_string(FRENCH_PROBLEM);
+        //send_string(string);
     }
 }
 

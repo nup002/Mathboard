@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "sendstring_norwegian.h": "c",
+        "sendstring_french.h": "c"
+    }
+}

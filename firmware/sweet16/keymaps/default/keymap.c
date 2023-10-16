@@ -5,6 +5,8 @@
 #include "microsoft_office.h"
 #include "symbol_functions.h"
 
+#include "sendstring_french.h"
+
 #define _BASE 0
 #define _BASE_SHIFT 1
 #define _OPT 2

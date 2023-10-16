@@ -10,7 +10,8 @@ void send_hex(int symbol){
 
 void send_hex_on_keypress(int symbol, keyrecord_t *record){
     if (record->event.pressed) {
-        send_hex(symbol);
+        //send_hex(symbol);
+        register_unicode(symbol);
     };
 };
 

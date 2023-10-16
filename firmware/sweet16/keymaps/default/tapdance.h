@@ -36,7 +36,7 @@ enum tap_dance_keys {
     LAMBDA_TD = 25,
 };
 
-void latex_dance(const char *symbols[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
+void latex_dance(const char *symbols[], int nelements, tap_dance_state_t *state, void *user_data) {
     int index = state->count - 1;
     if (index >= nelements) {
         index = 0;
@@ -44,7 +44,7 @@ void latex_dance(const char *symbols[], int nelements, qk_tap_dance_state_t *sta
     send_latex(symbols[index]);
 }
 
-void mof_dance(mofDefinition mof_defs[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
+void mof_dance(mofDefinition mof_defs[], int nelements, tap_dance_state_t *state, void *user_data) {
     int index = state->count - 1;
     if (index >= nelements) {
         index = 0;
@@ -52,7 +52,7 @@ void mof_dance(mofDefinition mof_defs[], int nelements, qk_tap_dance_state_t *st
     send_mof(mof_defs[index]);
 }
 
-void unicode_dance(int symbols[], int nelements, qk_tap_dance_state_t *state, void *user_data) {
+void unicode_dance(int symbols[], int nelements, tap_dance_state_t *state, void *user_data) {
     int index = state->count - 1;
     if (index >= nelements) {
         index = 0;
@@ -62,7 +62,7 @@ void unicode_dance(int symbols[], int nelements, qk_tap_dance_state_t *state, vo
     reset_tap_dance(state);
 }
 
-void gamma_dance (qk_tap_dance_state_t *s, void *d){
+void gamma_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_gamma, _Gamma};
         unicode_dance(symbols, 2, s, d);}
@@ -71,7 +71,7 @@ void gamma_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void delta_dance (qk_tap_dance_state_t *s, void *d){
+void delta_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_delta, _Delta};
         unicode_dance(symbols, 2, s, d);}
@@ -80,7 +80,7 @@ void delta_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void theta_dance (qk_tap_dance_state_t *s, void *d){
+void theta_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_theta, _Theta};
         unicode_dance(symbols, 2, s, d);}
@@ -89,7 +89,7 @@ void theta_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void lambda_dance (qk_tap_dance_state_t *s, void *d){
+void lambda_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_lambda, _Lambda};
         unicode_dance(symbols, 2, s, d);}
@@ -98,7 +98,7 @@ void lambda_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void xi_dance (qk_tap_dance_state_t *s, void *d){
+void xi_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_xi, _Xi};
         unicode_dance(symbols, 2, s, d);}
@@ -107,7 +107,7 @@ void xi_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void pi_dance (qk_tap_dance_state_t *s, void *d){
+void pi_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_pi, _Pi};
         unicode_dance(symbols, 2, s, d);}
@@ -116,7 +116,7 @@ void pi_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void sigma_dance (qk_tap_dance_state_t *s, void *d){
+void sigma_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_sigma, _Sigma};
         unicode_dance(symbols, 2, s, d);}
@@ -125,7 +125,7 @@ void sigma_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void phi_dance (qk_tap_dance_state_t *s, void *d){
+void phi_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_phi, _Phi};
         unicode_dance(symbols, 2, s, d);}
@@ -134,7 +134,7 @@ void phi_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void psi_dance (qk_tap_dance_state_t *s, void *d){
+void psi_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_psi, _Psi};
         unicode_dance(symbols, 2, s, d);}
@@ -143,7 +143,7 @@ void psi_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void omega_dance (qk_tap_dance_state_t *s, void *d){
+void omega_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_omega, _Omega};
         unicode_dance(symbols, 2, s, d);}
@@ -152,7 +152,7 @@ void omega_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void much_greater_than_dance (qk_tap_dance_state_t *s, void *d){
+void much_greater_than_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_much_greater_than, _much_much_greater_than};
         unicode_dance(symbols, 2, s, d);}
@@ -161,7 +161,7 @@ void much_greater_than_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void much_less_than_dance (qk_tap_dance_state_t *s, void *d){
+void much_less_than_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_much_less_than, _much_much_less_than};
         unicode_dance(symbols, 2, s, d);}
@@ -170,7 +170,7 @@ void much_less_than_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void dot_dance (qk_tap_dance_state_t *s, void *d){
+void dot_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){   
         int symbols[] = {_combining_dot, _combining_2dot};
         unicode_dance(symbols, 2, s, d);}
@@ -182,7 +182,7 @@ void dot_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void sub_dance (qk_tap_dance_state_t *s, void *d){
+void sub_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){
         int symbols[] = {_sub_0, _sub_1, _sub_2, _sub_i, _sub_j, _sub_n};
         unicode_dance(symbols, 6, s, d);}
@@ -194,7 +194,7 @@ void sub_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 6, s, d);}
 }
 
-void sup_dance (qk_tap_dance_state_t *s, void *d){
+void sup_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){
         int symbols[] = {_sup_0, _sup_1, _sup_2, _sup_i, _sup_j, _sup_n};
         unicode_dance(symbols, 6, s, d);}
@@ -206,7 +206,7 @@ void sup_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 6, s, d);}
 }
 
-void integral_dance (qk_tap_dance_state_t *s, void *d){
+void integral_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){
         int symbols[] = {_integral, _double_integral, _triple_integral};
         unicode_dance(symbols, 3, s, d);}
@@ -218,7 +218,7 @@ void integral_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void line_integral_dance (qk_tap_dance_state_t *s, void *d){
+void line_integral_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){
         int symbols[] = {_line_integral, _surface_integral, _volume_integral};
         unicode_dance(symbols, 3, s, d);}
@@ -230,7 +230,7 @@ void line_integral_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void root_dance (qk_tap_dance_state_t *s, void *d){
+void root_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC){
         int symbols[] = {_square_root, _cube_root, _fourth_root};
         unicode_dance(symbols, 3, s, d);}
@@ -242,7 +242,7 @@ void root_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void element_of_dance (qk_tap_dance_state_t *s, void *d){
+void element_of_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_element_of, _not_element_of};
         unicode_dance(symbols, 2, s, d);}
@@ -251,7 +251,7 @@ void element_of_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void subset_of_dance (qk_tap_dance_state_t *s, void *d){
+void subset_of_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_subset_of, _not_subset_of};
         unicode_dance(symbols, 2, s, d);}
@@ -260,7 +260,7 @@ void subset_of_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void subset_or_equal_dance (qk_tap_dance_state_t *s, void *d){
+void subset_or_equal_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_subset_or_equal, _not_subset_or_equal};
         unicode_dance(symbols, 2, s, d);}
@@ -269,7 +269,7 @@ void subset_or_equal_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void there_exists_dance (qk_tap_dance_state_t *s, void *d){
+void there_exists_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_there_exists, _there_does_not_exists};
         unicode_dance(symbols, 2, s, d);}
@@ -278,7 +278,7 @@ void there_exists_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void and_dance (qk_tap_dance_state_t *s, void *d){
+void and_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_and, _or, _xor};
         unicode_dance(symbols, 3, s, d);}
@@ -287,7 +287,7 @@ void and_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void unconditionally_true_dance (qk_tap_dance_state_t *s, void *d){
+void unconditionally_true_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_uncoditionally_true, _uncoditionally_false};
         unicode_dance(symbols, 2, s, d);}
@@ -296,7 +296,7 @@ void unconditionally_true_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void proves_dance (qk_tap_dance_state_t *s, void *d){
+void proves_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_proves, _models};
         unicode_dance(symbols, 2, s, d);}
@@ -305,7 +305,7 @@ void proves_dance (qk_tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void plusminus_dance (qk_tap_dance_state_t *s, void *d){
+void plusminus_dance (tap_dance_state_t *s, void *d){
     if (MODE == UC || MODE == MOF){
         int symbols[] = {_plusminus, _minusplus};
         unicode_dance(symbols, 2, s, d);}
@@ -315,7 +315,7 @@ void plusminus_dance (qk_tap_dance_state_t *s, void *d){
 }
 
 //Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [GAMMA_TD] = ACTION_TAP_DANCE_FN (gamma_dance),
   [DELTA_TD] = ACTION_TAP_DANCE_FN (delta_dance),
   [THETA_TD] = ACTION_TAP_DANCE_FN (theta_dance),
