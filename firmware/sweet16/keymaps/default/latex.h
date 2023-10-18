@@ -177,8 +177,7 @@ void send_latex(const char *string){
         // Send the final curly brace
         tap_code16(KC_RIGHT_CURLY_BRACE);
     } else {
-        send_string(FRENCH_PROBLEM);
-        //send_string(string);
+        send_string(string);
     }
 }
 
