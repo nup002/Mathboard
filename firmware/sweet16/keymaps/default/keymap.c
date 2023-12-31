@@ -5,7 +5,7 @@
 #include "microsoft_office.h"
 #include "symbol_functions.h"
 
-//#include "sendstring_french.h"
+//#include "sendstring_norwegian.h"
 
 #define _BASE 0
 #define _BASE_SHIFT 1

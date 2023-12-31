@@ -1,30 +1,26 @@
-KEYBOARDS = sweet16
-PATH_sweet16 = sweet16
+KEYBOARDS = mathboard
 
 all: $(KEYBOARDS)
 
 .PHONY: $(KEYBOARDS)
 $(KEYBOARDS):
-	# init submodule
-	# git submodule update --init --recursive
-
 	# cleanup old symlinks
-	for f in $(KEYBOARDS); do rm -rf qmk_firmware/keyboards/mathboard/$(PATH_$@); done
-	
-	#make mathboard folder if not present
-	mkdir -p qmk_firmware/keyboards/mathboard
-	
+	rm -rf qmk_firmware/keyboards/maglaur
+
+	#make maglaur folder if not present
+	mkdir -p qmk_firmware/keyboards/maglaur
+
 	# add new symlinks
-	ln -s $(shell pwd)/$@ qmk_firmware/keyboards/mathboard/$(PATH_$@)
+	ln -s $(shell pwd)/$@ qmk_firmware/keyboards/maglaur
 
 	# run lint check
-	#cd qmk_firmware; qmk lint -km default -kb mathboard/$(PATH_$@) --strict
+	cd qmk_firmware; qmk lint -km dev -kb maglaur/mathboard/v1 --strict
 
 	# run build
-	make BUILD_DIR=$(shell pwd)/compiled -j1 -C qmk_firmware mathboard/$(PATH_$@):default
+	make BUILD_DIR=$(shell pwd)/compiled -j1 -C qmk_firmware maglaur/mathboard/v1:dev
 
 	# cleanup symlinks
-	for f in $(KEYBOARDS); do rm -rf qmk_firmware/keyboards/mathboard/$(PATH_$@); done
+	rm -rf qmk_firmware/keyboards/maglaur
 
 clean:
 	rm -rf obj_*

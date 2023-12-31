@@ -1,0 +1,18 @@
+Designator,Val,Package,Mid X,mid Y,Rotation,Layer
+"D17","WS2812B","LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm",8.300000,-66.000000,180.000000,top
+"SW1","SW_Push","SW_Gateron_LowProfile_THT",11.300000,-9.000000,0.000000,top
+"SW2","SW_Push","SW_Gateron_LowProfile_THT",30.300000,-9.000000,0.000000,top
+"SW3","SW_Push","SW_Gateron_LowProfile_THT",49.300000,-9.000000,0.000000,top
+"SW4","SW_Push","SW_Gateron_LowProfile_THT",68.208000,-9.000000,90.000000,top
+"SW5","SW_Push","SW_Gateron_LowProfile_THT",87.300000,-9.000000,-90.000000,top
+"SW6","SW_Push","SW_Gateron_LowProfile_THT",19.300000,-28.000000,0.000000,top
+"SW7","SW_Push","SW_Gateron_LowProfile_THT",38.300000,-28.000000,0.000000,top
+"SW8","SW_Push","SW_Gateron_LowProfile_THT",57.300000,-28.000000,0.000000,top
+"SW9","SW_Push","SW_Gateron_LowProfile_THT",76.300000,-28.000000,0.000000,top
+"SW10","SW_Push","SW_Gateron_LowProfile_THT",8.300000,-47.000000,0.000000,top
+"SW11","SW_Push","SW_Gateron_LowProfile_THT",27.300000,-47.000000,0.000000,top
+"SW12","SW_Push","SW_Gateron_LowProfile_THT",46.300000,-47.000000,0.000000,top
+"SW13","SW_Push","SW_Gateron_LowProfile_THT",65.300000,-47.000000,0.000000,top
+"SW14","SW_Push","SW_Gateron_LowProfile_THT",84.300000,-47.000000,0.000000,top
+"SW15","SW_Push","SW_Gateron_LowProfile_THT",51.000000,-66.000000,180.000000,top
+"SW16","SW_Push","SW_Gateron_LowProfile_THT",79.600000,-66.000000,180.000000,top
