@@ -1,11 +1,11 @@
 # Mathboard
 
-The Mathboard is a 4x4 macropad to make typing math on a computer easier for engineers and scientists. 
-Follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
+The Mathboard is a macropad to make typing of equations on a computer easier for engineers and scientists, and this repository contains all the resources needed to make your own. With the Mathboard you can type 75 of the most common symbols used in algebra, calculus, set theory and logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can type directly with the Mathboard:
+
+You can follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
 <p align="center">
 <img src="https://cdn.hackaday.io/images/1746721664193689607.jpg" width="400">
 </p>
-With the Mathboard you can type 75 of the most common symbols used in algebra, calculus, set theory and logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can type directly with the Mathboard:
 
 <p style="text-align: center;"><font size="4"> 
 E = mc²<br>
@@ -27,16 +27,18 @@ When using the Mathboard on Windows, the open source application [WinCompose](ht
 must be installed and running.
 
 ## Hardware
-The Mathboard is a 
-[Sweet 16](https://1upkeyboards.com/shop/keyboard-kits/macro-pads/sweet16-macro-pad-white/) macro pad from 1UP 
-Keyboards. You must choose the 'Pro Micro 5V/16MHz' microcontroller when ordering it.
+The mathboard has three main components:
+
+1) A printed circuit board (PCB)
+2) A 3D printed case
+3) Custom keycaps
+
+All the production files for the PCB are in `/hardware/pcb/Production files`, and can be uploaded directly to [JLCPCB](https://jlcpcb.com). You will have to purchase and manually solder the switches, the microcontroller, and the indicator LED.
+
+The case is very simple, and it should be possible for virtually all 3D printers to print it. The `.step` files are located in `/hardware/case`.
 
 You should use OEM R2 keycaps, since the decals in `/hardware/keycaps/decals` are made for these specific keycaps. Their
-shape also makes it easier to see the symbols printed on their front faces.
-
-You must find your own way of printing the keycaps. I have been using a UV printer, but you can also use 
-[waterslide decals](https://www.reddit.com/r/MechanicalKeyboards/comments/nncx59/how_to_diy_custom_print_keycaps_using_waterslide/),
-or draw the symbols with a pen and covering the keys with clear lacquer. 
+shape also makes it easier to see the symbols printed on their front faces. You must find your own way of printing the keycaps. I have been using a UV printer, but you can also use [waterslide decals](https://www.reddit.com/r/MechanicalKeyboards/comments/nncx59/how_to_diy_custom_print_keycaps_using_waterslide/).
 
 ## Building and flashing the firmware
 The newest firmware version can always be found in the [releases](https://github.com/nup002/Mathboard/releases). The releases also contain 
@@ -46,3 +48,6 @@ If you wish to build the binaries yourself, for example after modifying the sour
 build environment for QMK. This is not very difficult if you follow the 
 [guide](https://docs.qmk.fm/#/newbs_getting_started). Once you've got the build environment set up, use the QMK CLI to
 navigate to the `/firmware` and type `make`. 
+
+## Licenses
+The Mathboard firmware is licensed under the GNU General Public License v3. The Mathboard hardware is licensed under CERN-OHL-S v2. This includes the PCB design files, case design files, and the keycap decals. As an individual you are free to make your own Mathboard, or to modify it, as long as these licenses are respected.
