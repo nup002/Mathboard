@@ -1,3 +1,9 @@
 [submodule "firmware/qmk_firmware"]
 	path = firmware/qmk_firmware
 	url = https://github.com/qmk/qmk_firmware.git
+[submodule "hardware/pcb/key-switches.pretty"]
+	path = hardware/pcb/key-switches.pretty
+	url = https://github.com/siderakb/key-switches.pretty.git
+[submodule "hardware/pcb/0xCB-Helios"]
+	path = hardware/pcb/0xCB-Helios
+	url = https://github.com/0xCB-dev/0xCB-Helios
