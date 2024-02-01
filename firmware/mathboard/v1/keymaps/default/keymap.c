@@ -245,56 +245,56 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_ortho_4x4(
-        key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],
-        key10[_BASE], key11[_BASE],   key12[_BASE],   key13[_BASE],
-        key20[_BASE], key21[_BASE],   key22[_BASE],   key23[_BASE],
-        KC_SWITCH_MODE, MO(_BASE_FRONT),MO(_BASE_SHIFT),MO(_OPT)
+    [_BASE] = LAYOUT_5x3_macropad(
+        key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],   KC_SWITCH_MODE,
+                      key10[_BASE],   key11[_BASE],   key12[_BASE],   key13[_BASE],
+        MO(_OPT),     key20[_BASE],   key21[_BASE],   key22[_BASE],   key23[_BASE],
+                                      MO(_BASE_FRONT),                MO(_BASE_SHIFT)
     ),
-	[_BASE_SHIFT] = LAYOUT_ortho_4x4(
-        key00[_BASE_SHIFT], key01[_BASE_SHIFT],   key02[_BASE_SHIFT],   key03[_BASE_SHIFT],
-        key10[_BASE_SHIFT], key11[_BASE_SHIFT],   key12[_BASE_SHIFT],   key13[_BASE_SHIFT],
-        key20[_BASE_SHIFT], key21[_BASE_SHIFT],   key22[_BASE_SHIFT],   key23[_BASE_SHIFT],
-        KC_NO,        KC_NO,          MO(_BASE_SHIFT),MO(_OPT_SHIFT)
+	[_BASE_SHIFT] = LAYOUT_5x3_macropad(
+        key00[_BASE_SHIFT], key01[_BASE_SHIFT],   key02[_BASE_SHIFT],   key03[_BASE_SHIFT],   KC_NO,
+                            key10[_BASE_SHIFT],   key11[_BASE_SHIFT],   key12[_BASE_SHIFT],   key13[_BASE_SHIFT],
+        MO(_OPT),           key20[_BASE_SHIFT],   key21[_BASE_SHIFT],   key22[_BASE_SHIFT],   key23[_BASE_SHIFT],
+                                                  MO(_BASE_SHIFT),                            MO(_OPT_SHIFT)
     ),
-	[_OPT] = LAYOUT_ortho_4x4(
-        key00[_OPT], key01[_OPT],   key02[_OPT],   key03[_OPT],
-        key10[_OPT], key11[_OPT],   key12[_OPT],   key13[_OPT],
-        key20[_OPT], key21[_OPT],   key22[_OPT],   key23[_OPT],
-        KC_NO,        MO(_OPT_FRONT), MO(_OPT_SHIFT), MO(_OPT)
+	[_OPT] = LAYOUT_5x3_macropad(
+        key00[_OPT], key01[_OPT],   key02[_OPT],   key03[_OPT],   KC_NO,
+                     key10[_OPT],   key11[_OPT],   key12[_OPT],   key13[_OPT],
+        MO(_OPT),    key20[_OPT],   key21[_OPT],   key22[_OPT],   key23[_OPT],
+                                    MO(_OPT_FRONT),               MO(_OPT_SHIFT)
     ),
-	[_OPT_SHIFT] = LAYOUT_ortho_4x4(
-        key00[_OPT_SHIFT], key01[_OPT_SHIFT],   key02[_OPT_SHIFT],   key03[_OPT_SHIFT],
-        key10[_OPT_SHIFT], key11[_OPT_SHIFT],   key12[_OPT_SHIFT],   key13[_OPT_SHIFT],
-        key20[_OPT_SHIFT], key21[_OPT_SHIFT],   key22[_OPT_SHIFT],   key23[_OPT_SHIFT],
-        KC_NO,        KC_NO,          MO(_OPT_SHIFT), MO(_OPT_SHIFT)
+	[_OPT_SHIFT] = LAYOUT_5x3_macropad(
+        key00[_OPT_SHIFT], key01[_OPT_SHIFT],   key02[_OPT_SHIFT],   key03[_OPT_SHIFT],   KC_NO,
+                           key10[_OPT_SHIFT],   key11[_OPT_SHIFT],   key12[_OPT_SHIFT],   key13[_OPT_SHIFT],
+        MO(_OPT),          key20[_OPT_SHIFT],   key21[_OPT_SHIFT],   key22[_OPT_SHIFT],   key23[_OPT_SHIFT],
+                                                MO(_OPT_SHIFT),                           MO(_OPT_SHIFT)
     ),
-	[_BASE_FRONT] = LAYOUT_ortho_4x4(
-        key00[_BASE_FRONT], key01[_BASE_FRONT],   key02[_BASE_FRONT],   key03[_BASE_FRONT],
-        key10[_BASE_FRONT], key11[_BASE_FRONT],   key12[_BASE_FRONT],   key13[_BASE_FRONT],
-        key20[_BASE_FRONT], key21[_BASE_FRONT],   key22[_BASE_FRONT],   key23[_BASE_FRONT],
-        KC_NO,        MO(_BASE_FRONT),          KC_NO, MO(_OPT_FRONT)
+	[_BASE_FRONT] = LAYOUT_5x3_macropad(
+        key00[_BASE_FRONT], key01[_BASE_FRONT],   key02[_BASE_FRONT],   key03[_BASE_FRONT],   KC_NO,
+                            key10[_BASE_FRONT],   key11[_BASE_FRONT],   key12[_BASE_FRONT],   key13[_BASE_FRONT],
+        MO(_OPT),           key20[_BASE_FRONT],   key21[_BASE_FRONT],   key22[_BASE_FRONT],   key23[_BASE_FRONT],
+                                                  MO(_BASE_FRONT),                            MO(_OPT_FRONT)
     ),
-	[_OPT_FRONT] = LAYOUT_ortho_4x4(
-        key00[_OPT_FRONT], key01[_OPT_FRONT],   key02[_OPT_FRONT],   key03[_OPT_FRONT],
-        key10[_OPT_FRONT], key11[_OPT_FRONT],   key12[_OPT_FRONT],   key13[_OPT_FRONT],
-        key20[_OPT_FRONT], key21[_OPT_FRONT],   key22[_OPT_FRONT],   key23[_OPT_FRONT],
-        KC_NO,        MO(_OPT_FRONT),          KC_NO, MO(_OPT_FRONT)
+	[_OPT_FRONT] = LAYOUT_5x3_macropad(
+        key00[_OPT_FRONT], key01[_OPT_FRONT],   key02[_OPT_FRONT],   key03[_OPT_FRONT],   KC_NO,
+                           key10[_OPT_FRONT],   key11[_OPT_FRONT],   key12[_OPT_FRONT],   key13[_OPT_FRONT],
+        MO(_OPT),          key20[_OPT_FRONT],   key21[_OPT_FRONT],   key22[_OPT_FRONT],   key23[_OPT_FRONT],
+                                                MO(_OPT_FRONT),                           MO(_OPT_FRONT)
     )
 };
 
-#ifdef ENCODER_ENABLE
-#include "encoder.h"
-bool encoder_update_user(uint8_t index, bool clockwise) {
-  if (index == 0) { /* First encoder */
-    if (clockwise) {
-      tap_code(KC_VOLU);
-    } else {
-      tap_code(KC_VOLD);
+bool dip_switch_update_user(uint8_t index, bool active) { 
+    send_string("check");
+    switch (index) {
+        case 0:
+            if(active) { send_string("0 active"); } else { send_string("0 inactive"); }
+            break;
+        case 1:
+            if(active) { send_string("1 active"); } else { send_string("1 inactive"); }
+            break;
+        case 2:
+            if(active) { send_string("2 active"); } else { send_string("2 inactive"); }
+            break;
     }
-  }
-  return true;
+    return true;
 }
-#endif
-
-

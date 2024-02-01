@@ -17,7 +17,7 @@ $(KEYBOARDS):
 	cd qmk_firmware; qmk lint -km dev -kb maglaur/mathboard/v1 --strict
 
 	# run build
-	make BUILD_DIR=$(shell pwd)/compiled -j1 -C qmk_firmware maglaur/mathboard/v1:dev
+	make BUILD_DIR=$(shell pwd)/compiled -j1 -C qmk_firmware maglaur/mathboard/v1:default
 
 	# cleanup symlinks
 	rm -rf qmk_firmware/keyboards/maglaur

@@ -1,7 +1,6 @@
 #ifndef UNICODE_SYMBOLS_H
 #define UNICODE_SYMBOLS_H
 
-
 void send_hex(int symbol){
     unicode_input_start();
     register_hex(symbol);
