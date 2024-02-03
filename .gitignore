@@ -1,6 +1,16 @@
 # Compilation folder
 firmware/compiled/
 
+# Kicad backups
+hardware/pcb/Mathboard-backups/
+
+# Lock files
+*.lck
+
+# Pycharm .idea folder
+.idea/
+
+
 #Visual studio code folder
 firmware/.vscode
 
