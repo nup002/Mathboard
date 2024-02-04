@@ -10,20 +10,16 @@ $(KEYBOARDS):
 	#make maglaur folder if not present
 	mkdir -p qmk_firmware/keyboards/maglaur
 
-	# add new symlinks
+	# add new symlinks (on windows, this simply makes copies)
 	ln -s $(shell pwd)/$@ qmk_firmware/keyboards/maglaur
 
+	cd qmk_firmware; 
+
 	# run lint check
-	cd qmk_firmware; qmk lint -km dev -kb maglaur/mathboard/v1 --strict
+	qmk lint -km default -kb maglaur/mathboard/v1 --strict
 
 	# run build
-	make BUILD_DIR=$(shell pwd)/compiled -j1 -C qmk_firmware maglaur/mathboard/v1:default
+	qmk compile -j 0 -kb maglaur/mathboard/v1 -km default
 
-	# cleanup symlinks
-	rm -rf qmk_firmware/keyboards/maglaur
-
-clean:
-	rm -rf obj_*
-	rm -f *.elf
-	rm -f *.map
-	rm -f *.hex
+	# Move .u2f file to /compiled
+	mv qmk_firmware/*.uf2 compiled;
