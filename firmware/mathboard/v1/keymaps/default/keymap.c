@@ -1,3 +1,17 @@
+/* Copyright 2023 Magne Lauritzen
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #include QMK_KEYBOARD_H
 #include "globs.h"
 #include "unicode_symbols.h"
@@ -284,17 +298,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool dip_switch_update_user(uint8_t index, bool active) { 
-    send_string("check");
+    uint8_t current_unicode_mode = get_unicode_input_mode();
     switch (index) {
         case 0:
-            if(active) { send_string("0 active"); } else { send_string("0 inactive"); }
+            if(!active & (current_unicode_mode!=UNICODE_MODE_LINUX)) {
+                set_unicode_input_mode(UNICODE_MODE_LINUX); 
+                }
             break;
         case 1:
-            if(active) { send_string("1 active"); } else { send_string("1 inactive"); }
+            if(!active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
+                set_unicode_input_mode(UNICODE_MODE_MACOS); 
+                }
             break;
         case 2:
-            if(active) { send_string("2 active"); } else { send_string("2 inactive"); }
+            if(!active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
+                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
+                }
             break;
     }
     return true;
-}
+};
+
+void unicode_input_mode_set_user(uint8_t input_mode) {
+    return;  // Comment out this to print a message when the unicode mode changes
+    send_string(" Switched to unicode mode : ");
+    switch (input_mode) {
+        case UNICODE_MODE_LINUX:
+            send_string("UNICODE_MODE_LINUX");
+            break;
+        case UNICODE_MODE_MACOS:
+            send_string("UNICODE_MODE_MACOS");
+            break;
+        case UNICODE_MODE_WINCOMPOSE:
+            send_string("UNICODE_MODE_WINCOMPOSE");
+            break;
+    }
+};
