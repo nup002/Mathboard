@@ -28,6 +28,31 @@
 #define _BASE_FRONT 4
 #define _OPT_FRONT 5
 
+// Sets the LED indicator to match the output mode
+void update_led_to_match_mode(void) {
+    switch (user_config.MODE) {
+        case UC:
+            rgblight_sethsv_at(HSV_CYAN, 0);
+        case MOF:
+            rgblight_sethsv_at(HSV_MAGENTA, 0);
+        case LTX:
+            rgblight_sethsv_at(HSV_YELLOW, 0);
+    }
+}
+
+// Sets the Mathboard output mode
+void output_mode_set(uint8_t mode) { 
+    user_config.MODE = mode; 
+    eeconfig_update_user(user_config.raw);
+    update_led_to_match_mode();
+}
+
+// Cycles between Mathboard output modes when called. UC -> MOF -> LTX -> UC
+void output_mode_update(void) {
+    if (user_config.MODE == UC){output_mode_set(MOF);} 
+    else if (user_config.MODE == MOF){output_mode_set(LTX);}
+    else if (user_config.MODE == LTX){output_mode_set(UC);}
+}
 
 // The custom_keycodes define all the "normal", or non-tapdance, symbols of the Mathboard. These are the symbols that 
 // (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
@@ -110,10 +135,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_SWITCH_MODE:
             if (record->event.pressed) {
-                if (user_config.MODE == UC){user_config.MODE = MOF;} 
-                else if (user_config.MODE == MOF){user_config.MODE = LTX;}
-                else if (user_config.MODE == LTX){user_config.MODE = UC;}
-                eeconfig_update_user(user_config.raw);
+                output_mode_update();
             }
             break;
         case KC_ALPHA:
@@ -338,6 +360,6 @@ void unicode_input_mode_set_user(uint8_t input_mode) {
 };
 
 void keyboard_post_init_user(void) {
-  // Read the user config from EEPROM
-  user_config.raw = eeconfig_read_user();
+  user_config.raw = eeconfig_read_user(); // Read the user config from EEPROM
+  update_led_to_match_mode();
 }

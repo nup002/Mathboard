@@ -21,14 +21,17 @@
       "extrakey": false,
       "mousekey": false,
       "nkro": false,
-      "rgb_matrix": false,
-      "rgblight": false
+      "rgb_matrix": false
   },
   "matrix_pins": {
       "cols": ["GP16", "GP15", "GP14", "GP13", "GP12"],
       "rows": ["GP5", "GP4", "GP3", "GP2"]
   },
   "diode_direction": "COL2ROW",
+  "ws2812": {
+    "pin": "GP10",
+    "driver": "vendor"
+    },
   "layouts": {
       "LAYOUT_5x3_macropad": {
           "layout": [

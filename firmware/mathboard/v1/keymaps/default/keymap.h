@@ -15,16 +15,8 @@
 
 #pragma once
 
-// Any changes to the layout names and/or definitions must also be made to info.json
+void output_mode_update(void);
 
-#define LAYOUT_5x3_macropad( \
-    K00, K01, K02, K03, K04, \
-         K05, K06, K07, K08, \
-    K09, K10, K11, K12, K13, \
-              K14,      K15  \
-) { \
-    { K00,   K01,   K02,   K03,   K04}, \
-    { KC_NO, K05,   K06,   K07,   K08}, \
-    { K09,   K10,   K11,   K12,   K13}, \
-    { KC_NO, KC_NO, K14,   KC_NO, K15}  \
-}
+void output_mode_set(uint8_t mode);
+
+void update_led_to_match_mode(void)
