@@ -15,16 +15,20 @@
 #ifndef GLOBS_H
 #define GLOBS_H
 
-enum modes {
-    UC,
-    MOF,
-    LTX
-};
+const unsigned char UC = 0;
+const unsigned char MOF = 1;
+const unsigned char LTX = 2;
 
-// MODE is a global variable that sets which type of output the Matboard should emit. 
-// It can be Unicode, Microsoft Office equations editor, LaTeX, etc. Clicking the mode-change button on the Mathboard
-// cycles the MODE variable to its next value.
-enum modes MODE = LTX;
+// Persistent settings
+typedef union {
+  uint8_t raw;
+  struct {
+    // MODE is a global variable that sets which type of output the Mathboard should emit. 
+    // It can be Unicode, Microsoft Office equations editor, LaTeX, etc. Clicking the mode-change button on the Mathboard
+    // cycles the MODE variable to its next value.
+    uint8_t     MODE :8;
+  };
+} user_config_t;
 
-
+user_config_t user_config;
 #endif

@@ -28,6 +28,7 @@
 #define _BASE_FRONT 4
 #define _OPT_FRONT 5
 
+
 // The custom_keycodes define all the "normal", or non-tapdance, symbols of the Mathboard. These are the symbols that 
 // (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
 // Tapdance symbols are those symbols which have different behaviour depending on how many times you tap them. They have
@@ -109,9 +110,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_SWITCH_MODE:
             if (record->event.pressed) {
-                if (MODE == UC){MODE = MOF;} 
-                else if (MODE == MOF){MODE = LTX;}
-                else if (MODE == LTX){MODE = UC;}
+                if (user_config.MODE == UC){user_config.MODE = MOF;} 
+                else if (user_config.MODE == MOF){user_config.MODE = LTX;}
+                else if (user_config.MODE == LTX){user_config.MODE = UC;}
+                eeconfig_update_user(user_config.raw);
             }
             break;
         case KC_ALPHA:
@@ -334,3 +336,8 @@ void unicode_input_mode_set_user(uint8_t input_mode) {
             break;
     }
 };
+
+void keyboard_post_init_user(void) {
+  // Read the user config from EEPROM
+  user_config.raw = eeconfig_read_user();
+}
