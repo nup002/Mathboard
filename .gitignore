@@ -1,3 +1,9 @@
+# Backup files
+*.bak
+
+# Zip files
+*.zip
+
 # Compilation folder
 firmware/compiled/
 
