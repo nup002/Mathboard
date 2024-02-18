@@ -33,10 +33,13 @@ void update_led_to_match_mode(void) {
     switch (user_config.MODE) {
         case UC:
             rgblight_sethsv_at(HSV_CYAN, 0);
+            break;
         case MOF:
             rgblight_sethsv_at(HSV_MAGENTA, 0);
+            break;
         case LTX:
             rgblight_sethsv_at(HSV_YELLOW, 0);
+            break;
     }
 }
 

@@ -16,6 +16,7 @@
 #pragma once
 
 #define RGBLED_NUM 1
+#define RGBLIGHT_LIMIT_VAL 25
 #define DIP_SWITCH_PINS { GP7, GP8, GP9 }
 
 #define UNICODE_CYCLE_PERSIST false
