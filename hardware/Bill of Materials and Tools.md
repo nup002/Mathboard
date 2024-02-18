@@ -6,8 +6,9 @@ tells you everything you need to assemble your own.
 
 * 1x Mathboard PCB
 * 1x Mathboard case (bottom, lid, and LED diffuser)
-* 1x 0xCB Helios RP2040 microcontroller (https://github.com/0xCB-dev/0xCB-Helios)
-* 1x WS2812 or WS2812B addressable LED
+* 16x [Gateron KS-33 Low Profile v2 switches](https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set)
+* 1x [0xCB Helios RP2040 microcontroller](https://github.com/0xCB-dev/0xCB-Helios)
+* 1x [WS2812 or WS2812B addressable LED](https://www.sparkfun.com/products/24837)
 * 1x USB-C cable
 * 1x set of UV-printed 1u OEM R2 keycaps
 * 2x 1u keycap of your choice
