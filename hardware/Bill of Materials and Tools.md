@@ -23,5 +23,5 @@ tells you everything you need to assemble your own.
 * A Phillips head screwdriver, to insert the screws that hold the case together
 * A soldering iron (plus solder) to solder the keyboard switches and the microcontroller
 * A wire clipper, to cut the microcontroller pins short after soldering
-* Acrylate glue (AKA super glue), for gluing the LED diffuser to the case lid.
+* Cyanoacrylate glue (AKA super glue), for gluing the LED diffuser to the case lid.
 
