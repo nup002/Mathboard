@@ -1,4 +1,5 @@
 # Mathboard
+[![Documentation Status](https://readthedocs.org/projects/mathboard/badge/?version=latest)](https://mathboard.readthedocs.io/en/latest/?badge=latest)
 
 The Mathboard is a macropad to make it easier to write equations on a computer. It is intended for engineers, 
 scientists, and anyone else who regularly need to write equations. This repository contains all the resources needed to 
