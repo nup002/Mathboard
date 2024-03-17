@@ -333,18 +333,25 @@ bool dip_switch_update_user(uint8_t index, bool active) {
                 }
             break;
         case 1:
-            if(!active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
-                set_unicode_input_mode(UNICODE_MODE_MACOS); 
+            if(!active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
+                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
                 }
             break;
         case 2:
-            if(!active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
-                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
+            if(!active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
+                set_unicode_input_mode(UNICODE_MODE_MACOS); 
                 }
             break;
     }
     return true;
 };
+
+void keyboard_post_init_user(void) {
+  user_config.raw = eeconfig_read_user(); // Read the user config from EEPROM
+  update_led_to_match_mode();
+}
+
+// DEBUG THINGS
 
 void unicode_input_mode_set_user(uint8_t input_mode) {
     return;  // Comment out this to print a message when the unicode mode changes
@@ -361,8 +368,3 @@ void unicode_input_mode_set_user(uint8_t input_mode) {
             break;
     }
 };
-
-void keyboard_post_init_user(void) {
-  user_config.raw = eeconfig_read_user(); // Read the user config from EEPROM
-  update_led_to_match_mode();
-}
