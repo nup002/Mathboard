@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="90mm"
+   height="90mm"
+   viewBox="0 0 90 90"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="OEM_R2_top_face.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="109.9551"
+     inkscape:cy="149.37631"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="2552"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2"
+     showguides="true" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect18"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="68.409448"
+       height="68.409448"
+       patternTransform="translate(83.784612,63.278269)"
+       id="pattern4742">
+      <g
+         id="g4717"
+         transform="matrix(3.7795276,0,0,3.7795276,-57.552407,-53.987697)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:0.079;stroke-dasharray:none;stroke-opacity:1"
+           id="rect381"
+           width="12"
+           height="14.5"
+           x="18.277409"
+           y="14.570045"
+           inkscape:label="Keytop outline"
+           ry="1.5"
+           rx="0" />
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:0.107755;stroke-dasharray:none;stroke-opacity:1"
+           id="rect381-6"
+           width="17.992245"
+           height="17.992245"
+           x="15.281285"
+           y="14.338122"
+           inkscape:label="Keybody outline"
+           ry="1.8612667"
+           rx="0" />
+      </g>
+    </pattern>
+    <symbol
+       id="UpArrow">
+      <title
+         id="title17409">Up Arrow</title>
+      <path
+         d="M 36,9 58,31 V 46 L 42,30 V 62 H 30 V 30 L 14,46 V 31 Z"
+         style="stroke:none"
+         id="path17411" />
+    </symbol>
+    <symbol
+       id="DownArrow">
+      <title
+         id="title17457">Down Arrow</title>
+      <path
+         d="M 36,63 14,41 V 26 L 30,42 V 10 H 42 V 42 L 58,26 v 15 z"
+         style="stroke:none"
+         id="path17459" />
+    </symbol>
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect18-0"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect18-1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1-3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2-5"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3-3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect4-6"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,1.4,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Keycaps outline"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       id="rect15"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.02;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.2180516,3.01 H 19.801949 C 20.471209,3.01 21.01,3.548791 21.01,4.2180516 V 19.801949 C 21.01,20.471209 20.471209,21.01 19.801949,21.01 H 4.2180516 C 3.548791,21.01 3.01,20.471209 3.01,19.801949 V 4.2180516 C 3.01,3.548791 3.548791,3.01 4.2180516,3.01 Z M 6.6854444,3.5099334 H 17.334557 c 0.457334,0 0.82551,0.4280435 0.82551,0.9597388 V 16.850328 c 0,0.531694 -0.368176,0.959739 -0.82551,0.959739 H 6.6854444 c -0.4573331,0 -0.825511,-0.428045 -0.825511,-0.959739 V 4.4696722 c 0,-0.5316953 0.3681779,-0.9597388 0.825511,-0.9597388 z"
+       inkscape:label="Key" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use18"
+       transform="translate(22)"
+       inkscape:label="Keyclone 1" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use19"
+       transform="translate(44)"
+       inkscape:label="Keyclone 2" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use20"
+       transform="translate(66)"
+       inkscape:label="Keyclone 3" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use18-6"
+       transform="translate(22.2,22)"
+       inkscape:label="Keyclone 1"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use19-6"
+       transform="translate(44,22)"
+       inkscape:label="Keyclone 2"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use20-6"
+       transform="translate(66,22)"
+       inkscape:label="Keyclone 3"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use21-4"
+       inkscape:label="Keyclone 4"
+       style="display:inline"
+       transform="translate(0,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use18-6-2"
+       transform="translate(22.2,44)"
+       inkscape:label="Keyclone 1"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use19-6-8"
+       transform="translate(43.999997,44)"
+       inkscape:label="Keyclone 2"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use20-6-9"
+       transform="translate(65.999997,44)"
+       inkscape:label="Keyclone 3"
+       style="display:inline" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect15"
+       id="use21-4-6"
+       inkscape:label="Keyclone 4"
+       style="display:inline"
+       transform="translate(0,44)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Undercolor"
+     sodipodi:insensitive="true">
+    <path
+       id="use14195"
+       style="display:inline;fill:#cdfdff;fill-opacity:1;stroke-width:0.108;stroke-dasharray:none"
+       d="M 9.0100002,0.39899528 H 13.854 a 1.3999782,1.3999782 45.000447 0 1 1.399978,1.40000002 l -1.83e-4,11.7465467 a 1.4000218,1.4000218 135.00045 0 1 -1.400022,1.4 H 9.0100002 Z"
+       inkscape:path-effect="#path-effect18"
+       inkscape:original-d="M 9.0100002,0.39899528 H 15.254 L 15.253773,14.945542 H 9.0100002 Z"
+       inkscape:label="Undercolor"
+       transform="translate(3,3.0010047)"
+       sodipodi:nodetypes="ccccc" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use22"
+       transform="translate(22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use23"
+       transform="translate(44)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use24"
+       transform="translate(66)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use22-9"
+       transform="translate(22,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use23-3"
+       transform="translate(44,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use24-8"
+       transform="translate(66,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use25-0"
+       transform="translate(-2e-7,22)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use22-9-7"
+       transform="translate(22,44)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use23-3-7"
+       transform="translate(44,44)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use24-8-0"
+       transform="translate(66,44)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use14195"
+       id="use25-0-1"
+       transform="translate(-2e-7,44)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Multitap indicators"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <circle
+       style="fill:#ff9ea2;fill-opacity:1;stroke:none;stroke-width:0.0575106;stroke-dasharray:none;stroke-opacity:1"
+       id="path20485"
+       cy="11.65852"
+       cx="33.018826"
+       r="0.5" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23165"
+       transform="translate(6.2419538)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23356"
+       transform="translate(44.006477,-7.1565193)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23567"
+       transform="translate(50.231703,-7.1565193)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23569"
+       transform="translate(50.231703)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23571"
+       transform="translate(4.7885743e-7,14.8563)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23573"
+       transform="translate(6.2419538,14.8563)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23575"
+       transform="translate(4.7885743e-7,21.999373)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23577"
+       transform="translate(21.99769,14.856301)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23579"
+       transform="translate(50.231703,21.999373)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23581"
+       transform="translate(4.7885743e-7,36.848088)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23668"
+       transform="translate(6.2419538,36.848088)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23670"
+       transform="translate(22.005958,44.005413)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23672"
+       transform="translate(28.245194,36.848088)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23676"
+       transform="translate(43.994784,44.005413)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23678"
+       transform="translate(50.231703,44.005413)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23680"
+       transform="translate(50.231703,36.848088)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path20485"
+       id="use23682"
+       transform="translate(-15.755827,44.005413)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Symbols"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <g
+       id="g5380"
+       inkscape:label="Top symbols"
+       transform="translate(-19.309165,-13.283251)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.329395"
+         y="21.979448"
+         id="text168"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6242"
+           x="32.329395"
+           y="21.979448">≈</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.118391"
+         y="21.944998"
+         id="text5223"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6240"
+           x="26.118391"
+           y="21.944998">≠</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="54.296944"
+         y="21.987719"
+         id="text168-6"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6246"
+           x="54.296944"
+           y="21.987719">≡</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="48.264111"
+         y="21.987717"
+         id="text5223-1"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6244"
+           x="48.264111"
+           y="21.987717">∝</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="76.273468"
+         y="21.990028"
+         id="text168-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6250"
+           x="76.273468"
+           y="21.990028">≥</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="70.137024"
+         y="21.990026"
+         id="text5223-5"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6248"
+           x="70.137024"
+           y="21.990026">≤</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="97.892509"
+         y="21.992592"
+         id="text168-4"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6254"
+           x="97.892509"
+           y="21.992592">≫</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="91.749779"
+         y="21.99259"
+         id="text5223-10"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6252"
+           x="91.749779"
+           y="21.99259">≪</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="32.109116"
+         y="43.760468"
+         id="text168-1"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6258"
+           x="32.109116"
+           y="43.760468">∏</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.39465"
+         y="43.77216"
+         id="text5223-0"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6256"
+           x="26.39465"
+           y="43.77216">∑</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="54.742409"
+         y="44.282185"
+         id="text168-6-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6262"
+           x="54.742409"
+           y="44.282185">∮</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="48.646957"
+         y="44.265648"
+         id="text5223-1-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6260"
+           x="48.646957"
+           y="44.265648">∫</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="76.030655"
+         y="43.995113"
+         id="text168-8-1"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6266"
+           x="76.030655"
+           y="43.995113">→</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="70.579811"
+         y="44.400452"
+         id="text5223-5-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6264"
+           x="70.579811"
+           y="44.400452">√</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="98.67955"
+         y="44.250591"
+         id="text168-4-6"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6270"
+           x="98.67955"
+           y="44.250591">∇</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="92.767899"
+         y="44.333275"
+         id="text5223-10-2"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6268"
+           x="92.767899"
+           y="44.333275">∂</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="31.485592"
+         y="65.986336"
+         id="text168-88"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6274"
+           x="31.485592"
+           y="65.986336">⇔</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="25.798923"
+         y="65.986336"
+         id="text5223-7"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6272"
+           x="25.798923"
+           y="65.986336">⇒</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="54.743019"
+         y="66.000153"
+         id="text168-6-4"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6278"
+           x="54.743019"
+           y="66.000153">∨</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="48.713631"
+         y="66.140503"
+         id="text5223-1-3"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6276"
+           x="48.713631"
+           y="66.140503">∃</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="76.532646"
+         y="66.140808"
+         id="text168-8-8"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6282"
+           x="76.532646"
+           y="66.140808">⊤</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="70.479546"
+         y="66.140808"
+         id="text5223-5-8"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6280"
+           x="70.479546"
+           y="66.140808">∀</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="98.421898"
+         y="66.016792"
+         id="text168-4-7"
+         inkscape:transform-center-x="1.4825489"
+         inkscape:transform-center-y="2.044895"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6286"
+           x="98.421898"
+           y="66.016792">⊢</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#a951dc;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="92.1427"
+         y="65.243828"
+         id="text5223-10-6"
+         inkscape:transform-center-x="1.8404055"
+         inkscape:transform-center-y="-2.1471397"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6284"
+           x="92.1427"
+           y="65.243828">¬</tspan></text>
+    </g>
+    <g
+       id="g5274-3"
+       inkscape:label="Bottom symbols"
+       transform="translate(-19.178736,-14.110173)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.168367"
+         y="30.109922"
+         id="text5227-6"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan5225-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.168367"
+           y="30.109922">α</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.168367"
+           y="38.047421"
+           id="tspan6180" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.392307"
+         y="30.131664"
+         id="text5231-7"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan5229-9"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="32.392307"
+           y="30.131664">β</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="32.392307"
+           y="38.069164"
+           id="tspan6182" /></text>
+    </g>
+    <g
+       id="g5274-3-8"
+       inkscape:label="Bottom symbols"
+       transform="translate(2.9027988,-14.964758)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.555931"
+         y="30.969461"
+         id="text5227-6-1"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan5225-8-5"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.555931"
+           y="30.969461">γ</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.555931"
+           y="38.90696"
+           id="tspan6184" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.537197"
+         y="30.956375"
+         id="text5231-7-4"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="32.537197"
+           y="30.956375"
+           id="tspan6186">δ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-1"
+       inkscape:label="Bottom symbols"
+       transform="translate(24.833923,-14.029431)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.587061"
+         y="30.035383"
+         id="text5227-6-19"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.587061"
+           y="30.035383"
+           id="tspan6188">ε</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.913799"
+         y="30.122126"
+         id="text5231-7-8"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6204"
+           x="32.913799"
+           y="30.122126">ζ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-10"
+       inkscape:label="Bottom symbols"
+       transform="translate(47.023218,-14.787495)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.233858"
+         y="30.859587"
+         id="text5227-6-12"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.079"
+           x="26.233858"
+           y="30.859587"
+           id="tspan6192">η</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.309055"
+         y="30.860029"
+         id="text5231-7-40"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6206"
+           x="32.309055"
+           y="30.860029">θ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-0"
+       inkscape:label="Bottom symbols"
+       transform="translate(-19.275988,8.0125431)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="27.067383"
+         y="29.95771"
+         id="text5227-6-5"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6208"
+           x="27.067383"
+           y="29.95771">ι</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.553833"
+         y="30.041389"
+         id="text5231-7-1"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6210"
+           x="32.553833"
+           y="30.041389">κ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-8-0"
+       inkscape:label="Bottom symbols"
+       transform="translate(2.3268058,7.6176542)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.965778"
+         y="30.44245"
+         id="text5227-6-1-8"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6212"
+           x="26.965778"
+           y="30.44245">λ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="33.045006"
+         y="30.411345"
+         id="text5231-7-4-1"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6214"
+           x="33.045006"
+           y="30.411345">μ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-1-4"
+       inkscape:label="Bottom symbols"
+       transform="translate(24.758986,7.9399191)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.764317"
+         y="30.09231"
+         id="text5227-6-19-3"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6216"
+           x="26.764317"
+           y="30.09231">ν</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.932663"
+         y="30.233349"
+         id="text5231-7-8-8"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6218"
+           x="32.932663"
+           y="30.233349">ξ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-10-5"
+       inkscape:label="Bottom symbols"
+       transform="translate(46.38824,7.9998121)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.856201"
+         y="30.04792"
+         id="text5227-6-12-2"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6220"
+           x="26.856201"
+           y="30.04792">ο</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.728016"
+         y="30.04274"
+         id="text5231-7-40-9"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6222"
+           x="32.728016"
+           y="30.04274">π</tspan></text>
+    </g>
+    <g
+       id="g5274-3-3"
+       inkscape:label="Bottom symbols"
+       transform="translate(-19.189209,29.931229)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.35531"
+         y="30.089945"
+         id="text5227-6-55"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6224"
+           x="26.35531"
+           y="30.089945">ρ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.392307"
+         y="30.061142"
+         id="text5231-7-44"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6226"
+           x="32.392307"
+           y="30.061142">σ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-8-6"
+       inkscape:label="Bottom symbols"
+       transform="translate(2.5076978,28.945551)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.96162"
+         y="31.087551"
+         id="text5227-6-1-3"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6228"
+           x="26.96162"
+           y="31.087551">τ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="33.06562"
+         y="31.025892"
+         id="text5231-7-4-7"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6230"
+           x="33.06562"
+           y="31.025892">υ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-1-7"
+       inkscape:label="Bottom symbols"
+       transform="translate(24.507341,30.129238)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.178062"
+         y="29.891182"
+         id="text5227-6-19-9"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6232"
+           x="26.178062"
+           y="29.891182">φ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="33.092827"
+         y="30.017923"
+         id="text5231-7-8-3"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6234"
+           x="33.092827"
+           y="30.017923">χ</tspan></text>
+    </g>
+    <g
+       id="g5274-3-10-3"
+       inkscape:label="Bottom symbols"
+       transform="translate(46.198992,29.951571)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="26.469177"
+         y="30.068293"
+         id="text5227-6-12-4"
+         inkscape:transform-center-x="-1.3803041"
+         inkscape:transform-center-y="-1.635916"
+         inkscape:label="A-col"><tspan
+           sodipodi:role="line"
+           id="tspan6236"
+           x="26.469177"
+           y="30.068293">ψ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0790001;stroke-dasharray:none;stroke-opacity:1"
+         x="32.498753"
+         y="30.043928"
+         id="text5231-7-40-7"
+         inkscape:transform-center-x="1.4314265"
+         inkscape:transform-center-y="-2.2493845"
+         inkscape:label="B-col"><tspan
+           sodipodi:role="line"
+           id="tspan6238"
+           x="32.498753"
+           y="30.043928">ω</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Midlines"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0310324;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.04270794,10.679012 H 89.8907 m -89.93340794,22 H 89.796083 m -89.83879094,22 H 89.759176"
+       id="path25"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="Midline horizontal" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0310324;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.0029522,16.070728 H 89.930456 m -89.9334082,22 H 89.835839 m -89.8387912,22 H 89.798932"
+       id="path25-6"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="Midline horizontal" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206882;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.01768455,7.0990124 H 89.915723 M -0.01768455,29.099012 H 89.821106 m -89.83879055,22 H 89.784199"
+       id="path25-4"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="Midline horizontal" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206882;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.02399611,14.249012 H 89.909412 m -89.93340811,22 H 89.814796 m -89.83879211,22 H 89.777888"
+       id="path25-4-8"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="Midline horizontal" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206882;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.04270794,4.5140124 H 89.890701 M -0.04270794,26.514012 H 89.796084 m -89.83879194,22 H 89.759177"
+       id="path25-4-8-7"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="horizontal double tap 2" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206882;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M -0.04270836,11.664012 H 89.890701 m -89.93340936,22 H 89.796084 m -89.83879236,22 H 89.759177"
+       id="path25-4-8-7-9"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="horizontal double tap" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206778;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 56.02,0.10441186 V 89.946729 M 34.02,0.10441186 V 89.852208 M 12.020002,0.10441186 V 89.815338 M 78.019998,0.10441186 78.025298,90.02202"
+       id="path26"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="Midline vertical" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206778;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 52.945,0.12208775 V 89.964404 M 30.945002,0.12208775 V 89.869884 M 8.9450031,0.12208775 V 89.833014 M 74.944998,0.12208775 74.950298,90.039696"
+       id="path26-5"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="Midline vertical" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206778;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 55.02,0.12512147 V 89.967438 M 33.02,0.12512147 V 89.872917 M 11.020002,0.12512147 V 89.836048 M 77.019998,0.12512147 77.025298,90.042729"
+       id="path26-5-6"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="Vertical double tap" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206778;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 61.263998,0.12258437 V 89.964901 M 39.264,0.12258437 V 89.870381 M 17.264002,0.12258437 V 89.833511 M 83.263998,0.12258437 83.269298,90.040193"
+       id="path26-5-6-5"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="Vertical double tap" />
+    <path
+       style="fill:#cdfdff;fill-opacity:1;stroke:#000000;stroke-width:0.0206778;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
+       d="M 59.095,0.10012353 V 89.94244 m -22,-89.84231647 V 89.847919 M 15.095002,0.10012353 V 89.81105 M 81.094998,0.10012353 81.100298,90.017731"
+       id="path26-5-5"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="Midline vertical" />
+  </g>
+</svg>
