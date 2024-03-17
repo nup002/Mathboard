@@ -16,6 +16,8 @@ hardware/pcb/Mathboard-backups/
 # Pycharm .idea folder
 .idea/
 
+# Docs build folder
+docs/_build
 
 #Visual studio code folder
 firmware/.vscode
