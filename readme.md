@@ -1,10 +1,12 @@
 # Mathboard
 [![Documentation Status](https://readthedocs.org/projects/mathboard/badge/?version=latest)](https://mathboard.readthedocs.io/en/latest/?badge=latest)
+[![](https://dcbadge.vercel.app/api/server/dgD6cMCUhD)](https://discord.gg/dgD6cMCUhD)
 
 [Documentation and instructions](https://mathboard.readthedocs.io/en/latest)
 
 **This is the repository for Mathboard V1 Alpha.** It is not fully finished, but can be built if you tolerate 
-lacking instructions and perhaps a few minor bugs or inconveniences.
+lacking instructions and perhaps a few minor bugs or inconveniences. Join the 
+[Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
 The Mathboard is a macropad to make it easier to write equations on a computer. It is intended for engineers, 
 scientists, and anyone else who regularly need to write equations. This repository contains all the resources needed to 
@@ -21,6 +23,8 @@ E = mc²<br>
 </font> </p>
 
 You can follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
+
+
 <p align="center">
 <img src=".github/images/mathboard_v1_0.jpg" width="500">
 </p>
