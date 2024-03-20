@@ -1,4 +1,5 @@
 # Mathboard
+For the most up to date version of the Mathboard, switch to branch [version 1](https://github.com/nup002/Mathboard/tree/version_1)
 
 The Mathboard is a 4x4 macropad to make typing math on a computer easier for engineers and scientists. 
 Follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
