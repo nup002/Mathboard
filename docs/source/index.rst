@@ -21,6 +21,5 @@ Contents
 
 .. toctree::
 
-    Introduction
     User manual
     Assembly manual
