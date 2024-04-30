@@ -15,6 +15,14 @@ accesses the top symbols. You can combine the Blue and Green/Purple modifier key
 When no modifier keys are pressed, clicking a key outputs the lower left symbol on the top face. This means that if you
 simply click the top left key, you will get the symbol α (lowercase Alpha).
 
+Multitap symbols
+================
+Certain symbols are marked by a small orange dot. Double-tapping such a symbol will output a different, but related,
+symbol than what's printed on the keycap. For example, double tapping λ produces Λ. Double tapping ω produces Ω.
+
+Certain symbols can be tapped more than twice. For example, double- and triple-tapping √ gives you ∛ and ∜.
+
+
 Switching between modes
 =======================
 The Mathboard can switch between three modes: Unicode, LaTeX, and Microsoft Office Equations Editor. The current mode is

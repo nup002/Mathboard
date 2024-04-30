@@ -1,8 +1,8 @@
 Mathboard documentation
 ===================================
 The Mathboard is a small keyboard that gives you access to a wide range of mathematical symbols and the entire
-greek alphabet. It works alongside your normal keyboard, and requires no software to use (except
-on Windows).
+lowercase and uppercase greek alphabet. It works alongside your normal keyboard, and requires no software to use
+(except on Windows).
 
 This documentation gathers all information on the Mathboard:
  - Usage
