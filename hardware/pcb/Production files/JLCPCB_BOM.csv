@@ -4,3 +4,4 @@ Comment,Designator,Footprint,LCSC Part #
 "TSW-112-06-T-S Generic connector, single row, 01x12, script generated","J1,J2",PinHeader_1x12_P2.54mm_Vertical,C1121851
 "Conn_01x07_Pin Generic connector, single row, 01x07, script generated",J4,PinHeader_1x07_P2.54mm_Vertical,C2894930
 "PCM13SMTR Switch, three position, single pole triple throw, 3 position switch, SP3T",SW17,SWITCH_3SMTR,C221842
+"SK2816MINI-E",U2,SK6812-MINI-E,C5149201

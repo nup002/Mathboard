@@ -1,4 +1,4 @@
-Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+Ref,Val,Package,PosX,PosY,Rot,Side
 "SW1","SW_Push","SW_Gateron_LowProfile_THT",11.300000,-9.000000,0.000000,top
 "SW2","SW_Push","SW_Gateron_LowProfile_THT",30.300000,-9.000000,0.000000,top
 "SW3","SW_Push","SW_Gateron_LowProfile_THT",49.300000,-9.000000,0.000000,top

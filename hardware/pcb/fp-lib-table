@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "key-switches")(type "KiCad")(uri "${KIPRJMOD}/resources/key-switches.pretty")(options "")(descr ""))
+)

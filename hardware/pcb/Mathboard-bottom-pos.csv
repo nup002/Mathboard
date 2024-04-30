@@ -1,4 +1,4 @@
-Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+Ref,Val,Package,PosX,PosY,Rot,Side
 "C1","100nF","C_0603_1608Metric",10.107000,-63.410000,180.000000,bottom
 "D1","1N4148W","D_SOD-123",6.300000,-7.150000,-90.000000,bottom
 "D2","1N4148W","D_SOD-123",25.300000,-7.150000,-90.000000,bottom
