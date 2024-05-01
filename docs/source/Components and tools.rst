@@ -49,13 +49,6 @@ the Mathboard in PLA, but you can probably use other materials as well.
 You don't need any special slicer or printer settings for the Mathboard case: All three parts, meaning the bottom,
 lid, and diffuser, should print fine with default settings.
 
-The keycap risers are very small components with tight tolerances, and may require some tuning to print correctly. I
-have personally had success with the following settings:
-
-* Layer height : 0.2mm
-* Skirt : Yes
-* Speed : 20% of normal
-
 Keycaps and UV printing
 --------------------------
 Blank keycaps can be purches from many sources. For the symbol keys you *must* use 1u OEM R2 keycaps, such as
