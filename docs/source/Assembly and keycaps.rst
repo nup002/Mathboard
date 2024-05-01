@@ -10,7 +10,8 @@ Assembly and keycaps
     * 16x keycaps
     * 16x :ref:`keycap risers <_Risers>` if using OEM R2 keycaps
 
-Insert the lid onto the bottom at an angle, so that the small OS switch on the back of the PCB can enter its cutout
+Insert the :ref:`Fully assembled lid with PCB <_Soldering the PCB>` onto the bottom at an angle, so that the small OS
+switch on the back of the PCB can enter its cutout
 in the bottom. Then, lower the lid down until it sits flush with the bottom. Screw the lid onto the bottom using the
 self-tapping M2.2 x 6mm screws. Flip the Mathboard over and attach the rubber feet.
 
