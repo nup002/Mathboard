@@ -6,5 +6,8 @@ looking for documentation on how to use the Mathboard, see :ref:`user_manual`.
 .. toctree::
 
     Components and tools
+    3D Printing the case
+    Assembling the lid
     Soldering the PCB
+    Assembly and keycaps
 

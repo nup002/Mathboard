@@ -1,5 +1,5 @@
-3D printing parts
-#################
+3D printing the Mathboard parts
+###############################
 .. note::
     Prerequisites:
 
@@ -25,6 +25,7 @@ Once the bottom and lid have been printed, move on to the diffuser. Import the f
 
 This part must be printed with white filament to allow the status LED to shine through.
 
+.. _Risers:
 Printing the keycap risers
 ===========================
 .. note::
