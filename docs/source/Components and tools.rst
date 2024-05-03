@@ -51,8 +51,9 @@ lid, and diffuser, should print fine with default settings.
 
 Keycaps and UV printing
 --------------------------
-Blank keycaps can be purches from many sources. For the symbol keys you *must* use 1u OEM R2 keycaps, such as
+Blank keycaps can be purchased from many sources. For the symbol keys you must use 1u OEM R2 keycaps, such as
 `these <https://ymdkey.com/products/customized-1x-r1-r2-r3-r4-blank-thick-pbt-oem-profile-alphanumeric-keycaps-for-keycap-diy?variant=39374782234685>`_.
+The reason for this is that the decals are made with these profiles in mind.
 For the other keys you are free to choose which keycaps you prefer. You will need :
 
 * A 1u keycap for the mode switch key
