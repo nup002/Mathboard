@@ -8,7 +8,6 @@ tells you everything you need to assemble your own. The following sections goes 
 * 1x Mathboard PCB
 * 16x `Gateron KS-33 Low Profile v2 switches <https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set>`_
 * 1x `0xCB Helios RP2040 microcontroller <https://github.com/0xCB-dev/0xCB-Helios>`_
-* 1x `WS2812 or WS2812B addressable LED <https://www.sparkfun.com/products/24837>`_
 * 1x 3D-printed Mathboard case (bottom, lid, and LED diffuser)
 * 16x 3D-printed keycap risers
 * 12x blank white 1u OEM R2 keycaps
@@ -21,7 +20,7 @@ tells you everything you need to assemble your own. The following sections goes 
 **Tools and supplies** :
 
 * A UV printer. This may be hard to find, inquire with makerspaces or fablabs near you.
-* A 3D printer, for printing the case, LED diffuser, keycap spacers, and UV printing fixtures.
+* A 3D printer for printing the case, LED diffuser, keycap spacers, and UV printing fixtures.
 * White PLA filament for the LED diffuser.
 * Any color PLA filament, for the case, spacers, and UV printing fixtures
 * A screwdriver, to insert the screws that hold the case together
