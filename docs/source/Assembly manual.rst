@@ -9,7 +9,7 @@ finished, head over to :ref:`first_setup` to set it up for use.
 .. toctree::
 
     Components and tools
-    3D Printing the case
+    3D printing the Mathboard parts
     Assembling the lid
     Soldering the PCB
     Assembly and keycaps

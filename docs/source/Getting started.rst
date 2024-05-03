@@ -1,10 +1,10 @@
 Getting started
 ###############
 
-Make sure you have already followed the instructions in :ref:`first_setup`_.
+Make sure you have already followed the instructions in :ref:`first_setup`.
 
 Accessing the Mathboard symbols
-====================
+===============================
 The Mathboard manages to pack a lot of symbols onto a small keyboard by placing more than one symbol on each key. When
 you click a key, it will output one of its six symbols depending on the state of the modifier keys.
 

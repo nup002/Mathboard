@@ -38,7 +38,7 @@ You can order the PCB pre-assembled with most of the components already soldered
 by hand. These include the 16 switches, the microcontroller, and the status LED. These components are all
 through-hole mounted and are simple to solder.
 
-TODO: Add images of the PCB
+TODO: Add an image of the PCB
 
 3D printed components
 ---------------------
@@ -59,7 +59,8 @@ For the other keys you are free to choose which keycaps you prefer. You will nee
 * A 1u keycap for the left modifier key
 * Two 1.5u keycaps for the bottom modifier keys
 
-TODO: Add images pointing out key positions
+.. image:: images/keycaps/modifier_keys.png
+    :width: 600
 
 The most challenging aspect of building your own Mathboard is getting the symbols onto the 12 symbol keys. This is done
 by UV printing, which prints the symbols onto the keys with special UV-curing ink. A UV printer is expensive and

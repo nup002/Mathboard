@@ -1,4 +1,5 @@
 .. _first_setup:
+
 First setup of the Mathboard
 ============================
 The Mathboard *almost* works straight out of the box, but there are some initial setup tasks that must be performed.
