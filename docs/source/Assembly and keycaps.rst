@@ -33,4 +33,4 @@ tolerances, and they might not fit if your printer did not print them correctly.
 press down well to insert them fully into the switches.
 
 .. image:: images/final_assembly/risers.jpg
-    :width: 300
+    :width: 600
