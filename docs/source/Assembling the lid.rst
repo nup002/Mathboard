@@ -13,7 +13,8 @@ Begin by gluing the diffuser into the lid. Add a small amount of glue to the fla
 where the diffuser will sit. Insert the diffuser and apply pressure to ensure that it is flush with the lid surface.
 The glue should dry within 5 minutes.
 
-TODO: Insert image of the diffuser being assembled
+.. image:: images/lid_and_pcb/diffuser.jpg
+    :width: 600
 
 Once the glue is dry and the diffuser won't fall out, insert the Gateron switches into the lid. Ensure that they are
 inserted in the correct orientation. Note that the two bottom switches must be oriented with 180 degrees rotation.

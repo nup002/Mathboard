@@ -45,6 +45,9 @@ The Mathboard is designed with 3D printing in mind, and it should be possible to
 extrusion 3D printer. It may also be possible to use a resin printer, but I have not tried that. I recommend printing
 the Mathboard in PLA, but you can probably use other materials as well.
 
+.. image:: images/3d_printing/case_parts.png
+   :width: 600
+
 You don't need any special slicer or printer settings for the Mathboard case: All three parts, meaning the bottom,
 lid, and diffuser, should print fine with default settings.
 

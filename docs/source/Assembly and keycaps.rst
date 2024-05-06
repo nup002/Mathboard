@@ -31,3 +31,6 @@ Keycaps
 If you are using OEM R2 keycaps, first place one :ref:`keycap riser <Risers>` into each switch. The risers have tight
 tolerances, and they might not fit if your printer did not print them correctly. Place the keycaps on the switches and
 press down well to insert them fully into the switches.
+
+.. image:: images/final_assembly/risers.jpg
+    :width: 300
