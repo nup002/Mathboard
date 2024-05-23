@@ -25,7 +25,8 @@ on top of the lid, with the switch pins going through the PCB. Solder all the sw
     The Mathboard PCB is thin, and has a tendency to flex. It is a good idea to apply bit of pressure to the PCB
     when soldering the switch pins so that the PCB is flush with the lid.
 
-TODO: Insert image of soldering the switches
+.. image:: images/lid_and_pcb/soldering_switches.jpg
+    :width: 600
 
 Insert two Gateron KS-33 Low Profile v2 switches in the two slots surrounded by the microcontroller pin headers. Solder
 them to the PCB.

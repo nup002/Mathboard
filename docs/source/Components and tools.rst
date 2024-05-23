@@ -32,12 +32,14 @@ Mathboard V1 PCB
 ----------------
 The mathboard V1 PCB can be manufactured by any electronics prototyping company. I have previously used JLCPCB,
 and a correctly formatted Bill of Materials [BOM] file for use with them is provided in the Mathboard repository.
+The PCB should be manufactured with 0.8mm PCB thickness.
 
 You can order the PCB pre-assembled with most of the components already soldered on, but some must still be soldered
-by hand. These include the 16 switches, the microcontroller, and the status LED. These components are all
+by hand. These include the 16 switches and the microcontroller. These components are all
 through-hole mounted and are simple to solder.
 
-TODO: Add an image of the PCB
+.. image:: images/lid_and_pcb/pcb.jpg
+   :width: 600
 
 3D printed components
 ---------------------
