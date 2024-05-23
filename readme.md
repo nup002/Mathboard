@@ -4,9 +4,9 @@
 
 [Documentation and instructions](https://mathboard.readthedocs.io/en/latest)
 
-**This is the repository for Mathboard V1 Alpha.** It is not fully finished, but can be built if you tolerate 
-lacking instructions and perhaps a few minor bugs or inconveniences. Join the 
-[Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
+**This is the repository for the Mathboard V1**. It is not fully finalized yet, and is being beta tested. The design files 
+may therefore change without notice. However, the assembly instructions are not likely to change, and you can build your own 
+Mathboard if you wish. Join the [Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
 The Mathboard is a macropad to make it easier to write equations on a computer. It is intended for engineers, 
 scientists, and anyone else who regularly need to write equations. This repository contains all the resources needed to 
@@ -50,7 +50,7 @@ The mathboard has three main components:
 
 All the production files for the PCB are in `/hardware/pcb/Production files`, and can be uploaded directly to 
 [JLCPCB](https://jlcpcb.com). You will have to purchase and manually solder the switches, the microcontroller, and the indicator LED.
-A full purchase list can be found in `/hardware/Bill of Materials and Tools.md`.
+A full purchase list can be found in [Components and Tools](https://mathboard.readthedocs.io/en/latest/Components%20and%20tools.html)
 
 The case of the Mathboard is very simple, and it should be possible for virtually all 3D printers to print it. 
 The `.step` files are located in `/hardware/case`.
