@@ -325,20 +325,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool dip_switch_update_user(uint8_t index, bool active) { 
+    // active = !active; // uncomment for pcb rev 1
     uint8_t current_unicode_mode = get_unicode_input_mode();
     switch (index) {
         case 0:
-            if(!active & (current_unicode_mode!=UNICODE_MODE_LINUX)) {
+            if(active & (current_unicode_mode!=UNICODE_MODE_LINUX)) {
                 set_unicode_input_mode(UNICODE_MODE_LINUX); 
                 }
             break;
         case 1:
-            if(!active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
+            if(active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
                 set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
                 }
             break;
         case 2:
-            if(!active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
+            if(active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
                 set_unicode_input_mode(UNICODE_MODE_MACOS); 
                 }
             break;
