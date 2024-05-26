@@ -5,7 +5,7 @@ tells you everything you need to assemble your own. The following sections goes 
 
 **Components** :
 
-* 1x Mathboard PCB
+* 1x `Mathboard PCB <https://www.tindie.com/products/maglaur/mathboard-v1-pcb/>`_
 * 16x `Gateron KS-33 Low Profile v2 switches <https://www.gateron.co/products/gateron-low-profile-mechanical-switch-set>`_
 * 1x `0xCB Helios RP2040 microcontroller <https://github.com/0xCB-dev/0xCB-Helios>`_
 * 1x 3D-printed Mathboard case (bottom, lid, and LED diffuser)
