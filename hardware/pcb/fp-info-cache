@@ -1,4 +1,4 @@
-23893104041942773
+23898287935877818
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -97132,6 +97132,13 @@ switch
 2
 2
 mathboard
+LED_SMD_0603_flat
+
+
+0
+2
+2
+mathboard
 SK6812-MINI-E
 
 
@@ -97139,12 +97146,12 @@ SK6812-MINI-E
 4
 4
 mathboard
-SWITCH_3SMTR
+SWITCH_MSK13C02
 
 PCM13SMTR 
 0
-10
-10
+8
+4
 mathboard
 SW_Push_1P1T_XKB_TS-1187A
 SMD Tactile Switch, http://www.helloxkb.com/public/images/pdf/TS-1187A-X-X-X.pdf
@@ -97154,6 +97161,20 @@ SPST Tactile Switch
 2
 mathboard
 USB_C_Receptacle_G-Switch_GT-USB-7010ASV
+USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
+USB C Type-C Receptacle SMD
+0
+20
+17
+mathboard
+USB_C_Receptacle_G-Switch_GT-USB-9014C
+USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
+USB C Type-C Receptacle SMD
+0
+20
+17
+mathboard
+USB_C_Receptacle_XYECONN TYPE-C-F02C-1BBWC1.6
 USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
 USB C Type-C Receptacle SMD
 0
