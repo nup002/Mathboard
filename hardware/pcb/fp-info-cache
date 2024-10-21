@@ -1,4 +1,4 @@
-23898287935877818
+23901745936660745
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -97139,6 +97139,13 @@ LED_SMD_0603_flat
 2
 2
 mathboard
+Potentiometer_Bourns_TC33X_Vertical
+Potentiometer, Bourns, TC33X, Vertical, https://www.bourns.com/pdfs/TC33.pdf
+Potentiometer Bourns TC33X Vertical
+0
+3
+3
+mathboard
 SK6812-MINI-E
 
 
@@ -97180,6 +97187,13 @@ USB C Type-C Receptacle SMD
 0
 20
 17
+mathboard
+WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm
+WSON, 8 Pin (https://datasheet.lcsc.com/lcsc/2204011730_GigaDevice-Semicon-Beijing-GD5F1GQ4UFYIGR_C2986324.pdf (page 44)), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+13
+9
 miniCO2
 480370001
 

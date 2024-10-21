@@ -57,9 +57,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 0.9,
-          "width": 2.0
+          "drill": 5.25,
+          "height": 5.25,
+          "width": 5.25
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -68,7 +68,7 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -537,11 +537,7 @@
     "netclass_patterns": [
       {
         "netclass": "USB",
-        "pattern": "/Microcontroller/PORT-"
-      },
-      {
-        "netclass": "USB",
-        "pattern": "/Microcontroller/PORT+"
+        "pattern": "/Microcontroller/PORT*"
       },
       {
         "netclass": "Small traces",
@@ -553,11 +549,11 @@
       },
       {
         "netclass": "USB",
-        "pattern": "/Microcontroller/USB+"
+        "pattern": "/Microcontroller/USB*"
       },
       {
         "netclass": "USB",
-        "pattern": "/Microcontroller/USB-"
+        "pattern": "/Microcontroller/D*"
       }
     ]
   },
@@ -656,7 +652,7 @@
           "group_by": false,
           "label": "MPN ",
           "name": "MPN ",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,

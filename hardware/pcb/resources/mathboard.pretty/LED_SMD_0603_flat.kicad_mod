@@ -233,4 +233,15 @@
 		(thermal_bridge_angle 45)
 		(uuid "9e8968d6-f819-4d3b-89ba-3823dd5312d5")
 	)
+	(model "${KIPRJMOD}/resources/3d_models/0603 side view led.step"
+		(offset
+			(xyz 0 -0.15 0)
+		)
+		(scale
+			(xyz 1 0.5 1)
+		)
+		(rotate
+			(xyz 0 90 0)
+		)
+	)
 )

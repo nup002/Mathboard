@@ -689,4 +689,15 @@
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(uuid "1f86adaf-b346-4250-a2e8-acc267453e72")
 	)
+	(model "${KIPRJMOD}/resources/3d_models/xb-msk-103.stp"
+		(offset
+			(xyz 0 0 1.4)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
