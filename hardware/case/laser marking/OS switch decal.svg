@@ -2,14 +2,17 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="97.599998mm"
-   height="75.599998mm"
-   viewBox="0 0 97.599998 75.599998"
+   width="27.073208mm"
+   height="13.102818mm"
+   viewBox="0 0 27.073208 13.102817"
    version="1.1"
    id="svg1"
    sodipodi:docname="back.svg"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="back.png"
+   inkscape:export-xdpi="960"
+   inkscape:export-ydpi="960"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,16 +27,20 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="3.9161897"
-     inkscape:cx="157.5511"
-     inkscape:cy="122.95114"
+     inkscape:zoom="11.076657"
+     inkscape:cx="184.35165"
+     inkscape:cy="75.880294"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     showguides="true" /><defs
+     showguides="true"><sodipodi:guide
+       position="14.24409,85.616597"
+       orientation="1,0"
+       id="guide17"
+       inkscape:locked="false" /></sodipodi:namedview><defs
      id="defs1"><inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect16"
@@ -65,45 +72,17 @@
        oposite_fuse="false"
        split_items="false"
        split_open="false"
-       link_styles="false" /><inkscape:path-effect
-       effect="fillet_chamfer"
-       id="path-effect13"
-       is_visible="true"
-       lpeversion="1"
-       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,4.3692452,0,1 @ F,0,0,1,0,0,0,1"
-       radius="0"
-       unit="px"
-       method="auto"
-       mode="F"
-       chamfer_steps="1"
-       flexible="false"
-       use_knot_distance="true"
-       apply_no_radius="true"
-       apply_with_radius="true"
-       only_selected="false"
-       hide_knots="false" /><inkscape:path-effect
-       effect="fillet_chamfer"
-       id="path-effect12"
-       is_visible="true"
-       lpeversion="1"
-       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,0,0,1 | F,0,1,1,0,0,0,1 @ F,0,0,1,0,6.6312102,0,1 @ F,0,0,1,0,0,0,1"
-       radius="0"
-       unit="px"
-       method="auto"
-       mode="F"
-       chamfer_steps="1"
-       flexible="false"
-       use_knot_distance="true"
-       apply_no_radius="true"
-       apply_with_radius="true"
-       only_selected="false"
-       hide_knots="false" /></defs><g
+       link_styles="false" /></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"><g
+     id="layer1"
+     transform="translate(-23.783326,-9.3)"><g
        id="g3"
        inkscape:label="Logos"
-       transform="matrix(0.55071723,0,0,0.55071723,12.138613,2.6700335)"><path
+       transform="matrix(0.55071723,0,0,0.55071723,12.138613,2.6700335)"
+       inkscape:export-filename="back.svg"
+       inkscape:export-xdpi="960"
+       inkscape:export-ydpi="960"><path
          d="m 51.711224,22.69115 c -0.07261,0.05634 -1.35463,0.778725 -1.35463,2.385001 0,1.857923 1.631316,2.515206 1.680143,2.531482 -0.0075,0.04007 -0.259158,0.900166 -0.860103,1.776545 -0.535843,0.771213 -1.095473,1.541174 -1.946812,1.541174 -0.851339,0 -1.070434,-0.494528 -2.05323,-0.494528 -0.957756,0 -1.298292,0.510803 -2.077017,0.510803 -0.778725,0 -1.322079,-0.713623 -1.946812,-1.590001 -0.723638,-1.029118 -1.308308,-2.627884 -1.308308,-4.14527 0,-2.433828 1.582489,-3.724608 3.139939,-3.724608 0.827552,0 1.517387,0.543354 2.036954,0.543354 0.494528,0 1.265741,-0.575906 2.207222,-0.575906 0.356811,0 1.638828,0.03256 2.482654,1.241954 z m -2.929607,-2.272324 c 0.389362,-0.461977 0.664795,-1.102985 0.664795,-1.743993 0,-0.08889 -0.0075,-0.179032 -0.02379,-0.251646 -0.633497,0.02379 -1.387182,0.421914 -1.841647,0.948992 -0.356811,0.405639 -0.689835,1.046647 -0.689835,1.696419 0,0.09765 0.01628,0.195307 0.02379,0.226606 0.04007,0.0075 0.105165,0.01628 0.170267,0.01628 0.568395,0 1.283269,-0.380599 1.696419,-0.892654 z"
          id="path1"
          style="stroke-width:0.0125197"
@@ -128,27 +107,20 @@
 		<g
    id="g4">
 			<polygon
-   points="496.549,242.386 496.549,0 227.959,39.869 227.959,242.386 "
+   points="227.959,39.869 227.959,242.386 496.549,242.386 496.549,0 "
    id="polygon1" />
 			<polygon
-   points="211.172,41.818 1.336,72.798 1.336,244.746 211.172,244.746 "
+   points="1.336,244.746 211.172,244.746 211.172,41.818 1.336,72.798 "
    id="polygon2" />
 			<polygon
-   points="496.549,261.535 227.959,261.535 227.959,458.017 496.549,497.886 "
+   points="227.959,458.017 496.549,497.886 496.549,261.535 227.959,261.535 "
    id="polygon3" />
 			<polygon
-   points="211.172,261.531 1.336,261.531 1.336,425.086 211.172,456.066 "
+   points="1.336,425.086 211.172,456.066 211.172,261.531 1.336,261.531 "
    id="polygon4" />
 		</g>
 	</g>
-</g></g></g><rect
-       style="display:none;fill:none;stroke:#000000;stroke-width:0.0901533"
-       id="rect3"
-       width="4.3098469"
-       height="1.3034749"
-       x="35.845078"
-       y="-1.2789234"
-       sodipodi:insensitive="true" /><image
+</g></g></g><image
        width="99.368576"
        height="77.093155"
        preserveAspectRatio="none"
@@ -169,17 +141,17 @@
        id="path14"
        sodipodi:nodetypes="cc" /><text
        xml:space="preserve"
-       style="font-size:1.30913px;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0696829"
-       x="27.190323"
-       y="21.696583"
+       style="font-size:1.30913px;line-height:1;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0696829"
+       x="27.385082"
+       y="20.812778"
        id="text16"><tspan
          sodipodi:role="line"
          id="tspan16"
-         style="text-align:center;text-anchor:middle;stroke-width:0.0696829"
-         x="27.190323"
-         y="21.696583">requires</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';text-align:center;text-anchor:middle;stroke-width:0.0696829"
+         x="27.385082"
+         y="20.812778">requires</tspan><tspan
          sodipodi:role="line"
-         style="text-align:center;text-anchor:middle;stroke-width:0.0696829"
-         x="27.190323"
-         y="23.332994"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';text-align:center;text-anchor:middle;stroke-width:0.0696829"
+         x="27.385082"
+         y="22.170778"
          id="tspan17">WinCompose</tspan></text></g></svg>
