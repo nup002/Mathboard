@@ -1,4 +1,4 @@
-/* Copyright 2023 Magne Lauritzen
+/* Copyright 2024 Magne Lauritzen
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -334,13 +334,13 @@ bool dip_switch_update_user(uint8_t index, bool active) {
                 }
             break;
         case 1:
-            if(active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
-                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
+            if(active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
+                set_unicode_input_mode(UNICODE_MODE_MACOS); 
                 }
             break;
         case 2:
-            if(active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
-                set_unicode_input_mode(UNICODE_MODE_MACOS); 
+            if(active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
+                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
                 }
             break;
     }
@@ -355,7 +355,7 @@ void keyboard_post_init_user(void) {
 // DEBUG THINGS
 
 void unicode_input_mode_set_user(uint8_t input_mode) {
-    return;  // Comment out this to print a message when the unicode mode changes
+    return;  // Comment this return statement to print a message when the unicode mode changes
     send_string(" Switched to unicode mode : ");
     switch (input_mode) {
         case UNICODE_MODE_LINUX:
