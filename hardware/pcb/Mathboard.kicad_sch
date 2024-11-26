@@ -1497,6 +1497,12 @@
 		(uuid "0eef4699-2f84-4797-a399-825d6333bf40")
 	)
 	(junction
+		(at 116.84 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "940ab910-014b-4361-b1c0-2aa7ea2cdce9")
+	)
+	(junction
 		(at 135.89 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1507,6 +1513,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b7e5699e-944d-4cb8-8976-b66e793e16f1")
+	)
+	(junction
+		(at 120.65 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d89cf183-3c23-49f7-82e4-cae5e6f79fde")
 	)
 	(junction
 		(at 95.25 130.81)
@@ -1537,6 +1549,16 @@
 			(type default)
 		)
 		(uuid "0bfb8c14-3603-496c-8a0a-d8f8291ee6e1")
+	)
+	(wire
+		(pts
+			(xy 116.84 72.39) (xy 120.65 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14bcf07e-5303-4f4c-ba01-38c252804738")
 	)
 	(wire
 		(pts
@@ -1627,6 +1649,16 @@
 			(type default)
 		)
 		(uuid "416d1b4b-1ad8-4c3f-99f4-304c3e4952a6")
+	)
+	(wire
+		(pts
+			(xy 109.22 64.77) (xy 113.03 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54aa656f-70ad-4839-b774-72534352260c")
 	)
 	(wire
 		(pts
@@ -1730,6 +1762,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 62.23) (xy 116.84 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3d3292b-f4d6-45ff-a0ce-8b6509d3f7dd")
+	)
+	(wire
+		(pts
 			(xy 82.55 80.645) (xy 85.09 80.645)
 		)
 		(stroke
@@ -1750,6 +1792,36 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 72.39) (xy 125.73 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c47e91f8-fe16-4071-991d-e2118ea6abd9")
+	)
+	(wire
+		(pts
+			(xy 109.22 59.69) (xy 120.65 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9f21e41-4e79-4ae0-abd1-934aa3812b6a")
+	)
+	(wire
+		(pts
+			(xy 120.65 59.69) (xy 120.65 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d05d961d-c2cd-483e-b082-6e65d972fafd")
+	)
+	(wire
+		(pts
 			(xy 106.68 130.81) (xy 95.25 130.81)
 		)
 		(stroke
@@ -1757,6 +1829,16 @@
 			(type default)
 		)
 		(uuid "d4ef41fc-83de-40db-8279-9d8e9b156251")
+	)
+	(wire
+		(pts
+			(xy 113.03 72.39) (xy 116.84 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6f03d4c-cf95-499b-93ac-53f4e3539bee")
 	)
 	(wire
 		(pts
@@ -1777,6 +1859,16 @@
 			(type default)
 		)
 		(uuid "dd5bf065-a052-4dd2-a68e-c88a9f30013d")
+	)
+	(wire
+		(pts
+			(xy 116.84 62.23) (xy 116.84 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dee51c1a-95df-419d-ba06-fb25852b0707")
 	)
 	(wire
 		(pts
@@ -1817,6 +1909,16 @@
 			(type default)
 		)
 		(uuid "fe360735-cb9d-43f8-8635-b969b225b592")
+	)
+	(text "Revision encoder \nresistors"
+		(exclude_from_sim no)
+		(at 118.364 57.912 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a652509c-e455-40b7-8d49-c840810ab510")
 	)
 	(label "RGB_DIN"
 		(at 80.01 123.19 0)
@@ -2062,6 +2164,102 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 113.03 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(uuid "10555a76-93be-4d21-9853-651e581fe621")
+		(property "Reference" "R16"
+			(at 111.252 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 111.252 76.962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 111.252 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 113.03 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1k 1% 0402"
+			(at 113.03 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB_CORRECTION" ""
+			(at 113.03 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 113.03 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0fcfe5e-9455-4d83-984c-dc2a8cfd7025")
+		)
+		(pin "2"
+			(uuid "71ccce06-3814-4e14-9415-1718037b5f21")
+		)
+		(instances
+			(project "Mathboard"
+				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 140.97 111.76 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2217,6 +2415,102 @@
 			(project ""
 				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
 					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 116.84 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(uuid "3e0f2b6a-8acb-4922-98ab-4ad34a4d4640")
+		(property "Reference" "R17"
+			(at 115.316 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 115.316 76.962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 115.062 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1k 1% 0402"
+			(at 116.84 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB_CORRECTION" ""
+			(at 116.84 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 116.84 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8902810-3f1f-4de6-9329-c3f2eb97da10")
+		)
+		(pin "2"
+			(uuid "18865b46-fac4-41e4-a3ea-adedadcab04c")
+		)
+		(instances
+			(project "Mathboard"
+				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -2606,6 +2900,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 125.73 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9eb22fd9-a7a2-4be0-8cb8-4c3da08fe60b")
+		(property "Reference" "#PWR019"
+			(at 125.73 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 125.73 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.73 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 125.73 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57715ff1-6dcf-49d0-be39-a1dd07f127f0")
+		)
+		(instances
+			(project "Mathboard"
+				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 149.86 111.76 90)
 		(unit 1)
@@ -2696,6 +3056,102 @@
 			(project "Mathboard"
 				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
 					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 120.65 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(uuid "ad2b9233-6620-460b-850c-6147e13b2e77")
+		(property "Reference" "R18"
+			(at 119.634 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 119.634 76.962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 118.872 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1k 1% 0402"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB_CORRECTION" ""
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8d04305-4cdd-4a8f-8ab7-28ed03861864")
+		)
+		(pin "2"
+			(uuid "19735ea3-7362-4b1a-9f5e-29021972a783")
+		)
+		(instances
+			(project "Mathboard"
+				(path "/51b4aa36-e8ca-479e-8f43-790046bf63bb"
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -2928,7 +3384,7 @@
 		)
 	)
 	(sheet
-		(at 116.84 64.77)
+		(at 154.94 63.5)
 		(size 58.42 25.4)
 		(fields_autoplaced yes)
 		(stroke
@@ -2940,7 +3396,7 @@
 		)
 		(uuid "1a85666e-71d9-469b-9a4e-884605e4300e")
 		(property "Sheetname" "Switch Matrix"
-			(at 116.84 64.0584 0)
+			(at 154.94 62.7884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2949,7 +3405,7 @@
 			)
 		)
 		(property "Sheetfile" "switch_matrix.kicad_sch"
-			(at 116.84 90.7546 0)
+			(at 154.94 89.4846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2967,7 +3423,7 @@
 	)
 	(sheet
 		(at 85.09 56.515)
-		(size 24.765 33.02)
+		(size 24.13 33.02)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3124,6 +3580,36 @@
 				(justify left)
 			)
 			(uuid "8a3b24ca-2288-41f0-af70-e9eac05414b9")
+		)
+		(pin "IO18" input
+			(at 109.22 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "15dfb5c5-11bd-45d5-b495-619ccee39180")
+		)
+		(pin "IO17" input
+			(at 109.22 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9b9dc1c1-ad4c-4fb0-81b7-1d769036c098")
+		)
+		(pin "IO19" input
+			(at 109.22 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "236ef4b6-08ef-4303-8f37-d8dcd9615ed3")
 		)
 		(instances
 			(project "Mathboard"
