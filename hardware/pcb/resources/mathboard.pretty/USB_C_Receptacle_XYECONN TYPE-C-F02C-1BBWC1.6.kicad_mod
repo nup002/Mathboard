@@ -314,7 +314,7 @@
 	)
 	(model "${KIPRJMOD}/resources/3d_models/USB - C inboard.STEP"
 		(offset
-			(xyz -0.977 11.05 -5.9)
+			(xyz -0.977 11.05 -5.8)
 		)
 		(scale
 			(xyz 1 1 1)
