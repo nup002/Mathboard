@@ -4,6 +4,11 @@
 	(generator_version "8.0")
 	(uuid "f19f656c-601f-4b16-ab3b-643b19f85cc1")
 	(paper "A4")
+	(title_block
+		(title "Mathboard ")
+		(date "2025-01-16")
+		(rev "1.5")
+	)
 	(lib_symbols
 		(symbol "Device:D_Small"
 			(pin_numbers hide)
@@ -1253,6 +1258,16 @@
 			(type default)
 		)
 		(uuid "ff79a5aa-2aef-4b9c-86df-0e1614442747")
+	)
+	(text "All swiches are Do Not Place. They must be populated by hand."
+		(exclude_from_sim no)
+		(at 112.522 29.718 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9db0eb1a-32e2-42e3-acf6-ec1fc55291c8")
 	)
 	(global_label "COL0"
 		(shape input)
