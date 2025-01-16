@@ -2,15 +2,15 @@
 [![Documentation Status](https://readthedocs.org/projects/mathboard/badge/?version=latest)](https://mathboard.readthedocs.io/en/latest/?badge=latest)
 [![](https://dcbadge.vercel.app/api/server/dgD6cMCUhD)](https://discord.gg/dgD6cMCUhD)
 
-[Documentation and instructions](https://mathboard.readthedocs.io/en/latest)
+[Documentation and instructions for beta version](https://mathboard.readthedocs.io/en/latest)
 
-**This is the repository for the Mathboard V1**. It is not fully finalized yet, and is being beta tested. The design files 
-may therefore change without notice. However, the assembly instructions are not likely to change, and you can build your own 
-Mathboard if you wish. Join the [Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
+**This is the official Mathboard repository**. The mathboard is still a work in progress. The design files 
+may therefore change without notice. The beta version is released and you can build your own if you wish. See the link above for instructions.
+Join the [Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
-The Mathboard is a macropad to make it easier to write equations on a computer. It is intended for engineers, 
-scientists, and anyone else who regularly need to write equations. This repository contains all the resources needed to 
-make your own. 
+The Mathboard is a macropad that makes it easier to write equations on a computer. It is intended for engineers, 
+scientists, and anyone else who regularly need to write equations. The Mathboard is fully open source and this 
+repository collects the design files, schematics, and documentation.
 
 With the Mathboard you can type 75 of the most common symbols used in algebra, calculus, set theory, and 
 logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can 
@@ -23,7 +23,6 @@ E = mc²<br>
 </font> </p>
 
 You can follow its development on Hackaday: https://hackaday.io/project/186205-math-keyboard
-
 
 <p align="center">
 <img src=".github/images/mathboard_v1_0.jpg" width="500">
@@ -38,26 +37,22 @@ You can follow its development on Hackaday: https://hackaday.io/project/186205-m
 | Apache Open Office equation editor | ❌        |
 
 ## Compatibility
-The mathboard works on nearly all Unix systems, Apple macOS, and Windows. When using the Mathboard on Windows, the 
+The Mathboard works on nearly all Unix systems, Apple macOS, and Windows. When using the Mathboard on Windows, the 
 lightweight and open source application [WinCompose](https://github.com/samhocevar/wincompose) must be installed and running.
+When using it on Apple macOS, you must enable Unicode Hex Input as a keyboard input source.
 
 ## Hardware
 The mathboard has three main components:
 
 1) A printed circuit board (PCB)
-2) A 3D printed case
+2) An aluminum enclosure
 3) Custom keycaps
 
 All the production files for the PCB are in `/hardware/pcb/Production files`, and can be uploaded directly to 
-[JLCPCB](https://jlcpcb.com). You will have to purchase and manually solder the switches, the microcontroller, and the indicator LED.
+[JLCPCB](https://jlcpcb.com). You will have to purchase and manually solder the Gateron switches.
 A full purchase list can be found in [Components and Tools](https://mathboard.readthedocs.io/en/latest/Components%20and%20tools.html)
 
-The case of the Mathboard is very simple, and it should be possible for virtually all 3D printers to print it. 
-The `.step` files are located in `/hardware/case`.
-
-You should use OEM R2 keycaps, since the decals in `/hardware/keycaps/decals` are made for them. Their
-shape also makes it easier to see the symbols printed on their front faces. You must find your own way of printing the 
-keycaps. I have been using a UV printer, but you can also use [waterslide decals](https://www.reddit.com/r/MechanicalKeyboards/comments/nncx59/how_to_diy_custom_print_keycaps_using_waterslide/).
+The enclosure can be CNCed or 3D printed. The `.step` files are located in `/hardware/case`.
 
 ## Building and flashing the firmware
 The newest firmware version can always be found in the [releases](https://github.com/nup002/Mathboard/releases). The releases also contain 
