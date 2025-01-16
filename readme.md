@@ -4,8 +4,7 @@
 
 [Documentation and instructions](https://mathboard.readthedocs.io/en/latest)
 
-**This is the repository for the Mathboard V1**. It is not fully finalized yet, and is being beta tested. The design files 
-may therefore change without notice. However, the assembly instructions are not likely to change, and you can build your own 
+**This is the repository for the Mathboard beta version**. Its design is finalized, and you can build your own 
 Mathboard if you wish. Join the [Mathboard Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
 The Mathboard is a macropad to make it easier to write equations on a computer. It is intended for engineers, 
@@ -40,6 +39,7 @@ You can follow its development on Hackaday: https://hackaday.io/project/186205-m
 ## Compatibility
 The mathboard works on nearly all Unix systems, Apple macOS, and Windows. When using the Mathboard on Windows, the 
 lightweight and open source application [WinCompose](https://github.com/samhocevar/wincompose) must be installed and running.
+When using it on Apple macOS, you must enable Unicode Hex Input as a keyboard input source.
 
 ## Hardware
 The mathboard has three main components:
