@@ -1,4 +1,4 @@
-23903493055446904
+23910449223536019
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -97223,6 +97223,13 @@ LS75C2D-T
 4
 2
 miniCO2
+L_SMD_2.2x1.6mm
+
+
+0
+2
+2
+miniCO2
 QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm
 QFN, 32 Pin (http://infocenter.nordicsemi.com/pdf/nRF52810_PS_v1.1.pdf#page=468), generated with kicad-footprint-generator ipc_noLead_generator.py
 QFN NoLead
@@ -97265,12 +97272,33 @@ U261-121N-4BS2S
 14
 13
 miniCO2
+USB_C_Receptacle_G-Switch_GT-USB-7051x
+USB Type C, vertical, SMT, https://datasheet.lcsc.com/lcsc/2108072030_G-Switch-GT-USB-7051A_C2843970.pdf
+USB C Type-C Receptacle SMD GT-USB-7051A GT-USB-7051B
+0
+20
+17
+miniCO2
 WS2812C-4020
 
 
 0
 4
 4
+miniCO2
+XDFN-2(0.6x1)
+
+
+0
+2
+2
+miniCO2
+XKB Connection X05C2018TZ
+
+
+0
+18
+18
 miniCO2
 winbond_uson-8_3mmx4mm
 
