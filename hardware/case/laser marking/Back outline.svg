@@ -6,7 +6,7 @@
    version="1.1"
    id="svg742"
    sodipodi:docname="Back outline.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      showgrid="false"
      showguides="false"
      inkscape:zoom="2.587745"
-     inkscape:cx="149.74427"
-     inkscape:cy="140.27657"
-     inkscape:window-width="3440"
+     inkscape:cx="149.74428"
+     inkscape:cy="140.08335"
+     inkscape:window-width="2560"
      inkscape:window-height="1369"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -127,7 +127,7 @@
        style="fill:none;stroke:#000000"
        id="path706" />
     <path
-       d="m 215.48688,242.58949 0.831,-1.99899 2.002,-0.828 2.001,0.828 0.831,1.99899 -0.831,1.999 -2.001,0.828 -2.002,-0.828 z"
+       d="m 181.094,149.84465 0.831,-1.99899 2.002,-0.828 2.001,0.828 0.831,1.99899 -0.831,1.999 -2.001,0.828 -2.002,-0.828 z"
        style="fill:none;stroke:#000000"
        id="path708" />
     <path
