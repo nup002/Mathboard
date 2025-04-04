@@ -208,7 +208,7 @@ void dotproduct_key(keyrecord_t *record){
 };
 
 void crossproduct_key(keyrecord_t *record){
-    if (user_config.MODE == UC || user_config.MODE == MOF){send_hex_on_keypress(_crossproduct, record);}
+    if (user_config.MODE == UC || user_config.MODE == MOF){send_hex_on_keypress(_times, record);}
     else if (user_config.MODE == LTX){send_latex_on_keypress(crossproduct_LTX, record);}
 };
 

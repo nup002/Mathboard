@@ -1,4 +1,4 @@
-23910449223536019
+23917413218065052
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -97167,6 +97167,13 @@ PCM13SMTR
 8
 4
 mathboard
+SW_Gateron_LowProfile_THT_hotswap
+Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, through-hole soldering, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
+switch, low_profile
+0
+2
+2
+mathboard
 SW_Push_1P1T_XKB_TS-1187A
 SMD Tactile Switch, http://www.helloxkb.com/public/images/pdf/TS-1187A-X-X-X.pdf
 SPST Tactile Switch
@@ -97209,6 +97216,13 @@ miniCO2
 6
 5
 miniCO2
+GT-TC108X-H034
+
+
+0
+7
+2
+miniCO2
 LED_SK6805_PLCC4_2.4x2.7mm_P1.3mm
 https://cdn-shop.adafruit.com/product-files/3484/3484_Datasheet.pdf
 LED RGB NeoPixel Nano PLCC-4
@@ -97223,12 +97237,26 @@ LS75C2D-T
 4
 2
 miniCO2
+L_Murata_LQH3NPZ
+https://www.lcsc.com/datasheet/lcsc_datasheet_2410121504_Murata-Electronics-LQH3NPZ3R3MMEL_C237449.pdf
+Inductor
+0
+2
+2
+miniCO2
 L_SMD_2.2x1.6mm
 
 
 0
 2
 2
+miniCO2
+MK-12C03-G015
+
+
+0
+3
+3
 miniCO2
 QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm
 QFN, 32 Pin (http://infocenter.nordicsemi.com/pdf/nRF52810_PS_v1.1.pdf#page=468), generated with kicad-footprint-generator ipc_noLead_generator.py

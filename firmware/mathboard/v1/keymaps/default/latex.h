@@ -47,6 +47,7 @@
 #define tau_LTX     "\\tau"
 #define upsilon_LTX "\\upsilon"
 #define phi_LTX     "\\phi"
+#define varphi_LTX  "\\varphi"
 #define Phi_LTX     "\\Phi"
 #define chi_LTX     "\\chi"
 #define psi_LTX     "\\psi"

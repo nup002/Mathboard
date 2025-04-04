@@ -34,7 +34,7 @@ typedef struct mofDefinition {
 mofDefinition ACCENT_HAT_MOF = {.string = "\\hat", .type = AS_IS_2SPACE};
 mofDefinition ACCENT_CHECK_MOF = {.string = "\\check", .type = AS_IS_2SPACE};
 mofDefinition ACCENT_TILDE_MOF = {.string = "\\tilde", .type = AS_IS_2SPACE};
-mofDefinition ACCENT_BAR_MOF = {.string = "\\overbar", .type = AS_IS_2SPACE};
+mofDefinition ACCENT_BAR_MOF = {.string = "\\bar", .type = AS_IS_2SPACE};
 mofDefinition ACCENT_ARROW_MOF = {.string = "\\vec", .type = AS_IS_2SPACE};
 mofDefinition ACCENT_DOT_MOF = {.string = "\\dot", .type = AS_IS_2SPACE};
 mofDefinition ACCENT_2DOT_MOF = {.string = "\\ddot", .type = AS_IS_2SPACE};
@@ -54,12 +54,12 @@ mofDefinition SUM_MOF = {.string = "\\sum_a^b", .type = SPACE_DELETE_PLACEHOLDER
 mofDefinition N_ARY_PRODUCT_MOF = {.string = "\\prod_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
 mofDefinition UNION_MOF = {.string = "\\bigcup_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
 mofDefinition INTERSECTION_MOF = {.string = "\\bigcap_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
-mofDefinition INTEGRAL_MOF = {.string = "\\int", .type = AS_IS_2SPACE};
-mofDefinition DOUBLE_INTEGRAL_MOF = {.string = "\\iint", .type = AS_IS_2SPACE};
-mofDefinition TRIPLE_INTEGRAL_MOF = {.string = "\\iiint", .type = AS_IS_2SPACE};
-mofDefinition LINE_INTEGRAL_MOF = {.string = "\\oint", .type = AS_IS_2SPACE};
-mofDefinition SURFACE_INTEGRAL_MOF = {.string = "\\oiint", .type = AS_IS_2SPACE};
-mofDefinition VOLUME_INTEGRAL_MOF = {.string = "\\oiiint", .type = AS_IS_2SPACE};
+mofDefinition INTEGRAL_MOF = {.string = "\\int_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition DOUBLE_INTEGRAL_MOF = {.string = "\\iint_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition TRIPLE_INTEGRAL_MOF = {.string = "\\iiint_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition LINE_INTEGRAL_MOF = {.string = "\\oint_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition SURFACE_INTEGRAL_MOF = {.string = "\\oiint_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
+mofDefinition VOLUME_INTEGRAL_MOF = {.string = "\\oiiint_a^b", .type = SPACE_DELETE_PLACEHOLDER_LIMITS};
 mofDefinition ROOT_MOF = {.string = "\\sqrt", .type = MOVE_LEFT_2SPACE};
 mofDefinition CUBE_ROOT_MOF = {.string = "\\cbrt", .type = MOVE_LEFT_2SPACE};
 mofDefinition FOURTH_ROOT_MOF = {.string = "\\qdrt", .type = MOVE_LEFT_2SPACE};

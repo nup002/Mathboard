@@ -76,6 +76,11 @@
           "gap": 0.0,
           "via_gap": 0.0,
           "width": 0.0
+        },
+        {
+          "gap": 0.2,
+          "via_gap": 0.2,
+          "width": 0.2918
         }
       ],
       "drc_exclusions": [],
@@ -202,7 +207,8 @@
       "track_widths": [
         0.0,
         0.2,
-        0.3
+        0.3,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -549,7 +555,7 @@
       },
       {
         "netclass": "USB",
-        "pattern": "/Microcontroller/USB*"
+        "pattern": "*USB*"
       },
       {
         "netclass": "USB",
@@ -586,7 +592,7 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": true,
+      "exclude_dnp": false,
       "fields_ordered": [
         {
           "group_by": false,
@@ -622,7 +628,7 @@
           "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,

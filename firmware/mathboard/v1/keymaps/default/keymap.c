@@ -14,6 +14,7 @@
  */
 #include QMK_KEYBOARD_H
 #include "globs.h"
+#include "print.h"
 #include "unicode_symbols.h"
 #include "tapdance.h"
 #include "microsoft_office.h"
@@ -21,12 +22,12 @@
 
 //#include "sendstring_norwegian.h"
 
-#define _BASE 0
-#define _BASE_SHIFT 1
-#define _OPT 2
-#define _OPT_SHIFT 3
-#define _BASE_FRONT 4
-#define _OPT_FRONT 5
+#define _BASE 0         // left
+#define _BASE_TOP 1     // top left
+#define _BASE_BOTTOM 2  // bottom left
+#define _OPT 3          // right
+#define _OPT_TOP 4      // top right
+#define _OPT_BOTTOM 5   // bottom right
 
 // Sets the LED indicator to match the output mode
 void update_led_to_match_mode(void) {
@@ -116,19 +117,19 @@ enum custom_keycodes {
 // 10 11 12 13 <- Middle row
 // 20 21 22 23 <- Bottom row
 // The index of a symbol in key arrays defines its location on the physical key. It goes:
-// [top face left, top face upper left, top face right, top face upper right, front left, front right] 
-const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_ACCENT_CHECK};
-const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGTILDE, KC_COMBININGBAR};
-const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ZETA, KC_GREATEROREQUAL, KC_ACCENT_ARROW, TD(DOT_TD)};
-const int key03[6] = {KC_ETA, TD(MLT_TD), TD(THETA_TD), TD(MGT_TD), TD(SUB_TD), TD(SUP_TD)};
-const int key10[6] = {KC_IOTA, KC_SUM, KC_KAPPA, KC_NARYPRODUCT, KC_UNION, KC_INTERSECTION};
-const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), KC_MU, TD(LINE_INTEGRAL_TD), TD(ELEMENT_OF_TD), KC_EMPTYSET};
-const int key12[6] = {KC_NU, TD(ROOT_TD), TD(XI_TD), KC_ARROW, TD(SUBSET_OF_TD), KC_SETDIFFERENCE};
-const int key13[6] = {KC_OMICRON, KC_PARTIALDERIVATIVE, TD(PI_TD), KC_NABLA, TD(SUBSET_OR_EQ_TD), KC_DISJOINTUNION};
-const int key20[6] = {KC_RHO, KC_ARROWIMPLIES, TD(SIGMA_TD), KC_ARROWIFANDONLYIF, KC_DOTPRODUCT, KC_CROSSPRODUCT};
-const int key21[6] = {KC_TAU, TD(THERE_EXIST_TD), KC_UPSILON, TD(AND_TD), TD(PLUSMINUS_TD), KC_PARALLEL};
-const int key22[6] = {TD(PHI_TD), KC_FORALL, KC_CHI, TD(UNCONDITIONALLY_TRUE_TD), KC_DEGREE, KC_INFINITY};
-const int key23[6] = {TD(PSI_TD), KC_NOT, TD(OMEGA_TD), TD(PROVES_TD), KC_MATRIX, KC_FRACTION};
+// [left, top left, bottom left, right, top right, bottom right] 
+const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
+const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGBAR};
+const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ACCENT_ARROW, KC_ZETA, KC_GREATEROREQUAL, TD(DOT_TD)};
+const int key03[6] = {KC_ETA, TD(MLT_TD), TD(SUB_TD), TD(THETA_TD), TD(MGT_TD), TD(SUP_TD)};
+const int key10[6] = {KC_IOTA, KC_SUM, KC_UNION, KC_KAPPA, KC_NARYPRODUCT, KC_INTERSECTION};
+const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), TD(ELEMENT_OF_TD), KC_MU, TD(LINE_INTEGRAL_TD), KC_EMPTYSET};
+const int key12[6] = {KC_NU, TD(ROOT_TD), TD(SUBSET_OF_TD), TD(XI_TD), KC_ARROW, KC_SETDIFFERENCE};
+const int key13[6] = {KC_OMICRON, KC_PARTIALDERIVATIVE, TD(SUBSET_OR_EQ_TD), TD(PI_TD), KC_NABLA, KC_DISJOINTUNION};
+const int key20[6] = {KC_RHO, KC_ARROWIMPLIES, KC_DOTPRODUCT, TD(SIGMA_TD), KC_ARROWIFANDONLYIF, KC_CROSSPRODUCT};
+const int key21[6] = {KC_TAU, TD(THERE_EXIST_TD), TD(PLUSMINUS_TD), KC_UPSILON, TD(AND_TD), KC_PARALLEL};
+const int key22[6] = {TD(PHI_TD), KC_FORALL, KC_DEGREE, KC_CHI, TD(UNCONDITIONALLY_TRUE_TD), KC_INFINITY};
+const int key23[6] = {TD(PSI_TD), KC_NOT, KC_MATRIX, TD(OMEGA_TD), TD(PROVES_TD), KC_FRACTION};
 
 
 // process_record_user handles keyclicks on "normal" (non-tapdance) symbols. Each normal symbol has a function defined in 
@@ -284,43 +285,128 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    print("\n\n==== layer_state_set_user called ====\n");
+    
+    char layer_info[128];
+    sprintf(layer_info, "Initial state: %d\n", state);
+    print(layer_info);
+    
+    // Check if either of our special layers is already active
+    bool opt_bottom_active = IS_LAYER_ON(_OPT_BOTTOM);
+    bool opt_top_active = IS_LAYER_ON(_OPT_TOP);
+    
+    print("Layer Status: ");
+    if (IS_LAYER_ON(_OPT)) print("OPT:ON ");
+    else print("OPT:OFF ");
+    
+    if (IS_LAYER_ON(_BASE_BOTTOM)) print("BASE_BOTTOM:ON ");
+    else print("BASE_BOTTOM:OFF ");
+    
+    if (IS_LAYER_ON(_BASE_TOP)) print("BASE_TOP:ON ");
+    else print("BASE_TOP:OFF ");
+    
+    if (opt_bottom_active) print("OPT_BOTTOM:ON ");
+    else print("OPT_BOTTOM:OFF ");
+    
+    if (opt_top_active) print("OPT_TOP:ON ");
+    else print("OPT_TOP:OFF ");
+    print("\n");
+    
+    // If OPT_BOTTOM is active, any press of BASE_TOP should be ignored
+    if (opt_bottom_active && IS_LAYER_ON(_BASE_TOP)) {
+        print("OPT_BOTTOM is active, ignoring BASE_TOP press\n");
+        state = state & ~(1UL << _BASE_TOP);
+        sprintf(layer_info, "State after ignoring BASE_TOP: %d\n", state);
+        print(layer_info);
+    }
+    
+    // If OPT_TOP is active, any press of BASE_BOTTOM should be ignored
+    if (opt_top_active && IS_LAYER_ON(_BASE_BOTTOM)) {
+        print("OPT_TOP is active, ignoring BASE_BOTTOM press\n");
+        state = state & ~(1UL << _BASE_BOTTOM);
+        sprintf(layer_info, "State after ignoring BASE_BOTTOM: %d\n", state);
+        print(layer_info);
+    }
+    
+    // Check for invalid combinations (BASE_TOP+BASE_BOTTOM without any active special layers)
+    bool base_bottom_layer_on = IS_LAYER_ON(_BASE_BOTTOM);
+    bool base_top_layer_on = IS_LAYER_ON(_BASE_TOP);
+    
+    if (base_bottom_layer_on && base_top_layer_on && !opt_bottom_active && !opt_top_active) {
+        print("Invalid combination (BASE_TOP+BASE_BOTTOM), returning to base layer\n");
+        return 0;
+    }
+    
+    // Now handle the tri-layer states with the modified state
+    print("Checking tri-layer combinations\n");
+    
+    layer_state_t opt_bottom_state = update_tri_layer_state(state, _OPT, _BASE_BOTTOM, _OPT_BOTTOM);
+    if (opt_bottom_state != state) {
+        print("Activating OPT_BOTTOM layer\n");
+        sprintf(layer_info, "New state: %d\n", opt_bottom_state);
+        print(layer_info);
+    }
+    
+    layer_state_t opt_top_state = update_tri_layer_state(state, _OPT, _BASE_TOP, _OPT_TOP);
+    if (opt_top_state != state) {
+        print("Activating OPT_TOP layer\n");
+        sprintf(layer_info, "New state: %d\n", opt_top_state);
+        print(layer_info);
+    }
+    
+    // Return the appropriate state
+    if (opt_bottom_state != state) {
+        print("Returning OPT_BOTTOM state\n");
+        print("==== End of function ====\n");
+        return opt_bottom_state;
+    } else if (opt_top_state != state) {
+        print("Returning OPT_TOP state\n");
+        print("==== End of function ====\n");
+        return opt_top_state;
+    } else {
+        print("Returning unchanged state\n");
+        print("==== End of function ====\n");
+        return state;
+    }
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_5x3_macropad(
         key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],   KC_SWITCH_MODE,
                       key10[_BASE],   key11[_BASE],   key12[_BASE],   key13[_BASE],
         MO(_OPT),     key20[_BASE],   key21[_BASE],   key22[_BASE],   key23[_BASE],
-                                      MO(_BASE_FRONT),                MO(_BASE_SHIFT)
+                                      MO(_BASE_BOTTOM),                MO(_BASE_TOP)
     ),
-	[_BASE_SHIFT] = LAYOUT_5x3_macropad(
-        key00[_BASE_SHIFT], key01[_BASE_SHIFT],   key02[_BASE_SHIFT],   key03[_BASE_SHIFT],   KC_NO,
-                            key10[_BASE_SHIFT],   key11[_BASE_SHIFT],   key12[_BASE_SHIFT],   key13[_BASE_SHIFT],
-        MO(_OPT),           key20[_BASE_SHIFT],   key21[_BASE_SHIFT],   key22[_BASE_SHIFT],   key23[_BASE_SHIFT],
-                                                  MO(_BASE_SHIFT),                            MO(_OPT_SHIFT)
+	[_BASE_TOP] = LAYOUT_5x3_macropad(
+        key00[_BASE_TOP], key01[_BASE_TOP],   key02[_BASE_TOP],   key03[_BASE_TOP],   KC_NO,
+                          key10[_BASE_TOP],   key11[_BASE_TOP],   key12[_BASE_TOP],   key13[_BASE_TOP],
+        MO(_OPT),         key20[_BASE_TOP],   key21[_BASE_TOP],   key22[_BASE_TOP],   key23[_BASE_TOP],
+                                              MO(_BASE_BOTTOM),                       MO(_BASE_TOP)
     ),
 	[_OPT] = LAYOUT_5x3_macropad(
         key00[_OPT], key01[_OPT],   key02[_OPT],   key03[_OPT],   KC_NO,
                      key10[_OPT],   key11[_OPT],   key12[_OPT],   key13[_OPT],
         MO(_OPT),    key20[_OPT],   key21[_OPT],   key22[_OPT],   key23[_OPT],
-                                    MO(_OPT_FRONT),               MO(_OPT_SHIFT)
+                                    MO(_BASE_BOTTOM),             MO(_BASE_TOP)
     ),
-	[_OPT_SHIFT] = LAYOUT_5x3_macropad(
-        key00[_OPT_SHIFT], key01[_OPT_SHIFT],   key02[_OPT_SHIFT],   key03[_OPT_SHIFT],   KC_NO,
-                           key10[_OPT_SHIFT],   key11[_OPT_SHIFT],   key12[_OPT_SHIFT],   key13[_OPT_SHIFT],
-        MO(_OPT),          key20[_OPT_SHIFT],   key21[_OPT_SHIFT],   key22[_OPT_SHIFT],   key23[_OPT_SHIFT],
-                                                MO(_OPT_SHIFT),                           MO(_OPT_SHIFT)
+	[_OPT_TOP] = LAYOUT_5x3_macropad(
+        key00[_OPT_TOP], key01[_OPT_TOP],   key02[_OPT_TOP],   key03[_OPT_TOP],   KC_NO,
+                         key10[_OPT_TOP],   key11[_OPT_TOP],   key12[_OPT_TOP],   key13[_OPT_TOP],
+        MO(_OPT),        key20[_OPT_TOP],   key21[_OPT_TOP],   key22[_OPT_TOP],   key23[_OPT_TOP],
+                                            MO(_BASE_BOTTOM),                     MO(_BASE_TOP)
     ),
-	[_BASE_FRONT] = LAYOUT_5x3_macropad(
-        key00[_BASE_FRONT], key01[_BASE_FRONT],   key02[_BASE_FRONT],   key03[_BASE_FRONT],   KC_NO,
-                            key10[_BASE_FRONT],   key11[_BASE_FRONT],   key12[_BASE_FRONT],   key13[_BASE_FRONT],
-        MO(_OPT),           key20[_BASE_FRONT],   key21[_BASE_FRONT],   key22[_BASE_FRONT],   key23[_BASE_FRONT],
-                                                  MO(_BASE_FRONT),                            MO(_OPT_FRONT)
+	[_BASE_BOTTOM] = LAYOUT_5x3_macropad(
+        key00[_BASE_BOTTOM], key01[_BASE_BOTTOM],   key02[_BASE_BOTTOM],   key03[_BASE_BOTTOM],   KC_NO,
+                             key10[_BASE_BOTTOM],   key11[_BASE_BOTTOM],   key12[_BASE_BOTTOM],   key13[_BASE_BOTTOM],
+        MO(_OPT),            key20[_BASE_BOTTOM],   key21[_BASE_BOTTOM],   key22[_BASE_BOTTOM],   key23[_BASE_BOTTOM],
+                                                    MO(_BASE_BOTTOM),                             MO(_BASE_TOP)
     ),
-	[_OPT_FRONT] = LAYOUT_5x3_macropad(
-        key00[_OPT_FRONT], key01[_OPT_FRONT],   key02[_OPT_FRONT],   key03[_OPT_FRONT],   KC_NO,
-                           key10[_OPT_FRONT],   key11[_OPT_FRONT],   key12[_OPT_FRONT],   key13[_OPT_FRONT],
-        MO(_OPT),          key20[_OPT_FRONT],   key21[_OPT_FRONT],   key22[_OPT_FRONT],   key23[_OPT_FRONT],
-                                                MO(_OPT_FRONT),                           MO(_OPT_FRONT)
+	[_OPT_BOTTOM] = LAYOUT_5x3_macropad(
+        key00[_OPT_BOTTOM], key01[_OPT_BOTTOM],   key02[_OPT_BOTTOM],   key03[_OPT_BOTTOM],   KC_NO,
+                            key10[_OPT_BOTTOM],   key11[_OPT_BOTTOM],   key12[_OPT_BOTTOM],   key13[_OPT_BOTTOM],
+        MO(_OPT),           key20[_OPT_BOTTOM],   key21[_OPT_BOTTOM],   key22[_OPT_BOTTOM],   key23[_OPT_BOTTOM],
+                                                  MO(_BASE_BOTTOM),                           MO(_BASE_TOP)
     )
 };
 

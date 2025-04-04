@@ -140,12 +140,12 @@ void sigma_dance (tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void phi_dance (tap_dance_state_t *s, void *d){
+void varphi_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC || user_config.MODE == MOF){
-        int symbols[] = {_phi, _Phi};
+        int symbols[] = {_varphi, _Phi};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX){
-        const char *symbols[] = {phi_LTX, Phi_LTX};
+        const char *symbols[] = {varphi_LTX, Phi_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
@@ -169,7 +169,7 @@ void omega_dance (tap_dance_state_t *s, void *d){
 
 void much_greater_than_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC || user_config.MODE == MOF){
-        int symbols[] = {_much_greater_than, _much_much_greater_than};
+        int symbols[] = {_much_greater_than, _verymuch_greater_than};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX){
         const char *symbols[] = {much_greater_than_LTX, much_much_greater_than_LTX};
@@ -178,7 +178,7 @@ void much_greater_than_dance (tap_dance_state_t *s, void *d){
 
 void much_less_than_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC || user_config.MODE == MOF){
-        int symbols[] = {_much_less_than, _much_much_less_than};
+        int symbols[] = {_much_less_than, _verymuch_less_than};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX){
         const char *symbols[] = {much_less_than_LTX, much_much_less_than_LTX};
@@ -338,7 +338,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [XI_TD] = ACTION_TAP_DANCE_FN (xi_dance),
   [PI_TD] = ACTION_TAP_DANCE_FN (pi_dance),
   [SIGMA_TD] = ACTION_TAP_DANCE_FN (sigma_dance),
-  [PHI_TD] = ACTION_TAP_DANCE_FN (phi_dance),
+  [PHI_TD] = ACTION_TAP_DANCE_FN (varphi_dance),
   [PSI_TD] = ACTION_TAP_DANCE_FN (psi_dance),
   [OMEGA_TD] = ACTION_TAP_DANCE_FN (omega_dance),
   [MGT_TD] = ACTION_TAP_DANCE_FN (much_greater_than_dance),
