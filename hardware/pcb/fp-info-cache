@@ -1,4 +1,4 @@
-23917413218065052
+23867910857433143
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -96928,280 +96928,77 @@ Varistor VF
 0
 2
 2
-key-switches
-SW_Gateron_LowProfile_HotSwap_PTH
-Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, Gateron Low Profile hot-swap socket and through-hole soldering, the hole of the socket is plated, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
-switch, low_profile, hot_swap
-0
-6
-2
-key-switches
-SW_Gateron_LowProfile_HotSwap_THT
-Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, Gateron Low Profile hot-swap socket and through-hole soldering, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
-switch, low_profile, hot_swap
-0
-4
-2
-key-switches
-SW_Gateron_LowProfile_THT
-Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, through-hole soldering, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V1V2_THT_Hybrid
-Compatible with Kailh Choc V1 (PG1350) and Choc V2 (PG1353) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-3
-2
-key-switches
-SW_Kailh_Choc_V1_HotSwap
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, hot-swap socket, single-sided mounting.
-switch, low_profile, hot_swap
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V1_HotSwap_PTH
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, hot-swap socket, the hole of the socket is plated, single-sided mounting.
-switch, low_profile, hot_swap
-0
-6
-2
-key-switches
-SW_Kailh_Choc_V1_HotSwap_PTH_nSilk
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, hot-swap socket, the hole of the socket is plated, single-sided mounting.
-switch, low_profile, hot_swap
-0
-6
-2
-key-switches
-SW_Kailh_Choc_V1_HotSwap_THT
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, hot-swap socket and through-hole soldering, single-sided mounting.
-switch, low_profile, hot_swap
-0
-4
-2
-key-switches
-SW_Kailh_Choc_V1_THT
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V1_THT_alt1
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting. An alternative to "SW_Kailh_Choc_V1_THT" with additional fix pin.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V1_THT_nSilk
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V1_THT_swap
-Kailh Choc V1 (PG1350) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_Kailh_Choc_V2_THT
-Kailh Choc V2 (PG1353) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-3
-2
-key-switches
-SW_Kailh_Choc_V2_THT_nSilk
-Kailh Choc V2 (PG1353) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-3
-2
-key-switches
-SW_MX_HotSwap_PTH
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, the hole of the socket is plated, single-sided mounting.
-switch, hot_swap
-0
-6
-2
-key-switches
-SW_MX_HotSwap_PTH_double
-Cherry MX style mechanical keyboard switch, through-hole soldering and Kailh/Gateron hot-swap socket, the hole of the socket is plated, double-sided mounting.
-switch, hot_swap
-0
-12
-2
-key-switches
-SW_MX_HotSwap_PTH_nSilk
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, the hole of the socket is plated, single-sided mounting.
-switch, hot_swap
-0
-6
-2
-key-switches
-SW_MX_HotSwap_PTH_swap
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, the hole of the socket is plated, single-sided mounting.
-switch, hot_swap
-0
-6
-2
-key-switches
-SW_MX_HotSwap_THT
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, single-sided mounting.
-switch, hot_swap
-0
-4
-2
-key-switches
-SW_MX_HotSwap_THT_double
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, double-sided mounting.
-switch, hot_swap
-0
-8
-2
-key-switches
-SW_MX_HotSwap_THT_double_alt1
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, double-sided mounting. An alternative to "SW_MX_HotSwap_THT_double".
-switch, hot_swap
-0
-8
-2
-key-switches
-SW_MX_HotSwap_THT_double_alt2
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, double-sided mounting. An alternative to "SW_MX_HotSwap_THT_double".
-switch, hot_swap
-0
-8
-2
-key-switches
-SW_MX_HotSwap_THT_nSilk
-Cherry MX style mechanical keyboard switch, Kailh/Gateron hot-swap socket and through-hole soldering, single-sided mounting.
-switch, hot_swap
-0
-4
-2
-key-switches
-SW_MX_Kailh_Choc_V1V2_THT_Hybrid
-Compatible with Cherry MX, Kailh Choc V1 (PG1350) and Choc V2 (PG1353) mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-5
-2
-key-switches
-SW_MX_LowProfile_Kailh_Choc_V1V2_THT_Hybrid
-Compatible with Cherry MX Low Profile, Kailh Choc V1 (PG1350) and Choc V2 (PG1353) low profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-5
-2
-key-switches
-SW_MX_LowProfile_THT
-Cherry MX Low Profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_MX_LowProfile_THT_nSilk
-Cherry MX Low Profile mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch, low_profile
-0
-2
-2
-key-switches
-SW_MX_THT
-Cherry MX style mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch
-0
-2
-2
-key-switches
-SW_MX_THT_nSilk
-Cherry MX style mechanical keyboard switch, through-hole soldering, single-sided mounting.
-switch
-0
-2
-2
-mathboard
+mathpad
 DFN1006-2L
 
 
 0
 2
 2
-mathboard
+mathpad
 LED_SMD_0603_flat
 
 
 0
 2
 2
-mathboard
+mathpad
 Potentiometer_Bourns_TC33X_Vertical
 Potentiometer, Bourns, TC33X, Vertical, https://www.bourns.com/pdfs/TC33.pdf
 Potentiometer Bourns TC33X Vertical
 0
 3
 3
-mathboard
+mathpad
 SK6812-MINI-E
 
 
 0
 4
 4
-mathboard
+mathpad
 SWITCH_MSK13C02
 
 PCM13SMTR 
 0
 8
 4
-mathboard
+mathpad
 SW_Gateron_LowProfile_THT_hotswap
 Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, through-hole soldering, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
 switch, low_profile
 0
 2
 2
-mathboard
+mathpad
 SW_Push_1P1T_XKB_TS-1187A
 SMD Tactile Switch, http://www.helloxkb.com/public/images/pdf/TS-1187A-X-X-X.pdf
 SPST Tactile Switch
 0
 4
 2
-mathboard
+mathpad
 USB_C_Receptacle_G-Switch_GT-USB-7010ASV
 USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
 USB C Type-C Receptacle SMD
 0
 20
 17
-mathboard
+mathpad
 USB_C_Receptacle_G-Switch_GT-USB-9014C
 USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
 USB C Type-C Receptacle SMD
 0
 20
 17
-mathboard
+mathpad
 USB_C_Receptacle_XYECONN TYPE-C-F02C-1BBWC1.6
 USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
 USB C Type-C Receptacle SMD
 0
 20
 17
-mathboard
+mathpad
 WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm
 WSON, 8 Pin (https://datasheet.lcsc.com/lcsc/2204011730_GigaDevice-Semicon-Beijing-GD5F1GQ4UFYIGR_C2986324.pdf (page 44)), generated with kicad-footprint-generator ipc_noLead_generator.py
 WSON NoLead

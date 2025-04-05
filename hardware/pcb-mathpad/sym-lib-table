@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "Mathboard")(type "KiCad")(uri "${KIPRJMOD}/resources/Mathboard.kicad_sym")(options "")(descr ""))
-  (lib (name "Mathpad")(type "KiCad")(uri "${KIPRJMOD}/resources/Mathpad.kicad_sym")(options "")(descr ""))
-)

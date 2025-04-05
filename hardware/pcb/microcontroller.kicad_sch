@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "f185dc9c-d825-4381-9085-a35634d02e04")
 	(paper "A4")
+	(title_block
+		(title "Mathpad")
+		(date "2025-04-05")
+		(rev "1.6")
+		(company "Summacogni OÜ")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers hide)
@@ -729,7 +735,7 @@
 				)
 			)
 		)
-		(symbol "Mathboard:W25Q64JV"
+		(symbol "Mathpad:W25Q64JV"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -6319,7 +6325,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mathboard:W25Q64JV")
+		(lib_id "Mathpad:W25Q64JV")
 		(at 63.5 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6345,7 +6351,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "mathboard:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
+		(property "Footprint" "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
 			(at 71.374 41.402 0)
 			(effects
 				(font
@@ -8417,7 +8423,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 96.2152 137.16 0)
 			(effects
 				(font
@@ -8462,7 +8468,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C23733"
+		(property "LCSC" "C1705"
 			(at 95.25 133.35 0)
 			(effects
 				(font
@@ -8720,7 +8726,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "mathboard:SW_Push_1P1T_XKB_TS-1187A"
+		(property "Footprint" "mathpad:SW_Push_1P1T_XKB_TS-1187A"
 			(at 48.26 135.89 0)
 			(effects
 				(font
@@ -9185,7 +9191,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 103.8352 137.16 0)
 			(effects
 				(font
@@ -9230,7 +9236,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C23733"
+		(property "LCSC" "C1705"
 			(at 102.87 133.35 0)
 			(effects
 				(font
