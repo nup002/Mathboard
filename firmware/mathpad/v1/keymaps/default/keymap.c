@@ -44,26 +44,26 @@ void update_led_to_match_mode(void) {
     }
 }
 
-// Sets the Mathboard output mode
+// Sets the mathpad output mode
 void output_mode_set(uint8_t mode) { 
     user_config.MODE = mode; 
     eeconfig_update_user(user_config.raw);
     update_led_to_match_mode();
 }
 
-// Cycles between Mathboard output modes when called. UC -> MOF -> LTX -> UC
+// Cycles between mathpad output modes when called. UC -> MOF -> LTX -> UC
 void output_mode_update(void) {
     if (user_config.MODE == UC){output_mode_set(MOF);} 
     else if (user_config.MODE == MOF){output_mode_set(LTX);}
     else if (user_config.MODE == LTX){output_mode_set(UC);}
 }
 
-// The custom_keycodes define all the "normal", or non-tapdance, symbols of the Mathboard. These are the symbols that 
+// The custom_keycodes define all the "normal", or non-tapdance, symbols of the mathpad. These are the symbols that 
 // (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
 // Tapdance symbols are those symbols which have different behaviour depending on how many times you tap them. They have
 // red dots next to them on the Matboard. These symbols are defined in the file tapdance.h.
 enum custom_keycodes {
-    KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the Mathboard MODE variable.
+    KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE variable.
     KC_ALPHA,
     KC_NOTEQUAL,
     KC_BETA,
@@ -112,7 +112,7 @@ enum custom_keycodes {
     KC_FRACTION
 };
 
-// Each physical symbolkey on the Mathboard is defined here. The upper rightmost key is 00. The bottommost key is 23:
+// Each physical symbolkey on the mathpad is defined here. The upper rightmost key is 00. The bottommost key is 23:
 // 00 01 02 03 <- Top row
 // 10 11 12 13 <- Middle row
 // 20 21 22 23 <- Bottom row
@@ -134,7 +134,7 @@ const int key23[6] = {TD(PSI_TD), KC_NOT, KC_MATRIX, TD(OMEGA_TD), TD(PROVES_TD)
 
 // process_record_user handles keyclicks on "normal" (non-tapdance) symbols. Each normal symbol has a function defined in 
 // symbol_functions.h. For example, when the user clicks KC_NOTEQUAL, process_record_user() will call notequal_key(). 
-// The symbol functions defined in symbol_functions.h decides which action to take depending on the Mathboard MODE.
+// The symbol functions defined in symbol_functions.h decides which action to take depending on the mathpad MODE.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_SWITCH_MODE:

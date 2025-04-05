@@ -12,23 +12,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef GLOBS_H
-#define GLOBS_H
 
-const unsigned char UC = 0;
-const unsigned char MOF = 1;
-const unsigned char LTX = 2;
+#include "mathpad.h"
+#include "globs.h"
 
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    // MODE is a global variable that sets which type of output the Mathboard should emit. 
-    // It can be Unicode, Microsoft Office equations editor, LaTeX, etc. Clicking the mode-change button on the Mathboard
-    // cycles the MODE variable to its next value.
-    uint8_t     MODE :8;
-  };
-} user_config_t;
-
-user_config_t user_config;
-#endif
+bool dip_switch_update_kb(uint8_t index, bool active) { 
+    if (!dip_switch_update_user(index, active)) { return false; }
+    return true;
+}
