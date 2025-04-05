@@ -4,12 +4,11 @@
 
 [Documentation](https://mathpad.readthedocs.io/en/latest)
 
-**The official Mathpad repository**. Mathpad is still a work in progress and the design files 
-may therefore change without notice.
+**Disclaimer:** Mathpad is still a work in progress and the design files contained in this repository may therefore change without notice.
 
 Join the [Mathpad Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
-Mathpad is a keypad that makes it easier to write equations on a computer. It is intended for engineers, 
+Mathpad is a keypad that make writing equations on a computer effortless. It is intended for engineers, 
 scientists, and anyone else who regularly need to write equations. The Mathpad is fully open source and this 
 repository collects the source code, design files, schematics, documentation.
 
