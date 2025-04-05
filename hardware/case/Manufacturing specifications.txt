@@ -3,5 +3,4 @@ Surface: As machined
 Finish: Matte black anodization with laser marking
 Tapped holes: 4 M2x0.4
 Tolerances: ISO2768 medium
-Quote: 10 and 100 assemblies
 

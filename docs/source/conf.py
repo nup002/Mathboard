@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Mathboard'
-copyright = '2024, Magne Lauritzen'
+project = 'Mathpad'
+copyright = 'Summcogni OÜ 2025'
 author = 'Magne Lauritzen'
 
 release = '1.0'

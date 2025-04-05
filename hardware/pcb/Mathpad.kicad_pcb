@@ -23510,7 +23510,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 120.3 -222.3 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -24194,7 +24194,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -24878,7 +24878,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -25562,7 +25562,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -26246,7 +26246,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 270 -216 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -26930,7 +26930,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -27614,7 +27614,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -28298,7 +28298,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 203.208 101.208 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -28314,7 +28314,7 @@
 		(path "/1a85666e-71d9-469b-9a4e-884605e4300e/ed31d35d-7e2f-4e10-bf19-04853473b703")
 		(sheetname "Switch Matrix")
 		(sheetfile "switch_matrix.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_bom)
 		(fp_line
 			(start 5.7 -3)
 			(end 5.7 -4)
@@ -28982,7 +28982,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -29666,7 +29666,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -30350,7 +30350,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -31034,7 +31034,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -31718,7 +31718,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -32402,7 +32402,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -33086,7 +33086,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 327.2 -216 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -33770,7 +33770,7 @@
 				(justify mirror)
 			)
 		)
-		(property "JLCPCB BOM" "0"
+		(property "JLCPCB BOM" ""
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)

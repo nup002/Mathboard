@@ -8,7 +8,7 @@
 firmware/compiled/
 
 # Kicad backups
-hardware/pcb/Mathboard-backups/
+hardware/pcb/Mathpad-backups/
 
 # Lock files
 *.lck
