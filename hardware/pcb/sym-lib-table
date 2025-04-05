@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Mathpad")(type "KiCad")(uri "${KIPRJMOD}/resources/Mathpad.kicad_sym")(options "")(descr ""))
+)

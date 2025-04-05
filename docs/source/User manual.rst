@@ -1,8 +1,8 @@
 .. _user_manual:
 
-Mathboard user manual
+Mathpad user manual
 =====================
-To set up your Mathboard for the first time, see :ref:`first_setup`.
+To set up your Mathpad for the first time, see :ref:`first_setup`.
 
 
 .. toctree::
