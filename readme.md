@@ -25,7 +25,7 @@ E = mc²<br>
 You can follow its development on [Hackaday](https://hackaday.io/project/186205-math-keyboard)
 
 <p align="center">
-<img src=".github/images/mathpad_v1_0.jpg" width="500">
+<img src=".github/images/mathpad_prototype.jpg" width="500">
 </p>
 
 ## Supported input methods
