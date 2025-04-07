@@ -41,22 +41,8 @@ Mathpad works on Windows, virtually all Unix systems, and Apple macOS. When usin
 lightweight and open source application [WinCompose](https://github.com/samhocevar/wincompose) must be installed and running.
 When using it on Apple macOS, you must enable Unicode Hex Input as a keyboard input source.
 
-## Hardware
-The Mathpad has three main components:
-
-1) A custom printed circuit board
-2) An aluminum enclosure
-3) Custom keycaps
-
-All the production files for the PCB are in `/hardware/pcb/Production files`, and can be uploaded directly to 
-[JLCPCB](https://jlcpcb.com). 
-
-The enclosure must be CNCed. The `.step` files are located in `/hardware/case`.
-
-The custom keycaps will be purchaseable in the future.
-
 ## Building and flashing the firmware
-Official releases will be located in [releases](https://github.com/nup002/Mathpad/releases). The firmware is under development 
+Official releases will be located in [releases](https://github.com/Summa-Cogni/Mathpad/releases). The firmware is under development 
 and therefore no official release exists yet.
 
 If you wish to build the firmwre binaries yourself, you need to set up the build environment for QMK. This is not very difficult 
