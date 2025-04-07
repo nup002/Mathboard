@@ -1,24 +1,21 @@
-Firmware resources
-##################
+# Firmware resources
 
 This folder contains everything related to the firmware of the Mathpad.
 
 If you wish to get started with developing or modifying the Mathpad firmware, follow the 
 [guide](https://docs.qmk.fm/#/newbs_getting_started) by QMK on how to get your development environment set up.
 
-The Mathpad firmware is licensed under the GNU GENERAL PUBLIC LICENSE version 3.
+The Mathpad firmware is licensed under [GNU GENERAL PUBLIC LICENSE version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
-What you CAN do:
-----------------
+## What you CAN do:
 - Use the firmware for any purpose
 - Study how the firmware works
 - Modify the firmware to suit your needs
 - Share and distribute the original firmware
 - Share and distribute your modified versions
 
-What you MUST do:
------------------
+## What you MUST do:
 - Include a copy of the license with the firmware
 - Keep all copyright notices intact
 - Make the source code available when you distribute the firmware
@@ -26,8 +23,7 @@ What you MUST do:
 - Clearly mark any modifications you make to the original firmware
 - If you distribute the firmware in executable form, you must make the complete source code available as well
 
-What you CANNOT do:
--------------------
+## What you CANNOT do:
 - Restrict others from exercising the rights granted by the license
 - Incorporate the firmware into proprietary (closed-source) firmware
 - Remove or alter the original license or copyright notices
