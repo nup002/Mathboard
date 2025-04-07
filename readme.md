@@ -66,4 +66,4 @@ CLI to navigate to `/firmware` and type `make`.
 ## Licenses
 The Mathpad firmware is licensed under the GNU General Public License v3. The Mathpad hardware is licensed under CERN-OHL-S v2. This includes the PCB design files, case design files, and the keycap decals. As an individual you are free to make your own Mathpad, or to modify it, as long as these licenses are respected.
 
-The Summa Cogni logo and Mathpad logo are the properties of SummAcogni OÜ and may not be replicated.
+The Summa Cogni logo and Mathpad logo are the properties of Summacogni OÜ and may not be replicated.
