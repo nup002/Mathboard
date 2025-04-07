@@ -5,8 +5,8 @@
 	(uuid "51b4aa36-e8ca-479e-8f43-790046bf63bb")
 	(paper "A4")
 	(title_block
-		(title "Mathpad")
-		(date "2025-04-05")
+		(title "Mathpad PCB")
+		(date "2025-04-07")
 		(rev "1.6")
 		(company "Summacogni OÜ")
 	)

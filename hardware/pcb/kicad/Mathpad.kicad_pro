@@ -628,7 +628,7 @@
           "group_by": true,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -640,7 +640,7 @@
           "group_by": false,
           "label": "JLCPCB BOM",
           "name": "JLCPCB BOM",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -714,7 +714,7 @@
     },
     "net_format_name": "KiCad",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "../",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
