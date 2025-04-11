@@ -10028,7 +10028,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
+		(property "Footprint" "mathpad:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm"
 			(at 71.374 41.402 0)
 			(effects
 				(font
