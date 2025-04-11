@@ -1,6 +1,8 @@
 # Mathpad
 [![Documentation Status](https://readthedocs.org/projects/mathpad/badge/?version=latest)](https://mathpad.readthedocs.io/en/latest/?badge=latest)
 [![](https://dcbadge.vercel.app/api/server/dgD6cMCUhD)](https://discord.gg/dgD6cMCUhD)
+<img src=".github/images/certification-mark-UK000074-wide.png" width="130">
+
 
 [Documentation](https://mathpad.readthedocs.io/en/latest)
 
@@ -50,6 +52,13 @@ if you follow the [guide](https://docs.qmk.fm/#/newbs_getting_started). Once you
 CLI to navigate to `/firmware` and type `make`. 
 
 ## Licenses
-The Mathpad firmware is licensed under the GNU General Public License v3. The Mathpad hardware is licensed under CERN-OHL-S v2. This includes the PCB design files, case design files, and the keycap decals. As an individual you are free to make your own Mathpad, or to modify it, as long as these licenses are respected.
+<p align="center">
+<img src=".github/images/oshw_facts.png" width="250">
+</p>
+
+As an individual you are free to make your own Mathpad, or to modify it, as long as these licenses are respected. Each 
+subfolder contains a quick summary of how to respect the licenses.
 
 The Summa Cogni logo and Mathpad logo are the properties of Summacogni OÜ and may not be replicated.
+
+The OSHWA certification ID `UK000074` is issued to Summa Cogni, and may not be replicated.
