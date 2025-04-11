@@ -293,17 +293,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     print(layer_info);
     
     // Check if either of our special layers is already active
-    bool opt_bottom_active = IS_LAYER_ON(_OPT_BOTTOM);
-    bool opt_top_active = IS_LAYER_ON(_OPT_TOP);
+    bool opt_bottom_active = IS_LAYER_ON_STATE(state, _OPT_BOTTOM);
+    bool opt_top_active = IS_LAYER_ON_STATE(state, _OPT_TOP);
     
     print("Layer Status: ");
-    if (IS_LAYER_ON(_OPT)) print("OPT:ON ");
+    if (IS_LAYER_ON_STATE(state, _OPT)) print("OPT:ON ");
     else print("OPT:OFF ");
     
-    if (IS_LAYER_ON(_BASE_BOTTOM)) print("BASE_BOTTOM:ON ");
+    if (IS_LAYER_ON_STATE(state, _BASE_BOTTOM)) print("BASE_BOTTOM:ON ");
     else print("BASE_BOTTOM:OFF ");
     
-    if (IS_LAYER_ON(_BASE_TOP)) print("BASE_TOP:ON ");
+    if (IS_LAYER_ON_STATE(state, _BASE_TOP)) print("BASE_TOP:ON ");
     else print("BASE_TOP:OFF ");
     
     if (opt_bottom_active) print("OPT_BOTTOM:ON ");
@@ -314,7 +314,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     print("\n");
     
     // If OPT_BOTTOM is active, any press of BASE_TOP should be ignored
-    if (opt_bottom_active && IS_LAYER_ON(_BASE_TOP)) {
+    if (opt_bottom_active && IS_LAYER_ON_STATE(state, _BASE_TOP)) {
         print("OPT_BOTTOM is active, ignoring BASE_TOP press\n");
         state = state & ~(1UL << _BASE_TOP);
         sprintf(layer_info, "State after ignoring BASE_TOP: %d\n", state);
@@ -322,7 +322,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     
     // If OPT_TOP is active, any press of BASE_BOTTOM should be ignored
-    if (opt_top_active && IS_LAYER_ON(_BASE_BOTTOM)) {
+    if (opt_top_active && IS_LAYER_ON_STATE(state, _BASE_BOTTOM)) {
         print("OPT_TOP is active, ignoring BASE_BOTTOM press\n");
         state = state & ~(1UL << _BASE_BOTTOM);
         sprintf(layer_info, "State after ignoring BASE_BOTTOM: %d\n", state);
@@ -330,8 +330,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     
     // Check for invalid combinations (BASE_TOP+BASE_BOTTOM without any active special layers)
-    bool base_bottom_layer_on = IS_LAYER_ON(_BASE_BOTTOM);
-    bool base_top_layer_on = IS_LAYER_ON(_BASE_TOP);
+    bool base_bottom_layer_on = IS_LAYER_ON_STATE(state, _BASE_BOTTOM);
+    bool base_top_layer_on = IS_LAYER_ON_STATE(state, _BASE_TOP);
     
     if (base_bottom_layer_on && base_top_layer_on && !opt_bottom_active && !opt_top_active) {
         print("Invalid combination (BASE_TOP+BASE_BOTTOM), returning to base layer\n");
