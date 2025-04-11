@@ -53,12 +53,12 @@ CLI to navigate to `/firmware` and type `make`.
 
 ## Licenses
 <p align="center">
-<img src=".github/images/oshw_facts.png" width="250">
+<img src=".github/images/oshw_facts.svg" width="250">
 </p>
 
-As an individual you are free to make your own Mathpad, or to modify it, as long as these licenses are respected. Each 
-subfolder contains a quick summary of how to respect the licenses.
+Everyone are permitted to replicate the Mathpad based on the design files found in this repository. Everyone are
+ permitted to modify, share, and distribute the files, as long as the terms set out in the licenses are respected.
 
 The Summa Cogni logo and Mathpad logo are the properties of Summacogni OÜ and may not be replicated.
 
-The OSHWA certification ID `UK000074` is issued to Summa Cogni, and may not be replicated.
+The OSHWA certification ID `UK000074` is issued to Summacogni OÜ, and may not be replicated.
