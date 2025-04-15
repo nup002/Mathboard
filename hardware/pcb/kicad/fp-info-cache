@@ -1,4 +1,4 @@
-23760993684837060
+23760994009954081
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -96664,8 +96664,8 @@ PCM13SMTR
 4
 mathpad
 SW_Gateron_LowProfile_THT_hotswap
-Gateron Low Profile (KS-27 & KS-33) style mechanical keyboard switch, through-hole soldering, single-sided mounting. Gateron Low Profile and Cherry MX Low Profile are NOT compatible.
-switch, low_profile
+Hotswap socket for Gateron low-profile v2
+switch, low_profile, hot swap
 0
 2
 2
