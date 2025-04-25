@@ -1,4 +1,4 @@
-/* Copyright 2024 Magne Lauritzen
+/* Copyright 2025 Summacogni OU
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,12 +22,18 @@
 
 //#include "sendstring_norwegian.h"
 
-#define _BASE 0         // left
-#define _BASE_TOP 1     // top left
-#define _BASE_BOTTOM 2  // bottom left
-#define _OPT 3          // right
-#define _OPT_TOP 4      // top right
-#define _OPT_BOTTOM 5   // bottom right
+// Define the 6 different symbol locations on the keycaps
+#define _LEFT_TOP 0  
+#define _RIGHT_TOP 3 
+#define _LEFT_MID 1
+#define _RIGHT_MID 4
+#define _LEFT_FRONT 2
+#define _RIGHT_FRONT 5
+
+// Track modifier key states
+static bool rightkey_pressed = false;
+static bool midkey_pressed = false;
+static bool frontkey_pressed = false;
 
 // Sets the LED indicator to match the output mode
 void update_led_to_match_mode(void) {
@@ -64,6 +70,9 @@ void output_mode_update(void) {
 // red dots next to them on the Matboard. These symbols are defined in the file tapdance.h.
 enum custom_keycodes {
     KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE variable.
+    KC_RIGHTKEY, // RIGHT keycap side modifier key
+    KC_MIDKEY, // MID keycap row modifier key
+    KC_FRONTKEY, // FRONT keycaprow modifier key
     KC_ALPHA,
     KC_NOTEQUAL,
     KC_BETA,
@@ -142,6 +151,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 output_mode_update();
             }
             break;
+        case KC_RIGHTKEY:
+            rightkey_pressed = record->event.pressed;
+            update_active_layer();
+            return false; // Don't continue processing this key
+        case KC_MIDKEY:
+            midkey_pressed = record->event.pressed;
+            update_active_layer();
+            return false; // Don't continue processing this key
+        case KC_FRONTKEY:
+            frontkey_pressed = record->event.pressed;
+            update_active_layer();
+            return false; // Don't continue processing this key
         case KC_ALPHA:
             alpha_key(record);
             break;
@@ -285,133 +306,80 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    print("\n\n==== layer_state_set_user called ====\n");
-    
-    char layer_info[128];
-    sprintf(layer_info, "Initial state: %d\n", state);
-    print(layer_info);
-    
-    // Check if either of our special layers is already active
-    bool opt_bottom_active = IS_LAYER_ON_STATE(state, _OPT_BOTTOM);
-    bool opt_top_active = IS_LAYER_ON_STATE(state, _OPT_TOP);
-    
-    print("Layer Status: ");
-    if (IS_LAYER_ON_STATE(state, _OPT)) print("OPT:ON ");
-    else print("OPT:OFF ");
-    
-    if (IS_LAYER_ON_STATE(state, _BASE_BOTTOM)) print("BASE_BOTTOM:ON ");
-    else print("BASE_BOTTOM:OFF ");
-    
-    if (IS_LAYER_ON_STATE(state, _BASE_TOP)) print("BASE_TOP:ON ");
-    else print("BASE_TOP:OFF ");
-    
-    if (opt_bottom_active) print("OPT_BOTTOM:ON ");
-    else print("OPT_BOTTOM:OFF ");
-    
-    if (opt_top_active) print("OPT_TOP:ON ");
-    else print("OPT_TOP:OFF ");
-    print("\n");
-    
-    // If OPT_BOTTOM is active, any press of BASE_TOP should be ignored
-    if (opt_bottom_active && IS_LAYER_ON_STATE(state, _BASE_TOP)) {
-        print("OPT_BOTTOM is active, ignoring BASE_TOP press\n");
-        state = state & ~(1UL << _BASE_TOP);
-        sprintf(layer_info, "State after ignoring BASE_TOP: %d\n", state);
-        print(layer_info);
-    }
-    
-    // If OPT_TOP is active, any press of BASE_BOTTOM should be ignored
-    if (opt_top_active && IS_LAYER_ON_STATE(state, _BASE_BOTTOM)) {
-        print("OPT_TOP is active, ignoring BASE_BOTTOM press\n");
-        state = state & ~(1UL << _BASE_BOTTOM);
-        sprintf(layer_info, "State after ignoring BASE_BOTTOM: %d\n", state);
-        print(layer_info);
-    }
-    
-    // Check for invalid combinations (BASE_TOP+BASE_BOTTOM without any active special layers)
-    bool base_bottom_layer_on = IS_LAYER_ON_STATE(state, _BASE_BOTTOM);
-    bool base_top_layer_on = IS_LAYER_ON_STATE(state, _BASE_TOP);
-    
-    if (base_bottom_layer_on && base_top_layer_on && !opt_bottom_active && !opt_top_active) {
-        print("Invalid combination (BASE_TOP+BASE_BOTTOM), returning to base layer\n");
-        return 0;
-    }
-    
-    // Now handle the tri-layer states with the modified state
-    print("Checking tri-layer combinations\n");
-    
-    layer_state_t opt_bottom_state = update_tri_layer_state(state, _OPT, _BASE_BOTTOM, _OPT_BOTTOM);
-    if (opt_bottom_state != state) {
-        print("Activating OPT_BOTTOM layer\n");
-        sprintf(layer_info, "New state: %d\n", opt_bottom_state);
-        print(layer_info);
-    }
-    
-    layer_state_t opt_top_state = update_tri_layer_state(state, _OPT, _BASE_TOP, _OPT_TOP);
-    if (opt_top_state != state) {
-        print("Activating OPT_TOP layer\n");
-        sprintf(layer_info, "New state: %d\n", opt_top_state);
-        print(layer_info);
-    }
-    
-    // Return the appropriate state
-    if (opt_bottom_state != state) {
-        print("Returning OPT_BOTTOM state\n");
-        print("==== End of function ====\n");
-        return opt_bottom_state;
-    } else if (opt_top_state != state) {
-        print("Returning OPT_TOP state\n");
-        print("==== End of function ====\n");
-        return opt_top_state;
-    } else {
-        print("Returning unchanged state\n");
-        print("==== End of function ====\n");
-        return state;
-    }
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_5x3_macropad(
-        key00[_BASE], key01[_BASE],   key02[_BASE],   key03[_BASE],   KC_SWITCH_MODE,
-                      key10[_BASE],   key11[_BASE],   key12[_BASE],   key13[_BASE],
-        MO(_OPT),     key20[_BASE],   key21[_BASE],   key22[_BASE],   key23[_BASE],
-                                      MO(_BASE_BOTTOM),                MO(_BASE_TOP)
+	[_LEFT_TOP] = LAYOUT_5x3_macropad(
+        key00[_LEFT_TOP], key01[_LEFT_TOP],   key02[_LEFT_TOP],   key03[_LEFT_TOP],   KC_NO,
+                          key10[_LEFT_TOP],   key11[_LEFT_TOP],   key12[_LEFT_TOP],   key13[_LEFT_TOP],
+        KC_RIGHTKEY,      key20[_LEFT_TOP],   key21[_LEFT_TOP],   key22[_LEFT_TOP],   key23[_LEFT_TOP],
+                                              KC_FRONTKEY,                            KC_MIDKEY
     ),
-	[_BASE_TOP] = LAYOUT_5x3_macropad(
-        key00[_BASE_TOP], key01[_BASE_TOP],   key02[_BASE_TOP],   key03[_BASE_TOP],   KC_NO,
-                          key10[_BASE_TOP],   key11[_BASE_TOP],   key12[_BASE_TOP],   key13[_BASE_TOP],
-        MO(_OPT),         key20[_BASE_TOP],   key21[_BASE_TOP],   key22[_BASE_TOP],   key23[_BASE_TOP],
-                                              MO(_BASE_BOTTOM),                       MO(_BASE_TOP)
+	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
+        key00[_RIGHT_TOP], key01[_RIGHT_TOP],   key02[_RIGHT_TOP],   key03[_RIGHT_TOP],   KC_NO,
+                           key10[_RIGHT_TOP],   key11[_RIGHT_TOP],   key12[_RIGHT_TOP],   key13[_RIGHT_TOP],
+        KC_RIGHTKEY,       key20[_RIGHT_TOP],   key21[_RIGHT_TOP],   key22[_RIGHT_TOP],   key23[_RIGHT_TOP],
+                                                KC_FRONTKEY,                              KC_MIDKEY
     ),
-	[_OPT] = LAYOUT_5x3_macropad(
-        key00[_OPT], key01[_OPT],   key02[_OPT],   key03[_OPT],   KC_NO,
-                     key10[_OPT],   key11[_OPT],   key12[_OPT],   key13[_OPT],
-        MO(_OPT),    key20[_OPT],   key21[_OPT],   key22[_OPT],   key23[_OPT],
-                                    MO(_BASE_BOTTOM),             MO(_BASE_TOP)
+    [_LEFT_MID] = LAYOUT_5x3_macropad(
+        key00[_LEFT_MID], key01[_LEFT_MID],   key02[_LEFT_MID],   key03[_LEFT_MID],   KC_SWITCH_MODE,
+                          key10[_LEFT_MID],   key11[_LEFT_MID],   key12[_LEFT_MID],   key13[_LEFT_MID],
+        KC_RIGHTKEY,      key20[_LEFT_MID],   key21[_LEFT_MID],   key22[_LEFT_MID],   key23[_LEFT_MID],
+                                              KC_FRONTKEY,                            KC_MIDKEY
     ),
-	[_OPT_TOP] = LAYOUT_5x3_macropad(
-        key00[_OPT_TOP], key01[_OPT_TOP],   key02[_OPT_TOP],   key03[_OPT_TOP],   KC_NO,
-                         key10[_OPT_TOP],   key11[_OPT_TOP],   key12[_OPT_TOP],   key13[_OPT_TOP],
-        MO(_OPT),        key20[_OPT_TOP],   key21[_OPT_TOP],   key22[_OPT_TOP],   key23[_OPT_TOP],
-                                            MO(_BASE_BOTTOM),                     MO(_BASE_TOP)
+	[_RIGHT_MID] = LAYOUT_5x3_macropad(
+        key00[_RIGHT_MID], key01[_RIGHT_MID],   key02[_RIGHT_MID],   key03[_RIGHT_MID],   KC_NO,
+                           key10[_RIGHT_MID],   key11[_RIGHT_MID],   key12[_RIGHT_MID],   key13[_RIGHT_MID],
+        KC_RIGHTKEY,       key20[_RIGHT_MID],   key21[_RIGHT_MID],   key22[_RIGHT_MID],   key23[_RIGHT_MID],
+                                                KC_FRONTKEY,                              KC_MIDKEY
     ),
-	[_BASE_BOTTOM] = LAYOUT_5x3_macropad(
-        key00[_BASE_BOTTOM], key01[_BASE_BOTTOM],   key02[_BASE_BOTTOM],   key03[_BASE_BOTTOM],   KC_NO,
-                             key10[_BASE_BOTTOM],   key11[_BASE_BOTTOM],   key12[_BASE_BOTTOM],   key13[_BASE_BOTTOM],
-        MO(_OPT),            key20[_BASE_BOTTOM],   key21[_BASE_BOTTOM],   key22[_BASE_BOTTOM],   key23[_BASE_BOTTOM],
-                                                    MO(_BASE_BOTTOM),                             MO(_BASE_TOP)
+	[_LEFT_FRONT] = LAYOUT_5x3_macropad(
+        key00[_LEFT_FRONT], key01[_LEFT_FRONT],   key02[_LEFT_FRONT],   key03[_LEFT_FRONT],   KC_NO,
+                            key10[_LEFT_FRONT],   key11[_LEFT_FRONT],   key12[_LEFT_FRONT],   key13[_LEFT_FRONT],
+        KC_RIGHTKEY,        key20[_LEFT_FRONT],   key21[_LEFT_FRONT],   key22[_LEFT_FRONT],   key23[_LEFT_FRONT],
+                                                  KC_FRONTKEY,                                KC_MIDKEY
     ),
-	[_OPT_BOTTOM] = LAYOUT_5x3_macropad(
-        key00[_OPT_BOTTOM], key01[_OPT_BOTTOM],   key02[_OPT_BOTTOM],   key03[_OPT_BOTTOM],   KC_NO,
-                            key10[_OPT_BOTTOM],   key11[_OPT_BOTTOM],   key12[_OPT_BOTTOM],   key13[_OPT_BOTTOM],
-        MO(_OPT),           key20[_OPT_BOTTOM],   key21[_OPT_BOTTOM],   key22[_OPT_BOTTOM],   key23[_OPT_BOTTOM],
-                                                  MO(_BASE_BOTTOM),                           MO(_BASE_TOP)
+	[_RIGHT_FRONT] = LAYOUT_5x3_macropad(
+        key00[_RIGHT_FRONT], key01[_RIGHT_FRONT],   key02[_RIGHT_FRONT],   key03[_RIGHT_FRONT],   KC_NO,
+                             key10[_RIGHT_FRONT],   key11[_RIGHT_FRONT],   key12[_RIGHT_FRONT],   key13[_RIGHT_FRONT],
+        KC_RIGHTKEY,         key20[_RIGHT_FRONT],   key21[_RIGHT_FRONT],   key22[_RIGHT_FRONT],   key23[_RIGHT_FRONT],
+                                                    KC_FRONTKEY,                                  KC_MIDKEY
     )
 };
 
+// Function to update active layer based on modifier states
+void update_active_layer(void) {
+    // Reset all layers first
+    layer_clear();
+    
+    // Debug output - show which keys are pressed
+    dprintf("Key states: RIGHT=%d, MID=%d, FRONT=%d\n", 
+            rightkey_pressed ? 1 : 0, 
+            midkey_pressed ? 1 : 0, 
+            frontkey_pressed ? 1 : 0);
+    
+    // Set the appropriate layer based on key combinations
+    if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
+        layer_on(_RIGHT_FRONT);
+        dprintf("Activating layer: _RIGHT_FRONT (%d)\n", _RIGHT_FRONT);
+    } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+        layer_on(_RIGHT_MID);
+        dprintf("Activating layer: _RIGHT_MID (%d)\n", _RIGHT_MID);
+    } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
+        layer_on(_RIGHT_TOP);
+        dprintf("Activating layer: _RIGHT_TOP (%d)\n", _RIGHT_TOP);
+    } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+        layer_on(_LEFT_MID);
+        dprintf("Activating layer: _LEFT_MID (%d)\n", _LEFT_MID);
+    } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
+        layer_on(_LEFT_FRONT);
+        dprintf("Activating layer: _LEFT_FRONT (%d)\n", _LEFT_FRONT);
+    } else {
+        // Default or invalid combinations go to _LEFT_TOP
+        layer_on(_LEFT_TOP);
+        dprintf("Activating layer: _LEFT_TOP (%d)\n", _LEFT_TOP);
+    }
+}
+
 bool dip_switch_update_user(uint8_t index, bool active) { 
-    // active = !active; // uncomment for pcb rev 1
     uint8_t current_unicode_mode = get_unicode_input_mode();
     switch (index) {
         case 0:

@@ -1,4 +1,4 @@
-/* Copyright 2023 Magne Lauritzen
+/* Copyright 2025 Summacogni OU
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,19 +12,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#ifndef GLOBS_H
+#define GLOBS_H
 
-#pragma once
+const unsigned char UC = 0;
+const unsigned char MOF = 1;
+const unsigned char LTX = 2;
 
-// Any changes to the layout names and/or definitions must also be made to info.json
+// Persistent settings
+typedef union {
+  uint8_t raw;
+  struct {
+    // MODE is a global variable that sets which type of output the mathpad should emit. 
+    // It can be Unicode, Microsoft Office equations editor, LaTeX, etc. Clicking the mode-change button on the mathpad
+    // cycles the MODE variable to its next value.
+    uint8_t     MODE :8;
+  };
+} user_config_t;
 
-#define LAYOUT_5x3_macropad( \
-    K00, K01, K02, K03, K04, \
-         K05, K06, K07, K08, \
-    K09, K10, K11, K12, K13, \
-              K14,      K15  \
-) { \
-    { K00,   K01,   K02,   K03,   K04}, \
-    { KC_NO, K05,   K06,   K07,   K08}, \
-    { K09,   K10,   K11,   K12,   K13}, \
-    { KC_NO, KC_NO, K14,   KC_NO, K15}  \
-}
+user_config_t user_config;
+#endif

@@ -1,4 +1,4 @@
-/* Copyright 2023 Magne Lauritzen
+/* Copyright 2025 Summacogni OU
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,16 @@
 
 #pragma once
 
-#define RGBLED_NUM 1
-#define RGBLIGHT_LIMIT_VAL 200
-#define DIP_SWITCH_PINS { GP7, GP8, GP9 }
+// Any changes to the layout names and/or definitions must also be made to info.json
 
-#define UNICODE_CYCLE_PERSIST false
+#define LAYOUT_5x3_macropad( \
+    K00, K01, K02, K03, K04, \
+         K05, K06, K07, K08, \
+    K09, K10, K11, K12, K13, \
+              K14,      K15  \
+) { \
+    { K00,   K01,   K02,   K03,   K04}, \
+    { KC_NO, K05,   K06,   K07,   K08}, \
+    { K09,   K10,   K11,   K12,   K13}, \
+    { KC_NO, KC_NO, K14,   KC_NO, K15}  \
+}

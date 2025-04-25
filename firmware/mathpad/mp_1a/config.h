@@ -1,4 +1,4 @@
-/* Copyright 2023 Magne Lauritzen
+/* Copyright 2025 Summacogni OU
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,23 +12,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef GLOBS_H
-#define GLOBS_H
 
-const unsigned char UC = 0;
-const unsigned char MOF = 1;
-const unsigned char LTX = 2;
+#pragma once
 
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    // MODE is a global variable that sets which type of output the mathpad should emit. 
-    // It can be Unicode, Microsoft Office equations editor, LaTeX, etc. Clicking the mode-change button on the mathpad
-    // cycles the MODE variable to its next value.
-    uint8_t     MODE :8;
-  };
-} user_config_t;
+#define RGBLIGHT_LED_COUNT 1
+#define RGBLIGHT_LIMIT_VAL 200
+#define DIP_SWITCH_PINS { GP7, GP8, GP9 }
 
-user_config_t user_config;
-#endif
+#define UNICODE_CYCLE_PERSIST false

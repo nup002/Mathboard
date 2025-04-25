@@ -16,10 +16,11 @@ $(KEYBOARDS):
 	cd qmk_firmware; 
 
 	# run lint check
-	qmk lint -km default -kb summacogni/mathpad/v1 --strict
+	qmk lint -km default -kb summacogni/mathpad/mp_1a --strict
 
 	# run build
-	qmk compile -j 0 -kb summacogni/mathpad/v1 -km default
+	qmk compile -j 0 -kb summacogni/mathpad/mp_1a -km default
 
 	# Move .u2f file to /compiled
+	mkdir -p compiled
 	mv qmk_firmware/*.uf2 compiled;

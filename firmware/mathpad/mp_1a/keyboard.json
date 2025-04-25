@@ -1,8 +1,8 @@
 {
   "keyboard_name": "Mathpad",
-  "url": "https://github.com/nup002/mathpad",
+  "url": "https://github.com/Summa-Cogni/Mathpad",
   "maintainer": "Magne Lauritzen",
-  "manufacturer": "Magne Lauritzen",
+  "manufacturer": "Summa Cogni",
   "usb": {
     "pid": "0x4D42",
     "vid": "0x4D4C",
