@@ -7,7 +7,7 @@
 	(title_block
 		(title "Mathpad PCB")
 		(date "2025-04-07")
-		(rev "1.6")
+		(rev "1.7")
 		(company "Summacogni OÜ")
 	)
 	(lib_symbols

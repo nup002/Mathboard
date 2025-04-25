@@ -1,4 +1,4 @@
-23760994009954081
+23764487535903267
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -96686,6 +96686,20 @@ USB C Type-C Receptacle SMD
 mathpad
 USB_C_Receptacle_G-Switch_GT-USB-9014C
 USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf
+USB C Type-C Receptacle SMD
+0
+20
+17
+mathpad
+USB_C_Receptacle_GT-USB-7014B01
+USB Type C, right-angle, SMT, https://www.lcsc.com/datasheet/lcsc_datasheet_2411221125_G-Switch-GT-USB-7014B01_C19188078.pdf
+USB C Type-C Receptacle SMD
+0
+20
+17
+mathpad
+USB_C_Receptacle_SHOU_HAN TYPE-C-16P CB0.8 073
+USB Type C, right-angle, SMT, https://www.lcsc.com/datasheet/lcsc_datasheet_2504211035_SHOU-HAN-TYPE-C-16P-CB0-8-073_C2906289.pdf
 USB C Type-C Receptacle SMD
 0
 20

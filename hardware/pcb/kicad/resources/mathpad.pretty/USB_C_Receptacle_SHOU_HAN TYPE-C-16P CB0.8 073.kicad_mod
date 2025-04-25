@@ -1,9 +1,9 @@
-(footprint "USB_C_Receptacle_XYECONN TYPE-C-F02C-1BBWC1.6"
+(footprint "USB_C_Receptacle_SHOU_HAN TYPE-C-16P CB0.8 073"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
 	(layer "F.Cu")
-	(descr "USB Type C, right-angle, SMT, https://datasheet.lcsc.com/lcsc/2204071530_G-Switch-GT-USB-7010ASV_C2988369.pdf")
+	(descr "USB Type C, right-angle, SMT, https://www.lcsc.com/datasheet/lcsc_datasheet_2504211035_SHOU-HAN-TYPE-C-16P-CB0-8-073_C2906289.pdf")
 	(tags "USB C Type-C Receptacle SMD")
 	(property "Reference" "REF**"
 		(at 0 -5.5 0)
@@ -16,7 +16,7 @@
 			)
 		)
 	)
-	(property "Value" "USB_C_Receptacle_XYECONN TYPE-C-F02C-1BBWC1.6"
+	(property "Value" "USB_C_Receptacle_SHOU_HAN TYPE-C-16P CB0.8 073"
 		(at 0 5 0)
 		(layer "F.Fab")
 		(uuid "cd301a04-be52-4bc1-963f-69790b266d55")
@@ -312,15 +312,15 @@
 		(remove_unused_layers no)
 		(uuid "9384f131-71cb-498f-9829-60301a016f43")
 	)
-	(model "${KIPRJMOD}/resources/3d_models/USB - C inboard.STEP"
+	(model "${KIPRJMOD}/resources/3d_models/TYPE-C 16P 0.8 3MD 073.step"
 		(offset
-			(xyz -0.977 11.05 -5.2)
+			(xyz -0.33 0.56 -6.35)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz -90 0 0)
+			(xyz 180 0 -180)
 		)
 	)
 )

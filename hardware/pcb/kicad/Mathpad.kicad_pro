@@ -80,7 +80,7 @@
         {
           "gap": 0.2,
           "via_gap": 0.2,
-          "width": 0.2918
+          "width": 0.16
         }
       ],
       "drc_exclusions": [],
@@ -522,7 +522,7 @@
         "clearance": 0.2,
         "diff_pair_gap": 0.2,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2918,
+        "diff_pair_width": 0.1575,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,

@@ -7,7 +7,7 @@
 	(title_block
 		(title "Mathpad PCB")
 		(date "2025-04-07")
-		(rev "1.6")
+		(rev "1.7")
 		(company "Summacogni OÜ")
 	)
 	(lib_symbols
@@ -5772,7 +5772,7 @@
 				)
 			)
 		)
-		(property "Footprint" "mathpad:USB_C_Receptacle_XYECONN TYPE-C-F02C-1BBWC1.6"
+		(property "Footprint" "mathpad:USB_C_Receptacle_GT-USB-7014B01"
 			(at 52.07 120.65 0)
 			(effects
 				(font
@@ -5781,7 +5781,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403011808_XYECONN-TYPE-C-F02C-1BBWC1-6_C20883026.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221125_G-Switch-GT-USB-7014B01_C19188078.pdf"
 			(at 52.07 120.65 0)
 			(effects
 				(font
@@ -5799,7 +5799,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "TYPE-C-F02C-1BBWC1.6"
+		(property "MPN " "7014B"
 			(at 48.26 120.65 0)
 			(effects
 				(font
@@ -5808,7 +5808,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C20883026"
+		(property "LCSC" ""
 			(at 48.26 120.65 0)
 			(effects
 				(font
@@ -5817,7 +5817,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C963372"
 			(at 48.26 120.65 0)
 			(effects
 				(font
