@@ -24,10 +24,10 @@
 
 // Define the 6 different symbol locations on the keycaps
 #define _LEFT_TOP 0  
-#define _RIGHT_TOP 3 
 #define _LEFT_MID 1
-#define _RIGHT_MID 4
 #define _LEFT_FRONT 2
+#define _RIGHT_TOP 3 
+#define _RIGHT_MID 4
 #define _RIGHT_FRONT 5
 
 // Track modifier key states
@@ -64,6 +64,28 @@ void output_mode_update(void) {
     else if (user_config.MODE == LTX){output_mode_set(UC);}
 }
 
+// Function to update active layer based on modifier states
+void update_active_layer(void) {
+    // Reset all layers first
+    layer_clear();
+
+    // Set the appropriate layer based on key combinations
+    if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
+        layer_on(_RIGHT_FRONT);
+    } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+        layer_on(_RIGHT_MID);
+    } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
+        layer_on(_RIGHT_TOP);
+    } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+        layer_on(_LEFT_MID);
+    } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
+        layer_on(_LEFT_FRONT);
+    } else {
+        // Default or invalid combinations go to _LEFT_TOP
+        layer_on(_LEFT_TOP);
+    }
+}
+
 // The custom_keycodes define all the "normal", or non-tapdance, symbols of the mathpad. These are the symbols that 
 // (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
 // Tapdance symbols are those symbols which have different behaviour depending on how many times you tap them. They have
@@ -72,7 +94,7 @@ enum custom_keycodes {
     KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE variable.
     KC_RIGHTKEY, // RIGHT keycap side modifier key
     KC_MIDKEY, // MID keycap row modifier key
-    KC_FRONTKEY, // FRONT keycaprow modifier key
+    KC_FRONTKEY, // FRONT keycap row modifier key
     KC_ALPHA,
     KC_NOTEQUAL,
     KC_BETA,
@@ -126,7 +148,7 @@ enum custom_keycodes {
 // 10 11 12 13 <- Middle row
 // 20 21 22 23 <- Bottom row
 // The index of a symbol in key arrays defines its location on the physical key. It goes:
-// [left, top left, bottom left, right, top right, bottom right] 
+// [top left, mid left, bottom left, top right, mid right, bottom right] 
 const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
 const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGBAR};
 const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ACCENT_ARROW, KC_ZETA, KC_GREATEROREQUAL, TD(DOT_TD)};
@@ -308,13 +330,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LEFT_TOP] = LAYOUT_5x3_macropad(
-        key00[_LEFT_TOP], key01[_LEFT_TOP],   key02[_LEFT_TOP],   key03[_LEFT_TOP],   KC_NO,
+        key00[_LEFT_TOP], key01[_LEFT_TOP],   key02[_LEFT_TOP],   key03[_LEFT_TOP],   KC_SWITCH_MODE,
                           key10[_LEFT_TOP],   key11[_LEFT_TOP],   key12[_LEFT_TOP],   key13[_LEFT_TOP],
         KC_RIGHTKEY,      key20[_LEFT_TOP],   key21[_LEFT_TOP],   key22[_LEFT_TOP],   key23[_LEFT_TOP],
                                               KC_FRONTKEY,                            KC_MIDKEY
     ),
 	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
-        key00[_RIGHT_TOP], key01[_RIGHT_TOP],   key02[_RIGHT_TOP],   key03[_RIGHT_TOP],   KC_NO,
+        key00[_RIGHT_TOP], key01[_RIGHT_TOP],   key02[_RIGHT_TOP],   key03[_RIGHT_TOP],   KC_SWITCH_MODE,
                            key10[_RIGHT_TOP],   key11[_RIGHT_TOP],   key12[_RIGHT_TOP],   key13[_RIGHT_TOP],
         KC_RIGHTKEY,       key20[_RIGHT_TOP],   key21[_RIGHT_TOP],   key22[_RIGHT_TOP],   key23[_RIGHT_TOP],
                                                 KC_FRONTKEY,                              KC_MIDKEY
@@ -326,58 +348,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                               KC_FRONTKEY,                            KC_MIDKEY
     ),
 	[_RIGHT_MID] = LAYOUT_5x3_macropad(
-        key00[_RIGHT_MID], key01[_RIGHT_MID],   key02[_RIGHT_MID],   key03[_RIGHT_MID],   KC_NO,
+        key00[_RIGHT_MID], key01[_RIGHT_MID],   key02[_RIGHT_MID],   key03[_RIGHT_MID],   KC_SWITCH_MODE,
                            key10[_RIGHT_MID],   key11[_RIGHT_MID],   key12[_RIGHT_MID],   key13[_RIGHT_MID],
         KC_RIGHTKEY,       key20[_RIGHT_MID],   key21[_RIGHT_MID],   key22[_RIGHT_MID],   key23[_RIGHT_MID],
                                                 KC_FRONTKEY,                              KC_MIDKEY
     ),
 	[_LEFT_FRONT] = LAYOUT_5x3_macropad(
-        key00[_LEFT_FRONT], key01[_LEFT_FRONT],   key02[_LEFT_FRONT],   key03[_LEFT_FRONT],   KC_NO,
+        key00[_LEFT_FRONT], key01[_LEFT_FRONT],   key02[_LEFT_FRONT],   key03[_LEFT_FRONT],   KC_SWITCH_MODE,
                             key10[_LEFT_FRONT],   key11[_LEFT_FRONT],   key12[_LEFT_FRONT],   key13[_LEFT_FRONT],
         KC_RIGHTKEY,        key20[_LEFT_FRONT],   key21[_LEFT_FRONT],   key22[_LEFT_FRONT],   key23[_LEFT_FRONT],
                                                   KC_FRONTKEY,                                KC_MIDKEY
     ),
 	[_RIGHT_FRONT] = LAYOUT_5x3_macropad(
-        key00[_RIGHT_FRONT], key01[_RIGHT_FRONT],   key02[_RIGHT_FRONT],   key03[_RIGHT_FRONT],   KC_NO,
+        key00[_RIGHT_FRONT], key01[_RIGHT_FRONT],   key02[_RIGHT_FRONT],   key03[_RIGHT_FRONT],   KC_SWITCH_MODE,
                              key10[_RIGHT_FRONT],   key11[_RIGHT_FRONT],   key12[_RIGHT_FRONT],   key13[_RIGHT_FRONT],
         KC_RIGHTKEY,         key20[_RIGHT_FRONT],   key21[_RIGHT_FRONT],   key22[_RIGHT_FRONT],   key23[_RIGHT_FRONT],
                                                     KC_FRONTKEY,                                  KC_MIDKEY
     )
 };
 
-// Function to update active layer based on modifier states
-void update_active_layer(void) {
-    // Reset all layers first
-    layer_clear();
-    
-    // Debug output - show which keys are pressed
-    dprintf("Key states: RIGHT=%d, MID=%d, FRONT=%d\n", 
-            rightkey_pressed ? 1 : 0, 
-            midkey_pressed ? 1 : 0, 
-            frontkey_pressed ? 1 : 0);
-    
-    // Set the appropriate layer based on key combinations
-    if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
-        layer_on(_RIGHT_FRONT);
-        dprintf("Activating layer: _RIGHT_FRONT (%d)\n", _RIGHT_FRONT);
-    } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_RIGHT_MID);
-        dprintf("Activating layer: _RIGHT_MID (%d)\n", _RIGHT_MID);
-    } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
-        layer_on(_RIGHT_TOP);
-        dprintf("Activating layer: _RIGHT_TOP (%d)\n", _RIGHT_TOP);
-    } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_LEFT_MID);
-        dprintf("Activating layer: _LEFT_MID (%d)\n", _LEFT_MID);
-    } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
-        layer_on(_LEFT_FRONT);
-        dprintf("Activating layer: _LEFT_FRONT (%d)\n", _LEFT_FRONT);
-    } else {
-        // Default or invalid combinations go to _LEFT_TOP
-        layer_on(_LEFT_TOP);
-        dprintf("Activating layer: _LEFT_TOP (%d)\n", _LEFT_TOP);
-    }
-}
 
 bool dip_switch_update_user(uint8_t index, bool active) { 
     uint8_t current_unicode_mode = get_unicode_input_mode();
