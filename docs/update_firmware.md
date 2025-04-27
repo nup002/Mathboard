@@ -1,0 +1,1 @@
+This page will contain instructions on how to update the Mathpad firmware.

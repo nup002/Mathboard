@@ -1,35 +1,67 @@
-Getting started
-===============
+>[!TIP|label:Before You Continue]
+>Make sure you have already followed the instructions in [First Setup](/first_setup.md).
+>
 
-Make sure you have already followed the instructions in :ref:`first_setup`.
+## Understanding the Mathpad symbol keys
+All symbol keys are divided into two parts: A white LEFT and a blue RIGHT. Symbols are placed in three coloured rows: 
+TOP, CENTER, and BOTTOM.
 
-Accessing the Mathpad symbols
------------------------------
-The Mathpad packs a lot of symbols onto a small keyboard by placing more than one symbol on each key. When
-you click a key, it will output one of its six symbols depending on the state of the modifier keys.
+![img](_media/keycap_overview.svg ':size=40%')
 
-There are three modifier keys: Blue, Green and Purple. The Blue modifier key accesses the symbols on the right 
-side of each key. The Green modifier key accesses the bottom row of symbols, located on the front face. The 
-Purple modifier key accesses the middle row of symbols. You can combine the Blue and Green/Purple modifier keys to 
-access any symbol.
+Symbols on the same row are almost always related. On the particular symbol key shown here:
+1) The TOP row has Greek letters
+2) The CENTER row has relationship operators
+3) The BOTTOM row has diacritical marks.
 
-When no modifier keys are pressed, clicking a key outputs left symbol of the black upper row of that key.
+**The default symbol is always in the top left corner**. The particular symbol key shown here will therefore give you 
+$α$ (Greek letter Alpha) when you press it, and we name the key <keycombo>[α]</keycombo>. The next section explains how 
+you access the other symbols on the key.
 
-Multitap symbols
-----------------
-Certain symbols are marked by a small orange dot. Double-tapping such a symbol will output a different, but related,
-symbol than what's printed on the keycap. For example, double tapping λ produces Λ. Double tapping ω produces Ω.
+## Using the modifier keys
+Accessing the five other symbols is as simple as combining a symbol key with one or two of the coloured modifier keys.
 
-Certain symbols can be tapped more than twice. For example, double- and triple-tapping √ gives you ∛ and ∜.
+![img](_media/top_modifiers_labelled.svg ':size=40%')
 
+The [R] modifier key selects the blue RIGHT side of the symbol key. The [B] modifier key selects the BOTTOM row 
+of symbols, and the [C] modifier key selects the CENTER row. 
 
-Switching between modes
------------------------
-The Mathpad can switch between three modes: Unicode, LaTeX, and Microsoft Office Equations Editor. The current mode is
-indicated by the LED with the following color codes:
+## Give it a shot!
+>[!TIP|label:Before You Continue]
+>Set your Mathpad to Plaintext mode by holding down the black MODE key (top right) for one second.
+>
+Let's get you comfortable with the Mathpad symbol system by practicing some key combinations. 
 
-- Blue: Unicode
-- Yellow: LaTeX
-- Purple: Microsoft Office Equations Editor
+We'll start simple. Click on the text editor below, and tap the <keycombo>[α]</keycombo> key once. This is the top left 
+key on your Mathpad. Clicking this key will output the Greek letter Alpha.
+<div class="keyboard-test-container">
+  <div class="input-area">
+    <textarea rows="1" cols="20" style="font-family:'Cambria Math';font-size: 30pt"></textarea>
+  </div>
+</div>
 
-Many symbols will be output differently depending on which mode is selected.
+>[!NOTE|label:In Case Of Problems]
+>If instead of $\alpha$ you get a bunch of random symbols or nothing at all, make sure you have followed 
+> [First Setup](/first_setup.md). If you get '\alpha', you must set your Mathpad to Plaintext mode.
+>
+
+Let's move on to something a bit more advanced. Locate the <keycombo>[ε]</keycombo> key on your Mathpad, and click the 
+text editor below. Then, type $\leq$ by keeping the [C] modifier key pressed while clicking 
+<keycombo>[ε]</keycombo>.
+<div class="keyboard-test-container">
+  <div class="input-area">
+    <textarea rows="1" cols="20" style="font-family:'Cambria Math';font-size: 30pt"></textarea>
+  </div>
+</div>
+
+Finally, type $\mathbb{C}$ by keeping the [R] and [B] modifier keys pressed while clicking <keycombo>[ω]</keycombo>.
+<div class="keyboard-test-container">
+  <div class="input-area">
+    <textarea rows="1" cols="20" style="font-family:'Cambria Math';font-size: 30pt"></textarea>
+  </div>
+</div>
+
+Look at you tapping away! Here's a few more key combinations you can try if you wish:
+- $\delta$ : <keycombo>[B]+[γ]</keycombo>
+- $\int$ : <keycombo>[C]+[λ]</keycombo>
+- $\gg$ : <keycombo>[R][C]+[η]</keycombo>
+- $\bigoplus$ : <keycombo>[R][B]+[ν]</keycombo>

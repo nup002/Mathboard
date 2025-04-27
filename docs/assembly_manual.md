@@ -1,7 +1,4 @@
-Assembly manual
-===============
-This page lists every component of the Mathpad and how to assemble them.
-
+This page lists every component of the Mathpad and how to assemble one.
 
 **Components** :
 

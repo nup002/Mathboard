@@ -1,33 +1,55 @@
-First setup of the Mathpad
-==========================
-The Mathpad *almost* works straight out of the box, but there are some initial setup tasks that must be performed.
-These tasks will depend on the computer that you intend to use your Mathpad with.
+# First setup of your Mathpad
+**Mathpad works straight out of the box in most cases.** But depending on your operating system and keyboard layout, 
+there are some initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
 
-Software
---------
-If you intend to use your Mathpad on an Apple Mac or any Linux-based operating system, you can skip to the Firmware
-section. If you intend to use the Mathpad on a Windows computer, you must first
-install the lightweight application `WinCompose <http://wincompose.info>`_ which provides support for Unicode input.
+## What is your operating system?
 
-Firmware
---------
-The firmware of the Mathpad must match the keyboard layout of the computer on which you intend to use it with.
-This is an inescapable consequence of both how operating systems interpret keycodes from keyboards, and the inability of a USB peripheral to automatically deduce the keyboard layout of the computer it is plugged in to.
+<!-- tabs:start -->
 
-You must therefore upload, or "flash", a version of the firmware that matches your keyboard layout. Start by figuring
-out your keyboard layout (google can help you here). Then go to the
-`latest release <https://github.com/nup002/Mathpad/releases>`_ and download the firmware file for your
-keyboard layout. Then, plug in the Mathpad and press the reset button (found on the bottom) for at least
-half a second. When you release the reset button, a folder will open on your computer. Place the firmware file
-in this folder to flash it to the Mathpad. The folder will automatically close when finished, and the Mathpad will
-reboot. Done!
+#### **Linux**
 
-.. warning::
-    Since the Mathpad is not fully released yet you must build your own firmware if you use a keyboard layout other
-    than US ANSI.
+Set the OS switch to the LINUX position.
 
-Setting the OS switch
----------------------
-Each operating system [OS] interprets Unicode input differently. The Mathpad must therefore be configured to
-output Unicode that the OS can understand. Using the illustration on the bottom of the Mathpad, place the OS switch on
-the back of the Mathpad to the OS your computer is running.
+#### **Mac OS**
+
+Set the OS switch to the MAC OS position.
+
+#### **Windows**
+
+1) Install [WinCompose](http://wincompose.info) - this enables special character input on Windows.
+2) Set the OS switch to the WINDOWS position.
+
+<!-- tabs:end -->
+
+> [!NOTE|label:Why Setting The OS Switch Is Required]
+> Mathpad transmits symbols using Unicode. Since each operating system handles Unicode input differently, Mathpad needs 
+> to adjust its data format based on the connected operating system. USB devices like Mathpad cannot detect your 
+> computer's operating system automatically, so you must specify it with the OS switch.
+> 
+
+
+## What is your keyboard layout?
+<!-- tabs:start -->
+
+#### **US ANSI**
+
+You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](./get_started.md).
+
+#### **Any other layout**
+
+Follow these steps to update your Mathpad's firmware:
+
+1. Go to the [releases page](link-to-releases) and download the firmware file that matches your keyboard layout
+2. Connect your Mathpad to your computer
+3. Follow the firmware update instructions in the [Firmware Update Guide](update_firmware.md)
+
+Once you're done, head over to [Getting Started](./get_started.md).
+
+<!-- tabs:end -->
+
+> [!NOTE|label:Why Layout Matching Is Required]
+>Your Mathpad's firmware must match your computer's keyboard layout. This is necessary because operating systems 
+> interpret keyboard signals differently based on layout settings, and USB devices like Mathpad cannot detect your 
+> computer's layout automatically.
+>
+
