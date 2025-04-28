@@ -3,8 +3,8 @@
 [![](https://dcbadge.vercel.app/api/server/dgD6cMCUhD)](https://discord.gg/dgD6cMCUhD)
 <img src=".github/images/certification-mark-UK000074-wide.png" width="130">
 
+[<img src="https://gist.githubusercontent.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/documentation.svg" alt="Documentation" height="32" />](https://summa-cogni.github.io/Mathpad/#/)
 
-[Documentation](https://mathpad.readthedocs.io/en/latest)
 
 **Disclaimer:** Mathpad is still a work in progress and the design files contained in this repository may therefore change without notice.
 
@@ -14,8 +14,8 @@ Mathpad is a keypad that make writing equations on a computer effortless. It is 
 scientists, and anyone else who regularly need to write equations. The Mathpad is fully open source and this 
 repository collects the source code, design files, schematics, documentation.
 
-With a Mathpad you can type 75 of the most common symbols used in algebra, calculus, set theory, and 
-logic, as well as all greek letters (including uppercase). The following equations are a few examples of what you can 
+With a Mathpad you can type 83 of the most common symbols used in algebra, calculus, set theory, and 
+logic, as well as all Greek letters including uppercase. The following equations are a few examples of what you can 
 type directly with the Mathpad:
 
 <p style="text-align: center;"><font size="4"> 
@@ -31,12 +31,14 @@ You can follow its development on [Hackaday](https://hackaday.io/project/186205-
 </p>
 
 ## Supported input methods
-| Input mode                         | Supported |
-|------------------------------------|-----------|
-| Unicode plaintext                  | ✅        |
-| LaTeX                              | ✅        |
-| Microsoft Office equation editor   | ✅        |
-| Apache Open Office equation editor | ❌        |
+| Input mode                       | Supported |
+|----------------------------------|-----------|
+| Unicode plaintext                | ✅        |
+| LaTeX                            | ✅        |
+| Microsoft Office equation editor | ✅        |
+| LibreOffice equation editor      | ❌        |
+
+LibreOffice support is in development.
 
 ## Compatibility
 Mathpad works on Windows, virtually all Unix systems, and Apple macOS. When using a Mathpad on Windows, the 
