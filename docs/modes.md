@@ -4,7 +4,7 @@ is the most versatile, and works with virtually all text editors.
 If you are instead working in the typesetting language LaTeX, or using the equation editors of Microsoft Office or 
 Apache OpenOffice, you'll want to switch modes by clicking the MODE key:
 
-![img](_media/mode_labelled.png ':size=40%')
+<img src="_media/mode_labelled.png" style="width: 100%; max-width: 500px;">
 
 ## LaTeX mode
 **Set LaTeX mode by clicking the MODE key until it lights magenta.**
@@ -48,13 +48,16 @@ In LaTeX mode, Mathpad will type LaTeX codes. Test it here:
 </style>
 
 > [!TIP]
-> You can always get Mathpad back to Plaintext mode by pressing the MODE key for one second.
+> You can always get Mathpad back to Plaintext mode by holding down the MODE key for one second.
 >
 
 
 
 ## Microsoft Office Equation Editor mode
-**Set Microsoft Office mode by clicking the MODE key until it lights orange.**
+**Set Microsoft Office mode by clicking the MODE key until it lights orange.** 
+
+In this mode, Mathpad will type codes 
+that works specifically with the equation editor that is built into many Microsoft Office applications, such as Word.
 
 
 ## LibreOffice Equation Editor mode
