@@ -1,7 +1,8 @@
-Firmware is the code that runs on the microcontroller inside the Mathpad. You must sometimes update it, for example when:
+Firmware is the code that runs on the microcontroller inside the Mathpad. You must sometimes update this firmware, 
+for example when:
 - You set up your Mathpad for the first time
-- You change your keyboard layout
-- You want to use a new feature in a new firmware release
+- You change the keyboard layout on your computer
+- You want to use a feature in a new firmware release
 
 **Updating the Mathpad firmware is safe and extremely simple**. It requires no previous experience or special 
 tools. Just follow these three steps:
