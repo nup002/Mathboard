@@ -1,4 +1,3 @@
-# First setup of your Mathpad
 **Mathpad works straight out of the box in most cases.** But depending on your operating system and keyboard layout, 
 there are some initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
 
@@ -33,7 +32,7 @@ Set the OS switch to the MAC OS position.
 
 #### **US ANSI**
 
-You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](./get_started.md).
+You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](/get_started.md).
 
 #### **Any other layout**
 
@@ -43,7 +42,7 @@ Follow these steps to update your Mathpad's firmware:
 2. Connect your Mathpad to your computer
 3. Follow the firmware update instructions in the [Firmware Update Guide](update_firmware.md)
 
-Once you're done, head over to [Getting Started](./get_started.md).
+Once you're done, head over to [Getting Started](/get_started.md).
 
 <!-- tabs:end -->
 

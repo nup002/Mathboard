@@ -6,21 +6,21 @@
 All symbol keys are divided into two parts: A white LEFT and a blue RIGHT. Symbols are placed in three coloured rows: 
 TOP, CENTER, and BOTTOM.
 
-![img](_media/keycap_overview.svg ':size=40%')
+<img src="_media/keycap_overview.svg" style="width: 100%; max-width: 400px;">
 
 Symbols on the same row are almost always related. On the particular symbol key shown here:
 1) The TOP row has Greek letters
 2) The CENTER row has relationship operators
 3) The BOTTOM row has diacritical marks.
 
-**The default symbol is always in the top left corner**. The particular symbol key shown here will therefore give you 
+**The default symbol is always in the top left corner**. The particular symbol key shown above will therefore give you 
 $α$ (Greek letter Alpha) when you press it, and we name the key <keycombo>[α]</keycombo>. The next section explains how 
 you access the other symbols on the key.
 
 ## Using the modifier keys
 Accessing the five other symbols is as simple as combining a symbol key with one or two of the coloured modifier keys.
 
-![img](_media/top_modifiers_labelled.svg ':size=40%')
+<img src="_media/top_modifiers_labelled.svg" style="width: 100%; max-width: 500px;">
 
 The [R] modifier key selects the blue RIGHT side of the symbol key. The [B] modifier key selects the BOTTOM row 
 of symbols, and the [C] modifier key selects the CENTER row. 
