@@ -1,5 +1,5 @@
-**Mathpad works straight out of the box in most cases.** But depending on your operating system and keyboard layout, 
-there are some initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
+**Mathpad works straight out of the box in many cases.** But depending on your operating system and keyboard layout, 
+there are a few initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
 
 ## What is your operating system?
 
@@ -7,16 +7,22 @@ there are some initial tasks that may have to be performed. Follow this short gu
 
 #### **Linux**
 
-Set the OS switch to the LINUX position.
+Set the OS switch to the LINUX position
 
 #### **Mac OS**
 
-Set the OS switch to the MAC OS position.
+1) Go to System Preferences → Keyboard → Input Sources
+2) Add Unicode Hex Input to the list (under Other) and activate it from the input dropdown in the menu bar
+3) Set the OS switch to the MAC OS position
+
+> [!NOTE]
+> This may disable some Option-based shortcuts such as Option+Left and Option+Right.
+> 
 
 #### **Windows**
 
-1) Install [WinCompose](http://wincompose.info) - this enables special character input on Windows.
-2) Set the OS switch to the WINDOWS position.
+1) Install [WinCompose](http://wincompose.info) - this enables special character input on Windows
+2) Set the OS switch to the WINDOWS position
 
 <!-- tabs:end -->
 
@@ -39,8 +45,7 @@ You're good to go! Mathpad supports US ANSI out of the box. You can move on to [
 Follow these steps to update your Mathpad's firmware:
 
 1. Go to the [releases page](link-to-releases) and download the firmware file that matches your keyboard layout
-2. Connect your Mathpad to your computer
-3. Follow the firmware update instructions in the [Firmware Update Guide](update_firmware.md)
+2. Follow the firmware update instructions in the [Firmware Update Guide](update_firmware.md)
 
 Once you're done, head over to [Getting Started](/get_started.md).
 
