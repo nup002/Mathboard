@@ -36,13 +36,20 @@ Set the OS switch to the LINUX position
 ## What is your keyboard layout?
 <!-- tabs:start -->
 
-#### **US ANSI**
+#### **US ANSI (standard layout in USA)**
 
 You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](/get_started.md).
 
 #### **Any other layout**
 
-Follow these steps to update your Mathpad's firmware:
+Often, countries use specific keyboard layouts in order to accommodate special characters used in that country's 
+written language. For example, if you buy a laptop in Norway, it comes with a Norwegian keyboard. It is important 
+that the Mathpad firmware matches the keyboard layout of the computer it will be used with.
+
+If you do not know your keyboard layout, there are many guides online that you can use. The keyboard layout is very 
+often defined in the "Input devices" or "Language and Region" settings.
+
+Once you know your keyboard layout, follow these steps to update your Mathpad's firmware:
 
 1. Go to the [releases page](link-to-releases) and download the firmware file that matches your keyboard layout
 2. Follow the firmware update instructions in the [Firmware Update Guide](update_firmware.md)
@@ -54,6 +61,10 @@ Once you're done, head over to [Getting Started](/get_started.md).
 > [!NOTE|label:Why Layout Matching Is Required]
 >Your Mathpad's firmware must match your computer's keyboard layout. This is necessary because operating systems 
 > interpret keyboard signals differently based on layout settings, and USB devices like Mathpad cannot detect your 
-> computer's layout automatically.
->
+> computer's layout automatically. 
+> 
+> No keyboard in existence sends actual letters, they all send 'keycodes' which are  
+> interpreted into symbols by the OS. When a Norwegian keyboard user clicks the key for 'å', the letter 'å' is never 
+> sent. Instead, the keyboard sends the keycode for 'left bracket' (`[`) which is then interpreted as 'å' by the OS.
+
 

@@ -99,7 +99,7 @@ enum custom_keycodes {
  * 00 01 02 03 <- Top row
  * 10 11 12 13 <- Middle row
  * 20 21 22 23 <- Bottom row
- * The index of a symbol in key arrays defines its location on the physical key. 
+ * The index of a symbol in the following key arrays defines its location on the physical key.
  * It goes: [top left, mid left, bottom left, top right, mid right, bottom right] 
  */
 const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
@@ -128,9 +128,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // Mode key clicked. Rotates from mode to mode.
             if (record->event.pressed) {
                 mode_key_timer = timer_read();
-                output_mode_update();
             }else if (timer_elapsed(mode_key_timer) > 1000) {
                 output_mode_set(UC_MODE); // Go to Unicode mode if MODE key is held for more than one second
+            }else{
+                output_mode_update(); // Cycle to next mode if the MODE key is released within one second
             }
             return false; // Don't continue processing this key
         case KC_RIGHTKEY:
