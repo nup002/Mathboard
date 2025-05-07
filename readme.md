@@ -1,14 +1,26 @@
 # Mathpad
-[![Documentation Status](https://readthedocs.org/projects/mathpad/badge/?version=latest)](https://mathpad.readthedocs.io/en/latest/?badge=latest)
-[![](https://dcbadge.vercel.app/api/server/dgD6cMCUhD)](https://discord.gg/dgD6cMCUhD)
-<img src=".github/images/certification-mark-UK000074-wide.png" width="130">
+<div style="display: flex; justify-content: space-between; text-align: center; margin: 10px 0;">
+  <div style="flex: 1; padding: 10px;">
+    <h1><a href="https://summa-cogni.github.io/Mathpad/#/"><img src=".github/images/documentation_banner.svg">️</a></h1>
+    <p>Learn more about Mathpad with the 
+    <a href="https://summa-cogni.github.io/Mathpad/#/" style="text-decoration: none;">Official Documentation</a>.</p>
+  </div> 
+  <div style="flex: 1; padding: 10px;">
+    <h1><a href="https://discord.gg/dgD6cMCUhD"><img src=".github/images/discord_banner.svg">️</a></h1></h1>
+    <p>Chat with other users and ask your questions in the
+    <a href="https://discord.gg/dgD6cMCUhD" style="text-decoration: none;">Mathpad Discord</a>.</p>
+  </div>
 
-[<img src="https://gist.githubusercontent.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/documentation.svg" alt="Documentation" height="32" />](https://summa-cogni.github.io/Mathpad/#/)
+  <div style="flex: 1; padding: 10px;">
+    <h1><a href="https://x.com/SummaCogni"><img src=".github/images/x_banner.svg">️</a></h1></h1>
+    <p>Get the latest updates about Mathpad on
+    <a href="https://x.com/SummaCogni" style="text-decoration: none;">Twitter/X</a>.</p>
+  </div>
+</div>
 
 
 **Disclaimer:** Mathpad is still a work in progress and the design files contained in this repository may therefore change without notice.
 
-Join the [Mathpad Discord](https://discord.gg/dgD6cMCUhD) if you want to chat!
 
 Mathpad is a keypad that make writing equations on a computer effortless. It is intended for engineers, 
 scientists, and anyone else who regularly need to write equations. The Mathpad is fully open source and this 
@@ -64,3 +76,8 @@ Everyone is permitted to replicate the Mathpad based on the design files found i
 The Summa Cogni logo and the Mathpad logo are the properties of Summacogni OÜ, and may not be replicated.
 
 The OSHWA certification ID `UK000074` is issued to Summacogni OÜ, and may not be replicated.
+
+## Certifications
+Mathpad is certified by the Open Source Hardware Association.
+
+<img src=".github/images/certification-mark-UK000074-wide.png" width="350">
