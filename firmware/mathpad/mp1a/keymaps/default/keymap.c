@@ -13,83 +13,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "globs.h"
 #include "print.h"
-#include "unicode_symbols.h"
-#include "tapdance.h"
-#include "microsoft_office.h"
-#include "symbol_functions.h"
+#include "globals.h"
+#include "modifiers.h"
+#include "mode.h"
+#include "multitap_symbols_defs.h"
+#include "normal_symbols_defs.h"
 
-//#include "sendstring_norwegian.h"
 
-// Define the 6 different symbol locations on the keycaps
-#define _LEFT_TOP 0  
-#define _LEFT_MID 1
-#define _LEFT_FRONT 2
-#define _RIGHT_TOP 3 
-#define _RIGHT_MID 4
-#define _RIGHT_FRONT 5
+#ifdef SENDSTRING_LAYOUT
+  // This converts the layout name to a string
+  #define STRINGIFY(x) #x
+  #define TOSTRING(x) STRINGIFY(x)
 
-// Track modifier key states
-static bool rightkey_pressed = false;
-static bool midkey_pressed = false;
-static bool frontkey_pressed = false;
+  // This creates the actual include path string
+  #define LAYOUTPATH(layout) "sendstring_" TOSTRING(layout) ".h"
 
-// Sets the LED indicator to match the output mode
-void update_led_to_match_mode(void) {
-    switch (user_config.MODE) {
-        case UC:
-            rgblight_sethsv_at(HSV_CYAN, 0);
-            break;
-        case MOF:
-            rgblight_sethsv_at(HSV_MAGENTA, 0);
-            break;
-        case LTX:
-            rgblight_sethsv_at(HSV_YELLOW, 0);
-            break;
-    }
-}
+  // Include the appropriate header
+  #include LAYOUTPATH(SENDSTRING_LAYOUT)
+#endif
 
-// Sets the mathpad output mode
-void output_mode_set(uint8_t mode) { 
-    user_config.MODE = mode; 
-    eeconfig_update_user(user_config.raw);
-    update_led_to_match_mode();
-}
-
-// Cycles between mathpad output modes when called. UC -> MOF -> LTX -> UC
-void output_mode_update(void) {
-    if (user_config.MODE == UC){output_mode_set(MOF);} 
-    else if (user_config.MODE == MOF){output_mode_set(LTX);}
-    else if (user_config.MODE == LTX){output_mode_set(UC);}
-}
-
-// Function to update active layer based on modifier states
-void update_active_layer(void) {
-    // Reset all layers first
-    layer_clear();
-
-    // Set the appropriate layer based on key combinations
-    if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
-        layer_on(_RIGHT_FRONT);
-    } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_RIGHT_MID);
-    } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
-        layer_on(_RIGHT_TOP);
-    } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_LEFT_MID);
-    } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
-        layer_on(_LEFT_FRONT);
-    } else {
-        // Default or invalid combinations go to _LEFT_TOP
-        layer_on(_LEFT_TOP);
-    }
-}
-
-// The custom_keycodes define all the "normal", or non-tapdance, symbols of the mathpad. These are the symbols that 
-// (on the Matboard) do not have a red dot next to them. Examples include the nearly equal sign, nabla, and arrows. 
-// Tapdance symbols are those symbols which have different behaviour depending on how many times you tap them. They have
-// red dots next to them on the Matboard. These symbols are defined in the file tapdance.h.
+/**
+ * The 'custom_keycodes' enum define all the "normal", or non-multitap, symbols of the Mathpad. These are the symbols that 
+ * (on the Mathboard) do not have a red dot next to them. 
+ * Multitap symbols are those symbols which have different behaviour depending on how many times you tap them. They have
+ * red dots next to them on the Matboard. These symbols are defined in the file tapdance.h.
+ * To add a new non-multitap symbol to the Mathpad, you need to define a new keycode by adding it to this enum.
+ */
 enum custom_keycodes {
     KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE variable.
     KC_RIGHTKEY, // RIGHT keycap side modifier key
@@ -143,12 +93,15 @@ enum custom_keycodes {
     KC_FRACTION
 };
 
-// Each physical symbolkey on the mathpad is defined here. The upper rightmost key is 00. The bottommost key is 23:
-// 00 01 02 03 <- Top row
-// 10 11 12 13 <- Middle row
-// 20 21 22 23 <- Bottom row
-// The index of a symbol in key arrays defines its location on the physical key. It goes:
-// [top left, mid left, bottom left, top right, mid right, bottom right] 
+/**
+ * Each physical symbol key on the mathpad is defined here as an array. 
+ * The upper rightmost key is 'key00'. The bottom leftmost key is 'key23':
+ * 00 01 02 03 <- Top row
+ * 10 11 12 13 <- Middle row
+ * 20 21 22 23 <- Bottom row
+ * The index of a symbol in the following key arrays defines its location on the physical key.
+ * It goes: [top left, mid left, bottom left, top right, mid right, bottom right] 
+ */
 const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
 const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGBAR};
 const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ACCENT_ARROW, KC_ZETA, KC_GREATEROREQUAL, TD(DOT_TD)};
@@ -163,16 +116,24 @@ const int key22[6] = {TD(PHI_TD), KC_FORALL, KC_DEGREE, KC_CHI, TD(UNCONDITIONAL
 const int key23[6] = {TD(PSI_TD), KC_NOT, KC_MATRIX, TD(OMEGA_TD), TD(PROVES_TD), KC_FRACTION};
 
 
-// process_record_user handles keyclicks on "normal" (non-tapdance) symbols. Each normal symbol has a function defined in 
-// symbol_functions.h. For example, when the user clicks KC_NOTEQUAL, process_record_user() will call notequal_key(). 
-// The symbol functions defined in symbol_functions.h decides which action to take depending on the mathpad MODE.
+/**
+ * 'process_record_user' handles keyclicks on "normal" (non-multitap) symbols. Each normal symbol has a function defined in
+ * normal_symbols_defs.h. For example, when the user clicks KC_NOTEQUAL, process_record_user() will call notequal_key().
+ * The symbol functions defined in symbol_functions.h decides which action to take depending on the mathpad MODE.
+ */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    static uint16_t mode_key_timer;
     switch (keycode) {
         case KC_SWITCH_MODE:
+            // Mode key clicked. Rotates from mode to mode.
             if (record->event.pressed) {
-                output_mode_update();
+                mode_key_timer = timer_read();
+            }else if (timer_elapsed(mode_key_timer) > 1000) {
+                output_mode_set(UC_MODE); // Go to Unicode mode if MODE key is held for more than one second
+            }else{
+                output_mode_update(); // Cycle to next mode if the MODE key is released within one second
             }
-            break;
+            return false; // Don't continue processing this key
         case KC_RIGHTKEY:
             rightkey_pressed = record->event.pressed;
             update_active_layer();
@@ -327,7 +288,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
+/**
+ * This array defines all the multitap symbols (known as 'tapdance' in QMK parlance).
+ * See https://docs.qmk.fm/features/tap_dance
+ */
+tap_dance_action_t tap_dance_actions[] = {
+    [GAMMA_TD] = ACTION_TAP_DANCE_FN (gamma_dance),
+    [DELTA_TD] = ACTION_TAP_DANCE_FN (delta_dance),
+    [THETA_TD] = ACTION_TAP_DANCE_FN (theta_dance),
+    [LAMBDA_TD] = ACTION_TAP_DANCE_FN (lambda_dance),
+    [XI_TD] = ACTION_TAP_DANCE_FN (xi_dance),
+    [PI_TD] = ACTION_TAP_DANCE_FN (pi_dance),
+    [SIGMA_TD] = ACTION_TAP_DANCE_FN (sigma_dance),
+    [PHI_TD] = ACTION_TAP_DANCE_FN (varphi_dance),
+    [PSI_TD] = ACTION_TAP_DANCE_FN (psi_dance),
+    [OMEGA_TD] = ACTION_TAP_DANCE_FN (omega_dance),
+    [MGT_TD] = ACTION_TAP_DANCE_FN (much_greater_than_dance),
+    [MLT_TD] = ACTION_TAP_DANCE_FN (much_less_than_dance),
+    [DOT_TD] = ACTION_TAP_DANCE_FN (dot_dance),
+    [SUB_TD] = ACTION_TAP_DANCE_FN (sub_dance),
+    [SUP_TD] = ACTION_TAP_DANCE_FN (sup_dance),
+    [INTEGRAL_TD] = ACTION_TAP_DANCE_FN (integral_dance),
+    [LINE_INTEGRAL_TD] = ACTION_TAP_DANCE_FN (line_integral_dance),
+    [ROOT_TD] = ACTION_TAP_DANCE_FN (root_dance),
+    [ELEMENT_OF_TD] = ACTION_TAP_DANCE_FN (element_of_dance),
+    [SUBSET_OF_TD] = ACTION_TAP_DANCE_FN (subset_of_dance),
+    [SUBSET_OR_EQ_TD] = ACTION_TAP_DANCE_FN (subset_or_equal_dance),
+    [THERE_EXIST_TD] = ACTION_TAP_DANCE_FN (there_exists_dance),
+    [AND_TD] = ACTION_TAP_DANCE_FN (and_dance),
+    [UNCONDITIONALLY_TRUE_TD] = ACTION_TAP_DANCE_FN (unconditionally_true_dance),
+    [PROVES_TD] = ACTION_TAP_DANCE_FN (proves_dance),
+    [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance)
+  };
 
+/**
+ * Keymap definition: This section defines each of the six symbol layers available on the Mathpad.
+ * The symbol layers can be accessed by combining specific modifier keys.
+ */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_LEFT_TOP] = LAYOUT_5x3_macropad(
         key00[_LEFT_TOP], key01[_LEFT_TOP],   key02[_LEFT_TOP],   key03[_LEFT_TOP],   KC_SWITCH_MODE,
@@ -367,48 +364,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-
-bool dip_switch_update_user(uint8_t index, bool active) { 
-    uint8_t current_unicode_mode = get_unicode_input_mode();
-    switch (index) {
-        case 0:
-            if(active & (current_unicode_mode!=UNICODE_MODE_LINUX)) {
-                set_unicode_input_mode(UNICODE_MODE_LINUX); 
-                }
-            break;
-        case 1:
-            if(active & (current_unicode_mode!=UNICODE_MODE_MACOS)) {
-                set_unicode_input_mode(UNICODE_MODE_MACOS); 
-                }
-            break;
-        case 2:
-            if(active & (current_unicode_mode!=UNICODE_MODE_WINCOMPOSE)) {
-                set_unicode_input_mode(UNICODE_MODE_WINCOMPOSE); 
-                }
-            break;
-    }
-    return true;
-};
-
+/**
+ * Performs post-initialization tasks for the keyboard.
+ * 
+ * This function reads the user configuration from EEPROM and updates the LED to match the current mode stored in the 
+ * configuration. It is typically called after the keyboard hardware has been initialized.
+ */
 void keyboard_post_init_user(void) {
   user_config.raw = eeconfig_read_user(); // Read the user config from EEPROM
   update_led_to_match_mode();
 }
-
-// DEBUG THINGS
-
-void unicode_input_mode_set_user(uint8_t input_mode) {
-    return;  // Comment this return statement to print a message when the unicode mode changes
-    send_string(" Switched to unicode mode : ");
-    switch (input_mode) {
-        case UNICODE_MODE_LINUX:
-            send_string("UNICODE_MODE_LINUX");
-            break;
-        case UNICODE_MODE_MACOS:
-            send_string("UNICODE_MODE_MACOS");
-            break;
-        case UNICODE_MODE_WINCOMPOSE:
-            send_string("UNICODE_MODE_WINCOMPOSE");
-            break;
-    }
-};

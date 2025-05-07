@@ -13,36 +13,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- #ifndef UNICODE_SYMBOLS_H
- #define UNICODE_SYMBOLS_H
+#ifndef UNICODE_SYMBOLS_H
+#define UNICODE_SYMBOLS_H
  
- /**
-  * @brief Send a Unicode symbol as a hexadecimal input
-  * 
-  * This function sends a Unicode symbol by using the QMK unicode input method.
-  * It starts unicode input, registers the hex code, and finishes the input.
-  * 
-  * @param symbol The Unicode code point to be sent (in hexadecimal)
-  */
- void send_hex(int symbol){
-     unicode_input_start();
-     register_hex(symbol);
-     unicode_input_finish();
- };
- 
- /**
-  * @brief Send a Unicode symbol when a key is pressed
-  * 
-  * This function registers a Unicode symbol only when the key is initially pressed down.
-  * 
-  * @param symbol The Unicode code point to be sent (in hexadecimal)
-  * @param record Pointer to the key record containing event information
-  */
- void send_hex_on_keypress(int symbol, keyrecord_t *record){
-     if (record->event.pressed) {
-         register_unicode(symbol);
-     };
- };
+#include QMK_KEYBOARD_H
+
+void send_unicode_as_hex(int symbol);
+
+void send_unicode_on_keypress(int symbol, keyrecord_t *record);
  
  // Greek Letters
  #define _alpha 0x03B1       // https://www.compart.com/en/unicode/U+03B1

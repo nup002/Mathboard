@@ -13,12 +13,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "mathpad.h"
 
-void output_mode_update(void);
-
-void output_mode_set(uint8_t mode);
-
-void update_led_to_match_mode(void);
-
-void update_active_layer(void);
+// This method enables the OS mode switch
+bool dip_switch_update_kb(uint8_t index, bool active) { 
+    if (!dip_switch_update_user(index, active)) { return false; }
+    return true;
+}

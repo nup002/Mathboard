@@ -13,10 +13,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "mathpad.h"
-#include "globs.h"
+#ifndef MODE_H
+#define MODE_H
 
-bool dip_switch_update_kb(uint8_t index, bool active) { 
-    if (!dip_switch_update_user(index, active)) { return false; }
-    return true;
-}
+
+// Each output mode is defined here. 
+#define UC_MODE 0  // Unicode
+#define MOF_MODE 1 // Microsoft Office Equation Editor
+#define LTX_MODE 2 // LaTeX
+
+void update_led_to_match_mode(void);
+
+void output_mode_set(uint8_t mode);
+
+void output_mode_update(void);
+# endif
