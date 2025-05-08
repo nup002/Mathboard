@@ -27,11 +27,11 @@
   </table>
 </div>
 <p align="center">
-<img src=".github/images/mathpad_prototype.jpg" width="300">
+<img src=".github/images/mathpad_prototype.jpg" width="500">
 </p>
 
 ## What is it?
-Mathpad helps you write equations on a computer. It is intended for engineers, 
+Mathpad is a keypad that makes it easy to type equations. It is intended for engineers, 
 scientists, students, and professionals in STEM fields who regularly need to write equations or who use 
 mathematical symbols in their day to day work. 
 
