@@ -1,21 +1,30 @@
 # Mathpad
-<div style="display: flex; justify-content: space-between; text-align: center; margin: 10px 0;">
-  <div style="flex: 1; padding: 10px;">
-    <h1><a href="https://summa-cogni.github.io/Mathpad/#/"><img src=".github/images/documentation_banner.svg">️</a></h1>
-    <p>Learn more about Mathpad with the 
-    <a href="https://summa-cogni.github.io/Mathpad/#/" style="text-decoration: none;">Official Documentation</a>.</p>
-  </div> 
-  <div style="flex: 1; padding: 10px;">
-    <h1><a href="https://discord.gg/dgD6cMCUhD"><img src=".github/images/discord_banner.svg">️</a></h1></h1>
-    <p>Chat with other users and ask your questions in the
-    <a href="https://discord.gg/dgD6cMCUhD" style="text-decoration: none;">Mathpad Discord</a>.</p>
-  </div>
-
-  <div style="flex: 1; padding: 10px;">
-    <h1><a href="https://x.com/SummaCogni"><img src=".github/images/x_banner.svg">️</a></h1></h1>
-    <p>Get the latest updates about Mathpad on
-    <a href="https://x.com/SummaCogni" style="text-decoration: none;">Twitter/X</a>.</p>
-  </div>
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+    <tr>
+      <td align="center" width="33%" style="border: none;">
+        <a href="https://summa-cogni.github.io/Mathpad/#/">
+          <img src=".github/images/documentation_banner.svg" alt="Documentation">
+        </a><br>
+        <p>Learn more about Mathpad with the 
+        <a href="https://summa-cogni.github.io/Mathpad/#/">Official Documentation</a>.</p>
+      </td>
+      <td align="center" width="33%" style="border: none;">
+        <a href="https://discord.gg/dgD6cMCUhD">
+          <img src=".github/images/discord_banner.svg" alt="Discord">
+        </a><br>
+        <p>Chat with other users and ask your questions in the
+        <a href="https://discord.gg/dgD6cMCUhD">Mathpad Discord</a>.</p>
+      </td>
+      <td align="center" width="33%" style="border: none;">
+        <a href="https://x.com/SummaCogni">
+          <img src=".github/images/x_banner.svg" alt="Twitter/X">
+        </a><br>
+        <p>Get the latest updates about Mathpad on
+        <a href="https://x.com/SummaCogni">Twitter/X</a>.</p>
+      </td>
+    </tr>
+  </table>
 </div>
 
 
