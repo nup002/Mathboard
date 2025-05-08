@@ -26,16 +26,16 @@
     </tr>
   </table>
 </div>
+<p align="center">
+<img src=".github/images/mathpad_prototype.jpg" width="300">
+</p>
 
+## What is it?
+Mathpad helps you write equations on a computer. It is intended for engineers, 
+scientists, students, and professionals in STEM fields who regularly need to write equations or who use 
+mathematical symbols in their day to day work. 
 
-**Disclaimer:** Mathpad is still a work in progress and the design files contained in this repository may therefore change without notice.
-
-
-Mathpad is a keypad that make writing equations on a computer effortless. It is intended for engineers, 
-scientists, and anyone else who regularly need to write equations. The Mathpad is fully open source and this 
-repository collects the source code, design files, schematics, documentation.
-
-With a Mathpad you can type 83 of the most common symbols used in algebra, calculus, set theory, and 
+With the Mathpad you can type 83 symbols from algebra, calculus, set theory, and 
 logic, as well as all Greek letters including uppercase. The following equations are a few examples of what you can 
 type directly with the Mathpad:
 
@@ -45,11 +45,7 @@ E = mc²<br>
 (A⊂B) ∧ (A⊂C) ⇔ A ⊂ (B ∪ C)
 </font> </p>
 
-You can follow its development on [Hackaday](https://hackaday.io/project/186205-math-keyboard)
 
-<p align="center">
-<img src=".github/images/mathpad_prototype.jpg" width="500">
-</p>
 
 ## Supported input methods
 | Input mode                       | Supported |
