@@ -45,30 +45,26 @@ E = mc²<br>
 (A⊂B) ∧ (A⊂C) ⇔ A ⊂ (B ∪ C)
 </font> </p>
 
+## Compatibility
+Mathpad works on Windows, Apple macOS, and virtually all Unix systems.
 
-
-## Supported input methods
-| Input mode                       | Supported |
+Several output modes are supported. Plaintext outputs standard Unicode symbols and can be used practically anywhere. LaTeX is 
+of course also supported, as well as the equation editor of Microsoft Office.
+| Output mode                      | Supported |
 |----------------------------------|-----------|
-| Unicode plaintext                | ✅        |
+| Plaintext                        | ✅        |
 | LaTeX                            | ✅        |
 | Microsoft Office equation editor | ✅        |
-| LibreOffice equation editor      | ❌        |
+| LibreOffice equation editor      | ❌ (in development)|
 
-LibreOffice support is in development.
+Mathpad works on all computers with Latin keyboard layouts. This includes nearly all western layouts, including US ANSI, UK, French AZERTY, DVORAK, and many more. For a full list of all supported keyboard layouts, 
+see [this list](https://docs.qmk.fm/reference_keymap_extras#header-files).
 
-## Compatibility
-Mathpad works on Windows, virtually all Unix systems, and Apple macOS. When using a Mathpad on Windows, the 
-lightweight and open source application [WinCompose](https://github.com/samhocevar/wincompose) must be installed and running.
-When using it on Apple macOS, you must enable Unicode Hex Input as a keyboard input source.
-
-## Building and flashing the firmware
+## Firmware releases
 Official releases will be located in [releases](https://github.com/Summa-Cogni/Mathpad/releases). The firmware is under development 
 and therefore no official release exists yet.
 
-If you wish to build the firmwre binaries yourself, you need to set up the build environment for QMK. This is not very difficult 
-if you follow the [guide](https://docs.qmk.fm/#/newbs_getting_started). Once you've got the build environment set up, use the QMK 
-CLI to navigate to `/firmware` and type `make`. 
+If you wish to build the firmware binaries yourself, follow [this guide](https://summa-cogni.github.io/Mathpad/#/firmware) from the official documentation.
 
 ## Licenses
 <p align="center">
