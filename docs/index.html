@@ -74,6 +74,59 @@
     .key-combination {
       white-space: nowrap;
     }
+    /* Symbol Grid Layout */
+    .symbols-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    /* Symbol Card Styling */
+    .symbol-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    /* Symbol Display */
+    .symbol {
+      font-size: 3.5rem;
+      font-weight: normal;
+      margin-bottom: 10px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Cambria Math", "STIX Two Math", "STIX", "Asana Math", "Cambria", serif;
+    }
+    /* Details Container */
+    .details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    /* Key Combination */
+    .key-combo {
+      background: #f1f1f1;
+      padding: 10px 10px;
+      border-radius: 4px;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    /* Symbol Name */
+    .name {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #555;
+      margin-top: 3px;
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 <body>
