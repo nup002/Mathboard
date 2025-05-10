@@ -7,13 +7,13 @@ there are a few initial tasks that may have to be performed. Follow this short g
 
 #### **Linux**
 
-Set the OS switch to the LINUX position
+Set the OS switch on the back of your Mathpad to the LINUX position
 
 #### **Mac OS**
 
 1) Go to System Preferences → Keyboard → Input Sources
 2) Add Unicode Hex Input to the list (under Other) and activate it from the input dropdown in the menu bar
-3) Set the OS switch to the MAC OS position
+3) Set the OS switch on the back of your Mathpad to the MAC OS position
 
 > [!NOTE]
 > This may disable some Option-based shortcuts such as Option+Left and Option+Right.
@@ -22,7 +22,7 @@ Set the OS switch to the LINUX position
 #### **Windows**
 
 1) Install [WinCompose](http://wincompose.info) - this enables special character input on Windows
-2) Set the OS switch to the WINDOWS position
+2) Set the OS switch on the back of your Mathpad to the WINDOWS position
 
 <!-- tabs:end -->
 
@@ -42,12 +42,10 @@ You're good to go! Mathpad supports US ANSI out of the box. You can move on to [
 
 #### **Any other layout**
 
-Often, countries use specific keyboard layouts in order to accommodate special characters used in that country's 
-written language. For example, if you buy a laptop in Norway, it comes with a Norwegian keyboard. It is important 
-that the Mathpad firmware matches the keyboard layout of the computer it will be used with.
+It is important that the Mathpad firmware matches the keyboard layout of the computer it will be used with.
 
-If you do not know your keyboard layout, there are many guides online that you can use. The keyboard layout is very 
-often defined in the "Input devices" or "Language and Region" settings.
+If you do not know your keyboard layout, there are many guides online that you can use. The keyboard layout is usually 
+defined in the "Input devices" or "Language and Region" settings.
 
 Once you know your keyboard layout, follow these steps to update your Mathpad's firmware:
 
@@ -63,8 +61,6 @@ Once you're done, head over to [Getting Started](/get_started.md).
 > interpret keyboard signals differently based on layout settings, and USB devices like Mathpad cannot detect your 
 > computer's layout automatically. 
 > 
-> No keyboard in existence sends actual letters, they all send 'keycodes' which are  
-> interpreted into symbols by the OS. When a Norwegian keyboard user clicks the key for 'å', the letter 'å' is never 
-> sent. Instead, the keyboard sends the keycode for 'left bracket' (`[`) which is then interpreted as 'å' by the OS.
-
-
+> No keyboard in existence sends actual letters, they all send 'keycodes' which are interpreted into symbols by the 
+> OS. When a Norwegian keyboard user clicks the key for 'å', the letter 'å' is never sent. Instead, the keyboard sends 
+> the keycode for 'left bracket' (`[`) which is then interpreted as 'å' by the OS.
