@@ -43,33 +43,38 @@
       background-color: #ecbfff; /* Purple */
     }
     .key-normal {
-      display: inline-flex;          /* Changed to inline-flex for better centering */
-      justify-content: center;       /* Center horizontally */
-      align-items: center;           /* Center vertically */
-      width: 1.1em;                  /* Fixed width */
-      height: 1.1em;                 /* Same as width to make it square */
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.1em;
+      height: 1.1em;
       margin: 0px 2px;
       background-color: #ffffff;
       border: 1px solid #000000;
       border-radius: 3px;
       font-family: "Cambria Math";
-      text-align: center;            /* Center text */
-      box-sizing: border-box;        /* Include padding in width/height calculation */
+      text-align: center;
+      box-sizing: border-box;
+      vertical-align: middle; /* Add this to align with surrounding text */
+      position: relative; /* Add this for more control */
     }
+
     .key-multitap {
-      display: inline-flex;          /* Changed to inline-flex for better centering */
-      justify-content: center;       /* Center horizontally */
-      align-items: center;           /* Center vertically */
-      width: 1.1em;                  /* Fixed width */
-      height: 1.1em;                 /* Same as width to make it square */
-      margin: 0px 0px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.37em;
+      height: 1.37em;
+      margin: 0px -2.5px;
       background-color: #ffffff;
-      border: 1px solid #b4684f;
+      border: 1px solid #000000;
       border-radius: 3px;
       font-family: "Cambria Math";
-      font-size: 0.9em;
-      text-align: center;            /* Center text */
-      box-sizing: border-box;        /* Include padding in width/height calculation */
+      font-size: 0.8em;
+      text-align: center;
+      box-sizing: border-box;
+      vertical-align: middle; /* Add this to align with surrounding text */
+      position: relative; /* Add this for more control */
     }
     .key-combination {
       white-space: nowrap;

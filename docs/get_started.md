@@ -44,9 +44,9 @@ key on your Mathpad. Clicking this key will output the Greek letter Alpha.
 > [First Setup](/first_setup.md). If you get '\alpha', you must set your Mathpad to Plaintext mode.
 >
 
-Let's move on to something a bit more advanced. Locate the <keycombo>[ε]</keycombo> key on your Mathpad, and click the 
-text editor below. Then, type $\leq$ by keeping the [C] modifier key pressed while clicking 
-<keycombo>[ε]</keycombo>.
+Let's move on to something a bit more advanced. Locate the <keycombo>[η]</keycombo> key on your Mathpad, and click the 
+text editor below. Then, type $\geq$ by keeping the [C] modifier key pressed while clicking 
+<keycombo>[η]</keycombo>.
 <div class="keyboard-test-container">
   <div class="input-area">
     <textarea rows="1" cols="20" style="font-family:'Cambria Math';font-size: 30pt"></textarea>
@@ -60,7 +60,8 @@ Finally, type $\mathbb{C}$ by keeping the [R] and [B] modifier keys pressed whil
   </div>
 </div>
 
-Look at you tapping away! Here's a few more key combinations you can try if you wish:
+Look at you tapping away! Here's a few more key combinations you can try. See [Symbols](/symbols.md) for all symbols 
+and how to type them.
 - $\delta$ : <keycombo>[B]+[γ]</keycombo>
 - $\int$ : <keycombo>[C]+[λ]</keycombo>
 - $\gg$ : <keycombo>[R][C]+[η]</keycombo>

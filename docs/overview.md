@@ -8,5 +8,3 @@ The top of Mathpad is full of keys. There are 3 rows of symbol keys, three color
 Mode key.
 
 <img src="_media/top_labelled.svg" style="width: 100%; max-width: 610px;">
-
-That's all!
