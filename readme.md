@@ -28,16 +28,19 @@
   </table>
 </div>
 <p align="center">
-<img src=".github/images/mathpad_prototype.jpg" width="500">
+<img src=".github/images/mathpad.png" width="500">
 </p>
 
 ## What is it?
 Mathpad is a keypad that makes it easy to type equations. It is intended for engineers, 
 scientists, students, and professionals in STEM fields who regularly need to write equations or who use 
-mathematical symbols in their day to day work. 
+mathematical symbols in their day-to-day work. 
 
 With the Mathpad you can type 82 symbols from algebra, calculus, set theory, and 
-logic, as well as all Greek letters, including uppercase. The following equations are a few examples of what you can 
+logic, as well as all Greek letters, including uppercase. Mathpad plugs into your computer with a USB-C cable and 
+works seamlessly alongside your regular keyboard.
+
+The following equations are a few examples of what you can 
 type directly with the Mathpad:
 
 <p style="text-align: center;"><font size="4"> 
@@ -49,7 +52,6 @@ E = mc²<br>
 ## Where to buy
 Mathpad is launching on Crowd Supply around the end of summer 2025. [Sign up](https://summacogni.com/Mathpad/#register) 
 to be notified when the campaign is live!
-
 
 ## Compatibility
 Mathpad works on Windows, Apple macOS, and virtually all Unix systems.
@@ -63,7 +65,8 @@ of course also supported, as well as the equation editor of Microsoft Office.
 | Microsoft Office equation editor | ✅        |
 | LibreOffice equation editor      | ❌ (in development)|
 
-Mathpad works on all computers with Latin keyboard layouts. This includes nearly all western layouts, including US ANSI, UK, French AZERTY, DVORAK, and many more. For a full list of all supported keyboard layouts, 
+Mathpad works on all computers with Latin keyboard layouts. This includes nearly all western layouts, including 
+US ANSI, UK, French AZERTY, DVORAK, and many more. For a full list of all supported keyboard layouts, 
 see [this list](https://docs.qmk.fm/reference_keymap_extras#header-files).
 
 ## Firmware releases
