@@ -87,7 +87,7 @@ The Summa Cogni logo and the Mathpad logo are the properties of Summacogni OÜ, 
 The OSHWA certification ID `UK000074` is issued to Summacogni OÜ, and may not be replicated.
 
 ## Certifications
-Mathpad is certified by the Open Source Hardware Association.
+Mathpad is [certified](https://certification.oshwa.org/uk000074.html) by the Open Source Hardware Association.
 <p align="center">
 <img src=".github/images/certification-mark-UK000074-wide.png" width="350">
 </p>
