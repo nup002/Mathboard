@@ -88,5 +88,6 @@ The OSHWA certification ID `UK000074` is issued to Summacogni OÜ, and may not b
 
 ## Certifications
 Mathpad is certified by the Open Source Hardware Association.
-
+<p align="center">
 <img src=".github/images/certification-mark-UK000074-wide.png" width="350">
+</p>
