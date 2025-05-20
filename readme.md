@@ -1,5 +1,5 @@
 # Mathpad
-### ➡️[Sign up](https://summacogni.com/Mathpad/#register)⬅️ and get notified when Mathpad can be ordered
+### ➡️[Get yours](https://www.crowdsupply.com/summa-cogni/mathpad)⬅️ on Crowd Supply
 <div align="center">
   <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
     <tr>
@@ -36,8 +36,8 @@ Mathpad is a keypad that makes it easy to type equations. It is intended for eng
 scientists, students, and professionals in STEM fields who regularly need to write equations or who use 
 mathematical symbols in their day-to-day work. 
 
-With the Mathpad you can type 82 symbols from algebra, calculus, set theory, and 
-logic, as well as all Greek letters, including uppercase. Mathpad plugs into your computer with a USB-C cable and 
+With the Mathpad you can type 112 symbols from algebra, calculus, set theory, and 
+logic, and the full greek alphabet. Mathpad plugs into your computer with a USB-C cable and 
 works seamlessly alongside your regular keyboard.
 
 The following equations are a few examples of what you can 
@@ -50,8 +50,7 @@ E = mc²<br>
 </font> </p>
 
 ## Where to buy
-Mathpad is launching on Crowd Supply around the end of summer 2025. [Sign up](https://summacogni.com/Mathpad/#register) 
-to be notified when the campaign is live!
+Mathpad will very soon be available on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad). Click the link and subscribe to be notified when it's available!
 
 ## Compatibility
 Mathpad works on Windows, Apple macOS, and virtually all Unix systems.
