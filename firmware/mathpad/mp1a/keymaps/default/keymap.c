@@ -103,9 +103,9 @@ enum custom_keycodes {
  * It goes: [top left, mid left, bottom left, top right, mid right, bottom right] 
  */
 const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
-const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), KC_IDENTICALTO, KC_COMBININGBAR};
-const int key02[6] = {KC_EPSILON, KC_LESSOREQUAL, KC_ACCENT_ARROW, KC_ZETA, KC_GREATEROREQUAL, TD(DOT_TD)};
-const int key03[6] = {KC_ETA, TD(MLT_TD), TD(SUB_TD), TD(THETA_TD), TD(MGT_TD), TD(SUP_TD)};
+const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), TD(ASYMPT_EQ_TD), KC_COMBININGBAR};
+const int key02[6] = {KC_EPSILON, TD(IDENTICALLY_EQUAL_TD), KC_ACCENT_ARROW, KC_ZETA, TD(EQUAL_BY_DEF_TD), TD(DOT_TD)};
+const int key03[6] = {KC_ETA, TD(GTEQ_TD), TD(SUB_TD), TD(THETA_TD), TD(MGT_TD), TD(SUP_TD)};
 const int key10[6] = {KC_IOTA, KC_SUM, KC_UNION, KC_KAPPA, KC_NARYPRODUCT, KC_INTERSECTION};
 const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), TD(ELEMENT_OF_TD), KC_MU, TD(LINE_INTEGRAL_TD), KC_EMPTYSET};
 const int key12[6] = {KC_NU, TD(ROOT_TD), TD(SUBSET_OF_TD), TD(XI_TD), KC_ARROW, KC_SETDIFFERENCE};
@@ -303,8 +303,11 @@ tap_dance_action_t tap_dance_actions[] = {
     [PHI_TD] = ACTION_TAP_DANCE_FN (varphi_dance),
     [PSI_TD] = ACTION_TAP_DANCE_FN (psi_dance),
     [OMEGA_TD] = ACTION_TAP_DANCE_FN (omega_dance),
+    [ASYMPT_EQ_TD] = ACTION_TAP_DANCE_FN (asymptotically_equal_dance),
+    [IDENTICALLY_EQUAL_TD] = ACTION_TAP_DANCE_FN (identically_equal_dance),
+    [EQUAL_BY_DEF_TD] = ACTION_TAP_DANCE_FN (equal_by_definition_dance),
+    [GTEQ_TD] = ACTION_TAP_DANCE_FN (greater_or_equal_dance),
     [MGT_TD] = ACTION_TAP_DANCE_FN (much_greater_than_dance),
-    [MLT_TD] = ACTION_TAP_DANCE_FN (much_less_than_dance),
     [DOT_TD] = ACTION_TAP_DANCE_FN (dot_dance),
     [SUB_TD] = ACTION_TAP_DANCE_FN (sub_dance),
     [SUP_TD] = ACTION_TAP_DANCE_FN (sup_dance),
@@ -330,37 +333,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key00[_LEFT_TOP], key01[_LEFT_TOP],   key02[_LEFT_TOP],   key03[_LEFT_TOP],   KC_SWITCH_MODE,
                           key10[_LEFT_TOP],   key11[_LEFT_TOP],   key12[_LEFT_TOP],   key13[_LEFT_TOP],
         KC_RIGHTKEY,      key20[_LEFT_TOP],   key21[_LEFT_TOP],   key22[_LEFT_TOP],   key23[_LEFT_TOP],
-                                              KC_FRONTKEY,                            KC_MIDKEY
+                                              KC_MIDKEY,                              KC_FRONTKEY
     ),
 	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
         key00[_RIGHT_TOP], key01[_RIGHT_TOP],   key02[_RIGHT_TOP],   key03[_RIGHT_TOP],   KC_SWITCH_MODE,
                            key10[_RIGHT_TOP],   key11[_RIGHT_TOP],   key12[_RIGHT_TOP],   key13[_RIGHT_TOP],
         KC_RIGHTKEY,       key20[_RIGHT_TOP],   key21[_RIGHT_TOP],   key22[_RIGHT_TOP],   key23[_RIGHT_TOP],
-                                                KC_FRONTKEY,                              KC_MIDKEY
+                                                KC_MIDKEY,                                KC_FRONTKEY
     ),
     [_LEFT_MID] = LAYOUT_5x3_macropad(
         key00[_LEFT_MID], key01[_LEFT_MID],   key02[_LEFT_MID],   key03[_LEFT_MID],   KC_SWITCH_MODE,
                           key10[_LEFT_MID],   key11[_LEFT_MID],   key12[_LEFT_MID],   key13[_LEFT_MID],
         KC_RIGHTKEY,      key20[_LEFT_MID],   key21[_LEFT_MID],   key22[_LEFT_MID],   key23[_LEFT_MID],
-                                              KC_FRONTKEY,                            KC_MIDKEY
+                                              KC_MIDKEY,                              KC_FRONTKEY
     ),
 	[_RIGHT_MID] = LAYOUT_5x3_macropad(
         key00[_RIGHT_MID], key01[_RIGHT_MID],   key02[_RIGHT_MID],   key03[_RIGHT_MID],   KC_SWITCH_MODE,
                            key10[_RIGHT_MID],   key11[_RIGHT_MID],   key12[_RIGHT_MID],   key13[_RIGHT_MID],
         KC_RIGHTKEY,       key20[_RIGHT_MID],   key21[_RIGHT_MID],   key22[_RIGHT_MID],   key23[_RIGHT_MID],
-                                                KC_FRONTKEY,                              KC_MIDKEY
+                                                KC_MIDKEY,                                KC_FRONTKEY
     ),
 	[_LEFT_FRONT] = LAYOUT_5x3_macropad(
         key00[_LEFT_FRONT], key01[_LEFT_FRONT],   key02[_LEFT_FRONT],   key03[_LEFT_FRONT],   KC_SWITCH_MODE,
                             key10[_LEFT_FRONT],   key11[_LEFT_FRONT],   key12[_LEFT_FRONT],   key13[_LEFT_FRONT],
         KC_RIGHTKEY,        key20[_LEFT_FRONT],   key21[_LEFT_FRONT],   key22[_LEFT_FRONT],   key23[_LEFT_FRONT],
-                                                  KC_FRONTKEY,                                KC_MIDKEY
+                                                  KC_MIDKEY,                                  KC_FRONTKEY
     ),
 	[_RIGHT_FRONT] = LAYOUT_5x3_macropad(
         key00[_RIGHT_FRONT], key01[_RIGHT_FRONT],   key02[_RIGHT_FRONT],   key03[_RIGHT_FRONT],   KC_SWITCH_MODE,
                              key10[_RIGHT_FRONT],   key11[_RIGHT_FRONT],   key12[_RIGHT_FRONT],   key13[_RIGHT_FRONT],
         KC_RIGHTKEY,         key20[_RIGHT_FRONT],   key21[_RIGHT_FRONT],   key22[_RIGHT_FRONT],   key23[_RIGHT_FRONT],
-                                                    KC_FRONTKEY,                                  KC_MIDKEY
+                                                    KC_MIDKEY,                                    KC_FRONTKEY
     )
 };
 

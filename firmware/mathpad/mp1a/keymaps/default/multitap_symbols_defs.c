@@ -154,21 +154,49 @@ void omega_dance (tap_dance_state_t *s, void *d){
         latex_dance(symbols, 2, s, d);}
 }
 
-void much_greater_than_dance (tap_dance_state_t *s, void *d){
+
+void asymptotically_equal_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_much_greater_than, _verymuch_greater_than};
+        int symbols[] = {_asymptotically_equal, _approximately_equal};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {much_greater_than_LTX, much_much_greater_than_LTX};
+        const char *symbols[] = {asymptotically_equal_LTX, approximately_equal_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
-void much_less_than_dance (tap_dance_state_t *s, void *d){
+void identically_equal_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_much_less_than, _verymuch_less_than};
+        int symbols[] = {_identical_to, _not_identical_to};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {much_less_than_LTX, much_much_less_than_LTX};
+        const char *symbols[] = {identical_to_LTX, not_identical_to_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void equal_by_definition_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_colon_equals, _equal_by_definition};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {colon_equals_LTX, equal_by_definition_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void greater_or_equal_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_greater_or_equal, _less_or_equal};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {greater_or_equal_LTX, less_or_equal_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void much_greater_than_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_much_greater_than, _much_less_than};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {much_greater_than_LTX, much_less_than_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 

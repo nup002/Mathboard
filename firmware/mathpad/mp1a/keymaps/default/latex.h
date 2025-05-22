@@ -56,12 +56,17 @@
 #define Omega_LTX   "\\Omega"
 
 // Comparison and equivalence
-#define notequal_LTX   "\\neq"
-#define almostequal_LTX   "\\approx"
+#define not_equal_LTX   "\\neq"
+#define almost_equal_LTX   "\\approx"
 #define proportional_LTX   "\\propto"
-#define identicalto_LTX   "\\equiv"
-#define lessorequal_LTX   "\\leq"
-#define greaterorequal_LTX   "\\geq"
+#define asymptotically_equal_LTX "\\simeq"
+#define approximately_equal_LTX "\\cong" 
+#define identical_to_LTX   "\\equiv"
+#define not_identical_to_LTX   "\\not\\equiv"
+#define colon_equals_LTX "\\coloneq" // Requires mathtools
+#define equal_by_definition_LTX "\\overset{\\underset{\\mathrm{def}}{}}{=}"
+#define less_or_equal_LTX   "\\leq"
+#define greater_or_equal_LTX   "\\geq"
 #define much_greater_than_LTX   "\\gg"
 #define much_much_greater_than_LTX   "\\ggg"
 #define much_less_than_LTX   "\\ll"

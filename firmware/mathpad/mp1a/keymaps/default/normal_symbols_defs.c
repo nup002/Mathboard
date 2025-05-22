@@ -32,8 +32,8 @@ void alpha_key(keyrecord_t *record){
 };
 
 void notequal_key(keyrecord_t *record){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_notequal, record);}
-    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(notequal_LTX, record);}
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_not_equal, record);}
+    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(not_equal_LTX, record);}
 };
 
 void beta_key(keyrecord_t *record){
@@ -42,8 +42,8 @@ void beta_key(keyrecord_t *record){
 };
 
 void almostequal_key(keyrecord_t *record){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_almostequal, record);}
-    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(almostequal_LTX, record);}
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_almost_equal, record);}
+    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(almost_equal_LTX, record);}
 };
 
 void circumflex_key(keyrecord_t *record){
@@ -64,8 +64,8 @@ void proportional_key(keyrecord_t *record){
 };
 
 void identicalto_key(keyrecord_t *record){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_identicalto, record);}
-    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(identicalto_LTX, record);}
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_identical_to, record);}
+    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(identical_to_LTX, record);}
 };
 
 void combiningtilde_key(keyrecord_t *record){
@@ -86,8 +86,8 @@ void epsilon_key(keyrecord_t *record){
 };
 
 void lessorequal_key(keyrecord_t *record){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_lessorequal, record);}
-    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(lessorequal_LTX, record);}
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_less_or_equal, record);}
+    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(less_or_equal_LTX, record);}
 };
 
 void zeta_key(keyrecord_t *record){
@@ -96,8 +96,8 @@ void zeta_key(keyrecord_t *record){
 };
 
 void greaterorequal_key(keyrecord_t *record){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_greaterorequal, record);}
-    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(greaterorequal_LTX, record);}
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){send_unicode_on_keypress(_greater_or_equal, record);}
+    else if (user_config.MODE == LTX_MODE){send_latex_on_keypress(greater_or_equal_LTX, record);}
 };
 
 void accent_arrow_key(keyrecord_t *record){

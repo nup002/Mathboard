@@ -35,23 +35,26 @@ enum tap_dance_keys {
     PHI_TD = 6,
     PSI_TD = 7,
     OMEGA_TD = 8,
-    MGT_TD = 9, // Much greater than / much much greater than
-    MLT_TD = 10, // Much less than / much much less than
-    DOT_TD = 11,
-    SUB_TD = 12,
-    SUP_TD = 13,
-    INTEGRAL_TD = 14,
-    LINE_INTEGRAL_TD = 15,
-    ROOT_TD = 16,
-    ELEMENT_OF_TD = 17,
-    SUBSET_OF_TD = 18,
-    SUBSET_OR_EQ_TD = 19,
-    THERE_EXIST_TD = 20,
-    AND_TD = 21,
-    UNCONDITIONALLY_TRUE_TD = 22,
-    PROVES_TD = 23,
-    PLUSMINUS_TD = 24,
-    LAMBDA_TD = 25,
+    ASYMPT_EQ_TD = 9, // Asymptotically equal to ≃ / approximately equal to ≅
+    IDENTICALLY_EQUAL_TD = 10, // Identical to ≡ / not identical to ≢
+    EQUAL_BY_DEF_TD = 11, // Colon equals ≔ / Equal by definition ≝
+    MGT_TD = 12, // Much greater than ≫ / Much less than ≪
+    GTEQ_TD = 13, // Greater or equal to ≥ / Less or equal to ≤
+    DOT_TD = 14, // Diacritic dot ȯ / Double diacritic dot ö  
+    SUB_TD = 15, // Subscripts
+    SUP_TD = 16, // Superscripts
+    INTEGRAL_TD = 17,
+    LINE_INTEGRAL_TD = 18,
+    ROOT_TD = 19,
+    ELEMENT_OF_TD = 20,
+    SUBSET_OF_TD = 21,
+    SUBSET_OR_EQ_TD = 22,
+    THERE_EXIST_TD = 23,
+    AND_TD = 24,
+    UNCONDITIONALLY_TRUE_TD = 25,
+    PROVES_TD = 26,
+    PLUSMINUS_TD = 27,
+    LAMBDA_TD = 28,
 };
 
 void latex_dance(const char *symbols[], int nelements, tap_dance_state_t *state, void *user_data);
@@ -80,9 +83,15 @@ void psi_dance (tap_dance_state_t *s, void *d);
 
 void omega_dance (tap_dance_state_t *s, void *d);
 
-void much_greater_than_dance (tap_dance_state_t *s, void *d);
+void asymptotically_equal_dance (tap_dance_state_t *s, void *d);
 
-void much_less_than_dance (tap_dance_state_t *s, void *d);
+void identically_equal_dance (tap_dance_state_t *s, void *d);
+
+void equal_by_definition_dance (tap_dance_state_t *s, void *d);
+
+void greater_or_equal_dance (tap_dance_state_t *s, void *d);
+
+void much_greater_than_dance (tap_dance_state_t *s, void *d);
 
 void dot_dance (tap_dance_state_t *s, void *d);
 
