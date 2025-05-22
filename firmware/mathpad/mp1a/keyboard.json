@@ -4,8 +4,8 @@
   "maintainer": "Magne Lauritzen",
   "manufacturer": "Summa Cogni",
   "usb": {
-    "pid": "0x4D42",
-    "vid": "0x4D4C",
+    "pid": "0x2211",
+    "vid": "0x1209",
     "device_version": "1.0.0"
   },
   "board": "QMK_PM2040",
