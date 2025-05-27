@@ -709,7 +709,7 @@ This page is still a work in progress, but every symbol is present.
   </div>
   <div class="symbol-card">
     <div class="symbol">⊕</div>
-    <div class="name">Symmetric Difference</div>
+    <div class="name">Direct sum</div>
     <div class="details">
       <div class="key-combo"><keycombo>[R][B]+[ν]</keycombo></div>
     </div>
@@ -737,6 +737,13 @@ This page is still a work in progress, but every symbol is present.
     <div class="name">Cross product</div>
     <div class="details">
       <div class="key-combo"><keycombo>[B]+[σ]</keycombo></div>
+    </div>
+  </div>
+  <div class="symbol-card">
+    <div class="symbol">÷</div>
+    <div class="name">Division</div>
+    <div class="details">
+      <div class="key-combo"><keycombo>[B]+[σ][x2]</keycombo></div>
     </div>
   </div>
   <div class="symbol-card">
