@@ -12,4 +12,7 @@
 
 - Technical reference
   * [Assembly Manual](assembly_manual.md "Assemble your own Mathpad")
-  * [Firmware](firmware.md "Learn how to modify the Mathpad firmware")
+  * [Firmware Manual](firmware.md "Learn how to modify the Mathpad firmware")
+
+- Downloads
+  * [Firmware](firmware_releases.md "Download Mathpad firmware")

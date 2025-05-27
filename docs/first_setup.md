@@ -49,7 +49,7 @@ defined in the "Input devices" or "Language and Region" settings.
 
 Once you know your keyboard layout, follow these steps to update your Mathpad's firmware:
 
-1. Go to the [releases page](link-to-releases) and download the firmware file that matches your keyboard layout
+1. Go to the [releases page](firmware_releases.md) and download the firmware file that matches your keyboard layout
 2. Follow the instructions in the [Firmware Update Guide](update_firmware.md)
 
 Once you're done, head over to [Getting Started](/get_started.md).
