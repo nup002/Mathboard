@@ -46,13 +46,13 @@ all: $(if $(LAYOUT),check-layout,)
 all-layouts:
 	@echo "Building for all layouts..."
 	$(MAKE)  # Build default first
-	@for lang in $(SUPPORTED_LAYOUTS); do \
-		echo "Building for $$lang..."; \
-		$(MAKE) LAYOUT=$$lang; \
+	@for layout in $(SUPPORTED_LAYOUTS); do \
+		echo "Building for $$layout..."; \
+		$(MAKE) LAYOUT=$$layout; \
 	done
 	@echo "All layout builds complete!"
 
-# Language validation target
+# Layout validation target
 check-layout:
 	@if echo "$(SUPPORTED_LAYOUTS)" | grep -wq "$(LAYOUT)"; then \
 		echo "Building with $(LAYOUT) layout support"; \

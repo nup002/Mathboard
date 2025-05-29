@@ -16,6 +16,7 @@
 #include "modifiers.h"
 #include QMK_KEYBOARD_H
 #include "globals.h"
+#include <stdbool.h>
 
 // Initiate the modifier key states to false on Mathpad boot
 bool rightkey_pressed = false;

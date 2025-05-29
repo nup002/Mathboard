@@ -16,7 +16,7 @@
 #pragma once
 
 #define RGBLIGHT_LED_COUNT 1  // MODE switch backlight
-#define RGBLIGHT_LIMIT_VAL 200  // MODE switch backlight strength
+#define RGBLIGHT_LIMIT_VAL 100  // MODE switch backlight strength
 #define DIP_SWITCH_PINS { GP7, GP8, GP9 }  // OS switch input pins
 
 #define UNICODE_CYCLE_PERSIST false

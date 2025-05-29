@@ -15,6 +15,7 @@
 
 #ifndef MODIFIERS_H
 #define MODIFIERS_H
+#include <stdbool.h>
 
 /*
  * Modifier key state variables.

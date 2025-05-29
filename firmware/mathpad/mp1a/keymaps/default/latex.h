@@ -107,37 +107,45 @@
 #define square_root_LTX   "\\sqrt{}"
 #define cube_root_LTX   "\\sqrt[3]{}"
 #define fourth_root_LTX   "\\sqrt[4]{}"
-#define arrow_LTX   "\\rightarrow"
-#define partial_derivative_LTX   "\\partial"
+#define partial_differential_LTX   "\\partial"
 #define nabla_LTX   "\\nabla"
+
+// Arrows
+#define right_arrow_LTX   "\\rightarrow"
+#define leftright_arrow_LTX   "\\leftrightarrow"
+#define left_arrow_LTX   "\\leftarrow"
+#define right_double_arrow_LTX   "\\Rightarrow"
+#define leftright_double_arrow_LTX   "\\Leftrightarrow"
+#define left_double_arrow_LTX   "\\Leftarrow"
 
 // Set theory 
 #define union_LTX   "\\bigcup_{}^{}"
 #define intersection_LTX   "\\bigcap_{}^{}"
 #define element_of_LTX   "\\in"
 #define not_element_of_LTX   "\\notin"
+#define contains_as_member_LTX   "\\ni"
 #define empty_set_LTX   "\\varnothing" // Requires amssymb
-#define subset_of_LTX   "\\subset"
-#define not_subset_of_LTX   "\\not\\subset"
+#define power_set_LTX   "\\mathcal{P}"
+#define proper_subset_LTX   "\\subset"
+#define not_proper_subset_LTX   "\\not\\subset"
 #define set_difference_LTX   "\\setminus"
-#define subset_or_equal_LTX   "\\subseteq"
-#define not_subset_or_equal_LTX   "\\nsubseteq"
+#define subset_LTX   "\\subseteq"
+#define not_subset_LTX   "\\nsubseteq"
 #define disjoint_union_LTX   "\\sqcup"
+#define direct_sum_LTX   "\\oplus"
 
 // Logic
-#define arrow_implies_LTX   "\\Rightarrow"
-#define arrow_if_and_only_if_LTX   "\\Leftrightarrow"
 #define there_exists_LTX   "\\exists"
 #define there_does_not_exist_LTX   "\\nexists"
 #define and_LTX   "\\wedge"
 #define or_LTX   "\\vee"
 #define xor_LTX   "\\veebar"
 #define for_all_LTX   "\\forall"
-#define unconditionally_true_LTX   "\\top"
-#define unconditionally_false_LTX   "\\bot"
 #define not_LTX   "\\neg"
 #define proves_LTX   "\\vdash"
 #define models_LTX   "\\models"
+#define down_tack_LTX   "\\top"
+#define up_tack_LTX     "\\bot"
 
 // Others
 #define dotproduct_LTX   "\\cdot"
@@ -149,6 +157,14 @@
 #define infinity_LTX   "\\infty"
 #define matrix_LTX  "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}" // Requires amsmath
 #define frac_LTX  "\\frac{}{}"
+#define circled_times_LTX  "\\otimes"
+
+//Number systems
+#define naturals_LTX   "\\mathbb{N}"
+#define integers_LTX   "\\mathbb{Z}"    
+#define rationals_LTX   "\\mathbb{Q}"
+#define reals_LTX   "\\mathbb{R}"
+#define complexes_LTX   "\\mathbb{C}"
 
 #define LTX_FLAG "LATEX: "
 

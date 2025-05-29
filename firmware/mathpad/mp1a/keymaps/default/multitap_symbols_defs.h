@@ -21,6 +21,7 @@
 #ifndef TAPDANCE_H
 #define TAPDANCE_H
 
+#include "latex.h"
 #include QMK_KEYBOARD_H
 #include "microsoft_office.h"
 
@@ -29,32 +30,37 @@ enum tap_dance_keys {
     GAMMA_TD = 0,
     DELTA_TD = 1,
     THETA_TD = 2,
-    XI_TD = 3,
-    PI_TD = 4,
-    SIGMA_TD = 5,
-    PHI_TD = 6,
-    PSI_TD = 7,
-    OMEGA_TD = 8,
-    ASYMPT_EQ_TD = 9, // Asymptotically equal to ≃ / approximately equal to ≅
-    IDENTICALLY_EQUAL_TD = 10, // Identical to ≡ / not identical to ≢
-    EQUAL_BY_DEF_TD = 11, // Colon equals ≔ / Equal by definition ≝
-    MGT_TD = 12, // Much greater than ≫ / Much less than ≪
-    GTEQ_TD = 13, // Greater or equal to ≥ / Less or equal to ≤
-    DOT_TD = 14, // Diacritic dot ȯ / Double diacritic dot ö  
-    SUB_TD = 15, // Subscripts
-    SUP_TD = 16, // Superscripts
-    INTEGRAL_TD = 17,
+    LAMBDA_TD = 3,
+    XI_TD = 4,
+    PI_TD = 5,
+    SIGMA_TD = 6,
+    PHI_TD = 7,
+    PSI_TD = 8,
+    OMEGA_TD = 9,
+    ASYMPT_EQ_TD = 10,               // Asymptotically equal to ≃ / approximately equal to ≅
+    IDENTICALLY_EQUAL_TD = 11,      // Identical to ≡ / not identical to ≢
+    EQUAL_BY_DEF_TD = 12,           // Colon equals ≔ / Equal by definition ≝
+    MGT_TD = 13,                    // Much greater than ≫ / Much less than ≪
+    GTEQ_TD = 14,                   // Greater or equal to ≥ / Less or equal to ≤
+    DOT_TD = 15,                    // Diacritic dot ȯ / Double diacritic dot ö  
+    SUB_TD = 16,                    // Subscripts
+    SUP_TD = 17,                    // Superscripts
     LINE_INTEGRAL_TD = 18,
     ROOT_TD = 19,
-    ELEMENT_OF_TD = 20,
-    SUBSET_OF_TD = 21,
-    SUBSET_OR_EQ_TD = 22,
-    THERE_EXIST_TD = 23,
-    AND_TD = 24,
-    UNCONDITIONALLY_TRUE_TD = 25,
-    PROVES_TD = 26,
-    PLUSMINUS_TD = 27,
-    LAMBDA_TD = 28,
+    ARROW_TD = 20,
+    UNION_TD = 21,
+    INTEGRAL_TD = 22,
+    CIRCLED_PLUS_TD = 23,
+    EMPTY_SET_TD = 24,
+    AND_TD = 25,
+    ELEMENT_OF_TD = 26,
+    PROPER_SUBSET_TD = 27,
+    SUBSET_TD = 28,
+    THERE_EXIST_TD = 29,
+    DOWN_TACK_TD = 30,
+    DOUBLE_ARROW_TD = 31,
+    CROSS_PRODUCT_TD = 32,
+    PLUSMINUS_TD = 33
 };
 
 void latex_dance(const char *symbols[], int nelements, tap_dance_state_t *state, void *user_data);
@@ -105,19 +111,27 @@ void line_integral_dance (tap_dance_state_t *s, void *d);
 
 void root_dance (tap_dance_state_t *s, void *d);
 
+void union_dance (tap_dance_state_t *s, void *d);
+
+void arrow_dance (tap_dance_state_t *s, void *d);
+
+void double_arrow_dance (tap_dance_state_t *s, void *d);
+
+void circled_plus_dance (tap_dance_state_t *s, void *d);
+
+void empty_set_dance (tap_dance_state_t *s, void *d);
+
 void element_of_dance (tap_dance_state_t *s, void *d);
 
-void subset_of_dance (tap_dance_state_t *s, void *d);
+void proper_subset_dance (tap_dance_state_t *s, void *d);
 
-void subset_or_equal_dance (tap_dance_state_t *s, void *d);
+void subset_dance (tap_dance_state_t *s, void *d);
 
 void there_exists_dance (tap_dance_state_t *s, void *d);
 
 void and_dance (tap_dance_state_t *s, void *d);
 
-void unconditionally_true_dance (tap_dance_state_t *s, void *d);
-
-void proves_dance (tap_dance_state_t *s, void *d);
+void down_tack_dance (tap_dance_state_t *s, void *d);
 
 void plusminus_dance (tap_dance_state_t *s, void *d);
 

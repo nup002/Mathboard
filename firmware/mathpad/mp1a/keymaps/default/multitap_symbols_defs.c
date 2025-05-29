@@ -18,6 +18,7 @@
 // take typically depend on which mode is active.
 // The equivalent file for 'normal' (non-multitap) symbols is 'normal_symbols_defs.h'
 
+#include "modifiers.h"
 #define SIZEOF(arr) sizeof(arr) / sizeof(*arr)
 
 #include "multitap_symbols_defs.h"
@@ -272,30 +273,78 @@ void root_dance (tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
+void union_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE){
+        int symbols[] = {_union, _intersection};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == MOF_MODE){
+        mofDefinition mof_defs[] = {UNION_MOF, INTERSECTION_MOF};
+        mof_dance(mof_defs, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {union_LTX, intersection_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void arrow_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_right_arrow, _rightleft_arrow, _left_arrow};
+        unicode_dance(symbols, 3, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {right_arrow_LTX, leftright_arrow_LTX, left_arrow_LTX};
+        latex_dance(symbols, 3, s, d);}
+}
+
+void double_arrow_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_right_double_arrow, _rightleft_double_arrow, _left_double_arrow};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {right_double_arrow_LTX, leftright_double_arrow_LTX, left_double_arrow_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void circled_plus_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_direct_sum, _circled_times};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {direct_sum_LTX, circled_times_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void empty_set_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_empty_set, _power_set};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {empty_set_LTX, power_set_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
 void element_of_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_element_of, _not_element_of};
+        int symbols[] = {_element_of, _contains_as_member};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {element_of_LTX, not_element_of_LTX};
+        const char *symbols[] = {element_of_LTX, contains_as_member_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
-void subset_of_dance (tap_dance_state_t *s, void *d){
+void proper_subset_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_subset_of, _not_subset_of};
+        int symbols[] = {_proper_subset, _not_proper_subset};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {subset_of_LTX, not_subset_of_LTX};
+        const char *symbols[] = {proper_subset_LTX, not_proper_subset_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
-void subset_or_equal_dance (tap_dance_state_t *s, void *d){
+void subset_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_subset_or_equal, _not_subset_or_equal};
+        int symbols[] = {_subset, _not_subset};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {subset_or_equal_LTX, not_subset_or_equal_LTX};
+        const char *symbols[] = {subset_LTX, not_subset_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
@@ -317,21 +366,12 @@ void and_dance (tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void unconditionally_true_dance (tap_dance_state_t *s, void *d){
+void cross_product_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_uncoditionally_true, _uncoditionally_false};
+        int symbols[] = {_cross_product, _minusplus};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {unconditionally_true_LTX, unconditionally_false_LTX};
-        latex_dance(symbols, 2, s, d);}
-}
-
-void proves_dance (tap_dance_state_t *s, void *d){
-    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_proves, _models};
-        unicode_dance(symbols, 2, s, d);}
-    else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {proves_LTX, models_LTX};
+        const char *symbols[] = {plusminus_LTX, minusplus_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 
@@ -341,5 +381,14 @@ void plusminus_dance (tap_dance_state_t *s, void *d){
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
         const char *symbols[] = {plusminus_LTX, minusplus_LTX};
+        latex_dance(symbols, 2, s, d);}
+}
+
+void down_tack_dance (tap_dance_state_t *s, void *d){
+    if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
+        int symbols[] = {_down_tack, _up_tack};
+        unicode_dance(symbols, 2, s, d);}
+    else if (user_config.MODE == LTX_MODE){
+        const char *symbols[] = {down_tack_LTX, up_tack_LTX};
         latex_dance(symbols, 2, s, d);}
 }

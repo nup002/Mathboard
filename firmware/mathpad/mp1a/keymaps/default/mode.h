@@ -15,7 +15,7 @@
 
 #ifndef MODE_H
 #define MODE_H
-
+#include <stdint.h>
 
 // Each output mode is defined here. 
 #define UC_MODE 0  // Unicode

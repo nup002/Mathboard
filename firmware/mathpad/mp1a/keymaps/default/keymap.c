@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include "latex.h"
 #include QMK_KEYBOARD_H
 #include "print.h"
 #include "globals.h"
@@ -46,8 +47,21 @@ enum custom_keycodes {
     KC_MIDKEY, // MID keycap row modifier key
     KC_FRONTKEY, // FRONT keycap row modifier key
     KC_ALPHA,
-    KC_NOTEQUAL,
     KC_BETA,
+    KC_EPSILON,
+    KC_ZETA,
+    KC_TAU,
+    KC_RHO,
+    KC_ETA,
+    KC_IOTA,
+    KC_KAPPA,
+    KC_MU,
+    KC_NU,
+    KC_OMICRON,
+    KC_NABLA,
+    KC_CHI,
+    KC_UPSILON,
+    KC_NOTEQUAL,
     KC_ALMOSTEQUAL,
     KC_ACCENT_CIRCUMFLEX,
     KC_ACCENT_CHECK,
@@ -55,42 +69,25 @@ enum custom_keycodes {
     KC_IDENTICALTO,
     KC_COMBININGTILDE,
     KC_COMBININGBAR,
-    KC_EPSILON,
     KC_LESSOREQUAL,
-    KC_ZETA,
     KC_GREATEROREQUAL,
     KC_ACCENT_ARROW,
-    KC_ETA,
-    KC_IOTA,
     KC_SUM,
-    KC_KAPPA,
     KC_NARYPRODUCT,
-    KC_UNION,
-    KC_INTERSECTION,
-    KC_MU,
-    KC_EMPTYSET,
-    KC_NU,
-    KC_ARROW,
-    KC_SETDIFFERENCE,
-    KC_OMICRON,
+    KC_NOT_ELEMENT_OF,
     KC_PARTIALDERIVATIVE,
-    KC_NABLA,
     KC_DISJOINTUNION,
-    KC_RHO,
-    KC_ARROWIMPLIES,
-    KC_ARROWIFANDONLYIF,
     KC_DOTPRODUCT,
-    KC_CROSSPRODUCT,
-    KC_TAU,
-    KC_UPSILON,
-    KC_PARALLEL,
     KC_FORALL,
-    KC_CHI,
     KC_DEGREE,
     KC_INFINITY,
     KC_NOT,
-    KC_MATRIX,
-    KC_FRACTION
+    KC_FRACTION,
+    KC_NATURALS,
+    KC_INTEGERS,
+    KC_RATIONALS,
+    KC_REALS,
+    KC_COMPLEXES
 };
 
 /**
@@ -102,18 +99,24 @@ enum custom_keycodes {
  * The index of a symbol in the following key arrays defines its location on the physical key.
  * It goes: [top left, mid left, bottom left, top right, mid right, bottom right] 
  */
+
+ // Top row
 const int key00[6] = {KC_ALPHA, KC_NOTEQUAL, KC_ACCENT_CIRCUMFLEX, KC_BETA, KC_ALMOSTEQUAL, KC_ACCENT_CHECK};
 const int key01[6] = {TD(GAMMA_TD), KC_PROPORTIONAL, KC_COMBININGTILDE, TD(DELTA_TD), TD(ASYMPT_EQ_TD), KC_COMBININGBAR};
 const int key02[6] = {KC_EPSILON, TD(IDENTICALLY_EQUAL_TD), KC_ACCENT_ARROW, KC_ZETA, TD(EQUAL_BY_DEF_TD), TD(DOT_TD)};
 const int key03[6] = {KC_ETA, TD(GTEQ_TD), TD(SUB_TD), TD(THETA_TD), TD(MGT_TD), TD(SUP_TD)};
-const int key10[6] = {KC_IOTA, KC_SUM, KC_UNION, KC_KAPPA, KC_NARYPRODUCT, KC_INTERSECTION};
-const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), TD(ELEMENT_OF_TD), KC_MU, TD(LINE_INTEGRAL_TD), KC_EMPTYSET};
-const int key12[6] = {KC_NU, TD(ROOT_TD), TD(SUBSET_OF_TD), TD(XI_TD), KC_ARROW, KC_SETDIFFERENCE};
-const int key13[6] = {KC_OMICRON, KC_PARTIALDERIVATIVE, TD(SUBSET_OR_EQ_TD), TD(PI_TD), KC_NABLA, KC_DISJOINTUNION};
-const int key20[6] = {KC_RHO, KC_ARROWIMPLIES, KC_DOTPRODUCT, TD(SIGMA_TD), KC_ARROWIFANDONLYIF, KC_CROSSPRODUCT};
-const int key21[6] = {KC_TAU, TD(THERE_EXIST_TD), TD(PLUSMINUS_TD), KC_UPSILON, TD(AND_TD), KC_PARALLEL};
-const int key22[6] = {TD(PHI_TD), KC_FORALL, KC_DEGREE, KC_CHI, TD(UNCONDITIONALLY_TRUE_TD), KC_INFINITY};
-const int key23[6] = {TD(PSI_TD), KC_NOT, KC_MATRIX, TD(OMEGA_TD), TD(PROVES_TD), KC_FRACTION};
+
+// Middle row
+const int key10[6] = {KC_IOTA, KC_SUM, TD(ELEMENT_OF_TD), KC_KAPPA, KC_NARYPRODUCT, KC_NOT_ELEMENT_OF};
+const int key11[6] = {TD(LAMBDA_TD), TD(INTEGRAL_TD), TD(PROPER_SUBSET_TD), KC_MU, TD(LINE_INTEGRAL_TD), TD(SUBSET_TD)};
+const int key12[6] = {KC_NU, TD(ROOT_TD), TD(UNION_TD), TD(XI_TD), TD(ARROW_TD), TD(CIRCLED_PLUS_TD)};
+const int key13[6] = {TD(PI_TD), KC_PARTIALDERIVATIVE, KC_DISJOINTUNION, KC_RHO, KC_NABLA, TD(EMPTY_SET_TD)};
+
+// Bottom row
+const int key20[6] = {TD(SIGMA_TD), TD(AND_TD), TD(CROSS_PRODUCT_TD), KC_TAU, KC_NOT, KC_DOTPRODUCT};
+const int key21[6] = {KC_UPSILON, TD(THERE_EXIST_TD), TD(PLUSMINUS_TD), TD(PHI_TD), KC_FORALL, KC_DEGREE};
+const int key22[6] = {KC_CHI, TD(DOWN_TACK_TD), KC_INFINITY, TD(PSI_TD), TD(DOUBLE_ARROW_TD), KC_FRACTION};
+const int key23[6] = {TD(OMEGA_TD), KC_INTEGERS, KC_REALS, KC_NATURALS, KC_RATIONALS, KC_COMPLEXES};
 
 
 /**
@@ -206,26 +209,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_NARYPRODUCT:
             naryproduct_key(record);
             break;
-        case KC_UNION:
-            union_key(record);
-            break;
-        case KC_INTERSECTION:
-            intersection_key(record);
-            break;
         case KC_MU:
             mu_key(record);
             break;
-        case KC_EMPTYSET:
-            emptyset_key(record);
+        case KC_NOT_ELEMENT_OF:
+            not_element_of_key(record);
             break;
         case KC_NU:
             nu_key(record);
-            break;
-        case KC_ARROW:
-            arrow_key(record);
-            break;
-        case KC_SETDIFFERENCE:
-            setdifference_key(record);
             break;
         case KC_OMICRON:
             omicron_key(record);
@@ -242,26 +233,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_RHO:
             rho_key(record);
             break;
-        case KC_ARROWIMPLIES:
-            arrowimplies_key(record);
-            break;
-        case KC_ARROWIFANDONLYIF:
-            arrowifandonlyif_key(record);
-            break;
         case KC_DOTPRODUCT:
             dotproduct_key(record);
-            break;
-        case KC_CROSSPRODUCT:
-            crossproduct_key(record);
             break;
         case KC_TAU:
             tau_key(record);
             break;
         case KC_UPSILON:
             upsilon_key(record);
-            break;
-        case KC_PARALLEL:
-            parallel_key(record);
             break;
         case KC_FORALL:
             forall_key(record);
@@ -278,11 +257,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_NOT:
             not_key(record);
             break;
-        case KC_FRACTION:
-            fraction_key(record);
+        case KC_NATURALS:
+            naturals_key(record);
             break;
-        case KC_MATRIX:
-            matrix_key(record);
+        case KC_INTEGERS:
+            integers_key(record);
+            break;
+        case KC_RATIONALS:
+            rationals_key(record);
+            break;
+        case KC_REALS:
+            reals_key(record);
+            break;
+        case KC_COMPLEXES:
+            complexes_key(record);
             break;
     }
     return true;
@@ -314,13 +302,17 @@ tap_dance_action_t tap_dance_actions[] = {
     [INTEGRAL_TD] = ACTION_TAP_DANCE_FN (integral_dance),
     [LINE_INTEGRAL_TD] = ACTION_TAP_DANCE_FN (line_integral_dance),
     [ROOT_TD] = ACTION_TAP_DANCE_FN (root_dance),
+    [UNION_TD] = ACTION_TAP_DANCE_FN (union_dance),
+    [ARROW_TD] = ACTION_TAP_DANCE_FN (arrow_dance),
+    [CIRCLED_PLUS_TD] = ACTION_TAP_DANCE_FN (circled_plus_dance),
+    [EMPTY_SET_TD] = ACTION_TAP_DANCE_FN (empty_set_dance),
     [ELEMENT_OF_TD] = ACTION_TAP_DANCE_FN (element_of_dance),
-    [SUBSET_OF_TD] = ACTION_TAP_DANCE_FN (subset_of_dance),
-    [SUBSET_OR_EQ_TD] = ACTION_TAP_DANCE_FN (subset_or_equal_dance),
+    [PROPER_SUBSET_TD] = ACTION_TAP_DANCE_FN (proper_subset_dance),
+    [SUBSET_TD] = ACTION_TAP_DANCE_FN (subset_dance),
     [THERE_EXIST_TD] = ACTION_TAP_DANCE_FN (there_exists_dance),
     [AND_TD] = ACTION_TAP_DANCE_FN (and_dance),
-    [UNCONDITIONALLY_TRUE_TD] = ACTION_TAP_DANCE_FN (unconditionally_true_dance),
-    [PROVES_TD] = ACTION_TAP_DANCE_FN (proves_dance),
+    [DOWN_TACK_TD] = ACTION_TAP_DANCE_FN (down_tack_dance),
+    [CROSS_PRODUCT_TD] = ACTION_TAP_DANCE_FN (cross_product_dance),
     [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance)
   };
 
