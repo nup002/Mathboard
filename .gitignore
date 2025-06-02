@@ -7,6 +7,9 @@
 # Compilation folder
 firmware/compiled/
 
+# Temporary qmk_firmware build folder
+firmware/qmk_firmware/keyboards/summacogni/
+
 # Kicad backups
 hardware/pcb/Mathpad-backups/
 
