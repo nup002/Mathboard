@@ -59,7 +59,7 @@ enum tap_dance_keys {
     THERE_EXIST_TD = 29,
     DOWN_TACK_TD = 30,
     DOUBLE_ARROW_TD = 31,
-    CROSS_PRODUCT_TD = 32,
+    TIMES_TD = 32,
     PLUSMINUS_TD = 33
 };
 
@@ -134,6 +134,8 @@ void and_dance (tap_dance_state_t *s, void *d);
 void down_tack_dance (tap_dance_state_t *s, void *d);
 
 void plusminus_dance (tap_dance_state_t *s, void *d);
+
+void times_dance (tap_dance_state_t *s, void *d);
 
 
 #endif

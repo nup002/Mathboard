@@ -4,5 +4,6 @@
         "sendstring_french.h": "c",
         "symbol_functions.h": "c",
         "*.inc": "c"
-    }
+    },
+    "idf.pythonInstallPath": "C:\\Users\\magla\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
 }
