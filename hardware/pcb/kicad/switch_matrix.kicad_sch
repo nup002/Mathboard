@@ -2191,6 +2191,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 107.95 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 107.95 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0ddfdc1c-f162-4647-9074-605c4c38a624")
 		)
@@ -2277,6 +2295,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 107.95 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 107.95 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b5e2a590-98b5-4679-8669-6ab900d159ad")
 		)
@@ -2311,7 +2347,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 127 115.57 90)
 			(effects
 				(font
@@ -2383,6 +2419,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 124.46 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 124.46 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "de556a82-6561-452d-a9a8-0187c1f6b5fa")
 		)
@@ -2417,7 +2471,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 171.45 68.58 90)
 			(effects
 				(font
@@ -2489,6 +2543,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 168.91 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 168.91 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9be68449-3cf0-4834-841d-2871367e7507")
 		)
@@ -2523,7 +2595,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 127 139.7 90)
 			(effects
 				(font
@@ -2595,6 +2667,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 124.46 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 124.46 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0317255f-60aa-4921-87bb-ddececa898b1")
 		)
@@ -2629,7 +2719,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 127 68.58 90)
 			(effects
 				(font
@@ -2693,6 +2783,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 124.46 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 124.46 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 124.46 67.31 0)
 			(effects
 				(font
@@ -2852,6 +2960,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 151.13 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 151.13 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6a715547-8add-4974-8bef-ddb34f8d0b2c")
 		)
@@ -2885,7 +3011,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 234.95 72.39 0)
 			(effects
 				(font
@@ -2921,7 +3047,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 234.95 69.85 0)
 			(effects
 				(font
@@ -2940,6 +3066,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 234.95 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 234.95 69.85 0)
 			(effects
 				(font
@@ -2982,7 +3117,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 83.82 68.58 90)
 			(effects
 				(font
@@ -3046,6 +3181,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 81.28 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 81.28 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 81.28 67.31 0)
 			(effects
 				(font
@@ -3140,6 +3293,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 173.99 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 173.99 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4914daa4-2059-411a-bee0-c044c575420d")
 		)
@@ -3173,7 +3344,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 256.54 72.39 0)
 			(effects
 				(font
@@ -3209,7 +3380,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 256.54 69.85 0)
 			(effects
 				(font
@@ -3228,6 +3399,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 256.54 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 256.54 69.85 0)
 			(effects
 				(font
@@ -3322,6 +3502,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 151.13 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 151.13 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "89163385-6c19-4e95-9ee1-fd113625eb71")
 		)
@@ -3356,7 +3554,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 148.59 91.44 90)
 			(effects
 				(font
@@ -3428,6 +3626,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 146.05 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 146.05 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1f4c41d1-2c18-4eb6-a09e-5912a17ae557")
 		)
@@ -3462,7 +3678,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 127 91.44 90)
 			(effects
 				(font
@@ -3526,6 +3742,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 124.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 124.46 90.17 0)
 			(effects
 				(font
@@ -3620,6 +3854,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 86.36 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 86.36 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "37c3c377-6327-476d-9a6b-e306c1961142")
 		)
@@ -3653,7 +3905,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 233.68 53.34 0)
 			(effects
 				(font
@@ -3689,7 +3941,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 233.68 50.8 0)
 			(effects
 				(font
@@ -3708,6 +3960,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 233.68 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 233.68 50.8 0)
 			(effects
 				(font
@@ -3750,7 +4011,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 171.45 139.7 90)
 			(effects
 				(font
@@ -3822,6 +4083,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 168.91 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 168.91 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "78633028-c932-4ac8-a4b6-eb78bf056e5a")
 		)
@@ -3856,7 +4135,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 148.59 115.57 90)
 			(effects
 				(font
@@ -3928,6 +4207,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 146.05 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 146.05 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7ce4b252-e13d-4bd9-9879-7993e078d1dc")
 		)
@@ -3961,7 +4258,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 245.11 72.39 0)
 			(effects
 				(font
@@ -3997,7 +4294,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 245.11 69.85 0)
 			(effects
 				(font
@@ -4016,6 +4313,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 245.11 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 245.11 69.85 0)
 			(effects
 				(font
@@ -4123,7 +4429,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 226.06 53.34 0)
 			(effects
 				(font
@@ -4159,7 +4465,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 226.06 50.8 0)
 			(effects
 				(font
@@ -4178,6 +4484,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 226.06 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 226.06 50.8 0)
 			(effects
 				(font
@@ -4284,7 +4599,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 226.06 72.39 0)
 			(effects
 				(font
@@ -4320,7 +4635,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 226.06 69.85 0)
 			(effects
 				(font
@@ -4339,6 +4654,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 226.06 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 226.06 69.85 0)
 			(effects
 				(font
@@ -4433,6 +4757,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 86.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 86.36 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bf2c8494-f735-432a-b54f-9cb18e2f1f57")
 		)
@@ -4467,7 +4809,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 171.45 91.44 90)
 			(effects
 				(font
@@ -4539,6 +4881,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "1N4148W"
+			(at 168.91 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
+			(at 168.91 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0b8db675-8bf0-474d-a97d-ffb601c67ad5")
 		)
@@ -4573,7 +4933,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 171.45 115.57 90)
 			(effects
 				(font
@@ -4637,6 +4997,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 168.91 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 168.91 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 168.91 114.3 0)
 			(effects
 				(font
@@ -4731,6 +5109,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 173.99 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 173.99 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f2cf3a33-0eda-429f-b844-48f97ad1608b")
 		)
@@ -4809,6 +5205,24 @@
 			)
 		)
 		(property "JLCPCB Part #" "C18212911"
+			(at 107.95 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 107.95 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
 			(at 107.95 85.09 0)
 			(effects
 				(font
@@ -4916,7 +5330,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 105.41 91.44 90)
 			(effects
 				(font
@@ -4980,6 +5394,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 102.87 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 102.87 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 102.87 90.17 0)
 			(effects
 				(font
@@ -5074,6 +5506,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 129.54 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "31365b60-eaf2-4f4a-87a1-3c7ea24ec44f")
 		)
@@ -5160,6 +5610,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 129.54 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 129.54 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "45903f0c-069f-45c0-a531-0ecb5adccd8f")
 		)
@@ -5194,7 +5662,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 105.41 115.57 90)
 			(effects
 				(font
@@ -5258,6 +5726,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 102.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 102.87 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 102.87 114.3 0)
 			(effects
 				(font
@@ -5352,6 +5838,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 129.54 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 129.54 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ecae7e6f-fbe6-40ec-91ec-9749acdae84a")
 		)
@@ -5386,7 +5890,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 105.41 68.58 90)
 			(effects
 				(font
@@ -5450,6 +5954,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 102.87 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 102.87 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 102.87 67.31 0)
 			(effects
 				(font
@@ -5544,6 +6066,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 129.54 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 129.54 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "005dac35-4cef-4838-9aa2-b2b92d1fb92c")
 		)
@@ -5578,7 +6118,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 83.82 115.57 90)
 			(effects
 				(font
@@ -5642,6 +6182,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 81.28 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 81.28 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 81.28 114.3 0)
 			(effects
 				(font
@@ -5736,6 +6294,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 151.13 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 151.13 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "26a6c6a8-6434-4ed9-b2fc-f9f339e7e24d")
 		)
@@ -5822,6 +6398,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 173.99 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
+			(at 173.99 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7e6ecb26-8d74-49b5-9b53-91f76ee9df92")
 		)
@@ -5856,7 +6450,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "75V 4ns 150mA"
 			(at 148.59 68.58 90)
 			(effects
 				(font
@@ -5920,6 +6514,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 146.05 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "1N4148W"
+			(at 146.05 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Switching-Diodes_ST-Semtech-1N4148W_C81598.html?s_z=n_C81598"
 			(at 146.05 67.31 0)
 			(effects
 				(font
@@ -6006,6 +6618,24 @@
 			)
 		)
 		(property "JLCPCB Part #" "C18212911"
+			(at 173.99 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "KS-2P02B01-02"
+			(at 173.99 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://www.alibaba.com/product-detail/GATERON-Customized-DIY-SMD-RGB-Gaming_1600566726731.html"
 			(at 173.99 85.09 0)
 			(effects
 				(font

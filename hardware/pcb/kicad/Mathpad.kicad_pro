@@ -626,12 +626,6 @@
         },
         {
           "group_by": false,
-          "label": "",
-          "name": "",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "LCSC",
           "name": "LCSC",
           "show": true
@@ -640,7 +634,7 @@
           "group_by": false,
           "label": "MPN ",
           "name": "MPN ",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -677,13 +671,19 @@
           "label": "JLCPCB Part #",
           "name": "JLCPCB Part #",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Purchase link",
+          "name": "Purchase link",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "MPN "
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
