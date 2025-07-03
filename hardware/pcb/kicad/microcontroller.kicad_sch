@@ -8965,7 +8965,7 @@
 				)
 			)
 		)
-		(property "Value" "2N7002VC-"
+		(property "Value" "2N7002VC"
 			(at 70.485 111.125 90)
 			(effects
 				(font
@@ -9023,6 +9023,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 74.93 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/MOSFETs_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-2N7002V_C504145.html?s_z=n_C504145"
 			(at 74.93 118.11 0)
 			(effects
 				(font
@@ -9277,7 +9286,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "1k 1%"
 			(at 111.76 121.92 0)
 			(effects
 				(font
@@ -9313,7 +9322,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "1k 1% 0402"
+		(property "MPN " "0402WGF1001TCE"
 			(at 110.49 120.65 0)
 			(effects
 				(font
@@ -9332,6 +9341,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 110.49 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1001TCE_C11702.html?s_z=n_C11702"
 			(at 110.49 120.65 0)
 			(effects
 				(font
@@ -9499,6 +9517,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Translators-Level-Shifters_Texas-Instruments-SN74LVC1T45DRLR_C352970.html?s_z=n_C352970"
+			(at 237.49 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "eff9900e-fb63-4922-a5bf-877a1c38e60d")
 		)
@@ -9545,7 +9572,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2N7002VC-"
+		(property "Value" "2N7002VC"
 			(at 63.5 135.89 0)
 			(effects
 				(font
@@ -9604,6 +9631,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 59.69 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/MOSFETs_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-2N7002V_C504145.html?s_z=n_C504145"
 			(at 59.69 130.81 0)
 			(effects
 				(font
@@ -9923,7 +9959,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1uF X5R ±10% 25V"
 			(at 165.1 62.23 90)
 			(effects
 				(font
@@ -9959,7 +9995,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "1uF 20% 10V 0402"
+		(property "MPN " "CL05A105KA5NQNC"
 			(at 166.37 60.96 0)
 			(effects
 				(font
@@ -9978,6 +10014,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 166.37 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.html?s_z=n_C52923"
 			(at 166.37 60.96 0)
 			(effects
 				(font
@@ -10019,7 +10064,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "W25Q64JV"
+		(property "Value" "W25Q64JVZEIQ"
 			(at 64.008 43.18 0)
 			(effects
 				(font
@@ -10065,6 +10110,24 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 63.5 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN " "W25Q64JVZEIQ"
+			(at 63.5 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/NOR-FLASH_Winbond-Elec-W25Q64JVZEIQ_C571262.html?s_z=n_C571262"
 			(at 63.5 62.23 0)
 			(effects
 				(font
@@ -10393,7 +10456,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 74.676 64.262 0)
 			(effects
 				(font
@@ -10429,7 +10492,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 73.66 62.23 0)
 			(effects
 				(font
@@ -10448,6 +10511,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 73.66 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 73.66 62.23 0)
 			(effects
 				(font
@@ -10622,7 +10694,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "51k"
+		(property "Value" "51k 1%"
 			(at 88.9 142.24 0)
 			(effects
 				(font
@@ -10658,7 +10730,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "51k 1% 0402"
+		(property "MPN " "0402WGF5102TCE"
 			(at 87.63 140.97 0)
 			(effects
 				(font
@@ -10677,6 +10749,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 87.63 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF5102TCE_C25794.html?s_z=n_C25794"
 			(at 87.63 140.97 0)
 			(effects
 				(font
@@ -10717,7 +10798,7 @@
 				)
 			)
 		)
-		(property "Value" "30p"
+		(property "Value" "30pF C0G ±5% 50V"
 			(at 161.925 95.25 90)
 			(effects
 				(font
@@ -10771,6 +10852,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 158.75 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0603CG300J500NT_C1658.html?s_z=n_C1658"
 			(at 158.75 96.52 0)
 			(effects
 				(font
@@ -10981,7 +11071,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "10k 1% 0402"
+		(property "MPN " "0402WGF1002TCE"
 			(at 77.47 109.22 0)
 			(effects
 				(font
@@ -11000,6 +11090,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 77.47 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.html?s_z=n_C25744"
 			(at 77.47 109.22 0)
 			(effects
 				(font
@@ -11042,7 +11141,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "1uF X5R ±10% 25V"
 			(at 165.1 67.31 90)
 			(effects
 				(font
@@ -11078,7 +11177,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "1uF 20% 10V 0402"
+		(property "MPN " "CL05A105KA5NQNC"
 			(at 166.37 66.04 0)
 			(effects
 				(font
@@ -11097,6 +11196,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 166.37 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.html?s_z=n_C52923"
 			(at 166.37 66.04 0)
 			(effects
 				(font
@@ -11332,6 +11440,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Crystals_YXC-Crystal-Oscillators-X322512MSB4SI_C9002.html?s_z=n_C9002"
+			(at 162.56 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6e3bd2a5-937b-4df4-abd2-2588612040dd")
 		)
@@ -11371,7 +11488,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 199.39 48.26 0)
 			(effects
 				(font
@@ -11407,7 +11524,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -11426,6 +11543,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 199.39 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -11503,7 +11629,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "10k 1% 0402"
+		(property "MPN " "0402WGF1002TCE"
 			(at 157.48 114.3 0)
 			(effects
 				(font
@@ -11522,6 +11648,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 157.48 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.html?s_z=n_C25744"
 			(at 157.48 114.3 0)
 			(effects
 				(font
@@ -11762,7 +11897,7 @@
 				)
 			)
 		)
-		(property "Value" "27"
+		(property "Value" "27 1%"
 			(at 165.1 83.82 90)
 			(effects
 				(font
@@ -11797,7 +11932,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "27 1% 0402"
+		(property "MPN " "0603WAF270JT5E"
 			(at 165.1 83.82 0)
 			(effects
 				(font
@@ -11816,6 +11951,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 165.1 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF270JT5E_C25190.html?s_z=n_C25190"
 			(at 165.1 83.82 0)
 			(effects
 				(font
@@ -11857,7 +12001,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 204.47 48.26 0)
 			(effects
 				(font
@@ -11893,7 +12037,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -11912,6 +12056,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 204.47 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 204.47 45.72 0)
 			(effects
 				(font
@@ -12018,7 +12171,7 @@
 				)
 			)
 		)
-		(property "Value" "51k"
+		(property "Value" "51k 1%"
 			(at 83.82 129.54 90)
 			(effects
 				(font
@@ -12053,7 +12206,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "51k 1% 0402"
+		(property "MPN " "0402WGF5102TCE"
 			(at 83.82 129.54 0)
 			(effects
 				(font
@@ -12072,6 +12225,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 83.82 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF5102TCE_C25794.html?s_z=n_C25794"
 			(at 83.82 129.54 0)
 			(effects
 				(font
@@ -12113,7 +12275,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7u"
+		(property "Value" "4.7uF X5R ±10% 10V"
 			(at 95.25 135.89 0)
 			(effects
 				(font
@@ -12149,7 +12311,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "4.7uF 20% 10V 0402"
+		(property "MPN " "CL10A475KP8NNNC"
 			(at 95.25 133.35 0)
 			(effects
 				(font
@@ -12168,6 +12330,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 95.25 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10A475KP8NNNC_C1705.html?s_z=n_C1705"
 			(at 95.25 133.35 0)
 			(effects
 				(font
@@ -12208,7 +12379,7 @@
 				)
 			)
 		)
-		(property "Value" "30p"
+		(property "Value" "30pF C0G ±5% 50V"
 			(at 161.925 103.886 90)
 			(effects
 				(font
@@ -12270,6 +12441,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_FH-Guangdong-Fenghua-Advanced-Tech-0603CG300J500NT_C1658.html?s_z=n_C1658"
+			(at 158.75 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "89d0d5c2-f3bd-4314-9ff3-e2b7b70a5305")
 		)
@@ -12305,7 +12485,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2N7002VC-"
+		(property "Value" "2N7002VC"
 			(at 113.665 130.8099 0)
 			(effects
 				(font
@@ -12372,6 +12552,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/MOSFETs_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-2N7002V_C504145.html?s_z=n_C504145"
+			(at 107.95 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "09433d97-62ec-42de-89f2-7d0b68dc1b9d")
 		)
@@ -12417,7 +12606,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "SWITCH"
+		(property "Value" "1P1T"
 			(at 52.07 135.89 90)
 			(effects
 				(font
@@ -12480,6 +12669,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Tactile-Switches_XKB-Connection-TS-1187A-B-A-B_C318884.html?s_z=n_C318884"
+			(at 53.34 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bf8ff2a2-8eec-4ea2-b0a6-a3bceff03c17")
 		)
@@ -12514,7 +12712,7 @@
 				)
 			)
 		)
-		(property "Value" "2N7002VC-"
+		(property "Value" "2N7002VC"
 			(at 74.93 120.015 0)
 			(effects
 				(font
@@ -12580,6 +12778,15 @@
 				(hide yes)
 			)
 		)
+		(property "Purchase link" "https://lcsc.com/product-detail/MOSFETs_Jiangsu-Changjing-Electronics-Technology-Co-Ltd-2N7002V_C504145.html?s_z=n_C504145"
+			(at 74.93 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c2e78a0c-cdf4-4329-a0f5-2f452a550502")
 		)
@@ -12625,7 +12832,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 191.77 48.26 0)
 			(effects
 				(font
@@ -12661,7 +12868,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 191.77 45.72 0)
 			(effects
 				(font
@@ -12680,6 +12887,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 191.77 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 191.77 45.72 0)
 			(effects
 				(font
@@ -12757,7 +12973,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "10k 1% 0402"
+		(property "MPN " "0402WGF1002TCE"
 			(at 62.23 121.92 0)
 			(effects
 				(font
@@ -12776,6 +12992,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 62.23 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.html?s_z=n_C25744"
 			(at 62.23 121.92 0)
 			(effects
 				(font
@@ -12884,7 +13109,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7u"
+		(property "Value" "4.7uF X5R ±10% 10V"
 			(at 102.87 135.89 0)
 			(effects
 				(font
@@ -12920,7 +13145,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "4.7uF 20% 10V 0402"
+		(property "MPN " "CL10A475KP8NNNC"
 			(at 102.87 133.35 0)
 			(effects
 				(font
@@ -12939,6 +13164,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 102.87 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL10A475KP8NNNC_C1705.html?s_z=n_C1705"
 			(at 102.87 133.35 0)
 			(effects
 				(font
@@ -12979,7 +13213,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "1k 1%"
 			(at 171.45 101.6 90)
 			(effects
 				(font
@@ -13014,7 +13248,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "1k 1% 0402"
+		(property "MPN " "0402WGF1001TCE"
 			(at 171.45 101.6 0)
 			(effects
 				(font
@@ -13033,6 +13267,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 171.45 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1001TCE_C11702.html?s_z=n_C11702"
 			(at 171.45 101.6 0)
 			(effects
 				(font
@@ -13178,7 +13421,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "SC0914(13)"
+		(property "MPN " "RP2040"
 			(at 195.58 99.06 0)
 			(effects
 				(font
@@ -13197,6 +13440,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 195.58 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Microcontrollers-MCU-MPU-SOC_Raspberry-Pi-RP2040_C2040.html?s_z=n_C2040"
 			(at 195.58 99.06 0)
 			(effects
 				(font
@@ -13403,7 +13655,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 240.03 59.69 0)
 			(effects
 				(font
@@ -13439,7 +13691,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 240.03 57.15 0)
 			(effects
 				(font
@@ -13458,6 +13710,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 240.03 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 240.03 57.15 0)
 			(effects
 				(font
@@ -13535,7 +13796,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "10k 1% 0402"
+		(property "MPN " "0402WGF1002TCE"
 			(at 53.34 127 0)
 			(effects
 				(font
@@ -13554,6 +13815,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 53.34 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.html?s_z=n_C25744"
 			(at 53.34 127 0)
 			(effects
 				(font
@@ -13595,7 +13865,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 186.69 48.26 0)
 			(effects
 				(font
@@ -13631,7 +13901,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 186.69 45.72 0)
 			(effects
 				(font
@@ -13650,6 +13920,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 186.69 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 186.69 45.72 0)
 			(effects
 				(font
@@ -13757,7 +14036,7 @@
 				)
 			)
 		)
-		(property "Value" "27"
+		(property "Value" "27 1%"
 			(at 165.1 86.36 90)
 			(effects
 				(font
@@ -13792,7 +14071,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "27 1% 0402"
+		(property "MPN " "0603WAF270JT5E"
 			(at 165.1 86.36 0)
 			(effects
 				(font
@@ -13811,6 +14090,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 165.1 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0603WAF270JT5E_C25190.html?s_z=n_C25190"
 			(at 165.1 86.36 0)
 			(effects
 				(font
@@ -13852,7 +14140,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 181.61 48.26 0)
 			(effects
 				(font
@@ -13888,7 +14176,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 181.61 45.72 0)
 			(effects
 				(font
@@ -13907,6 +14195,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 181.61 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 181.61 45.72 0)
 			(effects
 				(font
@@ -13948,7 +14245,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 176.53 48.26 0)
 			(effects
 				(font
@@ -13984,7 +14281,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 176.53 45.72 0)
 			(effects
 				(font
@@ -14003,6 +14300,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 176.53 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 176.53 45.72 0)
 			(effects
 				(font
@@ -14110,7 +14416,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "100nF X7R ±10% 16V"
 			(at 209.55 48.26 0)
 			(effects
 				(font
@@ -14146,7 +14452,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "100nF 10% 10V 0402"
+		(property "MPN " "CL05B104KO5NNNC"
 			(at 209.55 45.72 0)
 			(effects
 				(font
@@ -14165,6 +14471,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 209.55 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.html?s_z=n_C1525"
 			(at 209.55 45.72 0)
 			(effects
 				(font
@@ -14206,7 +14521,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "51k"
+		(property "Value" "51k 1%"
 			(at 88.9 134.62 0)
 			(effects
 				(font
@@ -14242,7 +14557,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN " "51k 1% 0402"
+		(property "MPN " "0402WGF5102TCE"
 			(at 87.63 133.35 0)
 			(effects
 				(font
@@ -14261,6 +14576,15 @@
 			)
 		)
 		(property "JLCPCB Part #" ""
+			(at 87.63 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Purchase link" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0402WGF5102TCE_C25794.html?s_z=n_C25794"
 			(at 87.63 133.35 0)
 			(effects
 				(font

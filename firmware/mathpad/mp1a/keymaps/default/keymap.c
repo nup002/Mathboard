@@ -113,7 +113,7 @@ const int key12[6] = {KC_NU, TD(ROOT_TD), TD(UNION_TD), TD(XI_TD), TD(ARROW_TD),
 const int key13[6] = {TD(PI_TD), KC_PARTIALDERIVATIVE, KC_DISJOINTUNION, KC_RHO, KC_NABLA, TD(EMPTY_SET_TD)};
 
 // Bottom row
-const int key20[6] = {TD(SIGMA_TD), TD(AND_TD), TD(CROSS_PRODUCT_TD), KC_TAU, KC_NOT, KC_DOTPRODUCT};
+const int key20[6] = {TD(SIGMA_TD), TD(AND_TD), TD(TIMES_TD), KC_TAU, KC_NOT, KC_DOTPRODUCT};
 const int key21[6] = {KC_UPSILON, TD(THERE_EXIST_TD), TD(PLUSMINUS_TD), TD(PHI_TD), KC_FORALL, KC_DEGREE};
 const int key22[6] = {KC_CHI, TD(DOWN_TACK_TD), KC_INFINITY, TD(PSI_TD), TD(DOUBLE_ARROW_TD), KC_FRACTION};
 const int key23[6] = {TD(OMEGA_TD), KC_INTEGERS, KC_REALS, KC_NATURALS, KC_RATIONALS, KC_COMPLEXES};
@@ -254,6 +254,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_INFINITY:
             infinity_key(record);
             break;
+        case KC_FRACTION:
+            fraction_key(record);
+            break;
         case KC_NOT:
             not_key(record);
             break;
@@ -304,6 +307,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [ROOT_TD] = ACTION_TAP_DANCE_FN (root_dance),
     [UNION_TD] = ACTION_TAP_DANCE_FN (union_dance),
     [ARROW_TD] = ACTION_TAP_DANCE_FN (arrow_dance),
+    [DOUBLE_ARROW_TD] = ACTION_TAP_DANCE_FN (double_arrow_dance),
     [CIRCLED_PLUS_TD] = ACTION_TAP_DANCE_FN (circled_plus_dance),
     [EMPTY_SET_TD] = ACTION_TAP_DANCE_FN (empty_set_dance),
     [ELEMENT_OF_TD] = ACTION_TAP_DANCE_FN (element_of_dance),
@@ -312,7 +316,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [THERE_EXIST_TD] = ACTION_TAP_DANCE_FN (there_exists_dance),
     [AND_TD] = ACTION_TAP_DANCE_FN (and_dance),
     [DOWN_TACK_TD] = ACTION_TAP_DANCE_FN (down_tack_dance),
-    [CROSS_PRODUCT_TD] = ACTION_TAP_DANCE_FN (cross_product_dance),
+    [TIMES_TD] = ACTION_TAP_DANCE_FN (times_dance),
     [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance)
   };
 

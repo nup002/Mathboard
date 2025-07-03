@@ -80,6 +80,7 @@
 #define combining_arrow_LTX   "\\vec{}"
 #define combining_dot_LTX   "\\dot{}"
 #define combining_2dot_LTX   "\\ddot{}"
+#define combining_3dot_LTX   "\\dddot{}"
 #define prime_LTX   "\\prime" // not in use currently
 #define transposed_LTX   "^\\top"
 #define sup_0_LTX   "^{0}"
@@ -149,7 +150,7 @@
 
 // Others
 #define dotproduct_LTX   "\\cdot"
-#define crossproduct_LTX   "\\times"
+#define times_LTX   "\\times"
 #define plusminus_LTX   "\\pm"
 #define minusplus_LTX   "\\mp"
 #define parallel_LTX   "\\parallel"

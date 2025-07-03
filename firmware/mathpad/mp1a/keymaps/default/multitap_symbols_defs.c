@@ -203,14 +203,14 @@ void much_greater_than_dance (tap_dance_state_t *s, void *d){
 
 void dot_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE){   
-        int symbols[] = {_combining_dot, _combining_2dot};
-        unicode_dance(symbols, 2, s, d);}
+        int symbols[] = {_combining_dot, _combining_2dot, _combining_3dot};
+        unicode_dance(symbols, 3, s, d);}
     else if (user_config.MODE == MOF_MODE){
-        mofDefinition mof_defs[] = {ACCENT_DOT_MOF, ACCENT_2DOT_MOF};
-        mof_dance(mof_defs, 2, s, d);}
+        mofDefinition mof_defs[] = {ACCENT_DOT_MOF, ACCENT_2DOT_MOF, ACCENT_3DOT_MOF};
+        mof_dance(mof_defs, 3, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {combining_dot_LTX, combining_2dot_LTX};
-        latex_dance(symbols, 2, s, d);}
+        const char *symbols[] = {combining_dot_LTX, combining_2dot_LTX, combining_3dot_LTX};
+        latex_dance(symbols, 3, s, d);}
 }
 
 void sub_dance (tap_dance_state_t *s, void *d){
@@ -297,10 +297,10 @@ void arrow_dance (tap_dance_state_t *s, void *d){
 void double_arrow_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
         int symbols[] = {_right_double_arrow, _rightleft_double_arrow, _left_double_arrow};
-        unicode_dance(symbols, 2, s, d);}
+        unicode_dance(symbols, 3, s, d);}
     else if (user_config.MODE == LTX_MODE){
         const char *symbols[] = {right_double_arrow_LTX, leftright_double_arrow_LTX, left_double_arrow_LTX};
-        latex_dance(symbols, 2, s, d);}
+        latex_dance(symbols, 3, s, d);}
 }
 
 void circled_plus_dance (tap_dance_state_t *s, void *d){
@@ -366,12 +366,12 @@ void and_dance (tap_dance_state_t *s, void *d){
         latex_dance(symbols, 3, s, d);}
 }
 
-void cross_product_dance (tap_dance_state_t *s, void *d){
+void times_dance (tap_dance_state_t *s, void *d){
     if (user_config.MODE == UC_MODE || user_config.MODE == MOF_MODE){
-        int symbols[] = {_cross_product, _minusplus};
+        int symbols[] = {_times, _division};
         unicode_dance(symbols, 2, s, d);}
     else if (user_config.MODE == LTX_MODE){
-        const char *symbols[] = {plusminus_LTX, minusplus_LTX};
+        const char *symbols[] = {times_LTX, dotproduct_LTX};
         latex_dance(symbols, 2, s, d);}
 }
 

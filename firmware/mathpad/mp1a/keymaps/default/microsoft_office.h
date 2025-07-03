@@ -58,6 +58,7 @@ static const mofDefinition ACCENT_BAR_MOF = {.string = "\\bar", .type = AS_IS_2S
 static const mofDefinition ACCENT_ARROW_MOF = {.string = "\\vec", .type = AS_IS_2SPACE};
 static const mofDefinition ACCENT_DOT_MOF = {.string = "\\dot", .type = AS_IS_2SPACE};
 static const mofDefinition ACCENT_2DOT_MOF = {.string = "\\ddot", .type = AS_IS_2SPACE};
+static const mofDefinition ACCENT_3DOT_MOF = {.string = "\\dddot", .type = AS_IS_2SPACE};
 static const mofDefinition SUP_0_MOF = {.string = "^0", .type = AS_IS_1SPACE};
 static const mofDefinition SUP_1_MOF = {.string = "^1", .type = AS_IS_1SPACE};
 static const mofDefinition SUP_2_MOF = {.string = "^2", .type = AS_IS_1SPACE};
