@@ -76,7 +76,7 @@
 #define circumflex_LTX   "\\hat{}"
 #define check_LTX   "\\check{}"
 #define combining_tilde_LTX   "\\tilde{}"
-#define combining_bar_LTX   "\\bar{}"
+#define combining_bar_LTX   "\\overline{}"
 #define combining_arrow_LTX   "\\vec{}"
 #define combining_dot_LTX   "\\dot{}"
 #define combining_2dot_LTX   "\\ddot{}"
