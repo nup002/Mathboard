@@ -1,5 +1,6 @@
-Mathpad is a [QMK](https://docs.qmk.fm)-based keypad that works on nearly all operating systems and with all Latin-based keyboard 
-layouts. This page explicitly defines these compatibilities to help you determine if Mathpad will work with your setup.
+Mathpad is a [QMK](https://docs.qmk.fm)-based keypad that works on nearly all operating systems and with all 
+Latin-based keyboard layouts. This page explicitly defines these compatibilities to help you determine if Mathpad 
+will work with your setup.
 
 # Operating Systems
 
@@ -13,6 +14,25 @@ for example due to not having administrator rights, you can use the
 [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) 
 instead.
 
+# Fonts
+Mathpad outputs Unicode mathematical symbols that may not display correctly if your system fonts don't include the 
+necessary character definitions. This can result in:
+ - Missing symbols showing as empty boxes (□)
+ - Symbols appearing as question marks (?)
+ - Fallback to basic ASCII characters
+ - Inconsistent symbol rendering across applications
+
+## Recommended Fonts
+For best compatibility, ensure your system has fonts that include mathematical Unicode blocks:
+ - Windows: Cambria Math, Segoe UI Symbol (usually pre-installed)
+ - MacOS: SF Pro, Menlo, Monaco (usually pre-installed)
+ - Linux: DejaVu Sans, Liberation fonts, or install `fonts-symbola` package
+
+## Testing Font Coverage
+To test if your fonts support mathematical symbols:
+ - Try typing or pasting these characters: ∑ ∫ ∞ ≤ ≥ ≠ ± √ π
+ - If you see boxes or question marks, you may need to install additional fonts
+ - Different applications may use different fonts, so test in your intended software
 
 # Keyboard Layouts
 
@@ -128,5 +148,4 @@ the letters A, B, C, D, E, and F can be typed.
 ### General
 - Some virtualized environments (VMs, remote desktop) may have reduced symbol support
 
-## Troubleshooting
 

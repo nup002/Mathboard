@@ -11,14 +11,14 @@ TOP, CENTER, and BOTTOM.
 Symbols on the same row are almost always related. On the particular symbol key shown here:
 1) The TOP row has Greek letters
 2) The CENTER row has relationship operators
-3) The BOTTOM row has diacritical marks.
+3) The BOTTOM row has accents.
 
 **The default symbol is always in the top left corner**. The particular symbol key shown above will therefore give you 
 $α$ (Greek letter Alpha) when you press it, and we name the key <keycombo>[α]</keycombo>. The next section explains how 
 you access the other symbols on the key.
 
 ## Using the modifier keys
-Accessing the five other symbols is as simple as combining a symbol key with one or two of the coloured modifier keys.
+Accessing the five other symbols is done by combining a symbol key with one or two of the coloured modifier keys.
 
 <img src="_media/top_modifiers_labelled.svg" style="width: 100%; max-width: 500px;">
 
@@ -41,7 +41,8 @@ key on your Mathpad. Clicking this key will output the Greek letter Alpha.
 
 >[!NOTE|label:In Case Of Problems]
 >If instead of $\alpha$ you get a bunch of random symbols or nothing at all, make sure you have followed 
-> [First Setup](/first_setup.md). If you get '\alpha', you must set your Mathpad to Plaintext mode.
+> [First Setup](/first_setup.md). If you get '\alpha', you must set your Mathpad to Plaintext mode. If you still have 
+> problems, refer to [Troubleshooting](/troubleshoot.md)
 >
 
 Let's move on to something a bit more advanced. Locate the <keycombo>[η]</keycombo> key on your Mathpad, and click the 

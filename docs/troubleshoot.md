@@ -10,6 +10,12 @@ is running Windows, ensure that WinCompose is running and using default settings
 If your Mathpad types out nonsensical text or completely incorrect symbols, it is likely because your Mathpad's 
 firmware does not match your computer's keyboard layout. Refer to [First Setup](/first_setup.md)
 
+## Symbols Appear as Question Marks, Empty Boxes, or Normal Letters
+This problem is not caused by Mathpad, but by the font you are using. Some fonts simply does not define the 
+mathematical symbols that Mathpad can type, so even if they are transmitted correctly to the computer, they cannot 
+be displayed by your font. To fix this problem, switch to a font that supports mathematical Unicode symbols. Refer to 
+[compatibility](/compatibility.md#fonts).
+
 ## General troubleshooting
 1. Verify your keyboard layout is [supported](/compatibility.md#supported-keyboard-layouts)
 2. Verify you have installed the firmware that matches your keyboard layout
