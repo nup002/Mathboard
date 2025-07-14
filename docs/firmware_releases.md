@@ -1,5 +1,3 @@
-# Firmware Download
-
 <link rel="stylesheet" href="_media/firmware-selector.css">
 
 <div class="firmware-selector">
