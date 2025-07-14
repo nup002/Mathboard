@@ -1,0 +1,132 @@
+Mathpad is a [QMK](https://docs.qmk.fm)-based keypad that works on nearly all operating systems and with all Latin-based keyboard 
+layouts. This page explicitly defines these compatibilities to help you determine if Mathpad will work with your setup.
+
+# Operating Systems
+
+Mathpad works on:
+ - **Windows 10 and 11** with WinCompose installed 
+ - **MacOS** (no additional software required)
+ - **Linux distros with IBus** (includes Ubuntu, Debian, Fedora, CentOS, Raspbian, and many more)
+
+When using Windows, WinCompose is **required** for proper Unicode symbol input. If you cannot install WinCompose,
+for example due to not having administrator rights, you can use the 
+[portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) 
+instead.
+
+
+# Keyboard Layouts
+
+Mathpad requires that the computer uses a **Latin-based keyboard layout**. This means layouts that use the 
+Latin alphabet (A-Z) as their primary character set, as opposed to Cyrillic, Arabic, Chinese, or other 
+non-Latin scripts. The layout can include additional accented characters and symbols, but the base alphabet must be 
+Latin.
+
+## Supported Keyboard Layouts
+
+### North America
+ - English (US International)
+ - Canadian Multilingual (CSA)
+ - French (Canada)
+
+### United Kingdom & Ireland
+ - English (UK)
+
+### Western Europe
+ - Danish
+ - Dutch (Belgium)
+ - Finnish
+ - French
+ - French (AFNOR)
+ - French (BÉPO)
+ - French (Belgium)
+ - French (Switzerland)
+ - French (macOS, ISO)
+ - German
+ - German (Switzerland)
+ - German (macOS)
+ - Icelandic
+ - Italian
+ - Italian (macOS, ANSI)
+ - Italian (macOS, ISO)
+ - Norwegian
+ - Portuguese
+ - Portuguese (macOS, ISO)
+ - Spanish
+ - Swedish
+
+### Eastern Europe
+ - Croatian
+ - Czech
+ - Czech (macOS, ANSI)
+ - Czech (macOS, ISO)
+ - Estonian
+ - Hungarian
+ - Latvian
+ - Lithuanian (ĄŽERTY)
+ - Lithuanian (QWERTY)
+ - Romanian
+ - Serbian (Latin)
+ - Slovak
+ - Slovenian
+
+### Other Regions
+ - Portuguese (Brazil)
+ - Spanish (Latin America)
+ - Japanese
+ - Turkish (F)
+ - Turkish (Q)
+
+### Alternative Layouts
+Mathpad also supports these non-QWERTY layouts:
+ - Colemak  
+ - Dvorak   
+ - Dvorak (French)  
+ - Dvorak (Spanish)
+ - Dvorak (Programmer)  
+ - Norman   
+ - Plover (Dvorak)
+ - Workman  
+ - Workman (ZXCVM)
+
+## Unsupported Layouts
+
+If you use an unsupported keyboard layout (non-Latin scripts like Arabic, Cyrillic, Chinese, etc.), Mathpad simply will 
+not function. The reason is that Mathpad sends symbols in their Unicode representation, which **requires** that 
+the letters A, B, C, D, E, and F can be typed.
+
+## How to Check Your Layout
+
+### Windows
+1. Right-click the language indicator in the system tray (usually shows "ENG" or similar)
+2. Select "More keyboard settings"
+3. Your current keyboard layout is shown under "Preferred languages"
+
+### MacOS
+1. Go to System Preferences > Keyboard > Input Sources
+2. Your active layout is shown in the left panel
+3. You can also check the input menu in the menu bar (flag icon)
+
+### Linux
+1. Open System Settings > Region & Language (Ubuntu/GNOME)
+2. Or run `setxkbmap -query` in terminal to see current layout
+3. The layout name will be shown in the "layout" field
+
+## Known Issues
+
+### Windows
+- WinCompose must be running for proper Unicode symbol input
+
+### MacOS
+- On some macOS versions, certain mathematical symbols may require manual font installation
+- Dead key behavior may vary between different macOS versions
+
+### Linux
+- IBus must be properly configured and running
+- Some minimal Linux distributions may require additional Unicode font packages
+- Wayland vs X11 display servers may affect dead key behavior
+
+### General
+- Some virtualized environments (VMs, remote desktop) may have reduced symbol support
+
+## Troubleshooting
+
