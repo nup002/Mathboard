@@ -23,7 +23,12 @@ Set the OS switch on the back of your Mathpad to the LINUX position
 
 1) Install [WinCompose](http://wincompose.info) - this enables special character input on Windows
 2) Set the OS switch on the back of your Mathpad to the WINDOWS position
-
+3) 
+> [!TIP]
+> If you cannot install WinCompose, for example if your computer is managed by at IT department and you 
+> lack administrator rights, use the [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe).
+> 
+> 
 <!-- tabs:end -->
 
 > [!NOTE|label:Why Setting The OS Switch Is Required]
@@ -44,8 +49,9 @@ You're good to go! Mathpad supports US ANSI out of the box. You can move on to [
 
 You must update the firmware of your Mathpad to match the keyboard layout of your computer.
 
-If you do not know your keyboard layout, there are many guides online that you can use. Your keyboard layout is usually 
-defined in the "Input devices" or "Language and Region" settings.
+If you do not know your keyboard layout, you can follow the short guide in 
+[compatibility](/compatibility.md#how-to-check-your-layout). Your keyboard layout is usually defined in the 
+"Input devices" or "Language and Region" settings.
 
 Once you know your keyboard layout, follow these steps to update your Mathpad's firmware:
 
