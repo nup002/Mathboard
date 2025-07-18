@@ -13,29 +13,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Global variables are defined in this file.
+#ifndef UNICODE_MODE_H
+#define UNICODE_MODE_H
 
-#ifndef GLOBALS_H
-#define GLOBALS_H
+#include QMK_KEYBOARD_H
 
-#include "quantum.h"
-#include <stdint.h>
+// Function to send a symbol's unicode representation
+void send_symbol_unicode(const symbol_definition_t* symbol);
 
-// Define the 6 different symbol locations on the keycaps
-#define _LEFT_TOP 0  
-#define _LEFT_MID 1
-#define _LEFT_FRONT 2
-#define _RIGHT_TOP 3 
-#define _RIGHT_MID 4
-#define _RIGHT_FRONT 5
+// Function to send a Unicode character
+void send_unicode(uint32_t unicode_value);
 
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    uint8_t     MODE :8;  // tracks the latest Mathpad mode.
-  };
-} user_config_t;
-
-user_config_t user_config;
-#endif
+#endif /* UNICODE_MODE_H */

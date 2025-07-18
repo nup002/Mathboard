@@ -12,8 +12,47 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "microsoft_office.h"
-#include QMK_KEYBOARD_H
+
+#include <quantum.h>
+#include "symbols/microsoft_office/microsoft_office_mode.h"
+
+
+// Function to send a symbol's Microsoft Office representation
+void send_symbol_mof(const symbol_definition_t* symbol) {
+    if (!symbol->mof_string && symbol->unicode_value != 0) {
+        // If no specific MOF string is defined but we have a Unicode value,
+        // fall back to sending the Unicode character
+        send_symbol_unicode(symbol);
+        return;
+    }
+    
+    if (!symbol->mof_string) {
+        return;  // No MOF representation available
+    }
+    
+    // Call the appropriate MOF sending function directly based on the mof_method
+    switch (symbol->mof_method) {
+        case MOF_AS_IS_1SPACE:
+            send_as_is_1space(symbol->mof_string);
+            break;
+        case MOF_AS_IS_2SPACE:
+            send_as_is_2space(symbol->mof_string);
+            break;
+        case MOF_MOVE_LEFT_1SPACE:
+            send_with_left_move_1space(symbol->mof_string);
+            break;
+        case MOF_MOVE_LEFT_2SPACE:
+            send_with_left_move_2space(symbol->mof_string);
+            break;
+        case MOF_SPACE_DELETE_PLACEHOLDER_LIMITS:
+            send_with_delete_lims_1space(symbol->mof_string);
+            break;
+        default:
+            // Default to sending as is with one space
+            send_as_is_1space(symbol->mof_string);
+            break;
+    }
+}
 
 /**
  * @brief Sends one space character
@@ -32,18 +71,16 @@ void send_2x_space(void) {
 
 /**
  * @brief Sends 'string' and one space. 
- 
+ *
  * Typically used for typing symbols that require an extra space to appear correctly, 
  * such as subscripts and superscripts.
  *
- * To send a MOF symbol with this method, define .type = AS_IS_1SPACE in the mofDefinition struct.
- *
  * @param string a pointer to the string to be sent
  */
-void send_as_is_1space(char *string){
+void send_as_is_1space(const char *string) {
     send_string(string);
     send_space();
-};
+}
 
 /**
  * @brief Sends 'string' and two spaces. 
@@ -51,28 +88,23 @@ void send_as_is_1space(char *string){
  * Typically used for typing symbols that require two extra spaces to appear 
  * correctly, such as combining symbols like hat, overbar, tilde, etc.
  *
- * To send a MOF symbol with this method, define .type = AS_IS_2SPACE in the mofDefinition struct.
- *
  * @param string a pointer to the string to be sent
  */
-void send_as_is_2space(char *string){
-    // Sends 'string' and two spaces
+void send_as_is_2space(const char *string) {
     send_string(string);
     send_2x_space();
-};
+}
 
 /**
  * @brief Sends 'string' and one space and moves the caret left once.
  *
- * To send a MOF symbol with this method, define .type = MOVE_LEFT_1SPACE in the mofDefinition struct.
- *
  * @param string a pointer to the string to be sent
  */
-void send_with_left_move_1space(char *string){
+void send_with_left_move_1space(const char *string) {
     send_string(string);
     send_space();
     tap_code(KC_LEFT);
-};
+}
 
 /**
  * @brief Sends 'string' and two spaces and moves the caret left once.
@@ -81,15 +113,13 @@ void send_with_left_move_1space(char *string){
  * and where the caret should be within the symbol's boundaries after typing. Examples
  * include square root, cube root, and quadratic root.
  *
- * To send a MOF symbol with this method, define .type = MOVE_LEFT_2SPACE in the mofDefinition struct.
- *
  * @param string a pointer to the string to be sent
  */
-void send_with_left_move_2space(char *string){
+void send_with_left_move_2space(const char *string) {
     send_string(string);
     send_2x_space();
     tap_code(KC_LEFT);
-};
+}
 
 /**
  * @brief Sends 'string' and one space and deletes limits.
@@ -98,57 +128,13 @@ void send_with_left_move_2space(char *string){
  * to delete the placeholder limits after typing. Examples include summation, integrals, etc.
  * The symbol string must end with '_a^b'. For example, '\\sum_a^b'.
  *
- * To send a MOF symbol with this method, define .type = SPACE_DELETE_PLACEHOLDER_LIMITS in 
- * the mofDefinition struct.
- *
  * @param string a pointer to the string to be sent
  */
-void send_with_delete_lims_1space(char *string){
+void send_with_delete_lims_1space(const char *string) {
     send_string(string);
     send_space();
     tap_code(KC_LEFT);
     tap_code(KC_BSPC);
     tap_code(KC_LEFT);
     tap_code(KC_BSPC);
-};
-
-/**
- * @brief Sends the string and spaces according to the type of the string.
- *
- * This function takes a struct mofDefinition and sends the string and spaces according to
- * the type of the string. The type can be one of the following:
- * - AS_IS_1SPACE: sends the string and one space
- * - AS_IS_2SPACE: sends the string and two spaces
- * - MOVE_LEFT_1SPACE: sends the string and one space and moves the caret left once
- * - MOVE_LEFT_2SPACE: sends the string and two spaces and moves the caret left once
- * - SPACE_DELETE_PLACEHOLDER_LIMITS: sends the string and one space and deletes limits
- *
- * @param mof_def a pointer to the struct mofDefinition to be sent
- */
-void send_mof(struct mofDefinition mof_def){
-    enum mofTypes mof_type = mof_def.type;
-    char *string = mof_def.string;
-    switch (mof_type) {
-        case AS_IS_1SPACE:
-            send_as_is_1space(string);
-            break;
-        case AS_IS_2SPACE:
-            send_as_is_2space(string);
-            break;
-        case MOVE_LEFT_1SPACE:
-            send_with_left_move_1space(string);
-            break;
-        case MOVE_LEFT_2SPACE:
-            send_with_left_move_2space(string);
-            break;
-        case SPACE_DELETE_PLACEHOLDER_LIMITS:
-            send_with_delete_lims_1space(string);
-            break;
-    };
-};
-
-void send_mof_on_keypress(struct mofDefinition mof_def, keyrecord_t *record){
-    if (record->event.pressed) {
-        send_mof(mof_def);
-    };
-};
+}

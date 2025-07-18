@@ -13,7 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Every tapdance symbol is defined in this file. It defines what should happen
+// Every multitap symbol is defined in this file. It defines what should happen
 // when the symbol is tapped, double-tapped, triple-tapped, etc. The action to 
 // take typically depend on which mode is active.
 // The equivalent file for 'normal' (non-tapdance) symbols is 'normal_symbols_defs.h'

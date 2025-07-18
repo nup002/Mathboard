@@ -13,29 +13,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Global variables are defined in this file.
+#ifndef SYMBOL_CATEGORIES_H
+#define SYMBOL_CATEGORIES_H
 
-#ifndef GLOBALS_H
-#define GLOBALS_H
+// Include all symbol category headers
+#include "greek_symbols.h"
+#include "algebra_symbols.h"
+#include "comparison_symbols.h"
+#include "logic_symbols.h"
+#include "misc_symbols.h"
+#include "modifier_symbols.h"
+#include "number_system_symbols.h"
+#include "set_theory_symbols.h"
 
-#include "quantum.h"
-#include <stdint.h>
-
-// Define the 6 different symbol locations on the keycaps
-#define _LEFT_TOP 0  
-#define _LEFT_MID 1
-#define _LEFT_FRONT 2
-#define _RIGHT_TOP 3 
-#define _RIGHT_MID 4
-#define _RIGHT_FRONT 5
-
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    uint8_t     MODE :8;  // tracks the latest Mathpad mode.
-  };
-} user_config_t;
-
-user_config_t user_config;
-#endif
+#endif /* SYMBOL_CATEGORIES_H */

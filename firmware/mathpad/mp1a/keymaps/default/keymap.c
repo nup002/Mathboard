@@ -12,15 +12,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "latex.h"
 #include QMK_KEYBOARD_H
-#include "print.h"
+#include <stddef.h> // For NULL definition
 #include "globals.h"
 #include "modifiers.h"
 #include "mode.h"
+#include "symbol_definitions.h"
 #include "multitap_symbols_defs.h"
-#include "normal_symbols_defs.h"
-
 
 #ifdef SENDSTRING_LAYOUT
   // This converts the layout name to a string
@@ -120,162 +118,49 @@ const int key23[6] = {TD(OMEGA_TD), KC_INTEGERS, KC_REALS, KC_NATURALS, KC_RATIO
 
 
 /**
- * 'process_record_user' handles keyclicks on "normal" (non-multitap) symbols. Each normal symbol has a function defined in
- * normal_symbols_defs.h. For example, when the user clicks KC_NOTEQUAL, process_record_user() will call notequal_key().
- * The symbol functions defined in symbol_functions.h decides which action to take depending on the mathpad MODE.
+ * 'process_record_user' handles keyclicks on symbols using the unified symbol definition structure.
+ * For normal (non-multitap) symbols, it uses the get_symbol_for_keycode function to map the keycode
+ * to its corresponding symbol definition, then processes it with handle_symbol_key.
  */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint16_t mode_key_timer;
+    
+    // Handle special modifier keys first
     switch (keycode) {
         case KC_SWITCH_MODE:
             // Mode key clicked. Rotates from mode to mode.
             if (record->event.pressed) {
                 mode_key_timer = timer_read();
-            }else if (timer_elapsed(mode_key_timer) > 1000) {
+            } else if (timer_elapsed(mode_key_timer) > 1000) {
                 output_mode_set(UC_MODE); // Go to Unicode mode if MODE key is held for more than one second
-            }else{
+            } else {
                 output_mode_update(); // Cycle to next mode if the MODE key is released within one second
             }
             return false; // Don't continue processing this key
+            
         case KC_RIGHTKEY:
             rightkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
+            
         case KC_MIDKEY:
             midkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
+            
         case KC_FRONTKEY:
             frontkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
-        case KC_ALPHA:
-            alpha_key(record);
-            break;
-        case KC_NOTEQUAL:
-            notequal_key(record);
-            break;
-        case KC_BETA:
-            beta_key(record);
-            break;
-        case KC_ALMOSTEQUAL:
-            almostequal_key(record);
-            break;
-        case KC_ACCENT_CIRCUMFLEX:
-            circumflex_key(record);
-            break;
-        case KC_ACCENT_CHECK:
-            check_key(record);
-            break;
-        case KC_PROPORTIONAL:
-            proportional_key(record);
-            break;
-        case KC_IDENTICALTO:
-            identicalto_key(record);
-            break;
-        case KC_COMBININGTILDE:
-            combiningtilde_key(record);
-            break;
-        case KC_COMBININGBAR:
-            combiningbar_key(record);
-            break;
-        case KC_EPSILON:
-            epsilon_key(record);
-            break;
-        case KC_LESSOREQUAL:
-            lessorequal_key(record);
-            break;
-        case KC_ZETA:
-            zeta_key(record);
-            break;
-        case KC_GREATEROREQUAL:
-            greaterorequal_key(record);
-            break;
-        case KC_ACCENT_ARROW:
-            accent_arrow_key(record);
-            break;
-        case KC_ETA:
-            eta_key(record);
-            break;
-        case KC_IOTA:
-            iota_key(record);
-            break;
-        case KC_SUM:
-            sum_key(record);
-            break;
-        case KC_KAPPA:
-            kappa_key(record);
-            break;
-        case KC_NARYPRODUCT:
-            naryproduct_key(record);
-            break;
-        case KC_MU:
-            mu_key(record);
-            break;
-        case KC_NOT_ELEMENT_OF:
-            not_element_of_key(record);
-            break;
-        case KC_NU:
-            nu_key(record);
-            break;
-        case KC_OMICRON:
-            omicron_key(record);
-            break;
-        case KC_PARTIALDERIVATIVE:
-            partialderivative_key(record);
-            break;
-        case KC_NABLA:
-            nabla_key(record);
-            break;
-        case KC_DISJOINTUNION:
-            disjointunion_key(record);
-            break;
-        case KC_RHO:
-            rho_key(record);
-            break;
-        case KC_DOTPRODUCT:
-            dotproduct_key(record);
-            break;
-        case KC_TAU:
-            tau_key(record);
-            break;
-        case KC_UPSILON:
-            upsilon_key(record);
-            break;
-        case KC_FORALL:
-            forall_key(record);
-            break;
-        case KC_CHI:
-            chi_key(record);
-            break;
-        case KC_DEGREE:
-            degree_key(record);
-            break;
-        case KC_INFINITY:
-            infinity_key(record);
-            break;
-        case KC_FRACTION:
-            fraction_key(record);
-            break;
-        case KC_NOT:
-            not_key(record);
-            break;
-        case KC_NATURALS:
-            naturals_key(record);
-            break;
-        case KC_INTEGERS:
-            integers_key(record);
-            break;
-        case KC_RATIONALS:
-            rationals_key(record);
-            break;
-        case KC_REALS:
-            reals_key(record);
-            break;
-        case KC_COMPLEXES:
-            complexes_key(record);
-            break;
     }
+    
+    // Handle normal (non-multitap) symbols
+    const symbol_definition_t *symbol = get_symbol_for_keycode(keycode);
+    if (symbol != NULL) {
+        return send_symbol_on_keypress(symbol, record);
+    }
+    
+    // If we get here, it's not a symbol we know how to handle
     return true;
 };
 
