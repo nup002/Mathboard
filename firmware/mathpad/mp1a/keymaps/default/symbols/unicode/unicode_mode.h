@@ -18,6 +18,8 @@
 
 #include QMK_KEYBOARD_H
 
+#include "../symbols.h"
+
 // Function to send a symbol's unicode representation
 void send_symbol_unicode(const symbol_definition_t* symbol);
 

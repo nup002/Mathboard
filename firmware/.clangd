@@ -1,0 +1,12 @@
+CompileFlags:
+  CompilationDatabase: qmk_firmware/
+  Add: [
+    "-I${workspaceFolder}/qmk_firmware/",
+    "-I${workspaceFolder}/qmk_firmware/quantum/",
+    "-I${workspaceFolder}/qmk_firmware/quantum/keymap_common/",
+    "-I${workspaceFolder}/qmk_firmware/tmk_core/common/",
+    "-I${workspaceFolder}/mathpad/",
+    "-I${workspaceFolder}/mathpad/mp1a/",
+    "-include", "quantum/quantum.h",
+    "-DQMK_KEYBOARD_H=\"quantum/keyboard.h\""
+  ]

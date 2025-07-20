@@ -18,14 +18,8 @@
 
 #include QMK_KEYBOARD_H
 
-// Define the different sending methods for Microsoft Office
-typedef enum {
-    MOF_AS_IS_1SPACE,
-    MOF_AS_IS_2SPACE,
-    MOF_MOVE_LEFT_1SPACE,
-    MOF_MOVE_LEFT_2SPACE,
-    MOF_SPACE_DELETE_PLACEHOLDER_LIMITS
-} mof_send_method_t;
+#include "../symbols.h"
+
 
 // Function to send a symbol's Microsoft Office representation
 void send_symbol_mof(const symbol_definition_t* symbol);

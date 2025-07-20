@@ -16,10 +16,7 @@
  */
 
 #include <stddef.h>  // For NULL
-#include "../unicode_symbols.h"
-#include "../symbol_definitions.h"
-#include "../latex.h"
-#include "../microsoft_office.h"
+#include "symbols.h"
 #include "comparison_symbols.h"
 
 // Comparison and equivalence symbols

@@ -18,16 +18,8 @@
 
 #include QMK_KEYBOARD_H
 
-// Define the different sending methods for LaTeX
-typedef enum {
-    LATEX_NORMAL,         // Just send the string as is
-    LATEX_BACKTRACK_1,    // Send string and move cursor back 1 position
-    LATEX_BACKTRACK_3,    // Send string and move cursor back 3 positions
-    LATEX_BACKTRACK_4     // Send string and move cursor back 4 positions
-} latex_send_method_t;
+#include "../symbols.h"
 
-// LaTeX string constants are defined in latex_strings.h
-#include "symbols/latex/latex_strings.h"
 
 void send_symbol_latex(const symbol_definition_t* symbol);
 

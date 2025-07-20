@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "../symbol_definitions.h"
+#include "symbols.h"
 
 // Set theory symbols
 extern const symbol_definition_t SYMBOL_UNION;
@@ -28,7 +28,9 @@ extern const symbol_definition_t SYMBOL_CONTAINS_AS_MEMBER;
 extern const symbol_definition_t SYMBOL_EMPTY_SET;
 extern const symbol_definition_t SYMBOL_POWER_SET;
 extern const symbol_definition_t SYMBOL_PROPER_SUBSET;
+extern const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET;
 extern const symbol_definition_t SYMBOL_SET_DIFFERENCE;
 extern const symbol_definition_t SYMBOL_SUBSET;
+extern const symbol_definition_t SYMBOL_NOT_SUBSET;
 extern const symbol_definition_t SYMBOL_DISJOINT_UNION;
 extern const symbol_definition_t SYMBOL_DIRECT_SUM;

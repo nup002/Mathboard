@@ -16,10 +16,7 @@
  */
 
 #include <stddef.h>  // For NULL
-#include "../unicode_symbols.h"
-#include "../symbol_definitions.h"
-#include "../latex.h"
-#include "../microsoft_office.h"
+#include "symbols.h"
 #include "misc_symbols.h"
 
 // Other mathematical and scientific symbols
@@ -108,37 +105,109 @@ const symbol_definition_t SYMBOL_LEFTRIGHTARROW = DEFINE_SYMBOL(
     NULL, MOF_AS_IS_1SPACE
 );
 
-const symbol_definition_t SYMBOL_MAPSTO = DEFINE_SYMBOL(
-    mapsto,
-    0x21A6,                  // Unicode: ↦
-    "\\mapsto", LATEX_NORMAL,
+const symbol_definition_t SYMBOL_DOUBLERIGHTARROW = DEFINE_SYMBOL(
+    doublerightarrow,
+    0x21D2,                  // Unicode: ⇒
+    "\\Rightarrow", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );
 
-const symbol_definition_t SYMBOL_LONGMAPSTO = DEFINE_SYMBOL(
-    longmapsto,
-    0x27FC,                  // Unicode: ⟼
-    "\\longmapsto", LATEX_NORMAL,
+const symbol_definition_t SYMBOL_DOUBLELEFTARROW = DEFINE_SYMBOL(
+    doubleleftarrow,
+    0x21D0,                  // Unicode: ⇐
+    "\\Leftarrow", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );
 
-const symbol_definition_t SYMBOL_LONGRIGHTARROW = DEFINE_SYMBOL(
-    longrightarrow,
-    0x27F6,                  // Unicode: ⟶
-    "\\longrightarrow", LATEX_NORMAL,
+const symbol_definition_t SYMBOL_DOUBLERIGHTLEFTARROW = DEFINE_SYMBOL(
+    doubleleftrightarrow,
+    0x21D4,                  // Unicode: ⇔
+    "\\Leftrightarrow", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );
 
-const symbol_definition_t SYMBOL_LONGLEFTARROW = DEFINE_SYMBOL(
-    longleftarrow,
-    0x27F5,                  // Unicode: ⟵
-    "\\longleftarrow", LATEX_NORMAL,
+// Subscript symbols
+const symbol_definition_t SYMBOL_SUB_0 = DEFINE_SYMBOL(
+    sub_0,
+    0x2080,                  // Unicode: ₀
+    "_0", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );
 
-const symbol_definition_t SYMBOL_LONGLEFTRIGHTARROW = DEFINE_SYMBOL(
-    longleftrightarrow,
-    0x27F7,                  // Unicode: ⟷
-    "\\longleftrightarrow", LATEX_NORMAL,
+const symbol_definition_t SYMBOL_SUB_1 = DEFINE_SYMBOL(
+    sub_1,
+    0x2081,                  // Unicode: ₁
+    "_1", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUB_2 = DEFINE_SYMBOL(
+    sub_2,
+    0x2082,                  // Unicode: ₂
+    "_2", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUB_I = DEFINE_SYMBOL(
+    sub_i,
+    0x1D62,                  // Unicode: ᵢ
+    "_i", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUB_J = DEFINE_SYMBOL(
+    sub_j,
+    0x2C7C,                  // Unicode: ⱼ
+    "_j", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUB_N = DEFINE_SYMBOL(
+    sub_n,
+    0x2099,                  // Unicode: ₙ
+    "_n", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+// Superscript symbols
+const symbol_definition_t SYMBOL_SUP_0 = DEFINE_SYMBOL(
+    sup_0,
+    0x2070,                  // Unicode: ⁰
+    "^0", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUP_1 = DEFINE_SYMBOL(
+    sup_1,
+    0x00B9,                  // Unicode: ¹
+    "^1", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUP_2 = DEFINE_SYMBOL(
+    sup_2,
+    0x00B2,                  // Unicode: ²
+    "^2", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUP_I = DEFINE_SYMBOL(
+    sup_i,
+    0x2071,                  // Unicode: ⁱ
+    "^i", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUP_J = DEFINE_SYMBOL(
+    sup_j,
+    0x02B2,                  // Unicode: ʲ
+    "^j", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_SUP_N = DEFINE_SYMBOL(
+    sup_n,
+    0x207F,                  // Unicode: ⁿ
+    "^n", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );

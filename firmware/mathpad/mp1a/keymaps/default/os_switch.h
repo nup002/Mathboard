@@ -16,6 +16,8 @@
 #define OS_SWITCH_H
 
 #include QMK_KEYBOARD_H
+#include <stdbool.h>
+#include <stdint.h>
 
 bool dip_switch_update_user(uint8_t index, bool active);
 

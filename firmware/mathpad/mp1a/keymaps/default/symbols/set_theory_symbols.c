@@ -16,10 +16,7 @@
  */
 
 #include <stddef.h>  // For NULL
-#include "../unicode_symbols.h"
-#include "../symbol_definitions.h"
-#include "../latex.h"
-#include "../microsoft_office.h"
+#include "symbols.h"
 #include "set_theory_symbols.h"
 
 // Set theory symbols
@@ -79,6 +76,13 @@ const symbol_definition_t SYMBOL_PROPER_SUBSET = DEFINE_SYMBOL(
     NULL, MOF_AS_IS_1SPACE
 );
 
+const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
+    not_proper_subset,
+    0x2284,                  // Unicode: ⊄
+    "\\not\\subset", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
 const symbol_definition_t SYMBOL_SET_DIFFERENCE = DEFINE_SYMBOL(
     set_difference,
     0x2216,                  // Unicode: ∖
@@ -90,6 +94,13 @@ const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
     subset,
     0x2286,                  // Unicode: ⊆
     "\\subseteq", LATEX_NORMAL,
+    NULL, MOF_AS_IS_1SPACE
+);
+
+const symbol_definition_t SYMBOL_NOT_SUBSET = DEFINE_SYMBOL(
+    not_subset,
+    0x2288,                  // Unicode: ⊈
+    "\\not\\subseteq", LATEX_NORMAL,
     NULL, MOF_AS_IS_1SPACE
 );
 

@@ -16,10 +16,7 @@
  */
 
 #include <stddef.h>  // For NULL
-#include "../unicode_symbols.h"
-#include "../symbol_definitions.h"
-#include "../latex.h"
-#include "../microsoft_office.h"
+#include "symbols.h"
 #include "algebra_symbols.h"
 
 // Algebra and calculus symbols

@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "../symbol_definitions.h"
+#include "symbols.h"
 
 // Other mathematical and scientific symbols
 extern const symbol_definition_t SYMBOL_DOTPRODUCT;
@@ -30,12 +30,26 @@ extern const symbol_definition_t SYMBOL_DEGREE;
 extern const symbol_definition_t SYMBOL_INFINITY;
 extern const symbol_definition_t SYMBOL_CIRCLED_TIMES;
 
+// Subscript symbols
+extern const symbol_definition_t SYMBOL_SUB_0;
+extern const symbol_definition_t SYMBOL_SUB_1;
+extern const symbol_definition_t SYMBOL_SUB_2;
+extern const symbol_definition_t SYMBOL_SUB_I;
+extern const symbol_definition_t SYMBOL_SUB_J;
+extern const symbol_definition_t SYMBOL_SUB_N;
+
+// Superscript symbols
+extern const symbol_definition_t SYMBOL_SUP_0;
+extern const symbol_definition_t SYMBOL_SUP_1;
+extern const symbol_definition_t SYMBOL_SUP_2;
+extern const symbol_definition_t SYMBOL_SUP_I;
+extern const symbol_definition_t SYMBOL_SUP_J;
+extern const symbol_definition_t SYMBOL_SUP_N;
+
 // Arrows
 extern const symbol_definition_t SYMBOL_RIGHTARROW;
 extern const symbol_definition_t SYMBOL_LEFTARROW;
 extern const symbol_definition_t SYMBOL_LEFTRIGHTARROW;
-extern const symbol_definition_t SYMBOL_MAPSTO;
-extern const symbol_definition_t SYMBOL_LONGMAPSTO;
-extern const symbol_definition_t SYMBOL_LONGRIGHTARROW;
-extern const symbol_definition_t SYMBOL_LONGLEFTARROW;
-extern const symbol_definition_t SYMBOL_LONGLEFTRIGHTARROW;
+extern const symbol_definition_t SYMBOL_DOUBLERIGHTARROW;
+extern const symbol_definition_t SYMBOL_DOUBLELEFTARROW;
+extern const symbol_definition_t SYMBOL_DOUBLERIGHTLEFTARROW;

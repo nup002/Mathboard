@@ -13,11 +13,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SYMBOLS_H
-#define SYMBOLS_H
-#include <stdint.h>
-// Include QMK headers first to get keyrecord_t definition
+#ifndef SYMBOL_DEFINITIONS_H
+#define SYMBOL_DEFINITIONS_H
+
 #include QMK_KEYBOARD_H
+#include <stdbool.h>
+#include <stdint.h>
 
 // Define the different sending methods for LaTeX
 typedef enum {
@@ -26,7 +27,6 @@ typedef enum {
     LATEX_BACKTRACK_3,    // Send string and move cursor back 3 positions
     LATEX_BACKTRACK_4     // Send string and move cursor back 4 positions
 } latex_send_method_t;
-
 
 // Define the different sending methods for Microsoft Office
 typedef enum {
@@ -54,6 +54,7 @@ typedef struct {
     mof_send_method_t mof_method; // How to send the MOF string
 } symbol_definition_t;
 
+
 // Macro to define a symbol with all representations
 #define DEFINE_SYMBOL(symbol_name, \
                      unicode_val, \
@@ -68,10 +69,4 @@ typedef struct {
         .mof_method = mof_meth \
     }
 
-// Function to send a symbol based on the current mode
-void send_symbol(const symbol_definition_t* symbol);
-
-// Function to send a symbol only if the key is pressed
-void send_symbol_on_keypress(const symbol_definition_t* symbol, keyrecord_t* record);
-
-#endif /* SYMBOLS_H */
+#endif /* SYMBOL_DEFINITIONS_H */

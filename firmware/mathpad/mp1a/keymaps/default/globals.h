@@ -18,7 +18,6 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include "quantum.h"
 #include <stdint.h>
 
 // Define the 6 different symbol locations on the keycaps

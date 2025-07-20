@@ -13,10 +13,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "modifiers.h"
 #include QMK_KEYBOARD_H
+#include "modifiers.h"
 #include "globals.h"
-#include <stdbool.h>
 
 // Initiate the modifier key states to false on Mathpad boot
 bool rightkey_pressed = false;

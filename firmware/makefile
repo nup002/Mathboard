@@ -24,7 +24,7 @@ all: $(if $(LAYOUT),check-layout,)
 	qmk lint -km default -kb summacogni/mathpad/mp1a --strict
 
 	# run build
-	qmk compile -j 0 -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
+	qmk compile -j 0 --compiledb -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
 
 	# Move .uf2 file to /compiled directory
 	mkdir -p compiled

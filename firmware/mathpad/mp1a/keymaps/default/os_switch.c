@@ -14,7 +14,6 @@
  */
 
 #include "os_switch.h"
-#include QMK_KEYBOARD_H
 
 /**
  * @brief Set the current Unicode compatibility mode based on the state of the OS switch.

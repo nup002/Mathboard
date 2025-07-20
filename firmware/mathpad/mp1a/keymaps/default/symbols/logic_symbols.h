@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "../symbol_definitions.h"
+#include "symbols.h"
 
 // Logic symbols
 extern const symbol_definition_t SYMBOL_THERE_EXISTS;

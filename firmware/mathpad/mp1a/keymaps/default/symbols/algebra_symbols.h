@@ -17,8 +17,7 @@
 
 #pragma once
 
-#include "../symbol_definitions.h"
-
+#include "symbols.h"
 // Algebra and calculus symbols
 extern const symbol_definition_t SYMBOL_SUM;
 extern const symbol_definition_t SYMBOL_N_ARY_PRODUCT;

@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include "../symbol_definitions.h"
+#include "symbols.h"
 
 // Number system symbols
 extern const symbol_definition_t SYMBOL_NATURALS;

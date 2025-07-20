@@ -13,8 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "symbols/latex/latex_mode.h"
-#include QMK_KEYBOARD_H
+#include "latex_mode.h"
 
 // Function to send a symbol's LaTeX representation
 void send_symbol_latex(const symbol_definition_t* symbol) {

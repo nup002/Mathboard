@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <quantum.h>
-#include "symbols/microsoft_office/microsoft_office_mode.h"
+#include "microsoft_office_mode.h"
+#include "../unicode/unicode_mode.h"
 
 
 // Function to send a symbol's Microsoft Office representation
