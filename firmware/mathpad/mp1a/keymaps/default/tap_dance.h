@@ -20,7 +20,7 @@
 #include "symbols/symbols.h"
 
 // Helper function to handle tap dance actions
-void symbol_dance(tap_dance_state_t *s, void *d, const symbol_definition_t *first_symbol, const symbol_definition_t *second_symbol);
+void symbol_dance(tap_dance_state_t *s, void *d, const symbol_definition_t **symbols, uint8_t symbol_count);
 
 // Greek symbols
 void gamma_dance(tap_dance_state_t *s, void *d);
@@ -57,19 +57,20 @@ void root_dance(tap_dance_state_t *s, void *d);
 void arrow_dance(tap_dance_state_t *s, void *d);
 void double_arrow_dance(tap_dance_state_t *s, void *d);
 
-
 // Set theory symbols
-void circled_plus_dance(tap_dance_state_t *s, void *d);
 void union_dance(tap_dance_state_t *s, void *d);
 void empty_set_dance(tap_dance_state_t *s, void *d);
 void element_of_dance(tap_dance_state_t *s, void *d);
 void proper_subset_dance(tap_dance_state_t *s, void *d);
 void subset_dance(tap_dance_state_t *s, void *d);
+
+//Logic symbols
 void there_exists_dance(tap_dance_state_t *s, void *d);
 void and_dance(tap_dance_state_t *s, void *d);
 void down_tack_dance(tap_dance_state_t *s, void *d);
 
 // Misc symbols
+void circled_plus_dance(tap_dance_state_t *s, void *d);
 void times_dance(tap_dance_state_t *s, void *d);
 void plusminus_dance(tap_dance_state_t *s, void *d);
 

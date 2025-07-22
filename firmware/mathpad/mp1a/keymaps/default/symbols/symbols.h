@@ -22,19 +22,19 @@
 // Define the different sending methods for LaTeX
 typedef enum {
     LATEX_NORMAL,         // Just send the string as is
-    LATEX_BACKTRACK_1,    // Send string and move cursor back 1 position
-    LATEX_BACKTRACK_3,    // Send string and move cursor back 3 positions
-    LATEX_BACKTRACK_4     // Send string and move cursor back 4 positions
+    LATEX_1BACKTRACK,    // Send string and move cursor back 1 position
+    LATEX_3BACKTRACK,    // Send string and move cursor back 3 positions
+    LATEX_4BACKTRACK     // Send string and move cursor back 4 positions
 } latex_send_method_t;
 
 
 // Define the different sending methods for Microsoft Office
 typedef enum {
-    MOF_AS_IS_1SPACE,
-    MOF_AS_IS_2SPACE,
-    MOF_MOVE_LEFT_1SPACE,
-    MOF_MOVE_LEFT_2SPACE,
-    MOF_SPACE_DELETE_PLACEHOLDER_LIMITS
+    MOF_1SPACE,             // Send string and send 1 space
+    MOF_2SPACE,             // Send string and send 2 spaces
+    MOF_1SPACE_1BACKTRACK,  // Send string, 1 space, and move cursor back 1 position
+    MOF_2SPACE_1BACKTRACK,  // Send string, 2 spaces, and move cursor back 1 position
+    MOF_1SPACE_DELETE_LIMS  // Send string with placeholder limits (_a^b) and delete the limits
 } mof_send_method_t;
 
 // Define the unified symbol structure

@@ -20,13 +20,13 @@
 
 #include <stdint.h>
 
-// Define the 6 different symbol locations on the keycaps
+// Define the 6 symbol layers
 #define _LEFT_TOP 0  
-#define _LEFT_MID 1
-#define _LEFT_FRONT 2
+#define _LEFT_CENTER 1
+#define _LEFT_BOTTOM 2
 #define _RIGHT_TOP 3 
-#define _RIGHT_MID 4
-#define _RIGHT_FRONT 5
+#define _RIGHT_CENTER 4
+#define _RIGHT_BOTTOM 5
 
 // Persistent settings
 typedef union {

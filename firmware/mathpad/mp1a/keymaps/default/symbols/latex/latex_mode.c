@@ -25,13 +25,13 @@ void send_symbol_latex(const symbol_definition_t* symbol) {
         case LATEX_NORMAL:
             send_string(symbol->latex_string);
             break;
-        case LATEX_BACKTRACK_1:
+        case LATEX_1BACKTRACK:
             send_and_backtrack_1(symbol->latex_string);
             break;
-        case LATEX_BACKTRACK_3:
+        case LATEX_3BACKTRACK:
             send_and_backtrack_3(symbol->latex_string);
             break;
-        case LATEX_BACKTRACK_4:
+        case LATEX_4BACKTRACK:
             send_and_backtrack_4(symbol->latex_string);
             break;
     }

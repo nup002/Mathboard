@@ -24,75 +24,75 @@ const symbol_definition_t SYMBOL_THERE_EXISTS = DEFINE_SYMBOL(
     there_exists,
     0x2203,                  // Unicode: ∃
     "\\exists", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_THERE_DOES_NOT_EXIST = DEFINE_SYMBOL(
     there_does_not_exists,
     0x2204,                  // Unicode: ∄
     "\\nexists", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_AND = DEFINE_SYMBOL(
     and,
     0x2227,                  // Unicode: ∧
     "\\wedge", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_OR = DEFINE_SYMBOL(
     or,
     0x2228,                  // Unicode: ∨
     "\\vee", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_XOR = DEFINE_SYMBOL(
     xor,
     0x22BB,                  // Unicode: ⊻
     "\\veebar", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_FOR_ALL = DEFINE_SYMBOL(
     for_all,
     0x2200,                  // Unicode: ∀
     "\\forall", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_NOT = DEFINE_SYMBOL(
     not,
     0x00AC,                  // Unicode: ¬
     "\\neg", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_PROVES = DEFINE_SYMBOL(
     proves,
     0x22A2,                  // Unicode: ⊢
     "\\vdash", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_MODELS = DEFINE_SYMBOL(
     models,
     0x22A8,                  // Unicode: ⊨
     "\\models", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DOWN_TACK = DEFINE_SYMBOL(
     down_tack,
     0x22A4,                  // Unicode: ⊤
     "\\top", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_UP_TACK = DEFINE_SYMBOL(
     up_tack,
     0x22A5,                  // Unicode: ⊥
     "\\bot", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );

@@ -15,14 +15,14 @@ const symbol_definition_t SYMBOL_YOUR_SYMBOL = DEFINE_SYMBOL(
     your_symbol_name,         // Name used in code (lowercase, underscores)
     0x1234,                   // Unicode code point (find at unicode-table.com)
     "\\yourlatex", LATEX_NORMAL,  // LaTeX command and sending method
-    NULL, MOF_AS_IS_1SPACE    // Microsoft Office string and sending method
+    NULL, MOF_1SPACE    // Microsoft Office string and sending method
 );
 ```
 
 4. Add your symbol to the corresponding header file (e.g., `logic_symbols.h`)
-5. If creating a new category, add an `#include` for your header file in `symbols.h`
+5. If creating an entirely new category, add an `#include` for your header file in `symbols.h`
 
-## Symbol Categories
+### Symbol Categories
 
 - `greek_symbols.c` - Greek letters (lowercase and uppercase)
 - `algebra_symbols.c` - Algebra and calculus symbols
@@ -33,13 +33,28 @@ const symbol_definition_t SYMBOL_YOUR_SYMBOL = DEFINE_SYMBOL(
 - `modifier_symbols.c` - Modifiers like circumflex, tilde, etc.
 - `misc_symbols.c` - Other mathematical and scientific symbols
 
-## Sending Methods
+### LaTeX sending methods
+ - LATEX_NORMAL,        // Just send the string as is
+ - LATEX_1BACKTRACK,    // Send string and move cursor back 1 position
+ - LATEX_3BACKTRACK,    // Send string and move cursor back 3 positions
+ - LATEX_4BACKTRACK     // Send string and move cursor back 4 positions
 
-- `LATEX_NORMAL` - Normal LaTeX command
-- `LATEX_BACKTRACK_1` - LaTeX command with 1 character backtracking
-- `LATEX_BACKTRACK_3` - LaTeX command with 3 characters backtracking
-- `MOF_AS_IS_1SPACE` - Microsoft Office string with 1 space
-- `MOF_AS_IS_2SPACE` - Microsoft Office string with 2 spaces
-- `MOF_MOVE_LEFT_1SPACE` - Microsoft Office string with left movement and one space
-- `MOF_MOVE_LEFT_2SPACE` - Microsoft Office string with left movement and two spaces
-- `MOF_SPACE_DELETE_PLACEHOLDER_LIMITS` - Microsoft Office string with placeholder limits
+### Microsoft Office equation editor sending methods
+ - MOF_1SPACE,             // Send string and send 1 space
+ - MOF_2SPACE,             // Send string and send 2 spaces
+ - MOF_1SPACE_1BACKTRACK,  // Send string, 1 space, and move cursor back 1 position
+ - MOF_2SPACE_1BACKTRACK,  // Send string, 2 spaces, and move cursor back 1 position
+ - MOF_1SPACE_DELETE_LIMS  // Send string with placeholder limits (_a^b) and delete the limits
+
+## Mapping a new symbol to a key
+Open `keymap.c` and add a new keycode to `custom_keycodes` at the top of the file. For example, if you have defined 
+a symbol named SYMBOL_HBAR, you should define a keycode named KC_HBAR.
+
+Still in `keymap.c`, scroll down to `get_symbol_for_keycode` and add a new case for your new keycode. For example:
+```
+case KC_HBAR:
+    return &SYMBOL_HBAR;
+```
+This maps the keycode to the symbol.
+
+Finally, scroll down to the key definitions around line 300 - 320. Add your new keycode to the appropriate key array.

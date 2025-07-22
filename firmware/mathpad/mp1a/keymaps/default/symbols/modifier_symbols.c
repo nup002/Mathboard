@@ -23,83 +23,83 @@
 const symbol_definition_t SYMBOL_CIRCUMFLEX = DEFINE_SYMBOL(
     circumflex,
     0x0302,                  // Unicode: ̂ (combining circumflex)
-    "\\hat{}", LATEX_BACKTRACK_1,
-    "\\hat", MOF_AS_IS_2SPACE
+    "\\hat{}", LATEX_1BACKTRACK,
+    "\\hat", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_CHECK = DEFINE_SYMBOL(
     check,
     0x030C,                  // Unicode: ̌ (combining caron)
-    "\\check{}", LATEX_BACKTRACK_1,
-    "\\check", MOF_AS_IS_2SPACE
+    "\\check{}", LATEX_1BACKTRACK,
+    "\\check", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_COMBINING_TILDE = DEFINE_SYMBOL(
     combining_tilde,
     0x0303,                  // Unicode: ̃ (combining tilde)
-    "\\tilde{}", LATEX_BACKTRACK_1,
-    "\\tilde", MOF_AS_IS_2SPACE
+    "\\tilde{}", LATEX_1BACKTRACK,
+    "\\tilde", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_BAR = DEFINE_SYMBOL(
     bar,
     0x0304,                  // Unicode: ̄ (combining macron)
-    "\\bar{}", LATEX_BACKTRACK_1,
-    "\\bar", MOF_AS_IS_2SPACE
+    "\\bar{}", LATEX_1BACKTRACK,
+    "\\bar", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_ARROW = DEFINE_SYMBOL(
     arrow,
     0x20D7,                  // Unicode: ⃗ (combining right arrow above)
-    "\\vec{}", LATEX_BACKTRACK_1,
-    "\\vec", MOF_AS_IS_2SPACE
+    "\\vec{}", LATEX_1BACKTRACK,
+    "\\vec", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_DOT = DEFINE_SYMBOL(
     dot,
     0x0307,                  // Unicode: ̇ (combining dot above)
-    "\\dot{}", LATEX_BACKTRACK_1,
-    "\\dot", MOF_AS_IS_2SPACE
+    "\\dot{}", LATEX_1BACKTRACK,
+    "\\dot", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_DOUBLE_DOT = DEFINE_SYMBOL(
     double_dot,
     0x0308,                  // Unicode: ̈ (combining diaeresis)
-    "\\ddot{}", LATEX_BACKTRACK_1,
-    "\\ddot", MOF_AS_IS_2SPACE
+    "\\ddot{}", LATEX_1BACKTRACK,
+    "\\ddot", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_TRIPLE_DOT = DEFINE_SYMBOL(
     triple_dot,
     0x20DB,                  // Unicode: ⃛ (combining three dots above)
-    "\\dddot{}", LATEX_BACKTRACK_1,
-    "\\dddot", MOF_AS_IS_2SPACE
+    "\\dddot{}", LATEX_1BACKTRACK,
+    "\\dddot", MOF_2SPACE
 );
 
 const symbol_definition_t SYMBOL_PRIME = DEFINE_SYMBOL(
     prime,
     0x2032,                  // Unicode: ′
     "'", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DOUBLE_PRIME = DEFINE_SYMBOL(
     double_prime,
     0x2033,                  // Unicode: ″
     "''", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_TRIPLE_PRIME = DEFINE_SYMBOL(
     triple_prime,
     0x2034,                  // Unicode: ‴
     "'''", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_TRANSPOSE = DEFINE_SYMBOL(
     transpose,
     0x1D40,                  // Unicode: ᵀ (modifier letter capital T)
     "^{\\mathsf{T}}", LATEX_NORMAL,
-    NULL, MOF_AS_IS_1SPACE
+    NULL, MOF_1SPACE
 );

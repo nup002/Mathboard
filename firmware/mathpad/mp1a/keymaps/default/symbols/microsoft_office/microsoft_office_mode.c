@@ -32,19 +32,19 @@ void send_symbol_mof(const symbol_definition_t* symbol) {
     
     // Call the appropriate MOF sending function directly based on the mof_method
     switch (symbol->mof_method) {
-        case MOF_AS_IS_1SPACE:
+        case MOF_1SPACE:
             send_as_is_1space(symbol->mof_string);
             break;
-        case MOF_AS_IS_2SPACE:
+        case MOF_2SPACE:
             send_as_is_2space(symbol->mof_string);
             break;
-        case MOF_MOVE_LEFT_1SPACE:
+        case MOF_1SPACE_1BACKTRACK:
             send_with_left_move_1space(symbol->mof_string);
             break;
-        case MOF_MOVE_LEFT_2SPACE:
+        case MOF_2SPACE_1BACKTRACK:
             send_with_left_move_2space(symbol->mof_string);
             break;
-        case MOF_SPACE_DELETE_PLACEHOLDER_LIMITS:
+        case MOF_1SPACE_DELETE_LIMS:
             send_with_delete_lims_1space(symbol->mof_string);
             break;
         default:
@@ -97,6 +97,10 @@ void send_as_is_2space(const char *string) {
 
 /**
  * @brief Sends 'string' and one space and moves the caret left once.
+ *
+ * Typically used for typing symbols that require one extra space to appear correctly 
+ * and where the caret should be within the symbol's boundaries after typing. 
+ * Currently only in use by the Matrix symbol.
  *
  * @param string a pointer to the string to be sent
  */

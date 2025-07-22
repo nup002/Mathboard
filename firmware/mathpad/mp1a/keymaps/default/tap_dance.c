@@ -23,157 +23,192 @@
 #include "symbols/symbol_categories.h"
 
 // Helper function to handle tap dance actions
-void symbol_dance(tap_dance_state_t *s, void *d, const symbol_definition_t *first_symbol, const symbol_definition_t *second_symbol) {
-    if (s->count == 1) {
-        // Single tap - send the first symbol
-        send_symbol(first_symbol);
-    } else if (s->count == 2) {
-        // Double tap - send the second symbol
-        send_symbol(second_symbol);
+void symbol_dance(tap_dance_state_t *s, void *d, const symbol_definition_t **symbols, uint8_t symbol_count) {
+    if (s->count > 0 && s->count <= symbol_count) {
+        // Send the symbol corresponding to the tap count (1-indexed)
+        send_symbol(symbols[s->count - 1]);
+    } else if (symbol_count > 0) {
+        // If tap count exceeds available symbols, send the last symbol
+        send_symbol(symbols[symbol_count - 1]);
     }
     reset_tap_dance(s);
 }
 
 // Greek symbols
 void gamma_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_GAMMA, &SYMBOL_GAMMA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_GAMMA, &SYMBOL_GAMMA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void delta_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_DELTA, &SYMBOL_DELTA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_DELTA, &SYMBOL_DELTA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void theta_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_THETA, &SYMBOL_THETA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_THETA, &SYMBOL_THETA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void lambda_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_LAMBDA, &SYMBOL_LAMBDA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_LAMBDA, &SYMBOL_LAMBDA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void xi_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_XI, &SYMBOL_XI_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_XI, &SYMBOL_XI_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void pi_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_PI, &SYMBOL_PI_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_PI, &SYMBOL_PI_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void sigma_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_SIGMA, &SYMBOL_SIGMA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SIGMA, &SYMBOL_SIGMA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void varphi_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_PHI, &SYMBOL_PHI_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_PHI, &SYMBOL_PHI_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void psi_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_PSI, &SYMBOL_PSI_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_PSI, &SYMBOL_PSI_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void omega_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_OMEGA, &SYMBOL_OMEGA_UPPERCASE);
+    const symbol_definition_t *symbols[] = {&SYMBOL_OMEGA, &SYMBOL_OMEGA_UPPERCASE};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Comparison symbols
 void asymptotically_equal_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_ASYMPTOTICALLY_EQUAL, &SYMBOL_APPROXIMATELY_EQUAL);
+    const symbol_definition_t *symbols[] = {&SYMBOL_ASYMPTOTICALLY_EQUAL, &SYMBOL_APPROXIMATELY_EQUAL};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void identically_equal_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_IDENTICAL, &SYMBOL_NOT_IDENTICAL);
+    const symbol_definition_t *symbols[] = {&SYMBOL_IDENTICAL, &SYMBOL_NOT_IDENTICAL};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void equal_by_definition_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_COLON_EQUALS,&SYMBOL_EQUAL_BY_DEFINITION);
+    const symbol_definition_t *symbols[] = {&SYMBOL_COLON_EQUALS, &SYMBOL_EQUAL_BY_DEFINITION};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void greater_or_equal_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_GREATER_THAN_OR_EQUAL, &SYMBOL_LESS_THAN_OR_EQUAL);
+    const symbol_definition_t *symbols[] = {&SYMBOL_GREATER_THAN_OR_EQUAL, &SYMBOL_LESS_THAN_OR_EQUAL};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void much_greater_than_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_MUCH_GREATER_THAN, &SYMBOL_MUCH_LESS_THAN);
+    const symbol_definition_t *symbols[] = {&SYMBOL_MUCH_GREATER_THAN, &SYMBOL_MUCH_LESS_THAN};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Modifier symbols
 void dot_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_DOT, &SYMBOL_DOUBLE_DOT);
+    const symbol_definition_t *symbols[] = {&SYMBOL_DOT, &SYMBOL_DOUBLE_DOT};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void sub_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_SUB_0, &SYMBOL_SUB_1);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SUB_0, &SYMBOL_SUB_1};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void sup_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_SUP_0, &SYMBOL_SUP_1);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SUP_0, &SYMBOL_SUP_1};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Calculus symbols
 void integral_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_INTEGRAL, &SYMBOL_DOUBLE_INTEGRAL);
+    const symbol_definition_t *symbols[] = {&SYMBOL_INTEGRAL, &SYMBOL_DOUBLE_INTEGRAL};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void line_integral_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_LINE_INTEGRAL, &SYMBOL_SURFACE_INTEGRAL);
+    const symbol_definition_t *symbols[] = {&SYMBOL_LINE_INTEGRAL, &SYMBOL_SURFACE_INTEGRAL};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Algebra symbols
 void root_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_SQUARE_ROOT, &SYMBOL_CUBE_ROOT);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SQUARE_ROOT, &SYMBOL_CUBE_ROOT};
+    symbol_dance(s, d, symbols, 2);
 }
 
-// Logic symbols
+// Arrows
 void arrow_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_RIGHTARROW, &SYMBOL_LEFTARROW);
-}
-
-void double_arrow_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_DOUBLERIGHTARROW, &SYMBOL_DOUBLELEFTARROW);
+    const symbol_definition_t *symbols[] = {&SYMBOL_RIGHTARROW, &SYMBOL_LEFTARROW};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void circled_plus_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_DIRECT_SUM, &SYMBOL_CIRCLED_TIMES);
+    const symbol_definition_t *symbols[] = {&SYMBOL_DIRECT_SUM, &SYMBOL_CIRCLED_TIMES};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Set theory symbols
 void union_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_UNION, &SYMBOL_INTERSECTION);
+    const symbol_definition_t *symbols[] = {&SYMBOL_UNION, &SYMBOL_INTERSECTION};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void empty_set_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_EMPTY_SET, &SYMBOL_POWER_SET);
+    const symbol_definition_t *symbols[] = {&SYMBOL_EMPTY_SET, &SYMBOL_POWER_SET};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void element_of_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_ELEMENT_OF, &SYMBOL_CONTAINS_AS_MEMBER);
+    const symbol_definition_t *symbols[] = {&SYMBOL_ELEMENT_OF, &SYMBOL_CONTAINS_AS_MEMBER};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void proper_subset_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_PROPER_SUBSET, &SYMBOL_NOT_PROPER_SUBSET);
+    const symbol_definition_t *symbols[] = {&SYMBOL_PROPER_SUBSET, &SYMBOL_NOT_PROPER_SUBSET};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void subset_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_SUBSET, &SYMBOL_NOT_SUBSET);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SUBSET, &SYMBOL_NOT_SUBSET};
+    symbol_dance(s, d, symbols, 2);
 }
 
+//Logic symbols
 void there_exists_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_THERE_EXISTS, &SYMBOL_THERE_DOES_NOT_EXIST);
+    const symbol_definition_t *symbols[] = {&SYMBOL_THERE_EXISTS, &SYMBOL_THERE_DOES_NOT_EXIST};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void and_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_AND, &SYMBOL_OR);
+    const symbol_definition_t *symbols[] = {&SYMBOL_AND, &SYMBOL_OR};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void down_tack_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_DOWN_TACK, &SYMBOL_UP_TACK);
+    const symbol_definition_t *symbols[] = {&SYMBOL_DOWN_TACK, &SYMBOL_UP_TACK};
+    symbol_dance(s, d, symbols, 2);
 }
 
 // Misc symbols
+void double_arrow_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&SYMBOL_DOUBLERIGHTARROW, &SYMBOL_DOUBLELEFTARROW};
+    symbol_dance(s, d, symbols, 2);
+}
+
 void times_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_TIMES, &SYMBOL_DIVISION);
+    const symbol_definition_t *symbols[] = {&SYMBOL_TIMES, &SYMBOL_DIVISION};
+    symbol_dance(s, d, symbols, 2);
 }
 
 void plusminus_dance(tap_dance_state_t *s, void *d) {
-    symbol_dance(s, d, &SYMBOL_PLUSMINUS, &SYMBOL_MINUSPLUS);
+    const symbol_definition_t *symbols[] = {&SYMBOL_PLUSMINUS, &SYMBOL_MINUSPLUS};
+    symbol_dance(s, d, symbols, 2);
 }
