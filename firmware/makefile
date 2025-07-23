@@ -24,7 +24,10 @@ all: $(if $(LAYOUT),check-layout,)
 	qmk lint -km default -kb summacogni/mathpad/mp1a --strict
 
 	# run build
-	qmk compile -j 0 -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
+	qmk compile -j 0 --compiledb -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
+
+	# cleanup symlinks (to avoid inadvertedly editing them instead of the true source files)
+	rm -rf qmk_firmware/keyboards/summacogni
 
 	# Move .uf2 file to /compiled directory
 	mkdir -p compiled

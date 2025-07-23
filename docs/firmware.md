@@ -125,7 +125,7 @@ Add your new symbol by following step 1, 2, and 3 in [Replacing a Symbol](#repla
 
 **Step 2: Make a new multitap symbol**
 
-Go to `multitap_symbols_defs.h` and add a new multitap keycode to the `tap_dance_keys` enum. If, for 
+Go to `multitap.h` and add a new multitap keycode to the `tap_dance_keys` enum. If, for 
 example, you are multitap-enabling the Union symbol, you would name the new keycode `UNION_TD`.
 
 Then, scroll down and define a new multitap function. In our example with the Union symbol, you would declare a 

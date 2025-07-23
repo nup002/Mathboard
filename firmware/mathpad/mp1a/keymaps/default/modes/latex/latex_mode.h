@@ -13,28 +13,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Global variables are defined in this file.
+#ifndef LATEX_MODE_H
+#define LATEX_MODE_H
 
-#ifndef GLOBALS_H
-#define GLOBALS_H
+#include QMK_KEYBOARD_H
 
-#include <stdint.h>
+#include "../../symbols/symbols.h"
 
-// Define the 6 symbol layers
-#define _LEFT_TOP 0  
-#define _LEFT_CENTER 1
-#define _LEFT_BOTTOM 2
-#define _RIGHT_TOP 3 
-#define _RIGHT_CENTER 4
-#define _RIGHT_BOTTOM 5
 
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    uint8_t     MODE :8;  // tracks the latest Mathpad mode.
-  };
-} user_config_t;
+void send_symbol_latex(const symbol_definition_t* symbol);
 
-user_config_t user_config;
-#endif
+// Function to send a string and move the caret 4 steps backwards
+void send_and_backtrack_4(const char *string);
+
+// Function to send a string and move the caret 3 steps backwards
+void send_and_backtrack_3(const char *string);
+
+// Function to send a string and move the caret 1 step backwards
+void send_and_backtrack_1(const char *string);
+
+#endif /* LATEX_MODE_H */

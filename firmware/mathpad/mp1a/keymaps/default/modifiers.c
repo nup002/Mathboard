@@ -13,10 +13,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "modifiers.h"
 #include QMK_KEYBOARD_H
+#include "modifiers.h"
 #include "globals.h"
-#include <stdbool.h>
 
 // Initiate the modifier key states to false on Mathpad boot
 bool rightkey_pressed = false;
@@ -35,15 +34,15 @@ void update_active_layer(void) {
 
     // Set the appropriate layer based on modifier key combinations
     if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
-        layer_on(_RIGHT_FRONT); // RIGHT and FRONT modifier keys are pressed
+        layer_on(_RIGHT_BOTTOM); // RIGHT and FRONT modifier keys are pressed
     } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_RIGHT_MID); // RIGHT and MIDDLE keys are pressed
+        layer_on(_RIGHT_CENTER); // RIGHT and MIDDLE keys are pressed
     } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
         layer_on(_RIGHT_TOP); // Only RIGHT key is pressed
     } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
-        layer_on(_LEFT_MID); // Only MIDDLE key is pressed
+        layer_on(_LEFT_CENTER); // Only MIDDLE key is pressed
     } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
-        layer_on(_LEFT_FRONT); // Only FRONT key is pressed
+        layer_on(_LEFT_BOTTOM); // Only FRONT key is pressed
     } else {
         layer_on(_LEFT_TOP); // Default or invalid combinations go to the default _LEFT_TOP
     }

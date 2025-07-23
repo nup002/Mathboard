@@ -14,12 +14,12 @@
  */
 
 // Functions related to setting the 'mode' of the Mathpad, meaning which 
-// representation is used when typing symbols. Modes include Unicode, 
-// LaTeX, Microsoft Office Equation Editor, and soon LibreOffice.
+// representation is used when typing symbols. Modes include Plaintext Unicode (UC_MODE), 
+// LaTeX (LTX_MODE), Microsoft Office Equation Editor (MOF_MODE), and soon LibreOffice (LOF_MODE).
 
 #include "mode.h"
 #include QMK_KEYBOARD_H
-#include "globals.h"
+#include "../globals.h"
 
 /** 
 * When 'update_led_to_match_mode' is called, it checks the current value of

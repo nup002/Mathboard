@@ -13,28 +13,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Global variables are defined in this file.
+#include "unicode_mode.h"
 
-#ifndef GLOBALS_H
-#define GLOBALS_H
 
-#include <stdint.h>
+// Function to send a symbol's unicode representation
+void send_symbol_unicode(const symbol_definition_t* symbol) {
+    if (symbol->unicode_value != 0) {
+        send_unicode(symbol->unicode_value);
+    }
+}
 
-// Define the 6 symbol layers
-#define _LEFT_TOP 0  
-#define _LEFT_CENTER 1
-#define _LEFT_BOTTOM 2
-#define _RIGHT_TOP 3 
-#define _RIGHT_CENTER 4
-#define _RIGHT_BOTTOM 5
-
-// Persistent settings
-typedef union {
-  uint8_t raw;
-  struct {
-    uint8_t     MODE :8;  // tracks the latest Mathpad mode.
-  };
-} user_config_t;
-
-user_config_t user_config;
-#endif
+/**
+ * @brief Sends a Unicode character
+ *
+ * @param unicode_value The Unicode code point to send
+ */
+void send_unicode(uint32_t unicode_value) {
+    if (unicode_value != 0) {
+        register_unicode(unicode_value);
+    }
+}
