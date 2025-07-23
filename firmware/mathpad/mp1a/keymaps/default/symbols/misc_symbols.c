@@ -20,7 +20,7 @@
 #include "misc_symbols.h"
 
 // Other mathematical and scientific symbols
-const symbol_definition_t SYMBOL_DOTPRODUCT = DEFINE_SYMBOL(
+const symbol_definition_t SYMBOL_ACCENT_DOTPRODUCT = DEFINE_SYMBOL(
     dotproduct,
     0x22C5,                  // Unicode: ⋅
     "\\cdot", LATEX_NORMAL,

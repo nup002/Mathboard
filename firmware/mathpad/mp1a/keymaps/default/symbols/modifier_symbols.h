@@ -20,11 +20,11 @@
 #include "symbols.h"
 
 // Modifiers
-extern const symbol_definition_t SYMBOL_CIRCUMFLEX;
-extern const symbol_definition_t SYMBOL_CHECK;
-extern const symbol_definition_t SYMBOL_COMBINING_TILDE;
-extern const symbol_definition_t SYMBOL_BAR;
-extern const symbol_definition_t SYMBOL_ARROW;
-extern const symbol_definition_t SYMBOL_DOT;
-extern const symbol_definition_t SYMBOL_DOUBLE_DOT;
-extern const symbol_definition_t SYMBOL_TRIPLE_DOT;
+extern const symbol_definition_t SYMBOL_ACCENT_CIRCUMFLEX;
+extern const symbol_definition_t SYMBOL_ACCENT_CHECK;
+extern const symbol_definition_t SYMBOL_ACCENT_TILDE;
+extern const symbol_definition_t SYMBOL_ACCENT_BAR;
+extern const symbol_definition_t SYMBOL_ACCENT_ARROW;
+extern const symbol_definition_t SYMBOL_ACCENT_DOT;
+extern const symbol_definition_t SYMBOL_ACCENT_DOUBLE_DOT;
+extern const symbol_definition_t SYMBOL_ACCENT_TRIPLE_DOT;

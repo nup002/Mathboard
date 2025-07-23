@@ -54,9 +54,9 @@ enum custom_keycodes {
     KC_LESSOREQUAL,
     KC_GREATEROREQUAL,
 
-    // Combining diacritics
-    KC_COMBININGTILDE,
-    KC_COMBININGBAR,
+    // Accents
+    KC_ACCENT_TILDE,
+    KC_ACCENT_BAR,
     KC_ACCENT_ARROW,
     KC_ACCENT_CIRCUMFLEX,
     KC_ACCENT_CHECK,
@@ -141,17 +141,17 @@ enum custom_keycodes {
         case KC_GREATEROREQUAL:
             return &SYMBOL_GREATER_THAN_OR_EQUAL;
             
-        // Combining diacritics
-        case KC_COMBININGTILDE:
-            return &SYMBOL_COMBINING_TILDE;
-        case KC_COMBININGBAR:
-            return &SYMBOL_BAR;
+        // Accents
+        case KC_ACCENT_TILDE:
+            return &SYMBOL_ACCENT_TILDE;
+        case KC_ACCENT_BAR:
+            return &SYMBOL_ACCENT_BAR;
         case KC_ACCENT_ARROW:
-            return &SYMBOL_ARROW;
+            return &SYMBOL_ACCENT_ARROW;
         case KC_ACCENT_CIRCUMFLEX:
-            return &SYMBOL_CIRCUMFLEX;
+            return &SYMBOL_ACCENT_CIRCUMFLEX;
         case KC_ACCENT_CHECK:
-            return &SYMBOL_CHECK;
+            return &SYMBOL_ACCENT_CHECK;
             
         // Algebra and Calculus symbols
         case KC_SUM:
@@ -181,7 +181,7 @@ enum custom_keycodes {
         case KC_FRACTION:
             return &SYMBOL_FRAC;
         case KC_DOTPRODUCT:
-            return &SYMBOL_DOTPRODUCT;
+            return &SYMBOL_ACCENT_DOTPRODUCT;
         case KC_INFINITY:
             return &SYMBOL_INFINITY;
             
@@ -206,6 +206,7 @@ enum custom_keycodes {
 // MULTITAP CODES
 //--------------
 enum tap_dance_keys {
+    // Greek symbols
     GAMMA_TD,                  // Gamma γ / Digamma ϝ
     DELTA_TD,                  // Delta δ / Capital delta Δ
     THETA_TD,                  // Theta θ / Capital theta Θ
@@ -216,28 +217,44 @@ enum tap_dance_keys {
     PHI_TD,                    // Phi φ / Capital phi Φ
     PSI_TD,                    // Psi ψ / Capital psi Ψ
     OMEGA_TD,                  // Omega ω / Capital omega Ω
+
+    // Comparison symbols
     ASYMPT_EQ_TD,              // Asymptotically equal to ≃ / Approximately equal to ≈
     IDENTICALLY_EQUAL_TD,      // Identical to ≡ / Not identical to ≢
     EQUAL_BY_DEF_TD,           // Colon equals ≔ / Equal by definition ≝ 
-    MGT_TD,                    // Much greater than ≫ / Much less than ≪
     GTEQ_TD,                   // Greater or equal to ≥ / Less or equal to ≤
-    DOT_TD,                    // Diacritic dot ȯ / Double diacritic dot ö  
-    SUB_TD,                    // Subscripts
-    SUP_TD,                    // Superscripts
-    LINE_INTEGRAL_TD,          // Line integral ∮ / Surface integral ∯
-    ROOT_TD,                   // Square root √ / Cube root ∛
-    ARROW_TD,                  // Right arrow → / Left arrow ←
+    MGT_TD,                    // Much greater than ≫ / Much less than ≪
+
+    // Accents and subscript/superscript symbols
+    ACCENT_DOT_TD,             // Dot · / Double dot ¨ / Triple dot ⃛  
+    SUB_TD,                    // Subscripts: ₀ / ₁ / ₂ / ᵢ / ⱼ / ₙ
+    SUP_TD,                    // Superscripts: ⁰ / ¹ / ² / ⁱ / ʲ / ⁿ
+
+    // Calculus symbols
+    INTEGRAL_TD,               // Integral ∫ / Double integral ∬ / Triple integral ∭
+    LINE_INTEGRAL_TD,          // Line integral ∮ / Surface integral ∯ / Volume integral ∰
+
+    // Algebra symbols
+    ROOT_TD,                   // Square root √ / Cube root ∛ / Fourth root ∜
+
+    // Arrows
+    ARROW_TD,                  // Right arrow → / Left arrow ← / Left-right arrow ↔
+    DOUBLE_ARROW_TD,           // Double right arrow ⇒ / Double left arrow ⇐ / Double left-right arrow ⇔
+
+    // Set theory symbols
     UNION_TD,                  // Union ∪ / Intersection ∩
-    INTEGRAL_TD,               // Integral ∫ / Double integral ∬
-    CIRCLED_PLUS_TD,           // Circled plus ⊕ / Circled times ⊗
     EMPTY_SET_TD,              // Empty set ∅ / Power set ℘
-    AND_TD,                    // Logical and ∧ / Logical or ∨
     ELEMENT_OF_TD,             // Element of ∈ / Contains as member ∋
     PROPER_SUBSET_TD,          // Proper subset ⊂ / Not proper subset ⊄
     SUBSET_TD,                 // Subset ⊆ / Not subset ⊈
+
+    // Logic symbols
     THERE_EXIST_TD,            // There exists ∃ / There does not exist ∄
+    AND_TD,                    // Logical and ∧ / Logical or ∨ / Logical xor ⊕
     DOWN_TACK_TD,              // Down tack ⊤ / Up tack ⊥
-    DOUBLE_ARROW_TD,           // Double right arrow ⇒ / Double left arrow ⇐
+
+    // Misc symbols
+    CIRCLED_PLUS_TD,           // Circled plus ⊕ / Circled times ⊗
     TIMES_TD,                  // Multiplication × / Division ÷
     PLUSMINUS_TD               // Plus-minus ± / Minus-plus ∓
 };
@@ -247,6 +264,7 @@ enum tap_dance_keys {
  * See https://docs.qmk.fm/features/tap_dance
  */
  tap_dance_action_t tap_dance_actions[] = {
+    // Greek symbols
     [GAMMA_TD] = ACTION_TAP_DANCE_FN (gamma_dance),
     [DELTA_TD] = ACTION_TAP_DANCE_FN (delta_dance),
     [THETA_TD] = ACTION_TAP_DANCE_FN (theta_dance),
@@ -257,28 +275,44 @@ enum tap_dance_keys {
     [PHI_TD] = ACTION_TAP_DANCE_FN (varphi_dance),
     [PSI_TD] = ACTION_TAP_DANCE_FN (psi_dance),
     [OMEGA_TD] = ACTION_TAP_DANCE_FN (omega_dance),
+
+    // Comparison symbols
     [ASYMPT_EQ_TD] = ACTION_TAP_DANCE_FN (asymptotically_equal_dance),
     [IDENTICALLY_EQUAL_TD] = ACTION_TAP_DANCE_FN (identically_equal_dance),
     [EQUAL_BY_DEF_TD] = ACTION_TAP_DANCE_FN (equal_by_definition_dance),
     [GTEQ_TD] = ACTION_TAP_DANCE_FN (greater_or_equal_dance),
     [MGT_TD] = ACTION_TAP_DANCE_FN (much_greater_than_dance),
-    [DOT_TD] = ACTION_TAP_DANCE_FN (dot_dance),
+
+    // Accents and subscript/superscript symbols
+    [ACCENT_DOT_TD] = ACTION_TAP_DANCE_FN (accent_dot_dance),
     [SUB_TD] = ACTION_TAP_DANCE_FN (sub_dance),
     [SUP_TD] = ACTION_TAP_DANCE_FN (sup_dance),
+
+    // Calculus symbols
     [INTEGRAL_TD] = ACTION_TAP_DANCE_FN (integral_dance),
     [LINE_INTEGRAL_TD] = ACTION_TAP_DANCE_FN (line_integral_dance),
+
+    // Algebra symbols
     [ROOT_TD] = ACTION_TAP_DANCE_FN (root_dance),
-    [UNION_TD] = ACTION_TAP_DANCE_FN (union_dance),
+
+    // Arrows
     [ARROW_TD] = ACTION_TAP_DANCE_FN (arrow_dance),
     [DOUBLE_ARROW_TD] = ACTION_TAP_DANCE_FN (double_arrow_dance),
-    [CIRCLED_PLUS_TD] = ACTION_TAP_DANCE_FN (circled_plus_dance),
+
+    // Set theory symbols
+    [UNION_TD] = ACTION_TAP_DANCE_FN (union_dance),
     [EMPTY_SET_TD] = ACTION_TAP_DANCE_FN (empty_set_dance),
     [ELEMENT_OF_TD] = ACTION_TAP_DANCE_FN (element_of_dance),
     [PROPER_SUBSET_TD] = ACTION_TAP_DANCE_FN (proper_subset_dance),
     [SUBSET_TD] = ACTION_TAP_DANCE_FN (subset_dance),
+
+    // Logic symbols
     [THERE_EXIST_TD] = ACTION_TAP_DANCE_FN (there_exists_dance),
     [AND_TD] = ACTION_TAP_DANCE_FN (and_dance),
     [DOWN_TACK_TD] = ACTION_TAP_DANCE_FN (down_tack_dance),
+
+    // Misc symbols
+    [CIRCLED_PLUS_TD] = ACTION_TAP_DANCE_FN (circled_plus_dance),
     [TIMES_TD] = ACTION_TAP_DANCE_FN (times_dance),
     [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance)
 };
@@ -331,10 +365,10 @@ static const key_layout_t key00 = {
 static const key_layout_t key01 = {
     .top_left = TD(GAMMA_TD),
     .center_left = KC_PROPORTIONAL,
-    .bottom_left = KC_COMBININGTILDE,
+    .bottom_left = KC_ACCENT_TILDE,
     .top_right = TD(DELTA_TD),
     .center_right = TD(ASYMPT_EQ_TD),
-    .bottom_right = KC_COMBININGBAR
+    .bottom_right = KC_ACCENT_BAR
 };
 
 static const key_layout_t key02 = {
@@ -343,7 +377,7 @@ static const key_layout_t key02 = {
     .bottom_left = KC_ACCENT_ARROW,
     .top_right = KC_ZETA,
     .center_right = TD(EQUAL_BY_DEF_TD),
-    .bottom_right = TD(DOT_TD)
+    .bottom_right = TD(ACCENT_DOT_TD)
 };
 
 static const key_layout_t key03 = {

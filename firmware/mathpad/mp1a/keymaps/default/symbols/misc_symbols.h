@@ -20,7 +20,7 @@
 #include "symbols.h"
 
 // Other mathematical and scientific symbols
-extern const symbol_definition_t SYMBOL_DOTPRODUCT;
+extern const symbol_definition_t SYMBOL_ACCENT_DOTPRODUCT;
 extern const symbol_definition_t SYMBOL_TIMES;
 extern const symbol_definition_t SYMBOL_DIVISION;
 extern const symbol_definition_t SYMBOL_PLUSMINUS;

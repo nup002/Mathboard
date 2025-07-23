@@ -111,9 +111,9 @@ void much_greater_than_dance(tap_dance_state_t *s, void *d) {
     symbol_dance(s, d, symbols, 2);
 }
 
-// Modifier symbols
-void dot_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_DOT, &SYMBOL_DOUBLE_DOT, &SYMBOL_TRIPLE_DOT};
+// Accents and sub/sup symbols
+void accent_dot_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&SYMBOL_ACCENT_DOT, &SYMBOL_ACCENT_DOUBLE_DOT, &SYMBOL_ACCENT_TRIPLE_DOT};
     symbol_dance(s, d, symbols, 3);
 }
 

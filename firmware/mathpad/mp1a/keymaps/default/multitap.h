@@ -41,8 +41,8 @@ void equal_by_definition_dance(tap_dance_state_t *s, void *d);
 void greater_or_equal_dance(tap_dance_state_t *s, void *d);
 void much_greater_than_dance(tap_dance_state_t *s, void *d);
 
-// Modifier symbols
-void dot_dance(tap_dance_state_t *s, void *d);
+// Accents and sub/sup symbols
+void accent_dot_dance(tap_dance_state_t *s, void *d);
 void sub_dance(tap_dance_state_t *s, void *d);
 void sup_dance(tap_dance_state_t *s, void *d);
 
