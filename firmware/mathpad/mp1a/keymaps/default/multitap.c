@@ -19,7 +19,7 @@
 
 #include "symbols/algebra_symbols.h"
 #include QMK_KEYBOARD_H
-#include "tap_dance.h"
+#include "multitap.h"
 #include "symbols/symbol_categories.h"
 
 // Helper function to handle tap dance actions
@@ -113,46 +113,46 @@ void much_greater_than_dance(tap_dance_state_t *s, void *d) {
 
 // Modifier symbols
 void dot_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_DOT, &SYMBOL_DOUBLE_DOT};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_DOT, &SYMBOL_DOUBLE_DOT, &SYMBOL_TRIPLE_DOT};
+    symbol_dance(s, d, symbols, 3);
 }
 
 void sub_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_SUB_0, &SYMBOL_SUB_1};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SUB_0, &SYMBOL_SUB_1, &SYMBOL_SUB_2, &SYMBOL_SUB_I, &SYMBOL_SUB_J, &SYMBOL_SUB_N};
+    symbol_dance(s, d, symbols, 6);
 }
 
 void sup_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_SUP_0, &SYMBOL_SUP_1};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SUP_0, &SYMBOL_SUP_1, &SYMBOL_SUP_2, &SYMBOL_SUP_I, &SYMBOL_SUP_J, &SYMBOL_SUP_N};
+    symbol_dance(s, d, symbols, 6);
 }
 
 // Calculus symbols
 void integral_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_INTEGRAL, &SYMBOL_DOUBLE_INTEGRAL};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_INTEGRAL, &SYMBOL_DOUBLE_INTEGRAL, &SYMBOL_TRIPLE_INTEGRAL};
+    symbol_dance(s, d, symbols, 3);
 }
 
 void line_integral_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_LINE_INTEGRAL, &SYMBOL_SURFACE_INTEGRAL};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_LINE_INTEGRAL, &SYMBOL_SURFACE_INTEGRAL, &SYMBOL_VOLUME_INTEGRAL};
+    symbol_dance(s, d, symbols, 3);
 }
 
 // Algebra symbols
 void root_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_SQUARE_ROOT, &SYMBOL_CUBE_ROOT};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_SQUARE_ROOT, &SYMBOL_CUBE_ROOT, &SYMBOL_FOURTH_ROOT};
+    symbol_dance(s, d, symbols, 3);
 }
 
 // Arrows
 void arrow_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_RIGHTARROW, &SYMBOL_LEFTARROW};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_RIGHTARROW, &SYMBOL_LEFTARROW, &SYMBOL_LEFTRIGHTARROW};
+    symbol_dance(s, d, symbols, 3);
 }
 
-void circled_plus_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_DIRECT_SUM, &SYMBOL_CIRCLED_TIMES};
-    symbol_dance(s, d, symbols, 2);
+void double_arrow_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&SYMBOL_DOUBLERIGHTARROW, &SYMBOL_DOUBLELEFTARROW, &SYMBOL_DOUBLERIGHTLEFTARROW};
+    symbol_dance(s, d, symbols, 3);
 }
 
 // Set theory symbols
@@ -188,8 +188,8 @@ void there_exists_dance(tap_dance_state_t *s, void *d) {
 }
 
 void and_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_AND, &SYMBOL_OR};
-    symbol_dance(s, d, symbols, 2);
+    const symbol_definition_t *symbols[] = {&SYMBOL_AND, &SYMBOL_OR, &SYMBOL_XOR};
+    symbol_dance(s, d, symbols, 3);
 }
 
 void down_tack_dance(tap_dance_state_t *s, void *d) {
@@ -198,8 +198,9 @@ void down_tack_dance(tap_dance_state_t *s, void *d) {
 }
 
 // Misc symbols
-void double_arrow_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_DOUBLERIGHTARROW, &SYMBOL_DOUBLELEFTARROW};
+
+void circled_plus_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&SYMBOL_DIRECT_SUM, &SYMBOL_CIRCLED_TIMES};
     symbol_dance(s, d, symbols, 2);
 }
 

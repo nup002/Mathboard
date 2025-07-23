@@ -75,31 +75,3 @@ const symbol_definition_t SYMBOL_TRIPLE_DOT = DEFINE_SYMBOL(
     "\\dddot{}", LATEX_1BACKTRACK,
     "\\dddot", MOF_2SPACE
 );
-
-const symbol_definition_t SYMBOL_PRIME = DEFINE_SYMBOL(
-    prime,
-    0x2032,                  // Unicode: ′
-    "'", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_DOUBLE_PRIME = DEFINE_SYMBOL(
-    double_prime,
-    0x2033,                  // Unicode: ″
-    "''", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_TRIPLE_PRIME = DEFINE_SYMBOL(
-    triple_prime,
-    0x2034,                  // Unicode: ‴
-    "'''", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_TRANSPOSE = DEFINE_SYMBOL(
-    transpose,
-    0x1D40,                  // Unicode: ᵀ (modifier letter capital T)
-    "^{\\mathsf{T}}", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);

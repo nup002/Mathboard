@@ -83,13 +83,6 @@ const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_SET_DIFFERENCE = DEFINE_SYMBOL(
-    set_difference,
-    0x2216,                  // Unicode: ∖
-    "\\setminus", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
     subset,
     0x2286,                  // Unicode: ⊆

@@ -55,13 +55,6 @@ const symbol_definition_t SYMBOL_MINUSPLUS = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_PARALLEL = DEFINE_SYMBOL(
-    parallel,
-    0x2225,                  // Unicode: ∥
-    "\\parallel", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_DEGREE = DEFINE_SYMBOL(
     degree,
     0x00B0,                  // Unicode: °

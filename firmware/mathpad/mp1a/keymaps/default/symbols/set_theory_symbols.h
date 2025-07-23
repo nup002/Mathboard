@@ -29,7 +29,6 @@ extern const symbol_definition_t SYMBOL_EMPTY_SET;
 extern const symbol_definition_t SYMBOL_POWER_SET;
 extern const symbol_definition_t SYMBOL_PROPER_SUBSET;
 extern const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET;
-extern const symbol_definition_t SYMBOL_SET_DIFFERENCE;
 extern const symbol_definition_t SYMBOL_SUBSET;
 extern const symbol_definition_t SYMBOL_NOT_SUBSET;
 extern const symbol_definition_t SYMBOL_DISJOINT_UNION;

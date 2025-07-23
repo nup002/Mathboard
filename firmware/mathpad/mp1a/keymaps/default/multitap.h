@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TAPDANCE_H
-#define TAPDANCE_H
+#ifndef MULTITAP_H
+#define MULTITAP_H
 
 #include QMK_KEYBOARD_H
 #include "symbols/symbols.h"
@@ -74,4 +74,4 @@ void circled_plus_dance(tap_dance_state_t *s, void *d);
 void times_dance(tap_dance_state_t *s, void *d);
 void plusminus_dance(tap_dance_state_t *s, void *d);
 
-#endif // TAPDANCE_H
+#endif // MULTITAP_H

@@ -17,10 +17,10 @@
 #include "symbols.h"
 #include "symbol_categories.h"
 #include "../globals.h"
-#include "../mode.h"
-#include "unicode/unicode_mode.h"
-#include "latex/latex_mode.h"
-#include "microsoft_office/microsoft_office_mode.h"
+#include "../modes/mode.h"
+#include "../modes/unicode/unicode_mode.h"
+#include "../modes/latex/latex_mode.h"
+#include "../modes/microsoft_office/microsoft_office_mode.h"
 
 // Function to send a symbol if the key is pressed
 void send_symbol_on_keypress(const symbol_definition_t* symbol, keyrecord_t* record) {

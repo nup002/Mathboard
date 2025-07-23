@@ -16,7 +16,6 @@
 #ifndef SYMBOLS_H
 #define SYMBOLS_H
 #include <stdint.h>
-// Include QMK headers first to get keyrecord_t definition
 #include QMK_KEYBOARD_H
 
 // Define the different sending methods for LaTeX

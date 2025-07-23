@@ -13,7 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "symbols/unicode/unicode_mode.h"
+#include "unicode_mode.h"
 
 
 // Function to send a symbol's unicode representation

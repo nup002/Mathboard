@@ -16,18 +16,19 @@
 #include <stddef.h> // For NULL definition
 #include "globals.h"
 #include "modifiers.h"
-#include "mode.h"
-
-// Include other project headers after keycodes.h
+#include "modes/mode.h"
 #include "symbols/symbols.h"
 #include "symbols/symbol_categories.h"
-#include "tap_dance.h"
+#include "multitap.h"
 
+//--------------
+// KEYCODES
+//--------------
 enum custom_keycodes {
-    KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE variable.
-    KC_RIGHTKEY, // RIGHT keycap side modifier key
-    KC_MIDKEY, // MID keycap row modifier key
-    KC_FRONTKEY, // FRONT keycap row modifier key
+    KC_SWITCH_MODE = SAFE_RANGE, // KC_SWITCH_MODE is a special button that cycles the mathpad MODE
+    KC_RIGHTKEY,                 // RIGHT modifier key
+    KC_CENTERKEY,                // CENTER modifier key
+    KC_BOTTOMKEY,                // BOTTOM modifier key
     
     // Greek symbols
     KC_ALPHA,
@@ -201,7 +202,9 @@ enum custom_keycodes {
     }
 }
 
-// Enum defining every tapdance symbol
+//--------------
+// MULTITAP CODES
+//--------------
 enum tap_dance_keys {
     GAMMA_TD,                  // Gamma γ / Digamma ϝ
     DELTA_TD,                  // Delta δ / Capital delta Δ
@@ -240,7 +243,7 @@ enum tap_dance_keys {
 };
 
 /**
- * This array defines all the multitap symbols (known as 'tapdance' in QMK parlance).
+ * This array maps multitap symbols to their corresponding functions.
  * See https://docs.qmk.fm/features/tap_dance
  */
  tap_dance_action_t tap_dance_actions[] = {
@@ -280,42 +283,42 @@ enum tap_dance_keys {
     [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance)
 };
 
-#ifdef SENDSTRING_LAYOUT
-  // This converts the layout name to a string
-  #define STRINGIFY(x) #x
-  #define TOSTRING(x) STRINGIFY(x)
-
-  // This creates the actual include path string
-  #define LAYOUTPATH(layout) "sendstring_" TOSTRING(layout) ".h"
-
-  // Include the appropriate header
-  #include LAYOUTPATH(SENDSTRING_LAYOUT)
-#endif
-
 /**
  * Key Layout Structure Definition
  * 
- * Each physical symbol key on the mathpad is defined using a struct with named fields.
- * The upper rightmost key is 'key00'. The bottom leftmost key is 'key23':
- * 00 01 02 03 <- Top row
- * 10 11 12 13 <- Middle row
- * 20 21 22 23 <- Bottom row
- * 
- * Each key struct contains 6 symbol positions corresponding to the 6 keycap layers:
- * - top_left, center_left, bottom_left (left side of keycap)
- * - top_right, center_right, bottom_right (right side of keycap)
+ * Here, symbols (both normal and multitap) are mapped to the physical keys.
+ *
+ *  Physical Layout (4x3 grid):
+ *  ┌─────┬─────┬─────┬─────┐
+ *  │key00│key01│key02│key03│
+ *  ├─────┼─────┼─────┼─────┤
+ *  │key10│key11│key12│key13│
+ *  ├─────┼─────┼─────┼─────┤
+ *  │key20│key21│key22│key23│
+ *  └─────┴─────┴─────┴─────┘
+
+ *  Each key has 6 positions:
+ *  ┌─────────────┐─────────────┐
+ *  │ top_left    │ top_right   │
+ *  │             │             │
+ *  │ center_left │ center_right│ 
+ *  │             │             │
+ *  │ bottom_left │ bottom_right│
+ *  └─────────────┘─────────────┘
+ *
  */
 
 typedef struct {
     uint16_t top_left;      // _LEFT_TOP layer (0)
-    uint16_t center_left;      // _LEFT_CENTER layer (1) 
+    uint16_t center_left;   // _LEFT_CENTER layer (1) 
     uint16_t bottom_left;   // _LEFT_BOTTOM layer (2)
     uint16_t top_right;     // _RIGHT_TOP layer (3)
-    uint16_t center_right;     // _RIGHT_CENTER layer (4)
+    uint16_t center_right;  // _RIGHT_CENTER layer (4)
     uint16_t bottom_right;  // _RIGHT_BOTTOM layer (5)
 } key_layout_t;
 
-// Top row
+
+// Top row keys
 static const key_layout_t key00 = {
     .top_left = KC_ALPHA,
     .center_left = KC_NOTEQUAL,
@@ -352,7 +355,7 @@ static const key_layout_t key03 = {
     .bottom_right = TD(SUP_TD)
 };
 
-// Middle row
+// Middle row keys
 static const key_layout_t key10 = {
     .top_left = KC_IOTA,
     .center_left = KC_SUM,
@@ -389,7 +392,7 @@ static const key_layout_t key13 = {
     .bottom_right = TD(EMPTY_SET_TD)
 };
 
-// Bottom row
+// Bottom row keys
 static const key_layout_t key20 = {
     .top_left = TD(SIGMA_TD),
     .center_left = TD(AND_TD),
@@ -426,6 +429,21 @@ static const key_layout_t key23 = {
     .bottom_right = KC_COMPLEXES
 };
 
+//--------
+// No user-configurable code below this line
+//--------
+
+#ifdef SENDSTRING_LAYOUT
+  // This converts the layout name to a string
+  #define STRINGIFY(x) #x
+  #define TOSTRING(x) STRINGIFY(x)
+
+  // This creates the actual include path string
+  #define LAYOUTPATH(layout) "sendstring_" TOSTRING(layout) ".h"
+
+  // Include the appropriate header
+  #include LAYOUTPATH(SENDSTRING_LAYOUT)
+#endif
 
 /**
  * 'process_record_user' handles keyclicks on symbols using the unified symbol definition structure.
@@ -453,12 +471,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             update_active_layer();
             return false; // Don't continue processing this key
             
-        case KC_MIDKEY:
+        case KC_CENTERKEY:
             midkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
             
-        case KC_FRONTKEY:
+        case KC_BOTTOMKEY:
             frontkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
@@ -485,37 +503,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         key00.top_left, key01.top_left,   key02.top_left,   key03.top_left,   KC_SWITCH_MODE,
                         key10.top_left,   key11.top_left,   key12.top_left,   key13.top_left,
         KC_RIGHTKEY,    key20.top_left,   key21.top_left,   key22.top_left,   key23.top_left,
-                                          KC_MIDKEY,                          KC_FRONTKEY
+                                          KC_CENTERKEY,                          KC_BOTTOMKEY
     ),
 	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
         key00.top_right, key01.top_right,   key02.top_right,   key03.top_right,   KC_SWITCH_MODE,
                          key10.top_right,   key11.top_right,   key12.top_right,   key13.top_right,
         KC_RIGHTKEY,     key20.top_right,   key21.top_right,   key22.top_right,   key23.top_right,
-                                            KC_MIDKEY,                            KC_FRONTKEY
+                                            KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
     [_LEFT_CENTER] = LAYOUT_5x3_macropad(
         key00.center_left, key01.center_left,   key02.center_left,   key03.center_left,   KC_SWITCH_MODE,
                         key10.center_left,   key11.center_left,   key12.center_left,   key13.center_left,
         KC_RIGHTKEY,    key20.center_left,   key21.center_left,   key22.center_left,   key23.center_left,
-                                          KC_MIDKEY,                          KC_FRONTKEY
+                                          KC_CENTERKEY,                          KC_BOTTOMKEY
     ),
 	[_RIGHT_CENTER] = LAYOUT_5x3_macropad(
         key00.center_right, key01.center_right,   key02.center_right,   key03.center_right,   KC_SWITCH_MODE,
                          key10.center_right,   key11.center_right,   key12.center_right,   key13.center_right,
         KC_RIGHTKEY,     key20.center_right,   key21.center_right,   key22.center_right,   key23.center_right,
-                                            KC_MIDKEY,                            KC_FRONTKEY
+                                            KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
 	[_LEFT_BOTTOM] = LAYOUT_5x3_macropad(
         key00.bottom_left, key01.bottom_left,   key02.bottom_left,   key03.bottom_left,   KC_SWITCH_MODE,
                            key10.bottom_left,   key11.bottom_left,   key12.bottom_left,   key13.bottom_left,
         KC_RIGHTKEY,       key20.bottom_left,   key21.bottom_left,   key22.bottom_left,   key23.bottom_left,
-                                                KC_MIDKEY,                                KC_FRONTKEY
+                                                KC_CENTERKEY,                                KC_BOTTOMKEY
     ),
 	[_RIGHT_BOTTOM] = LAYOUT_5x3_macropad(
         key00.bottom_right, key01.bottom_right,   key02.bottom_right,   key03.bottom_right,   KC_SWITCH_MODE,
                             key10.bottom_right,   key11.bottom_right,   key12.bottom_right,   key13.bottom_right,
         KC_RIGHTKEY,        key20.bottom_right,   key21.bottom_right,   key22.bottom_right,   key23.bottom_right,
-                                                  KC_MIDKEY,                                  KC_FRONTKEY
+                                                  KC_CENTERKEY,                                  KC_BOTTOMKEY
     )
 };
 

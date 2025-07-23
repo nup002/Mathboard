@@ -189,19 +189,6 @@ const symbol_definition_t SYMBOL_OMEGA = DEFINE_SYMBOL(
 );
 
 // Greek letters - uppercase
-const symbol_definition_t SYMBOL_ALPHA_UPPERCASE = DEFINE_SYMBOL(
-    alpha_uppercase,
-    0x0391,                  // Unicode: Α
-    "\\Alpha", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_BETA_UPPERCASE = DEFINE_SYMBOL(
-    beta_uppercase,
-    0x0392,                  // Unicode: Β
-    "\\Beta", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
 
 const symbol_definition_t SYMBOL_GAMMA_UPPERCASE = DEFINE_SYMBOL(
     gamma_uppercase,
@@ -217,45 +204,10 @@ const symbol_definition_t SYMBOL_DELTA_UPPERCASE = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_EPSILON_UPPERCASE = DEFINE_SYMBOL(
-    epsilon_uppercase,
-    0x0395,                  // Unicode: Ε
-    "\\Epsilon", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_ZETA_UPPERCASE = DEFINE_SYMBOL(
-    zeta_uppercase,
-    0x0396,                  // Unicode: Ζ
-    "\\Zeta", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_ETA_UPPERCASE = DEFINE_SYMBOL(
-    eta_uppercase,
-    0x0397,                  // Unicode: Η
-    "\\Eta", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_THETA_UPPERCASE = DEFINE_SYMBOL(
     theta_uppercase,
     0x0398,                  // Unicode: Θ
     "\\Theta", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_IOTA_UPPERCASE = DEFINE_SYMBOL(
-    iota_uppercase,
-    0x0399,                  // Unicode: Ι
-    "\\Iota", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_KAPPA_UPPERCASE = DEFINE_SYMBOL(
-    kappa_uppercase,
-    0x039A,                  // Unicode: Κ
-    "\\Kappa", LATEX_NORMAL,
     NULL, MOF_1SPACE
 );
 
@@ -266,31 +218,10 @@ const symbol_definition_t SYMBOL_LAMBDA_UPPERCASE = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_MU_UPPERCASE = DEFINE_SYMBOL(
-    mu_uppercase,
-    0x039C,                  // Unicode: Μ
-    "\\Mu", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_NU_UPPERCASE = DEFINE_SYMBOL(
-    nu_uppercase,
-    0x039D,                  // Unicode: Ν
-    "\\Nu", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_XI_UPPERCASE = DEFINE_SYMBOL(
     xi_uppercase,
     0x039E,                  // Unicode: Ξ
     "\\Xi", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_OMICRON_UPPERCASE = DEFINE_SYMBOL(
-    omicron_uppercase,
-    0x039F,                  // Unicode: Ο
-    "\\Omicron", LATEX_NORMAL,
     NULL, MOF_1SPACE
 );
 
@@ -301,13 +232,6 @@ const symbol_definition_t SYMBOL_PI_UPPERCASE = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_RHO_UPPERCASE = DEFINE_SYMBOL(
-    rho_uppercase,
-    0x03A1,                  // Unicode: Ρ
-    "\\Rho", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_SIGMA_UPPERCASE = DEFINE_SYMBOL(
     sigma_uppercase,
     0x03A3,                  // Unicode: Σ
@@ -315,31 +239,10 @@ const symbol_definition_t SYMBOL_SIGMA_UPPERCASE = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_TAU_UPPERCASE = DEFINE_SYMBOL(
-    tau_uppercase,
-    0x03A4,                  // Unicode: Τ
-    "\\Tau", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_UPSILON_UPPERCASE = DEFINE_SYMBOL(
-    upsilon_uppercase,
-    0x03A5,                  // Unicode: Υ
-    "\\Upsilon", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_PHI_UPPERCASE = DEFINE_SYMBOL(
     phi_uppercase,
     0x03A6,                  // Unicode: Φ
     "\\Phi", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_CHI_UPPERCASE = DEFINE_SYMBOL(
-    chi_uppercase,
-    0x03A7,                  // Unicode: Χ
-    "\\Chi", LATEX_NORMAL,
     NULL, MOF_1SPACE
 );
 

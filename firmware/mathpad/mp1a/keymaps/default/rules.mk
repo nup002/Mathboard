@@ -5,10 +5,9 @@ RGBLIGHT_ENABLE = yes
 CONSOLE_ENABLE=no
 
 # Main keymap files
-SRC += mode.c
 SRC += modifiers.c
 SRC += os_switch.c
-SRC += tap_dance.c
+SRC += multitap.c
 
 # Symbol files
 SRC += symbols/symbols.c
@@ -22,6 +21,7 @@ SRC += symbols/number_system_symbols.c
 SRC += symbols/set_theory_symbols.c
 
 # Mode-specific files
-SRC += symbols/latex/latex_mode.c
-SRC += symbols/microsoft_office/microsoft_office_mode.c
-SRC += symbols/unicode/unicode_mode.c
+SRC += modes/mode.c
+SRC += modes/latex/latex_mode.c
+SRC += modes/microsoft_office/microsoft_office_mode.c
+SRC += modes/unicode/unicode_mode.c

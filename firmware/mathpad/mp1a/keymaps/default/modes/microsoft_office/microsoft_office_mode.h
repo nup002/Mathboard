@@ -18,7 +18,7 @@
 
 #include QMK_KEYBOARD_H
 
-#include "../symbols.h"
+#include "../../symbols/symbols.h"
 
 
 // Function to send a symbol's Microsoft Office representation

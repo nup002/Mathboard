@@ -18,7 +18,7 @@
 
 #include QMK_KEYBOARD_H
 
-#include "../symbols.h"
+#include "../../symbols/symbols.h"
 
 
 void send_symbol_latex(const symbol_definition_t* symbol);

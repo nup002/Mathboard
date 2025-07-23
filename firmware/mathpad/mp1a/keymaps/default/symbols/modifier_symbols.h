@@ -28,7 +28,3 @@ extern const symbol_definition_t SYMBOL_ARROW;
 extern const symbol_definition_t SYMBOL_DOT;
 extern const symbol_definition_t SYMBOL_DOUBLE_DOT;
 extern const symbol_definition_t SYMBOL_TRIPLE_DOT;
-extern const symbol_definition_t SYMBOL_PRIME;
-extern const symbol_definition_t SYMBOL_DOUBLE_PRIME;
-extern const symbol_definition_t SYMBOL_TRIPLE_PRIME;
-extern const symbol_definition_t SYMBOL_TRANSPOSE;

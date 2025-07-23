@@ -69,20 +69,6 @@ const symbol_definition_t SYMBOL_NOT = DEFINE_SYMBOL(
     NULL, MOF_1SPACE
 );
 
-const symbol_definition_t SYMBOL_PROVES = DEFINE_SYMBOL(
-    proves,
-    0x22A2,                  // Unicode: ⊢
-    "\\vdash", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
-const symbol_definition_t SYMBOL_MODELS = DEFINE_SYMBOL(
-    models,
-    0x22A8,                  // Unicode: ⊨
-    "\\models", LATEX_NORMAL,
-    NULL, MOF_1SPACE
-);
-
 const symbol_definition_t SYMBOL_DOWN_TACK = DEFINE_SYMBOL(
     down_tack,
     0x22A4,                  // Unicode: ⊤

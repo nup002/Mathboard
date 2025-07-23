@@ -27,7 +27,5 @@ extern const symbol_definition_t SYMBOL_OR;
 extern const symbol_definition_t SYMBOL_XOR;
 extern const symbol_definition_t SYMBOL_FOR_ALL;
 extern const symbol_definition_t SYMBOL_NOT;
-extern const symbol_definition_t SYMBOL_PROVES;
-extern const symbol_definition_t SYMBOL_MODELS;
 extern const symbol_definition_t SYMBOL_DOWN_TACK;
 extern const symbol_definition_t SYMBOL_UP_TACK;

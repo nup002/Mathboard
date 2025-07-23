@@ -25,7 +25,6 @@ extern const symbol_definition_t SYMBOL_TIMES;
 extern const symbol_definition_t SYMBOL_DIVISION;
 extern const symbol_definition_t SYMBOL_PLUSMINUS;
 extern const symbol_definition_t SYMBOL_MINUSPLUS;
-extern const symbol_definition_t SYMBOL_PARALLEL;
 extern const symbol_definition_t SYMBOL_DEGREE;
 extern const symbol_definition_t SYMBOL_INFINITY;
 extern const symbol_definition_t SYMBOL_CIRCLED_TIMES;

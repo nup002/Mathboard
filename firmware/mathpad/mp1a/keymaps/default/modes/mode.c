@@ -19,7 +19,7 @@
 
 #include "mode.h"
 #include QMK_KEYBOARD_H
-#include "globals.h"
+#include "../globals.h"
 
 /** 
 * When 'update_led_to_match_mode' is called, it checks the current value of
