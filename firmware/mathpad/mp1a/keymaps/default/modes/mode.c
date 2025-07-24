@@ -42,6 +42,9 @@ void update_led_to_match_mode(void) {
         case LTX_MODE:
             rgblight_sethsv_at(HSV_YELLOW, 0);
             break;
+        case LOF_MODE:
+            rgblight_sethsv_at(HSV_CORAL, 0);
+            break;
     }
 }
 
@@ -65,7 +68,7 @@ void output_mode_set(uint8_t mode) {
 
 /**
  * Cycles between mathpad output modes when called. 
- * It goes UC_MODE -> MOF_MODE -> LTX_MODE -> UC_MODE
+ * It goes UC_MODE -> MOF_MODE -> LOF_MODE -> LTX_MODE 
  * 
  * This function is meant to be called from the keymap to cycle the output
  * modes of the mathpad.
@@ -74,6 +77,8 @@ void output_mode_update(void) {
     if (user_config.MODE == UC_MODE) {
         output_mode_set(MOF_MODE);
     } else if (user_config.MODE == MOF_MODE) {
+        output_mode_set(LOF_MODE);
+    } else if (user_config.MODE == LOF_MODE) {
         output_mode_set(LTX_MODE);
     } else if (user_config.MODE == LTX_MODE) {
         output_mode_set(UC_MODE);

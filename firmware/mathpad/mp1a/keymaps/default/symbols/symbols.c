@@ -21,6 +21,7 @@
 #include "../modes/unicode/unicode_mode.h"
 #include "../modes/latex/latex_mode.h"
 #include "../modes/microsoft_office/microsoft_office_mode.h"
+#include "../modes/libreoffice/libreoffice_mode.h"
 
 // Function to send a symbol if the key is pressed
 void send_symbol_on_keypress(const symbol_definition_t* symbol, keyrecord_t* record) {
@@ -41,6 +42,9 @@ void send_symbol(const symbol_definition_t* symbol) {
             break;
         case MOF_MODE:
             send_symbol_mof(symbol);
+            break;
+        case LOF_MODE:
+            send_symbol_lof(symbol);
             break;
     }
 }

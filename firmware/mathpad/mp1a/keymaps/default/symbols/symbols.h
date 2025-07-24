@@ -36,6 +36,19 @@ typedef enum {
     MOF_1SPACE_DELETE_LIMS  // Send string with placeholder limits (_a^b) and delete the limits
 } mof_send_method_t;
 
+// Define the different sending methods for LibreOffice Equation Editor
+typedef enum {
+    LOF_NORMAL,             // Just send the string as is
+    LOF_1SPACE,             // Send string and send 1 space
+    LOF_2SPACE,             // Send string and send 2 spaces
+    LOF_1BACKTRACK,         // Send string and move cursor back 1 position
+    LOF_2BACKTRACK,         // Send string and move cursor back 2 positions
+    LOF_3BACKTRACK,         // Send string and move cursor back 3 positions
+    LOF_6BACKTRACK,         // Send string and move cursor back 7 positions
+    LOF_1SPACE_1BACKTRACK,  // Send string, 1 space, and move cursor back 1 position
+    LOF_2SPACE_1BACKTRACK   // Send string, 2 spaces, and move cursor back 1 position
+} lof_send_method_t;
+
 // Define the unified symbol structure
 typedef struct {
     // Symbol metadata
@@ -51,20 +64,27 @@ typedef struct {
     // Microsoft Office representation
     const char* mof_string;     // Microsoft Office string representation
     mof_send_method_t mof_method; // How to send the MOF string
+    
+    // LibreOffice representation
+    const char* lof_string;     // LibreOffice string representation
+    lof_send_method_t lof_method; // How to send the LOF string
 } symbol_definition_t;
 
 // Macro to define a symbol with all representations
 #define DEFINE_SYMBOL(symbol_name, \
                      unicode_val, \
                      latex_str, latex_meth, \
-                     mof_str, mof_meth) \
+                     mof_str, mof_meth, \
+                     lof_str, lof_meth) \
     { \
         .name = #symbol_name, \
         .unicode_value = unicode_val, \
         .latex_string = latex_str, \
         .latex_method = latex_meth, \
         .mof_string = mof_str, \
-        .mof_method = mof_meth \
+        .mof_method = mof_meth, \
+        .lof_string = lof_str, \
+        .lof_method = lof_meth \
     }
 
 // Function to send a symbol based on the current mode

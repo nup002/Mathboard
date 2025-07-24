@@ -18,7 +18,7 @@
 
 // Include all symbol category headers
 #include "greek_symbols.h"
-#include "algebra_symbols.h"
+#include "calculus_symbols.h"
 #include "comparison_symbols.h"
 #include "logic_symbols.h"
 #include "misc_symbols.h"
