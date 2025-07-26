@@ -26,7 +26,7 @@ const symbol_definition_t SYMBOL_SUM = DEFINE_SYMBOL(
     "\\sum_{}{}", LATEX_3BACKTRACK,
     "\\sum_a^b", MOF_1SPACE_DELETE_LIMS,
     "sum from{} to{}", LOF_6BACKTRACK
-);
+); //TODO: LOF brackets are autocompleted
 
 const symbol_definition_t SYMBOL_N_ARY_PRODUCT = DEFINE_SYMBOL(
     n_ary_product,
@@ -65,7 +65,7 @@ const symbol_definition_t SYMBOL_LINE_INTEGRAL = DEFINE_SYMBOL(
     0x222E,                  // Unicode: ∮
     "\\oint_{}{}", LATEX_3BACKTRACK,
     "\\oint_a^b", MOF_1SPACE_DELETE_LIMS,
-    "oint from{} to{}", LOF_6BACKTRACK
+    "lint from{} to{}", LOF_6BACKTRACK
 );
 
 const symbol_definition_t SYMBOL_SURFACE_INTEGRAL = DEFINE_SYMBOL(
@@ -73,7 +73,7 @@ const symbol_definition_t SYMBOL_SURFACE_INTEGRAL = DEFINE_SYMBOL(
     0x222F,                  // Unicode: ∯
     "\\oiint_{}{}", LATEX_3BACKTRACK,
     "\\oiint_a^b", MOF_1SPACE_DELETE_LIMS,
-    "oiint from{} to{}", LOF_6BACKTRACK
+    "llint from{} to{}", LOF_6BACKTRACK
 );
 
 const symbol_definition_t SYMBOL_VOLUME_INTEGRAL = DEFINE_SYMBOL(
@@ -81,7 +81,7 @@ const symbol_definition_t SYMBOL_VOLUME_INTEGRAL = DEFINE_SYMBOL(
     0x2230,                  // Unicode: ∰
     "\\oiiint_{}{}", LATEX_3BACKTRACK,
     "\\oiiint_a^b", MOF_1SPACE_DELETE_LIMS,
-    "oiiint from{} to{}", LOF_6BACKTRACK
+    "lllint from{} to{}", LOF_6BACKTRACK
 );
 
 const symbol_definition_t SYMBOL_SQUARE_ROOT = DEFINE_SYMBOL(
@@ -121,7 +121,7 @@ const symbol_definition_t SYMBOL_NABLA = DEFINE_SYMBOL(
     0x2207,                  // Unicode: ∇
     "\\nabla", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    " nabla", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_FRAC = DEFINE_SYMBOL(
@@ -137,5 +137,5 @@ const symbol_definition_t SYMBOL_MATRIX = DEFINE_SYMBOL(
     0x25A1,                  // Unicode: □ (using white square as approximation)
     "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}", LATEX_NORMAL,
     "[\\matrix(@&)]", MOF_1SPACE_1BACKTRACK,
-    "matrix{a # b ## c # d}", LOF_NORMAL
+    "matrix{a # b ## c # d}", LOF_1SPACE
 );

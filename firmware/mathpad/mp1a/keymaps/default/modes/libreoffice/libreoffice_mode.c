@@ -51,7 +51,7 @@ void send_symbol_lof(const symbol_definition_t* symbol) {
             send_lof_3backtrack(symbol->lof_string);
             break;
         case LOF_6BACKTRACK:
-            send_lof_7backtrack(symbol->lof_string);
+            send_lof_6backtrack(symbol->lof_string);
             break;
         case LOF_1SPACE_1BACKTRACK:
             send_lof_1space_1backtrack(symbol->lof_string);
@@ -66,20 +66,6 @@ void send_symbol_lof(const symbol_definition_t* symbol) {
     }
 }
 
-/**
- * @brief Sends one space character
- */
-void send_space(void) {
-    tap_code(KC_SPACE);
-}
-
-/**
- * @brief Sends two space characters
- */
-void send_2x_space(void) {
-    tap_code(KC_SPACE);
-    tap_code(KC_SPACE);
-}
 
 /**
  * @brief Sends string as is without any modifications.
@@ -102,7 +88,7 @@ void send_lof_normal(const char *string) {
  */
 void send_lof_1space(const char *string) {
     send_string(string);
-    send_space();
+    tap_code(KC_SPACE);
 }
 
 /**
@@ -115,7 +101,8 @@ void send_lof_1space(const char *string) {
  */
 void send_lof_2space(const char *string) {
     send_string(string);
-    send_2x_space();
+    tap_code(KC_SPACE);
+    tap_code(KC_SPACE);
 }
 
 /**
@@ -186,7 +173,7 @@ void send_lof_6backtrack(const char *string) {
  */
 void send_lof_1space_1backtrack(const char *string) {
     send_string(string);
-    send_space();
+    tap_code(KC_SPACE);
     tap_code(KC_LEFT);
 }
 
@@ -201,6 +188,7 @@ void send_lof_1space_1backtrack(const char *string) {
  */
 void send_lof_2space_1backtrack(const char *string) {
     send_string(string);
-    send_2x_space();
+    tap_code(KC_SPACE);
+    tap_code(KC_SPACE);
     tap_code(KC_LEFT);
 }

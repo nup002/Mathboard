@@ -25,7 +25,7 @@ const symbol_definition_t SYMBOL_UNION = DEFINE_SYMBOL(
     0x222A,                  // Unicode: ∪
     "\\cup", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "union", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_INTERSECTION = DEFINE_SYMBOL(
@@ -33,7 +33,7 @@ const symbol_definition_t SYMBOL_INTERSECTION = DEFINE_SYMBOL(
     0x2229,                  // Unicode: ∩
     "\\cap", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "intersection", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_ELEMENT_OF = DEFINE_SYMBOL(
@@ -41,7 +41,7 @@ const symbol_definition_t SYMBOL_ELEMENT_OF = DEFINE_SYMBOL(
     0x2208,                  // Unicode: ∈
     "\\in", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "in", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_NOT_ELEMENT_OF = DEFINE_SYMBOL(
@@ -49,7 +49,7 @@ const symbol_definition_t SYMBOL_NOT_ELEMENT_OF = DEFINE_SYMBOL(
     0x2209,                  // Unicode: ∉
     "\\notin", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "notin", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_CONTAINS_AS_MEMBER = DEFINE_SYMBOL(
@@ -57,7 +57,7 @@ const symbol_definition_t SYMBOL_CONTAINS_AS_MEMBER = DEFINE_SYMBOL(
     0x220B,                  // Unicode: ∋
     "\\ni", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "owns", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_EMPTY_SET = DEFINE_SYMBOL(
@@ -65,7 +65,7 @@ const symbol_definition_t SYMBOL_EMPTY_SET = DEFINE_SYMBOL(
     0x2205,                  // Unicode: ∅
     "\\emptyset", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "emptyset", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_POWER_SET = DEFINE_SYMBOL(
@@ -73,7 +73,7 @@ const symbol_definition_t SYMBOL_POWER_SET = DEFINE_SYMBOL(
     0x2118,                  // Unicode: ℘
     "\\wp", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "wp", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_PROPER_SUBSET = DEFINE_SYMBOL(
@@ -81,7 +81,7 @@ const symbol_definition_t SYMBOL_PROPER_SUBSET = DEFINE_SYMBOL(
     0x2282,                  // Unicode: ⊂
     "\\subset", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "subset", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
@@ -89,7 +89,7 @@ const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
     0x2284,                  // Unicode: ⊄
     "\\not\\subset", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "nsubset", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
@@ -97,7 +97,7 @@ const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
     0x2286,                  // Unicode: ⊆
     "\\subseteq", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "subseteq", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_NOT_SUBSET = DEFINE_SYMBOL(
@@ -105,7 +105,7 @@ const symbol_definition_t SYMBOL_NOT_SUBSET = DEFINE_SYMBOL(
     0x2288,                  // Unicode: ⊈
     "\\not\\subseteq", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "nsubseteq", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DISJOINT_UNION = DEFINE_SYMBOL(
@@ -114,12 +114,12 @@ const symbol_definition_t SYMBOL_DISJOINT_UNION = DEFINE_SYMBOL(
     "\\bigsqcup", LATEX_NORMAL,
     NULL, MOF_1SPACE,
     NULL, LOF_1SPACE
-);
+); // TODO: What do we do here for LOF?
 
 const symbol_definition_t SYMBOL_DIRECT_SUM = DEFINE_SYMBOL(
     direct_sum,
     0x2295,                  // Unicode: ⊕
     "\\oplus", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "oplus", LOF_1SPACE
 );

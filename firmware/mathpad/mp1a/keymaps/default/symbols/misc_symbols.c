@@ -25,7 +25,7 @@ const symbol_definition_t SYMBOL_ACCENT_DOTPRODUCT = DEFINE_SYMBOL(
     0x22C5,                  // Unicode: ⋅
     "\\cdot", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "cdot", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_TIMES = DEFINE_SYMBOL(
@@ -33,7 +33,7 @@ const symbol_definition_t SYMBOL_TIMES = DEFINE_SYMBOL(
     0x00D7,                  // Unicode: ×
     "\\times", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "times", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DIVISION = DEFINE_SYMBOL(
@@ -41,7 +41,7 @@ const symbol_definition_t SYMBOL_DIVISION = DEFINE_SYMBOL(
     0x00F7,                  // Unicode: ÷
     "\\div", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "div", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_PLUSMINUS = DEFINE_SYMBOL(
@@ -49,7 +49,7 @@ const symbol_definition_t SYMBOL_PLUSMINUS = DEFINE_SYMBOL(
     0x00B1,                  // Unicode: ±
     "\\pm", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "plusminus", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_MINUSPLUS = DEFINE_SYMBOL(
@@ -57,7 +57,7 @@ const symbol_definition_t SYMBOL_MINUSPLUS = DEFINE_SYMBOL(
     0x2213,                  // Unicode: ∓
     "\\mp", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "minusplus", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DEGREE = DEFINE_SYMBOL(
@@ -81,7 +81,7 @@ const symbol_definition_t SYMBOL_CIRCLED_TIMES = DEFINE_SYMBOL(
     0x2297,                  // Unicode: ⊗
     "\\otimes", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "otimes", LOF_1SPACE
 );
 
 // Arrows
@@ -114,7 +114,7 @@ const symbol_definition_t SYMBOL_DOUBLERIGHTARROW = DEFINE_SYMBOL(
     0x21D2,                  // Unicode: ⇒
     "\\Rightarrow", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "drarrow", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DOUBLELEFTARROW = DEFINE_SYMBOL(
@@ -122,7 +122,7 @@ const symbol_definition_t SYMBOL_DOUBLELEFTARROW = DEFINE_SYMBOL(
     0x21D0,                  // Unicode: ⇐
     "\\Leftarrow", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "dlarrow", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_DOUBLERIGHTLEFTARROW = DEFINE_SYMBOL(
@@ -130,7 +130,7 @@ const symbol_definition_t SYMBOL_DOUBLERIGHTLEFTARROW = DEFINE_SYMBOL(
     0x21D4,                  // Unicode: ⇔
     "\\Leftrightarrow", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "dlrarrow", LOF_1SPACE
 );
 
 // Subscript symbols
@@ -139,7 +139,7 @@ const symbol_definition_t SYMBOL_SUB_0 = DEFINE_SYMBOL(
     0x2080,                  // Unicode: ₀
     "_0", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_0", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUB_1 = DEFINE_SYMBOL(
@@ -147,7 +147,7 @@ const symbol_definition_t SYMBOL_SUB_1 = DEFINE_SYMBOL(
     0x2081,                  // Unicode: ₁
     "_1", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_1", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUB_2 = DEFINE_SYMBOL(
@@ -155,7 +155,7 @@ const symbol_definition_t SYMBOL_SUB_2 = DEFINE_SYMBOL(
     0x2082,                  // Unicode: ₂
     "_2", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_2", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUB_I = DEFINE_SYMBOL(
@@ -163,7 +163,7 @@ const symbol_definition_t SYMBOL_SUB_I = DEFINE_SYMBOL(
     0x1D62,                  // Unicode: ᵢ
     "_i", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_i", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUB_J = DEFINE_SYMBOL(
@@ -171,7 +171,7 @@ const symbol_definition_t SYMBOL_SUB_J = DEFINE_SYMBOL(
     0x2C7C,                  // Unicode: ⱼ
     "_j", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_j", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUB_N = DEFINE_SYMBOL(
@@ -179,7 +179,7 @@ const symbol_definition_t SYMBOL_SUB_N = DEFINE_SYMBOL(
     0x2099,                  // Unicode: ₙ
     "_n", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "_n", LOF_1SPACE
 );
 
 // Superscript symbols
@@ -188,7 +188,7 @@ const symbol_definition_t SYMBOL_SUP_0 = DEFINE_SYMBOL(
     0x2070,                  // Unicode: ⁰
     "^0", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^0", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUP_1 = DEFINE_SYMBOL(
@@ -196,7 +196,7 @@ const symbol_definition_t SYMBOL_SUP_1 = DEFINE_SYMBOL(
     0x00B9,                  // Unicode: ¹
     "^1", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^1", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUP_2 = DEFINE_SYMBOL(
@@ -204,7 +204,7 @@ const symbol_definition_t SYMBOL_SUP_2 = DEFINE_SYMBOL(
     0x00B2,                  // Unicode: ²
     "^2", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^2", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUP_I = DEFINE_SYMBOL(
@@ -212,7 +212,7 @@ const symbol_definition_t SYMBOL_SUP_I = DEFINE_SYMBOL(
     0x2071,                  // Unicode: ⁱ
     "^i", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^i", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUP_J = DEFINE_SYMBOL(
@@ -220,7 +220,7 @@ const symbol_definition_t SYMBOL_SUP_J = DEFINE_SYMBOL(
     0x02B2,                  // Unicode: ʲ
     "^j", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^j", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_SUP_N = DEFINE_SYMBOL(
@@ -228,5 +228,5 @@ const symbol_definition_t SYMBOL_SUP_N = DEFINE_SYMBOL(
     0x207F,                  // Unicode: ⁿ
     "^n", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "^n", LOF_1SPACE
 );

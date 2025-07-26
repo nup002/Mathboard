@@ -25,7 +25,7 @@ const symbol_definition_t SYMBOL_YOUR_SYMBOL = DEFINE_SYMBOL(
 ### Symbol Categories
 
 - `greek_symbols.c` - Greek letters (lowercase and uppercase)
-- `algebra_symbols.c` - Algebra and calculus symbols
+- `calculus_symbols.c` - Algebra and calculus symbols
 - `set_theory_symbols.c` - Set theory symbols
 - `logic_symbols.c` - Logic symbols
 - `comparison_symbols.c` - Comparison and equivalence symbols

@@ -73,15 +73,24 @@ const symbol_definition_t SYMBOL_ASYMPTOTICALLY_EQUAL = DEFINE_SYMBOL(
     0x2243,                  // Unicode: ≃
     "\\simeq", LATEX_NORMAL,
     NULL, MOF_1SPACE,
+    "simeq", LOF_1SPACE
+);
+
+const symbol_definition_t SYMBOL_CONGRUENT = DEFINE_SYMBOL(
+    congtruent,
+    0x2245,                  // Unicode: ≅
+    "\\cong", LATEX_NORMAL,
+    NULL, MOF_1SPACE,
     NULL, LOF_1SPACE
 );
+
 
 const symbol_definition_t SYMBOL_PROPORTIONAL_TO = DEFINE_SYMBOL(
     proportional_to,
     0x221D,                  // Unicode: ∝
     "\\propto", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "prop", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_MUCH_GREATER_THAN = DEFINE_SYMBOL(
@@ -89,7 +98,7 @@ const symbol_definition_t SYMBOL_MUCH_GREATER_THAN = DEFINE_SYMBOL(
     0x226B,                  // Unicode: ≫
     "\\gg", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "\%strictlygreaterthan", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_MUCH_LESS_THAN = DEFINE_SYMBOL(
@@ -97,7 +106,7 @@ const symbol_definition_t SYMBOL_MUCH_LESS_THAN = DEFINE_SYMBOL(
     0x226A,                  // Unicode: ≪
     "\\ll", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "\%strictlylessthan", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_COLON_EQUALS = DEFINE_SYMBOL(
@@ -113,5 +122,5 @@ const symbol_definition_t SYMBOL_EQUAL_BY_DEFINITION = DEFINE_SYMBOL(
     0x225D,                  // Unicode: ≝
     "\\overset{\\underset{\\mathrm{def}}{}}{=}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "def", LOF_1SPACE
 );

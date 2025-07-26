@@ -24,10 +24,6 @@
 // Function to send a symbol's LibreOffice representation
 void send_symbol_lof(const symbol_definition_t* symbol);
 
-// Helper functions for sending spaces
-void send_space(void);
-void send_2x_space(void);
-
 // Functions for sending LibreOffice symbols with different methods
 void send_lof_normal(const char *string);
 void send_lof_1space(const char *string);

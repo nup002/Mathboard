@@ -25,7 +25,7 @@ const symbol_definition_t SYMBOL_NATURALS = DEFINE_SYMBOL(
     0x2115,                  // Unicode: ℕ
     "\\mathbb{N}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "setN", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_INTEGERS = DEFINE_SYMBOL(
@@ -33,7 +33,7 @@ const symbol_definition_t SYMBOL_INTEGERS = DEFINE_SYMBOL(
     0x2124,                  // Unicode: ℤ
     "\\mathbb{Z}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "setZ", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_RATIONALS = DEFINE_SYMBOL(
@@ -41,7 +41,7 @@ const symbol_definition_t SYMBOL_RATIONALS = DEFINE_SYMBOL(
     0x211A,                  // Unicode: ℚ
     "\\mathbb{Q}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "setQ", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_REALS = DEFINE_SYMBOL(
@@ -49,7 +49,7 @@ const symbol_definition_t SYMBOL_REALS = DEFINE_SYMBOL(
     0x211D,                  // Unicode: ℝ
     "\\mathbb{R}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "setR", LOF_1SPACE
 );
 
 const symbol_definition_t SYMBOL_COMPLEXES = DEFINE_SYMBOL(
@@ -57,5 +57,5 @@ const symbol_definition_t SYMBOL_COMPLEXES = DEFINE_SYMBOL(
     0x2102,                  // Unicode: ℂ
     "\\mathbb{C}", LATEX_NORMAL,
     NULL, MOF_1SPACE,
-    NULL, LOF_1SPACE
+    "setC", LOF_1SPACE
 );
