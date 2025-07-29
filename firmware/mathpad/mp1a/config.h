@@ -15,10 +15,12 @@
 
 #pragma once
 
-#define RGBLIGHT_LIMIT_VAL 255 // Maximum brightness
-#define RGBLIGHT_LED_COUNT 1   // MODE switch backlight
-#define RGBLIGHT_SLEEP true    // Turn off light when host goes to sleep
-#define RGBLIGHT_VAL_STEP 10   // Brightness increment
+#define RGBLIGHT_LIMIT_VAL 255        // Maximum MODE switch brightness
+#define RGBLIGHT_LED_COUNT 1          // MODE switch backlight
+#define RGBLIGHT_SLEEP true           // Turn off MODE switch light when host goes to sleep
+#define RGBLIGHT_VAL_STEP 10          // Brightness increment
+#define RGBLIGHT_LAYERS               // Enable MODE switch colours
+#define RGBLIGHT_LAYERS_RETAIN_VAL    // Retain brightness value when switching mode
 #define DIP_SWITCH_PINS { GP7, GP8, GP9 }  // OS switch input pins
 
 #define UNICODE_CYCLE_PERSIST false

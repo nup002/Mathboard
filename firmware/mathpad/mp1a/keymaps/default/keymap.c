@@ -29,6 +29,8 @@ enum custom_keycodes {
     KC_RIGHTKEY,                 // RIGHT modifier key
     KC_CENTERKEY,                // CENTER modifier key
     KC_BOTTOMKEY,                // BOTTOM modifier key
+    KC_INCREASE_BRIGHTNESS,
+    KC_DECREASE_BRIGHTNESS,
     
     // Greek symbols
     KC_ALPHA,
@@ -509,11 +511,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             midkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
-            
         case KC_BOTTOMKEY:
             frontkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
+        case KC_INCREASE_BRIGHTNESS: {
+            uint8_t val = rgblight_get_val();   
+            val *= 1.1;
+            if (val > 255) {
+                val = 255;
+            }
+            rgblight_sethsv_eeprom_helper(255, 255, val, true);
+            return false;
+        }
+        case KC_DECREASE_BRIGHTNESS: {
+            uint8_t val = rgblight_get_val();
+            val *= 0.9;
+            if (val < 0) {
+                val = 0;
+            }
+            rgblight_sethsv_eeprom_helper(255, 255, val, true);
+            return false;
+        }
     }
     
     // Handle normal (non-multitap) symbols
@@ -540,13 +559,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_CENTERKEY,                          KC_BOTTOMKEY
     ),
 	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
-        key00.top_right, key01.top_right,   key02.top_right,   key03.top_right,   QK_UNDERGLOW_TOGGLE,
+        key00.top_right, key01.top_right,   key02.top_right,   key03.top_right,   KC_SWITCH_MODE,
                          key10.top_right,   key11.top_right,   key12.top_right,   key13.top_right,
         KC_RIGHTKEY,     key20.top_right,   key21.top_right,   key22.top_right,   key23.top_right,
                                             KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
     [_LEFT_CENTER] = LAYOUT_5x3_macropad(
-        key00.center_left, key01.center_left,   key02.center_left,   key03.center_left,   QK_UNDERGLOW_VALUE_DOWN,
+        key00.center_left, key01.center_left,   key02.center_left,   key03.center_left,   KC_DECREASE_BRIGHTNESS,
                         key10.center_left,   key11.center_left,   key12.center_left,   key13.center_left,
         KC_RIGHTKEY,    key20.center_left,   key21.center_left,   key22.center_left,   key23.center_left,
                                           KC_CENTERKEY,                          KC_BOTTOMKEY
@@ -558,7 +577,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
 	[_LEFT_BOTTOM] = LAYOUT_5x3_macropad(
-        key00.bottom_left, key01.bottom_left,   key02.bottom_left,   key03.bottom_left,   QK_UNDERGLOW_VALUE_UP,
+        key00.bottom_left, key01.bottom_left,   key02.bottom_left,   key03.bottom_left,   KC_INCREASE_BRIGHTNESS,
                            key10.bottom_left,   key11.bottom_left,   key12.bottom_left,   key13.bottom_left,
         KC_RIGHTKEY,       key20.bottom_left,   key21.bottom_left,   key22.bottom_left,   key23.bottom_left,
                                                 KC_CENTERKEY,                                KC_BOTTOMKEY
@@ -571,6 +590,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+const rgblight_segment_t PROGMEM unicode_light_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, 0, 0, 255}
+);
+
+const rgblight_segment_t PROGMEM mof_light_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, 144, 255, 255}
+);
+
+const rgblight_segment_t PROGMEM lof_light_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, 59, 255, 255}
+);
+
+const rgblight_segment_t PROGMEM latex_light_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 1, 233, 255, 255}
+);
+
+// Now define the array of layers. Later layers take precedence
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    unicode_light_layer,
+    mof_light_layer,    
+    lof_light_layer,   
+    latex_light_layer
+);
+
+
 /**
  * Performs post-initialization tasks for the keyboard.
  * 
@@ -579,5 +623,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 void keyboard_post_init_user(void) {
   user_config.raw = eeconfig_read_user(); // Read the user config from EEPROM
+  // Enable the LED layers
+  rgblight_layers = my_rgb_layers;
   update_led_to_match_mode();
 }

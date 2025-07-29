@@ -27,29 +27,12 @@
 * When 'update_led_to_match_mode' is called, it checks the current value of
 * user_config.MODE and sets the mode key backlight to the
 * corresponding color.
-* 
-* The colors are defined as follows:
-* - UC_MODE:  White     (Unicode)
-* - MOF_MODE: Blue      (Microsoft Office)
-* - LTX_MODE: Red       (LaTeX)
-* - LOF_MODE: Green     (LibreOffice)
 */
-uint8_t val = 32;
 void update_led_to_match_mode(void) {
-    switch (user_config.MODE) {
-        case UC_MODE:
-            rgblight_sethsv_at(0, 0, val, 0);
-            break;
-        case MOF_MODE:
-            rgblight_sethsv_at(144, 255, val, 0);
-            break;
-        case LTX_MODE:
-            rgblight_sethsv_at(230, 255, val, 0);
-            break;
-        case LOF_MODE:
-            rgblight_sethsv_at(59, 255, val, 0);
-            break;
-    }
+    rgblight_set_layer_state(0, user_config.MODE == UC_MODE);
+    rgblight_set_layer_state(1, user_config.MODE == MOF_MODE);
+    rgblight_set_layer_state(2, user_config.MODE == LTX_MODE);
+    rgblight_set_layer_state(3, user_config.MODE == LOF_MODE);
 }
 
 
