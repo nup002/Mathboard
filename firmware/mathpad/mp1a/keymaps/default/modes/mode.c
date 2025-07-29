@@ -18,6 +18,8 @@
 // LaTeX (LTX_MODE), Microsoft Office Equation Editor (MOF_MODE), and soon LibreOffice (LOF_MODE).
 
 #include "mode.h"
+#include "color.h"
+#include "rgblight.h"
 #include QMK_KEYBOARD_H
 #include "../globals.h"
 
@@ -28,22 +30,24 @@
 * 
 * The colors are defined as follows:
 * - UC_MODE:  White     (Unicode)
-* - MOF_MODE: Magenta   (Microsoft Office Equation Editor)
-* - LTX_MODE: Yellow    (LaTeX)
+* - MOF_MODE: Blue      (Microsoft Office)
+* - LTX_MODE: Red       (LaTeX)
+* - LOF_MODE: Green     (LibreOffice)
 */
+uint8_t val = 32;
 void update_led_to_match_mode(void) {
     switch (user_config.MODE) {
         case UC_MODE:
-            rgblight_sethsv_at(HSV_WHITE, 0);
+            rgblight_sethsv_at(0, 0, val, 0);
             break;
         case MOF_MODE:
-            rgblight_sethsv_at(HSV_MAGENTA, 0);
+            rgblight_sethsv_at(144, 255, val, 0);
             break;
         case LTX_MODE:
-            rgblight_sethsv_at(HSV_YELLOW, 0);
+            rgblight_sethsv_at(230, 255, val, 0);
             break;
         case LOF_MODE:
-            rgblight_sethsv_at(HSV_CORAL, 0);
+            rgblight_sethsv_at(59, 255, val, 0);
             break;
     }
 }

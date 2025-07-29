@@ -540,13 +540,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_CENTERKEY,                          KC_BOTTOMKEY
     ),
 	[_RIGHT_TOP] = LAYOUT_5x3_macropad(
-        key00.top_right, key01.top_right,   key02.top_right,   key03.top_right,   KC_SWITCH_MODE,
+        key00.top_right, key01.top_right,   key02.top_right,   key03.top_right,   QK_UNDERGLOW_TOGGLE,
                          key10.top_right,   key11.top_right,   key12.top_right,   key13.top_right,
         KC_RIGHTKEY,     key20.top_right,   key21.top_right,   key22.top_right,   key23.top_right,
                                             KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
     [_LEFT_CENTER] = LAYOUT_5x3_macropad(
-        key00.center_left, key01.center_left,   key02.center_left,   key03.center_left,   KC_SWITCH_MODE,
+        key00.center_left, key01.center_left,   key02.center_left,   key03.center_left,   QK_UNDERGLOW_VALUE_DOWN,
                         key10.center_left,   key11.center_left,   key12.center_left,   key13.center_left,
         KC_RIGHTKEY,    key20.center_left,   key21.center_left,   key22.center_left,   key23.center_left,
                                           KC_CENTERKEY,                          KC_BOTTOMKEY
@@ -558,7 +558,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_CENTERKEY,                            KC_BOTTOMKEY
     ),
 	[_LEFT_BOTTOM] = LAYOUT_5x3_macropad(
-        key00.bottom_left, key01.bottom_left,   key02.bottom_left,   key03.bottom_left,   KC_SWITCH_MODE,
+        key00.bottom_left, key01.bottom_left,   key02.bottom_left,   key03.bottom_left,   QK_UNDERGLOW_VALUE_UP,
                            key10.bottom_left,   key11.bottom_left,   key12.bottom_left,   key13.bottom_left,
         KC_RIGHTKEY,       key20.bottom_left,   key21.bottom_left,   key22.bottom_left,   key23.bottom_left,
                                                 KC_CENTERKEY,                                KC_BOTTOMKEY
