@@ -32,57 +32,22 @@ void send_symbol_lof(const symbol_definition_t* symbol) {
     
     // Call the appropriate LOF sending function based on the lof_method
     switch (symbol->lof_method) {
-        case LOF_NORMAL:
-            send_lof_normal(symbol->lof_string);
-            break;
         case LOF_1SPACE:
             send_lof_1space(symbol->lof_string);
-            break;
-        case LOF_2SPACE:
-            send_lof_2space(symbol->lof_string);
             break;
         case LOF_1BACKTRACK:
             send_lof_1backtrack(symbol->lof_string);
             break;
-        case LOF_2BACKTRACK:
-            send_lof_2backtrack(symbol->lof_string);
-            break;
-        case LOF_3BACKTRACK:
-            send_lof_3backtrack(symbol->lof_string);
-            break;
         case LOF_6BACKTRACK:
             send_lof_6backtrack(symbol->lof_string);
             break;
-        case LOF_1SPACE_1BACKTRACK:
-            send_lof_1space_1backtrack(symbol->lof_string);
-            break;
-        case LOF_2SPACE_1BACKTRACK:
-            send_lof_2space_1backtrack(symbol->lof_string);
-            break;
-        default:
-            // Default to sending as is
-            send_lof_normal(symbol->lof_string);
-            break;
     }
-}
-
-
-/**
- * @brief Sends string as is without any modifications.
- *
- * Used for LibreOffice symbols that don't require special handling.
- *
- * @param string a pointer to the string to be sent
- */
-void send_lof_normal(const char *string) {
-    send_string(string);
 }
 
 /**
  * @brief Sends 'string' and one space.
  *
- * Typically used for typing symbols that require an extra space to appear correctly
- * in LibreOffice Equation Editor, such as subscripts and superscripts.
+ * Used for most LibreOffice symbols. 
  *
  * @param string a pointer to the string to be sent
  */
@@ -92,24 +57,10 @@ void send_lof_1space(const char *string) {
 }
 
 /**
- * @brief Sends 'string' and two spaces.
- *
- * Typically used for typing symbols that require two extra spaces to appear
- * correctly in LibreOffice Equation Editor, such as combining symbols like hat, overbar, tilde, etc.
- *
- * @param string a pointer to the string to be sent
- */
-void send_lof_2space(const char *string) {
-    send_string(string);
-    tap_code(KC_SPACE);
-    tap_code(KC_SPACE);
-}
-
-/**
- * @brief Sends string and moves the caret 1 step backwards.
+ * @brief Sends string and moves the cursor 1 step backwards.
  *
  * This is commonly used when sending a LibreOffice code that ends with '{}', in order
- * to place the caret inside the curly braces.
+ * to place the cursor inside the curly braces.
  *
  * @param string The string to send.
  */
@@ -119,40 +70,10 @@ void send_lof_1backtrack(const char *string) {
 }
 
 /**
- * @brief Sends string and moves the caret 2 steps backwards.
- *
- * This is commonly used when sending a LibreOffice code that ends with '()' or similar
- * two-character constructs, in order to place the caret inside them.
- *
- * @param string The string to send.
- */
-void send_lof_2backtrack(const char *string) {
-    send_string(string);
-    for (int i = 0; i < 2; ++i) {
-        tap_code(KC_LEFT);
-    }
-}
-
-/**
- * @brief Sends string and moves the caret 3 steps backwards.
- *
- * This is commonly used when sending a LibreOffice code that ends with '{}{}', in order
- * to place the caret inside the first curly braces.
- *
- * @param string The string to send.
- */
-void send_lof_3backtrack(const char *string) {
-    send_string(string);
-    for (int i = 0; i < 3; ++i) {
-        tap_code(KC_LEFT);
-    }
-}
-
-/**
- * @brief Sends string and moves the caret 6 steps backwards.
+ * @brief Sends string and moves the cursor 6 steps backwards.
  *
  * This is commonly used when sending a LibreOffice code that ends with 'from{} to{}', in order
- * to place the caret inside the first limit (the {} after 'from').
+ * to place the cursor inside the first limit (the {} after 'from').
  *
  * @param string The string to send.
  */
@@ -161,34 +82,4 @@ void send_lof_6backtrack(const char *string) {
     for (int i = 0; i < 6; ++i) {
         tap_code(KC_LEFT);
     }
-}
-
-/**
- * @brief Sends 'string' and one space and moves the caret left once.
- *
- * Typically used for typing symbols that require one extra space to appear correctly
- * and where the caret should be within the symbol's boundaries after typing.
- *
- * @param string a pointer to the string to be sent
- */
-void send_lof_1space_1backtrack(const char *string) {
-    send_string(string);
-    tap_code(KC_SPACE);
-    tap_code(KC_LEFT);
-}
-
-/**
- * @brief Sends 'string' and two spaces and moves the caret left once.
- *
- * Typically used for typing symbols that require two extra spaces to appear correctly
- * and where the caret should be within the symbol's boundaries after typing. Examples
- * include square root, cube root, and quadratic root.
- *
- * @param string a pointer to the string to be sent
- */
-void send_lof_2space_1backtrack(const char *string) {
-    send_string(string);
-    tap_code(KC_SPACE);
-    tap_code(KC_SPACE);
-    tap_code(KC_LEFT);
 }

@@ -24,7 +24,7 @@ const symbol_definition_t SYMBOL_NOT_EQUAL = DEFINE_SYMBOL(
     not_equal,
     0x2260,                  // Unicode: ≠
     "\\neq", LATEX_NORMAL,
-    NULL, MOF_1SPACE,   // Use Unicode for MOF
+    NULL, MOF_1SPACE,   
     NULL, LOF_1SPACE
 );
 

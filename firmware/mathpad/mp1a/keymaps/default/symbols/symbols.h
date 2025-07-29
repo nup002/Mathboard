@@ -38,15 +38,9 @@ typedef enum {
 
 // Define the different sending methods for LibreOffice Equation Editor
 typedef enum {
-    LOF_NORMAL,             // Just send the string as is with one preceding space
     LOF_1SPACE,             // Send string and send 1 space
-    LOF_2SPACE,             // Send string and send 2 spaces
     LOF_1BACKTRACK,         // Send string and move cursor back 1 position
-    LOF_2BACKTRACK,         // Send string and move cursor back 2 positions
-    LOF_3BACKTRACK,         // Send string and move cursor back 3 positions
-    LOF_6BACKTRACK,         // Send string and move cursor back 7 positions
-    LOF_1SPACE_1BACKTRACK,  // Send string, 1 space, and move cursor back 1 position
-    LOF_2SPACE_1BACKTRACK   // Send string, 2 spaces, and move cursor back 1 position
+    LOF_6BACKTRACK          // Send string and move cursor back 6 positions
 } lof_send_method_t;
 
 // Define the unified symbol structure

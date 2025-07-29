@@ -25,14 +25,8 @@
 void send_symbol_lof(const symbol_definition_t* symbol);
 
 // Functions for sending LibreOffice symbols with different methods
-void send_lof_normal(const char *string);
 void send_lof_1space(const char *string);
-void send_lof_2space(const char *string);
 void send_lof_1backtrack(const char *string);
-void send_lof_2backtrack(const char *string);
-void send_lof_3backtrack(const char *string);
 void send_lof_6backtrack(const char *string);
-void send_lof_1space_1backtrack(const char *string);
-void send_lof_2space_1backtrack(const char *string);
 
 #endif /* LIBREOFFICE_MODE_H */
