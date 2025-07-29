@@ -25,6 +25,7 @@ extern const symbol_definition_t SYMBOL_LESS_THAN_OR_EQUAL;
 extern const symbol_definition_t SYMBOL_GREATER_THAN_OR_EQUAL;
 extern const symbol_definition_t SYMBOL_IDENTICAL;
 extern const symbol_definition_t SYMBOL_APPROXIMATELY_EQUAL;
+extern const symbol_definition_t SYMBOL_CONGRUENT;
 extern const symbol_definition_t SYMBOL_ASYMPTOTICALLY_EQUAL;
 extern const symbol_definition_t SYMBOL_PROPORTIONAL_TO;
 extern const symbol_definition_t SYMBOL_MUCH_GREATER_THAN;

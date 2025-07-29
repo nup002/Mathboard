@@ -18,7 +18,8 @@ class SymbolValidator:
     def __init__(self):
         self.errors = []
         self.warnings = []
-        self.symbols_found = {}
+        self.symbols_found = set()
+        self.symbol_details = {}
         self.keycodes_found = set()
         self.keymap_assignments = {}
         self.multitap_symbols = set()
@@ -61,9 +62,10 @@ class SymbolValidator:
             # Remove comments to simplify parsing
             content_no_comments = re.sub(r'//.*?$', '', content, flags=re.MULTILINE)
             
-            # Find all DEFINE_SYMBOL definitions - more flexible pattern
+            # Find all DEFINE_SYMBOL definitions - improved pattern to handle nested content
             # Matches: const symbol_definition_t SYMBOL_NAME = DEFINE_SYMBOL(
-            pattern = r'const\s+symbol_definition_t\s+(SYMBOL_\w+)\s*=\s*DEFINE_SYMBOL\s*\(([^)]+)\)'
+            # Use a more robust approach to find the complete DEFINE_SYMBOL blocks
+            pattern = r'const\s+symbol_definition_t\s+(SYMBOL_\w+)\s*=\s*DEFINE_SYMBOL\s*\((.*?)\);'
             matches = re.findall(pattern, content_no_comments, re.MULTILINE | re.DOTALL)
             
             for symbol_name, params in matches:
@@ -80,7 +82,8 @@ class SymbolValidator:
                     office_method = param_parts[5]
                     
                     # Store symbol info
-                    self.symbols_found[symbol_name] = {
+                    self.symbols_found.add(symbol_name)
+                    self.symbol_details[symbol_name] = {
                         'file': file_path.name,
                         'unicode': unicode_hex,
                         'latex': latex_cmd.strip(),
@@ -110,14 +113,29 @@ class SymbolValidator:
             with open(keymap_file, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Find custom keycodes
-            keycode_pattern = r'KC_(\w+),'
+            # Find custom keycodes (exclude special keycodes related to layers and modes)
+            # Handle both KC_NAME, and KC_NAME (last item without comma)
+            keycode_pattern = r'KC_(\w+)(?:,|\s*(?=\}))'
             keycodes = re.findall(keycode_pattern, content)
-            self.keycodes_found = set(f"KC_{kc}" for kc in keycodes)
+            self.keycodes_found = set(f"KC_{kc}" for kc in keycodes if kc not in ["BOTTOMKEY", "CENTERKEY", "RIGHTKEY", "SWITCH_MODE"])
             
             # Find symbol mappings in get_symbol_for_keycode
-            mapping_pattern = r'case\s+(KC_\w+):\s*return\s+&(SYMBOL_\w+);'
-            mappings = re.findall(mapping_pattern, content)
+            # Use line-by-line approach to handle multi-line case statements
+            lines = content.split('\n')
+            mappings = []
+            
+            for i, line in enumerate(lines):
+                # Look for case statements
+                case_match = re.search(r'case\s+(KC_\w+):', line)
+                if case_match:
+                    keycode = case_match.group(1)
+                    # Look for the corresponding return statement in the next few lines
+                    for j in range(i + 1, min(i + 4, len(lines))):
+                        return_match = re.search(r'return\s+&(SYMBOL_\w+);', lines[j])
+                        if return_match:
+                            symbol = return_match.group(1)
+                            mappings.append((keycode, symbol))
+                            break
             
             for keycode, symbol in mappings:
                 if symbol not in self.symbols_found:
@@ -161,7 +179,8 @@ class SymbolValidator:
     
     def check_unicode_validity(self):
         """Check if Unicode characters are valid and renderable"""
-        for symbol_name, info in self.symbols_found.items():
+        for symbol_name in self.symbols_found:
+            info = self.symbol_details[symbol_name]
             try:
                 unicode_int = int(info['unicode'], 16)
                 char = chr(unicode_int)
@@ -176,10 +195,15 @@ class SymbolValidator:
     
     def print_results(self):
         """Print validation results"""
+        # Check for unused keycodes before printing results
+        unused = self.keycodes_found - self.keymap_assignments.keys()
+        for keycode in unused:
+            self.warnings.append(f"⚠️  Keycode {keycode} is defined but not mapped to any symbol")
+
         # Check for unmapped symbols before printing results
-        unmapped = set(self.symbols_found.keys()) - self.all_used_symbols
+        unmapped = self.symbols_found - self.all_used_symbols
         for symbol in unmapped:
-            loc = self.symbols_found[symbol]['file']
+            loc = self.symbol_details[symbol]['file']
             self.warnings.append(f"⚠️  Symbol {symbol} is defined in '{loc}' but not mapped to any key")
         
         print(f"📊 Validation Results:")
@@ -216,8 +240,8 @@ class SymbolValidator:
 
 def main():
     """Main entry point"""
-    # Change to the directory containing this script
-    script_dir = Path(__file__).parent
+    # Change to the default keymap directory
+    script_dir = Path(__file__).parent / 'keymaps/default'
     os.chdir(script_dir)
     
     validator = SymbolValidator()

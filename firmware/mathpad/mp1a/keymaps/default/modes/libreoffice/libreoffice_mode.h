@@ -13,10 +13,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "mathpad.h"
+#ifndef LIBREOFFICE_MODE_H
+#define LIBREOFFICE_MODE_H
 
-// Reacts to changes to the OS switch.
-bool dip_switch_update_kb(uint8_t index, bool active) { 
-    if (!dip_switch_update_user(index, active)) { return false; }
-    return true;
-}
+#include QMK_KEYBOARD_H
+
+#include "../../symbols/symbols.h"
+
+
+// Function to send a symbol's LibreOffice representation
+void send_symbol_lof(const symbol_definition_t* symbol);
+
+// Functions for sending LibreOffice symbols with different methods
+void send_lof_1space(const char *string);
+void send_lof_1backtrack(const char *string);
+void send_lof_6backtrack(const char *string);
+
+#endif /* LIBREOFFICE_MODE_H */

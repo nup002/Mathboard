@@ -17,7 +17,7 @@
 // when the symbol is tapped, double-tapped, triple-tapped, etc. The action to 
 // take typically depend on which mode is active.
 
-#include "symbols/algebra_symbols.h"
+#include "symbols/calculus_symbols.h"
 #include QMK_KEYBOARD_H
 #include "multitap.h"
 #include "symbols/symbol_categories.h"
@@ -87,9 +87,9 @@ void omega_dance(tap_dance_state_t *s, void *d) {
 
 // Comparison symbols
 void asymptotically_equal_dance(tap_dance_state_t *s, void *d) {
-    const symbol_definition_t *symbols[] = {&SYMBOL_ASYMPTOTICALLY_EQUAL, &SYMBOL_APPROXIMATELY_EQUAL};
+    const symbol_definition_t *symbols[] = {&SYMBOL_ASYMPTOTICALLY_EQUAL, &SYMBOL_CONGRUENT};
     symbol_dance(s, d, symbols, 2);
-}
+} //TODO: 
 
 void identically_equal_dance(tap_dance_state_t *s, void *d) {
     const symbol_definition_t *symbols[] = {&SYMBOL_IDENTICAL, &SYMBOL_NOT_IDENTICAL};

@@ -24,15 +24,15 @@ all: $(if $(LAYOUT),check-layout,)
 	qmk lint -km default -kb summacogni/mathpad/mp1a --strict
 
 	# run build
-	qmk compile -j 0 --compiledb -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
+	qmk compile -j 0 -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
 
 	# cleanup symlinks (to avoid inadvertedly editing them instead of the true source files)
 	rm -rf qmk_firmware/keyboards/summacogni
 
-	# Move .uf2 file to /compiled directory
+	# Create compile folder in case it does not exist
 	mkdir -p compiled
 
-	# Ensure the file exists before moving it
+	# Move .uf2 file to /compiled directory. Ensure the file exists before moving it
 	@LAYOUT_NAME="$(or $(LAYOUT),us_ansi)"; \
 	EXPECTED_UF2="qmk_firmware/summacogni_mathpad_mp1a_default.uf2"; \
 	echo "Looking for firmware file at: $$EXPECTED_UF2"; \

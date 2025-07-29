@@ -18,6 +18,8 @@
 // LaTeX (LTX_MODE), Microsoft Office Equation Editor (MOF_MODE), and soon LibreOffice (LOF_MODE).
 
 #include "mode.h"
+#include "color.h"
+#include "rgblight.h"
 #include QMK_KEYBOARD_H
 #include "../globals.h"
 
@@ -28,19 +30,24 @@
 * 
 * The colors are defined as follows:
 * - UC_MODE:  White     (Unicode)
-* - MOF_MODE: Magenta   (Microsoft Office Equation Editor)
-* - LTX_MODE: Yellow    (LaTeX)
+* - MOF_MODE: Blue      (Microsoft Office)
+* - LTX_MODE: Red       (LaTeX)
+* - LOF_MODE: Green     (LibreOffice)
 */
+uint8_t val = 32;
 void update_led_to_match_mode(void) {
     switch (user_config.MODE) {
         case UC_MODE:
-            rgblight_sethsv_at(HSV_WHITE, 0);
+            rgblight_sethsv_at(0, 0, val, 0);
             break;
         case MOF_MODE:
-            rgblight_sethsv_at(HSV_MAGENTA, 0);
+            rgblight_sethsv_at(144, 255, val, 0);
             break;
         case LTX_MODE:
-            rgblight_sethsv_at(HSV_YELLOW, 0);
+            rgblight_sethsv_at(230, 255, val, 0);
+            break;
+        case LOF_MODE:
+            rgblight_sethsv_at(59, 255, val, 0);
             break;
     }
 }
@@ -65,7 +72,7 @@ void output_mode_set(uint8_t mode) {
 
 /**
  * Cycles between mathpad output modes when called. 
- * It goes UC_MODE -> MOF_MODE -> LTX_MODE -> UC_MODE
+ * It goes UC_MODE -> MOF_MODE -> LOF_MODE -> LTX_MODE 
  * 
  * This function is meant to be called from the keymap to cycle the output
  * modes of the mathpad.
@@ -74,6 +81,8 @@ void output_mode_update(void) {
     if (user_config.MODE == UC_MODE) {
         output_mode_set(MOF_MODE);
     } else if (user_config.MODE == MOF_MODE) {
+        output_mode_set(LOF_MODE);
+    } else if (user_config.MODE == LOF_MODE) {
         output_mode_set(LTX_MODE);
     } else if (user_config.MODE == LTX_MODE) {
         output_mode_set(UC_MODE);

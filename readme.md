@@ -12,10 +12,10 @@
       </td>
       <td align="center" width="33%" style="border: none;">
         <a href="https://discord.gg/dgD6cMCUhD">
-          <img src=".github/images/discord_banner.svg" alt="Discord">
+          <img src=".github/images/forum_banner.svg" alt="Forum">
         </a><br>
         <p>Chat with other users and ask your questions in the
-        <a href="https://discord.gg/dgD6cMCUhD">Mathpad Discord</a>.</p>
+        <a href="https://www.summacogni.com/forum/viewforum.php?f=3&sid=dd5691a11e42b75db93c227916b067e8">Mathpad Forum</a>.</p>
       </td>
       <td align="center" width="33%" style="border: none;">
         <a href="https://x.com/SummaCogni">
@@ -36,7 +36,7 @@ Mathpad is a keypad that makes it easy to type equations. It is intended for eng
 scientists, students, and professionals in STEM fields who regularly need to write equations or who use 
 mathematical symbols in their day-to-day work. 
 
-With the Mathpad you can type 112 symbols from algebra, calculus, set theory, and 
+With the Mathpad you can type 120 symbols from algebra, calculus, set theory, and 
 logic, and the full greek alphabet. Mathpad plugs into your computer with a USB-C cable and 
 works seamlessly alongside your regular keyboard.
 
@@ -55,18 +55,18 @@ Mathpad will very soon be available on [Crowd Supply](https://www.crowdsupply.co
 ## Compatibility
 Mathpad works on Windows, Apple macOS, and virtually all Unix systems.
 
-Several output modes are supported. Plaintext outputs standard Unicode symbols and can be used practically anywhere. LaTeX is 
-of course also supported, as well as the equation editor of Microsoft Office.
+Several output modes are supported. Plaintext outputs standard Unicode symbols and can be used practically anywhere you can type regular text. LaTeX is 
+of course also supported, as well as the equation editors of Microsoft Office and LibreOffice.
 | Output mode                      | Supported |
 |----------------------------------|-----------|
 | Plaintext                        | ✅        |
 | LaTeX                            | ✅        |
 | Microsoft Office equation editor | ✅        |
-| LibreOffice equation editor      | ❌ (in development)|
+| LibreOffice equation editor      | ✅        |
 
 Mathpad works on all computers with Latin keyboard layouts. This includes nearly all western layouts, including 
 US ANSI, UK, French AZERTY, DVORAK, and many more. For a full list of all supported keyboard layouts, 
-see [this list](https://docs.qmk.fm/reference_keymap_extras#header-files).
+see [this list](https://summa-cogni.github.io/Mathpad/#/compatibility?id=keyboard-layouts).
 
 ## Firmware releases
 Official releases will be located in [releases](https://github.com/Summa-Cogni/Mathpad/releases). The firmware is under development 

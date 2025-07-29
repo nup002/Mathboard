@@ -21,6 +21,7 @@
 #define UC_MODE 0  // Unicode
 #define MOF_MODE 1 // Microsoft Office Equation Editor
 #define LTX_MODE 2 // LaTeX
+#define LOF_MODE 3 // LibreOffice Equation Editor
 
 void update_led_to_match_mode(void);
 
