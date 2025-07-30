@@ -18,9 +18,9 @@
 // LaTeX (LTX_MODE), Microsoft Office Equation Editor (MOF_MODE), and soon LibreOffice (LOF_MODE).
 
 #include "mode.h"
+#include QMK_KEYBOARD_H
 #include "color.h"
 #include "rgblight.h"
-#include QMK_KEYBOARD_H
 #include "../globals.h"
 
 /** 
@@ -35,6 +35,42 @@ void update_led_to_match_mode(void) {
     rgblight_set_layer_state(3, user_config.MODE == LOF_MODE);
 }
 
+/**
+ * Increases the brightness of the MODE switch.
+ *
+ * This function increases the brightness of the MODE switch by a factor of 2.
+ * If the brightness is already at its maximum, it will not change.
+ */
+void increase_brightness(void) {
+    uint8_t val = rgblight_get_val(); 
+
+    uint16_t new_val;  
+    if (val == 0){
+        new_val = 16; // Lowest brightness
+    }else{
+        new_val = (uint16_t)(val * 2);
+        if (new_val > 255) {
+            new_val = 255;
+        }
+    }
+    rgblight_sethsv(255, 255, (uint8_t)new_val);
+}
+
+/**
+ * Decreases the brightness of the MODE switch.
+ *
+ * This function decreases the brightness of the MODE switch by a factor of 2.
+ * If the brightness is already at its minimum, it will not change.
+ */
+void decrease_brightness(void) {
+    uint8_t val = rgblight_get_val(); 
+    if (val <= 16){
+        val = 0;
+    }else{
+        val /= 2;
+    }
+    rgblight_sethsv(255, 255, val);
+}
 
 /**
  * Sets the mathpad output mode.

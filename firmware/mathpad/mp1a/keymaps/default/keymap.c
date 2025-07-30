@@ -515,24 +515,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             frontkey_pressed = record->event.pressed;
             update_active_layer();
             return false; // Don't continue processing this key
-        case KC_INCREASE_BRIGHTNESS: {
-            uint8_t val = rgblight_get_val();   
-            val *= 1.1;
-            if (val > 255) {
-                val = 255;
+        case KC_INCREASE_BRIGHTNESS:
+            if (record->event.pressed) {
+                increase_brightness();
             }
-            rgblight_sethsv_eeprom_helper(255, 255, val, true);
             return false;
-        }
-        case KC_DECREASE_BRIGHTNESS: {
-            uint8_t val = rgblight_get_val();
-            val *= 0.9;
-            if (val < 0) {
-                val = 0;
+        case KC_DECREASE_BRIGHTNESS:
+            if (record->event.pressed) {
+                decrease_brightness();
             }
-            rgblight_sethsv_eeprom_helper(255, 255, val, true);
             return false;
-        }
     }
     
     // Handle normal (non-multitap) symbols

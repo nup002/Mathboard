@@ -25,6 +25,10 @@
 
 void update_led_to_match_mode(void);
 
+void increase_brightness(void);
+
+void decrease_brightness(void);
+
 void output_mode_set(uint8_t mode);
 
 void output_mode_update(void);

@@ -117,7 +117,7 @@ class SymbolValidator:
             # Handle both KC_NAME, and KC_NAME (last item without comma)
             keycode_pattern = r'KC_(\w+)(?:,|\s*(?=\}))'
             keycodes = re.findall(keycode_pattern, content)
-            self.keycodes_found = set(f"KC_{kc}" for kc in keycodes if kc not in ["BOTTOMKEY", "CENTERKEY", "RIGHTKEY", "SWITCH_MODE"])
+            self.keycodes_found = set(f"KC_{kc}" for kc in keycodes if kc not in ["BOTTOMKEY", "CENTERKEY", "RIGHTKEY", "SWITCH_MODE", "INCREASE_BRIGHTNESS", "DECREASE_BRIGHTNESS"])
             
             # Find symbol mappings in get_symbol_for_keycode
             # Use line-by-line approach to handle multi-line case statements
