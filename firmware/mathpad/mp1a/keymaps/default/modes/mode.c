@@ -31,8 +31,8 @@
 void update_led_to_match_mode(void) {
     rgblight_set_layer_state(0, user_config.MODE == UC_MODE);
     rgblight_set_layer_state(1, user_config.MODE == MOF_MODE);
-    rgblight_set_layer_state(2, user_config.MODE == LTX_MODE);
-    rgblight_set_layer_state(3, user_config.MODE == LOF_MODE);
+    rgblight_set_layer_state(2, user_config.MODE == LOF_MODE);
+    rgblight_set_layer_state(3, user_config.MODE == LTX_MODE);
 }
 
 /**
