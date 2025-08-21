@@ -14,6 +14,7 @@
  */
 
 #include "mathpad.h"
+#include QMK_KEYBOARD_H
 
 // Reacts to changes to the OS switch.
 bool dip_switch_update_kb(uint8_t index, bool active) { 
