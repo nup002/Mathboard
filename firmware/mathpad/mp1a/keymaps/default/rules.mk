@@ -8,6 +8,7 @@ CONSOLE_ENABLE=no
 SRC += modifiers.c
 SRC += os_switch.c
 SRC += multitap.c
+SRC += info.c
 
 # Symbol files
 SRC += symbols/symbols.c
