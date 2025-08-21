@@ -17,8 +17,6 @@
 // when the symbol is tapped, double-tapped, triple-tapped, etc. The action to 
 // take typically depend on which mode is active.
 
-#include "symbols/calculus_symbols.h"
-#include QMK_KEYBOARD_H
 #include "multitap.h"
 #include "symbols/symbol_categories.h"
 
