@@ -1,6 +1,6 @@
 # List all supported keyboard layouts
 SUPPORTED_LAYOUTS = canadian_multilingual croatian czech czech_mac_ansi czech_mac_iso \
-    danish belgian uk us_international estonian finnish french french_afnor bepo \
+    danish uk us_international estonian finnish french french_afnor bepo \
     belgian canadian_french swiss_fr french_mac_iso german swiss_de german_mac_iso \
     hungarian icelandic italian italian_mac_ansi italian_mac_iso japanese latvian \
     lithuanian_azerty lithuanian_qwerty norwegian portuguese portuguese_mac_iso brazilian_abnt2 \
@@ -14,14 +14,6 @@ all: $(if $(LAYOUT),check-layout,)
 
 	# make summacogni folder if not present
 	mkdir -p qmk_firmware/keyboards/summacogni
-
-	# add new symlinks (on windows, this simply makes copies)
-	ln -s $(shell pwd)/mathpad qmk_firmware/keyboards/summacogni
-
-	cd qmk_firmware; 
-
-	# run lint check
-	qmk lint -km default -kb summacogni/mathpad/mp1a --strict
 
 	# Generate build information header file
 	@echo "Generating build information header..."
@@ -46,8 +38,35 @@ all: $(if $(LAYOUT),check-layout,)
 	echo "#endif // BUILD_INFO_GENERATED_H" >> mathpad/mp1a/keymaps/default/build_info_generated.h; \
 	echo "Generated build_info_generated.h with build information"
 
+	# Generate build configuration header file
+	@echo "Generating build configuration header..."
+	@echo "/* Auto-generated build configuration - DO NOT EDIT */" > mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	echo "#ifndef BUILD_CONFIG_GENERATED_H" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	echo "#define BUILD_CONFIG_GENERATED_H" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	echo "" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	if [ -n "$(LAYOUT)" ]; then \
+		echo "#define SENDSTRING_LAYOUT $(LAYOUT)" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+		echo "#define SENDSTRING_LAYOUT_HEADER \"sendstring_$(LAYOUT).h\"" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+		echo "Layout configured: $(LAYOUT)"; \
+	fi; \
+	if [ -n "$(STICKY_MODIFIERS)" ]; then \
+		echo "#define STICKY_MODIFIERS $(STICKY_MODIFIERS)" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+		echo "Sticky modifiers: $(STICKY_MODIFIERS)"; \
+	fi; \
+	echo "" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	echo "#endif // BUILD_CONFIG_GENERATED_H" >> mathpad/mp1a/keymaps/default/build_config_generated.h; \
+	echo "Generated build_config_generated.h with configuration"
+
+	# add new symlinks (on windows, this simply makes copies)
+	ln -s $(shell pwd)/mathpad qmk_firmware/keyboards/summacogni
+
+	cd qmk_firmware; 
+
+	# run lint check
+	qmk lint -km default -kb summacogni/mathpad/mp1a --strict
+	
 	# run build
-	qmk compile -j 0 -kb summacogni/mathpad/mp1a -km default $(if $(LAYOUT),-e SENDSTRING_LAYOUT=$(LAYOUT),)
+	qmk compile -j 0 -kb summacogni/mathpad/mp1a -km default
 
 	# cleanup symlinks (to avoid inadvertedly editing them instead of the true source files)
 	rm -rf qmk_firmware/keyboards/summacogni
@@ -57,12 +76,14 @@ all: $(if $(LAYOUT),check-layout,)
 
 	# Move .uf2 file to /compiled directory and calculate SHA256
 	@LAYOUT_NAME="$(or $(LAYOUT),us_ansi)"; \
+	FIRMWARE_VERSION=$$(grep -oP '#define\s+FIRMWARE_VERSION\s+"\K[^"]+' mathpad/mp1a/config.h || echo "unknown"); \
 	EXPECTED_UF2="qmk_firmware/summacogni_mathpad_mp1a_default.uf2"; \
 	echo "Looking for firmware file at: $$EXPECTED_UF2"; \
 	if [ -f "$$EXPECTED_UF2" ]; then \
 		echo "Found firmware file, calculating SHA256 and moving to compiled directory"; \
+		echo "Firmware version: $$FIRMWARE_VERSION"; \
 		FIRMWARE_SHA256=$$(sha256sum "$$EXPECTED_UF2" 2>/dev/null | cut -d' ' -f1 || shasum -a 256 "$$EXPECTED_UF2" 2>/dev/null | cut -d' ' -f1 || echo 'unknown'); \
-		mv "$$EXPECTED_UF2" "compiled/summacogni_mathpad_mp1a_$$LAYOUT_NAME.uf2"; \
+		mv "$$EXPECTED_UF2" "compiled/mathpad_mp1a_$$LAYOUT_NAME""_v$$FIRMWARE_VERSION.uf2"; \
 		echo "Firmware SHA256: $$FIRMWARE_SHA256"; \
 		echo "Build completed successfully!"; \
 	else \
@@ -96,5 +117,6 @@ clean:
 	@echo "Cleaning build artifacts..."
 	rm -rf qmk_firmware/keyboards/summacogni
 	rm -f mathpad/mp1a/keymaps/default/build_info_generated.h
+	rm -f mathpad/mp1a/keymaps/default/build_config_generated.h
 	rm -rf qmk_firmware/.build
 	@echo "Clean complete!"

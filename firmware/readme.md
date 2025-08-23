@@ -7,6 +7,30 @@ If you wish to get started with developing or modifying the Mathpad firmware, fo
 
 The Mathpad firmware is licensed under [GNU GENERAL PUBLIC LICENSE version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
+## How to build the firmware
+In `firmware` folder, run the following command:
+```
+make [LAYOUT=<layout>] [STICKY_MODIFIERS=<true|false>]
+```
+
+**Examples**
+
+Compile the firmware for the default US ANSI keyboard layout:
+```
+make
+```
+
+Compile the firmware for Canadian French layout:
+```
+make LAYOUT=canadian_french
+```
+
+Compile the firmware for Dvorak layout with sticky modifier keys:
+```
+make LAYOUT=dvorak STICKY_MODIFIERS=true
+```
+
+For more detailed information, see [the official documentation](https://summa-cogni.github.io/Mathpad/#/firmware?id=compiling).
 
 ## What you CAN do:
 - Use the firmware for any purpose

@@ -15,11 +15,18 @@
 #include QMK_KEYBOARD_H
 #include <stddef.h> // For NULL definition
 #include "globals.h"
+#include "build_config_generated.h"
 #include "modifiers.h"
 #include "modes/mode.h"
 #include "symbols/symbols.h"
 #include "symbols/symbol_categories.h"
 #include "multitap.h"
+
+// Include layout-specific sendstring header if defined
+// SENDSTRING_LAYOUT_HEADER is defined in build_config_generated.h when LAYOUT is specified
+#ifdef SENDSTRING_LAYOUT_HEADER
+  #include SENDSTRING_LAYOUT_HEADER
+#endif
 
 //--------------
 // KEYCODES
@@ -469,18 +476,6 @@ static const key_layout_t key23 = {
 // No user-configurable code below this line
 //--------
 
-#ifdef SENDSTRING_LAYOUT
-  // This converts the layout name to a string
-  #define STRINGIFY(x) #x
-  #define TOSTRING(x) STRINGIFY(x)
-
-  // This creates the actual include path string
-  #define LAYOUTPATH(layout) "sendstring_" TOSTRING(layout) ".h"
-
-  // Include the appropriate header
-  #include LAYOUTPATH(SENDSTRING_LAYOUT)
-#endif
-
 /**
  * 'process_record_user' handles keyclicks on symbols using the unified symbol definition structure.
  * For normal (non-multitap) symbols, it uses the get_symbol_for_keycode function to map the keycode
@@ -500,21 +495,47 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 output_mode_update(); // Cycle to next mode if the MODE key is released within one second
             }
-            return false; // Don't continue processing this key
+            return false;
             
         case KC_RIGHTKEY:
             rightkey_pressed = record->event.pressed;
+            if (STICKY_MODIFIERS){
+                // Sticky modifier keys behaviour - special mode for those who cannot press several keys at once
+                if (record->event.pressed){rightkey_toggled = !rightkey_toggled;}
+            }else{
+                // Normal behaviour
+                rightkey_toggled = rightkey_pressed;
+            }
             update_active_layer();
-            return false; // Don't continue processing this key
-            
+            return false;
         case KC_CENTERKEY:
             midkey_pressed = record->event.pressed;
+            if (STICKY_MODIFIERS){
+                // Sticky modifier keys behaviour - special mode for those who cannot press several keys at once
+                if (record->event.pressed){midkey_toggled = !midkey_toggled;}   
+                if (midkey_toggled){
+                    bottomkey_toggled = false;
+                }
+            }else{
+                // Normal behaviour
+                midkey_toggled = midkey_pressed;
+            }
             update_active_layer();
-            return false; // Don't continue processing this key
+            return false; 
         case KC_BOTTOMKEY:
-            frontkey_pressed = record->event.pressed;
+            bottomkey_pressed = record->event.pressed;
+            if (STICKY_MODIFIERS){
+                // Sticky modifier keys behaviour - special mode for those who cannot press several keys at once
+                if (record->event.pressed){bottomkey_toggled = !bottomkey_toggled;}   
+                if (bottomkey_toggled){
+                    midkey_toggled = false;
+                }
+            }else{
+                // Normal behaviour
+                bottomkey_toggled = bottomkey_pressed;
+            }
             update_active_layer();
-            return false; // Don't continue processing this key
+            return false; 
         case KC_INCREASE_BRIGHTNESS:
             if (record->event.pressed) {
                 increase_brightness();
@@ -582,6 +603,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+
+// Define mode switch colours
 const rgblight_segment_t PROGMEM unicode_light_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 1, 0, 0, 255}
 );

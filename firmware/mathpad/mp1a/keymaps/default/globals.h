@@ -18,7 +18,9 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include <stdint.h>
+#include "quantum.h"
+#include "build_info_generated.h"
+#include "build_config_generated.h"
 
 // Define the 6 symbol layers
 #define _LEFT_TOP 0  
@@ -35,6 +37,12 @@ typedef union {
     uint8_t     MODE :8;  // tracks the latest Mathpad mode.
   };
 } user_config_t;
+
+// Sticky modifiers are normally off. Enable by adding `STICKY_MODIFIERS=true` to the `make` command when compiling.
+// This is now defined in build_config_generated.h if specified during build
+#ifndef STICKY_MODIFIERS
+#define STICKY_MODIFIERS false
+#endif
 
 user_config_t user_config;
 #endif

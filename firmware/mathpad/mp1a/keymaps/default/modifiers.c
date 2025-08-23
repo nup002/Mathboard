@@ -19,9 +19,12 @@
  #include "globals.h"
  
  // Initiate the modifier key states to false on Mathpad boot
+ bool rightkey_toggled = false;
+ bool midkey_toggled = false;
+ bool bottomkey_toggled = false;
  bool rightkey_pressed = false;
  bool midkey_pressed = false;
- bool frontkey_pressed = false;
+ bool bottomkey_pressed = false;
  
  
  /**
@@ -36,23 +39,21 @@
      layer_clear(); // Clear all layers first
  
      // Set the appropriate layer based on modifier key combinations
-     if (rightkey_pressed && frontkey_pressed && !midkey_pressed) {
+     if (rightkey_toggled && bottomkey_toggled && !midkey_toggled) {
          layer_on(_RIGHT_BOTTOM); // RIGHT and FRONT modifier keys are pressed
-     } else if (rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+     } else if (rightkey_toggled && midkey_toggled && !bottomkey_toggled) {
          layer_on(_RIGHT_CENTER); // RIGHT and MIDDLE keys are pressed
-     } else if (rightkey_pressed && !midkey_pressed && !frontkey_pressed) {
+     } else if (rightkey_toggled && !midkey_toggled && !bottomkey_toggled) {
          layer_on(_RIGHT_TOP); // Only RIGHT key is pressed
-     } else if (!rightkey_pressed && midkey_pressed && !frontkey_pressed) {
+     } else if (!rightkey_toggled && midkey_toggled && !bottomkey_toggled) {
          layer_on(_LEFT_CENTER); // Only MIDDLE key is pressed
-     } else if (!rightkey_pressed && !midkey_pressed && frontkey_pressed) {
+     } else if (!rightkey_toggled && !midkey_toggled && bottomkey_toggled) {
          layer_on(_LEFT_BOTTOM); // Only FRONT key is pressed
      } else {
          layer_on(_LEFT_TOP); // Default or invalid combinations go to the default _LEFT_TOP
      }
      
-     
-     bool all_modifier_keys_pressed = rightkey_pressed && midkey_pressed && frontkey_pressed;
- 
+     // If the user has been holding down all modifier keys for a long time, we print debug info
      if (debug_info_timer != 0) {
         uint16_t time_delta = timer_read() - debug_info_timer;
         debug_info_timer = 0;
@@ -61,6 +62,7 @@
         }
      }
  
+     bool all_modifier_keys_pressed = rightkey_pressed && midkey_pressed && bottomkey_pressed;
      if (all_modifier_keys_pressed){
          // The user is pressing all modifier keys. We start the debug info print timer.
          debug_info_timer = timer_read();

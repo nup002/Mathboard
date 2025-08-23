@@ -16,6 +16,7 @@
 #include QMK_KEYBOARD_H
 #include "symbols.h"
 #include "symbol_categories.h"
+#include "../modifiers.h"
 #include "../globals.h"
 #include "../modes/mode.h"
 #include "../modes/unicode/unicode_mode.h"
@@ -29,6 +30,14 @@ void send_symbol_on_keypress(const symbol_definition_t* symbol, keyrecord_t* rec
         return;  // Only process on key press, not release
     }
     send_symbol(symbol);
+
+    // If the special 'sticky modifiers' mode is enabled, sending a symbol resets the layer to the default
+    if (STICKY_MODIFIERS) {
+        layer_clear();
+        rightkey_toggled = false;
+        midkey_toggled = false;
+        bottomkey_toggled = false;
+    }
 }
 
 // Function to send a symbol based on the current mode

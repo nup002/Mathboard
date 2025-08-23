@@ -22,9 +22,12 @@
  * These are set to True or False depending on which modifier
  * keys are pressed.
  */
+extern bool rightkey_toggled;
+extern bool midkey_toggled;
+extern bool bottomkey_toggled;
 extern bool rightkey_pressed;
 extern bool midkey_pressed;
-extern bool frontkey_pressed;
+extern bool bottomkey_pressed;
 
 void update_active_layer(void);
 

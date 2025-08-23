@@ -69,7 +69,7 @@ void print_info(void){
     send_string(buffer);
     wait_ms(50);  // Small delay to prevent jumbling
 #else
-    send_string("Keyboard layout: US ANSI\n");
+    send_string("Keyboard layout: US ANSI (default)\n");
     wait_ms(50);  // Small delay to prevent jumbling
 #endif
     
@@ -135,6 +135,11 @@ void print_info(void){
     uint8_t brightness = rgblight_get_val();
     uint8_t brightness_percent = (brightness * 100) / 255;
     snprintf(buffer, sizeof(buffer), "Current mode switch brightness: %d%%\n", brightness_percent);
+    send_string(buffer);
+    wait_ms(50);  // Small delay to prevent jumbling
+
+    // Print sticky modifiers
+    snprintf(buffer, sizeof(buffer), "Sticky modifiers: %s\n", STICKY_MODIFIERS ? "Enabled" : "Disabled");
     send_string(buffer);
     wait_ms(50);  // Small delay to prevent jumbling
 }
