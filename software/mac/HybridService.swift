@@ -80,22 +80,33 @@ class HybridUnicodeService {
     }
 
     private func handleInputReport(data: UnsafePointer<UInt8>, length: CFIndex) {
-        guard length >= 5 else { return }
+        guard length >= 5 else {
+            print("Report too short: \(length) bytes")
+            return
+        }
+
+        // Debug: Print raw report data
+        let rawBytes = Array(UnsafeBufferPointer(start: data, count: min(10, length)))
+        let hexString = rawBytes.map { String(format: "%02x", $0) }.joined(separator: " ")
+        print("Raw HID report: \(hexString)")
 
         // Check command byte
         let commandByte = data[0]
-        guard commandByte == 0x01 else { return }
+        guard commandByte == 0x01 else {
+            print("Ignoring report with command byte: 0x\(String(format: "%02x", commandByte))")
+            return
+        }
 
         // Extract Unicode hex digits
         let unicodeBytes = Array(UnsafeBufferPointer(start: data.advanced(by: 1), count: 4))
 
         guard let hexString = String(bytes: unicodeBytes, encoding: .utf8),
               let codepoint = UInt32(hexString, radix: 16) else {
-            print("Failed to parse Unicode from HID report")
+            print("Failed to parse Unicode from bytes: \(unicodeBytes)")
             return
         }
 
-        print("Received Unicode: \(hexString) -> U+\(String(codepoint, radix: 16, uppercase: true))")
+        print("Parsed Unicode: '\(hexString)' -> U+\(String(codepoint, radix: 16, uppercase: true))")
 
         // Call Python script to inject the character
         callPythonInjector(codepoint: codepoint)
