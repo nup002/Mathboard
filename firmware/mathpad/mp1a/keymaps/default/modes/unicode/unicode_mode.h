@@ -26,4 +26,7 @@ void send_symbol_unicode(const symbol_definition_t* symbol);
 // Function to send a Unicode character
 void send_unicode(uint32_t unicode_value);
 
+// Function to send a Unicode over RAW HID (used for MAC OS)
+void send_unicode_via_rawhid(uint32_t unicode_value);
+
 #endif /* UNICODE_MODE_H */
