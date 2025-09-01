@@ -13,7 +13,7 @@ Set the OS switch on the back of your Mathpad to the LINUX position
 
 1) Go to System Preferences → Keyboard → Input Sources
 2) Add Unicode Hex Input to the list (under Other) and activate it from the input dropdown in the menu bar
-3) Set the OS switch on the back of your Mathpad to the MAC OS position
+3) Set the OS switch on the back of your Mathpad to the MAC position
 
 > [!NOTE]
 > This may disable some Option-based shortcuts such as Option+Left and Option+Right.
@@ -25,7 +25,7 @@ Set the OS switch on the back of your Mathpad to the LINUX position
 2) Set the OS switch on the back of your Mathpad to the WINDOWS position
 3) 
 > [!TIP]
-> If you cannot install WinCompose, for example if your computer is managed by at IT department and you 
+> If you cannot install WinCompose, for example if your computer is managed by an IT department and you 
 > lack administrator rights, use the [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe).
 > 
 > 
