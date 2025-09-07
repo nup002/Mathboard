@@ -14,12 +14,38 @@
  */
 
 #include "unicode_mode.h"
+#include "os_switch.h"
+#include "unicode.h"
+#include "raw_hid.h"
 
 
 // Function to send a symbol's unicode representation
 void send_symbol_unicode(const symbol_definition_t* symbol) {
     if (symbol->unicode_value != 0) {
-        send_unicode(symbol->unicode_value);
+        if (get_unicode_input_mode() == UNICODE_MODE_MACOS) {
+            send_raw_hid_unicode(symbol->unicode_value);
+        } else {
+            send_unicode(symbol->unicode_value);
+        }
+    }
+}
+
+void send_raw_hid_unicode(uint32_t unicode_value) {
+    if (unicode_value != 0) {
+        uint8_t data[32] = {0};
+        
+        // Prepare the data packet for raw HID
+        // First byte: command type (1 for Unicode)
+        data[0] = 1;
+        
+        // Next 4 bytes: Unicode value (32-bit)
+        data[1] = (unicode_value >> 24) & 0xFF;
+        data[2] = (unicode_value >> 16) & 0xFF;
+        data[3] = (unicode_value >> 8) & 0xFF;
+        data[4] = unicode_value & 0xFF;
+        
+        // Send the data packet
+        raw_hid_send(data, 32);
     }
 }
 

@@ -15,7 +15,7 @@
 
 #pragma once
 
-#define FIRMWARE_VERSION "1.0.0"      // Firmware version
+#define FIRMWARE_VERSION "1.1.0"      // Firmware version
 
 #define RGBLIGHT_LIMIT_VAL 255        // Maximum MODE switch brightness
 #define RGBLIGHT_LED_COUNT 1          // MODE switch backlight
