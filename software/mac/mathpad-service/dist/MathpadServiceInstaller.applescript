@@ -1,4 +1,4 @@
--- Mathpad Unicode Service Installer (User Installation - No Admin Required)
+-- Mathpad Service Installer
 -- Save this as an Application in Script Editor
 
 on run
@@ -6,20 +6,11 @@ on run
 
 	try
 		-- Welcome dialog
-		set userChoice to display dialog "Welcome to Mathpad Service " & installerVersion & " Installer!
+		set userChoice to display dialog "You will now install Mathpad Service.
 
-This will install a background service in your user directory (no admin password required).
+This is a small program that is required for your Mathpad to communicate with your Mac.
 
-The service will:
-• Run only for your user account
-• Start automatically when you log in
-• Enable Unicode typing in any application
-
-Required permissions:
-• Input Monitoring
-• Accessibility
-
-Click Install to continue." buttons {"Cancel", "Install"} default button 2 with title "Mathpad Service" with icon note
+Click Install to continue." buttons {"Cancel", "Install"} default button 2 with title "Mathpad Service " & installerVersion & "" with icon note
 
 		if button returned of userChoice is "Cancel" then
 			tell me to quit
@@ -45,7 +36,7 @@ Click Install to continue." buttons {"Cancel", "Install"} default button 2 with 
 		try
 			do shell script "test -f " & quoted form of sourceBinaryPath
 		on error
-			display dialog "Error: Mathpad service binary not found in application bundle.
+			display dialog "Error: Mathpad Service binary not found in application bundle.
 
 Expected location: " & sourceBinaryPath buttons {"OK"} default button 1 with title "Installation Error" with icon stop
 			return
@@ -71,12 +62,12 @@ Expected location: " & sourceBinaryPath buttons {"OK"} default button 1 with tit
 			set buttonOptions to {}
 
 			if isRunning then
-				set dialogMessage to "Mathpad Unicode Service is already installed and running.
+				set dialogMessage to "Mathpad Service is already installed and running.
 
 What would you like to do?"
 				set buttonOptions to {"Cancel", "Stop & Uninstall", "Reinstall"}
 			else
-				set dialogMessage to "Mathpad Unicode Service is already installed but not running.
+				set dialogMessage to "Mathpad Service is already installed but not running.
 
 What would you like to do?"
 				set buttonOptions to {"Cancel", "Uninstall", "Reinstall"}
@@ -111,7 +102,7 @@ What would you like to do?"
 					display dialog "Uninstall encountered some issues: " & errMsg buttons {"OK"} with icon caution
 				end try
 
-				display dialog "✅ Mathpad Unicode Service has been uninstalled successfully." buttons {"OK"} default button 1 with title "Uninstall Complete" with icon note
+				display dialog "Mathpad Service has been uninstalled successfully." buttons {"OK"} default button 1 with title "✅ Uninstall Complete" with icon note
 				tell me to quit
 				return
 			else
@@ -198,15 +189,60 @@ echo \"Mathpad service started with PID: $SERVICE_PID\"
 			return
 		end try
 
-		-- Load and start the service
+		-- PERMISSION CONFIRMATION DIALOG (NEW SECTION)
+		set permissionChoice to display dialog "Next, Mathpad Service needs to start and request permissions from macOS.
+
+When you click \"Start Service\", you will see two system dialogs asking for:
+	• Keystroke Receiving permission
+	• Accessibility Access permission
+
+These permissions are required for the service to work properly.
+
+Are you ready to grant these permissions?" buttons {"Cancel Installation", "Start Service"} default button 2 with title "✅ Files installed successfully" with icon note
+
+		if button returned of permissionChoice is "Cancel Installation" then
+			-- Clean up installed files since user cancelled
+			try
+				do shell script "rm -f " & quoted form of serviceBinary
+				do shell script "rm -f " & quoted form of startupScript
+				do shell script "rm -f " & quoted form of plistFile
+			end try
+
+			display dialog "Installation cancelled. Files have been cleaned up." buttons {"OK"} default button 1 with title "Installation Cancelled" with icon note
+			tell me to quit
+			return
+		end if
+
+		-- User confirmed they're ready, now start the service
 		try
+			-- Load and start the service (this will trigger permission requests if not already granted)
 			do shell script "launchctl load " & quoted form of plistFile
+
+			-- Give service a moment to start
 			delay 2
+
+			-- Now ask user to confirm they've granted permissions
+			set permissionConfirm to display dialog "Mathpad Service has started and should have requested permissions.
+
+Please grant BOTH permissions:
+	• Keystroke Receiving
+	• Accessibility Access
+
+If you haven't seen the permission dialogs yet, they may appear while this dialog is open." buttons {"I could not grant permissions", "I have granted the permissions"} default button 2 with title "Grant Permissions" with icon note
+
+			if button returned of permissionConfirm is "I could not grant permissions" then
+				display dialog "Your Mathpad will not work until these two permissions are granted.
+
+You can manually grant the permissions by going to System Preferences → Security and Privacy → Privacy." buttons {"Take me there", "OK"} default button 1 with title "Permissions Needed" with icon caution
+				tell me to quit
+				return
+			end if
+
 		on error errMsg
 			display dialog "Service installed but failed to start: " & errMsg buttons {"OK"} with icon caution
 		end try
 
-		-- Check if running
+		-- Check if service is running after permissions should be granted
 		try
 			do shell script "pgrep -f mathpad-service"
 			set isRunning to true
@@ -214,47 +250,27 @@ echo \"Mathpad service started with PID: $SERVICE_PID\"
 			set isRunning to false
 		end try
 
-		-- Final message
+		-- Final status message
 		if isRunning then
-			set finalMessage to "✅ Installation completed successfully!
+			set finalMessage to "Your Mathpad is now ready to be used.
 
-Your Mathpad Unicode Service is now running and will start automatically when you log in.
-
-IMPORTANT: Please grant the following permissions:
-• Input Monitoring
-• Accessibility
-
-Location: System Preferences > Security & Privacy > Privacy
-
-Files installed in your home directory:
-• Service: ~/.local/bin/mathpad-service
-• Logs: ~/.local/var/log/mathpad-service.log
-• Auto-start: ~/Library/LaunchAgents/com.mathpad.service.plist
-
-Commands:
-• Manual start: " & startupScript & "
-• Stop: launchctl unload " & plistFile & "
-• Restart: launchctl unload && launchctl load " & plistFile
+Remember to set your Mathpad's OS switch to the 'MAC' position."
 		else
-			set finalMessage to "⚠️ Installation completed but service may not be running.
+			set finalMessage to "⚠️ Installation complete, but service verification failed.
 
-This is normal and usually due to missing permissions. Please:
+This might mean:
+	• Permissions were not fully granted
+	• The service needs a restart
 
-1. Open System Preferences > Security & Privacy > Privacy
-2. Grant permissions for Input Monitoring and Accessibility
-3. The service should start automatically
+Please check:
+1. System Preferences > Security & Privacy > Privacy
+2. Ensure both Input Monitoring and Accessibility show Mathpad Service as enabled
+3. Restart your computer if needed
 
-Manual commands:
-• Start: launchctl load " & plistFile & "
-• Stop: launchctl unload " & plistFile
+Mathpad Service should work once permissions are properly set."
 		end if
 
-		display dialog finalMessage buttons {"Open System Preferences", "Done"} default button 2 with title "Installation Complete" with icon note
-
-		set userChoice to button returned of result
-		if userChoice is "Open System Preferences" then
-			do shell script "open 'x-apple.systempreferences:com.apple.preference.security?Privacy'"
-		end if
+		display dialog finalMessage buttons {"Done"} default button 1 with title "✅ Installation Complete" with icon note
 
 		tell me to quit
 

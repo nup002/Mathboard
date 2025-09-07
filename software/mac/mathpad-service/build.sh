@@ -3,7 +3,7 @@
 
 set -e  # Exit on any error
 
-APP_NAME="MathpadService"
+APP_NAME="MathpadServiceInstaller"
 SERVICE_NAME="mathpad-service"
 
 echo "MATHPAD SERVICE BUILD SCRIPT"
