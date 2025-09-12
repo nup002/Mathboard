@@ -1,9 +1,10 @@
 #!/bin/bash
 # Build script for Mathpad Service
-
+# Also builds the installer app and converts it to a DMG
 set -e  # Exit on any error
 
-APP_NAME="MathpadServiceInstaller"
+DMG_NAME="Mathpad Service"
+INSTALLER_NAME="Install"
 SERVICE_NAME="mathpad-service"
 
 echo "MATHPAD SERVICE BUILD SCRIPT"
@@ -13,7 +14,12 @@ echo "Cleaning previous builds..."
 rm -rf build/
 mkdir -p build/
 
-# Compile Swift service
+# Clean previous dist
+echo "Cleaning previous dist..."
+rm -rf dist/
+mkdir -p dist/
+
+# Compile mathpad-service
 echo "Compiling Mathpad Service..."
 swiftc \
     -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk \
@@ -24,10 +30,28 @@ swiftc \
     MathpadService.swift \
     -o "build/${SERVICE_NAME}"
 
-# Copy the compiled binary to the app bundle
-echo "Removing old binary..."
-rm -f "dist/${APP_NAME}.app/Contents/Resources/${SERVICE_NAME}"
-echo "Copying compiled binary to app bundle..."
-cp "build/${SERVICE_NAME}" "dist/${APP_NAME}.app/Contents/Resources"
+# Set the custom executable icon (requires fileicon. Install with 'brew install fileicon')
+fileicon set "build/${SERVICE_NAME}" ../applet.icns
 
 echo "Mathpad Service compiled successfully."
+
+echo "Creating installer app bundle..."
+
+# Export installer script to app bundle
+osacompile -o "./dist/${INSTALLER_NAME}.app" "${INSTALLER_NAME}.applescript"
+
+# Copy the compiled binary to the app bundle
+echo "Copying compiled binary to app bundle..."
+cp "build/${SERVICE_NAME}" "dist/${INSTALLER_NAME}.app/Contents/Resources/"
+
+# Set the installer app icon
+cp ../applet.icns "dist/${INSTALLER_NAME}.app/Contents/Resources/applet.icns"
+
+# Convert installer to DMG
+echo "Converting installer to DMG..."
+hdiutil create -volname "${DMG_NAME}" -srcfolder "./dist/${INSTALLER_NAME}.app" -ov -format UDZO "./dist/${DMG_NAME}.dmg"
+
+# Set the DMG icon
+fileicon set "./dist/${DMG_NAME}.dmg" ../applet.icns
+
+echo "All done."
