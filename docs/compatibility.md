@@ -5,14 +5,15 @@ will work with your setup.
 # Operating Systems
 
 Mathpad works on:
- - **Windows 10 and 11** with WinCompose installed 
- - **MacOS** (no additional software required)
+ - **Windows 10 and 11** with `WinCompose` installed 
+ - **macOS** with `Mathpad Service` installed
  - **Linux distros with IBus** (includes Ubuntu, Debian, Fedora, CentOS, Raspbian, and many more)
 
-When using Windows, WinCompose is **required** for proper Unicode symbol input. If you cannot install WinCompose,
+When using Windows PC, `WinCompose` is **required** for proper Unicode symbol input. If you cannot install WinCompose,
 for example due to not having administrator rights, you can use the 
-[portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) 
-instead.
+[portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) instead.
+
+When using a Mac, `Mathpad Service` is **required** for proper Unicode symbol input.
 
 # Fonts
 Mathpad outputs Unicode mathematical symbols that may not display correctly if your system fonts don't include the 
@@ -147,5 +148,3 @@ the letters A, B, C, D, E, and F can be typed.
 
 ### General
 - Some virtualized environments (VMs, remote desktop) may have reduced symbol support
-
-
