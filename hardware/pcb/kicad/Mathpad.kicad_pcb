@@ -36129,6 +36129,19 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "Stackup: JLC04101H-3313"
+		(at 83.3 38.1 -0)
+		(layer "F.Fab")
+		(uuid "2ae7d265-4b79-4384-8930-b1bc442e1f28")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(segment
 		(start 136.468629 62.15)
 		(end 134.7 63.918629)
