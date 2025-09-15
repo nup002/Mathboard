@@ -11,9 +11,9 @@
   * [Troubleshooting](troubleshoot.md "Fix common problems")
 
 - Technical reference
-  * [Assembly Manual](assembly_manual.md "Assemble your own Mathpad")
   * [Firmware Manual](firmware.md "Learn how to modify the Mathpad firmware")
   * [Compatibility](compatibility.md "View OS and keyboard layout compatibility")
 
 - Downloads
-  * [Firmware](firmware_releases.md "Download Mathpad firmware")
+  * [Firmware](firmware-download.md "Download Mathpad firmware")
+  * [Software](software-download.md "Download Mathpad software")
