@@ -1,3 +1,5 @@
+# Multitap
+
 Many symbols are marked by a small orange dot. Double-tapping such a symbol will type a different but related 
 symbol. For example, double tapping ω types its uppercase variant Ω. The notation for this action is 
 <keycombo>[ω][x2]</keycombo>.

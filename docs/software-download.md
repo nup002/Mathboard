@@ -1,3 +1,6 @@
+# Software
+Mathpad requires software to work on certain operating systems.
+
 ## Mathpad Service
 `Mathpad Service` for Macs. It is a small application that runs silently in the background and enables
 your Mac to understand the Unicode symbols that Mathpad sends to it.

@@ -1,3 +1,4 @@
+# Firmware
 This page documents the Mathpad firmware. It is organized in four sections:
 1) Overview
 2) Setting up your development environment

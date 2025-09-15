@@ -1,3 +1,5 @@
+# Troubleshooting
+
 **Having trouble with your Mathpad? This page might help.**
 
 ## Nothing Happens When I Click Any Key

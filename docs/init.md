@@ -1,3 +1,5 @@
+# Initial Setup
+
 **Mathpad works straight out of the box in many cases.** But depending on your operating system and keyboard layout, 
 there are a few initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
 

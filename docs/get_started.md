@@ -1,4 +1,6 @@
->[!TIP|label:Before You Continue]
+# Getting started
+
+> >[!TIP|label:Before You Continue]
 >Make sure you have already followed the instructions in [First Setup](/first_setup.md).
 >
 

@@ -1,3 +1,5 @@
+# Updating the Firmware
+
 Firmware is the code that runs on the processor inside the Mathpad. You must sometimes update this firmware, 
 for example when:
 - You set up your Mathpad for the first time

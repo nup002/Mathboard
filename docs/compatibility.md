@@ -1,3 +1,5 @@
+# Compatibility
+
 Mathpad is a [QMK](https://docs.qmk.fm)-based keypad that works on nearly all operating systems and with all 
 Latin-based keyboard layouts. This page explicitly defines these compatibilities to help you determine if Mathpad 
 will work with your setup.

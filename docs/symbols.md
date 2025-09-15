@@ -1,3 +1,5 @@
+# Mathpad Symbols
+
 Every symbol that can be typed with the Mathpad is listed here. 
 This page is still a work in progress, but every symbol is present.
 
