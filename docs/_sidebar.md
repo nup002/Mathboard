@@ -1,5 +1,5 @@
 - Learn the ropes
-  * [First Setup](first_setup.md "Setting up your Mathpad for the first time")
+  * [Initial Setup](init.md "Setting up your Mathpad for the first time")
   * [Getting Started](get_started.md "Getting started with using your Mathpad")
   * [Overview](overview.md "What are all these keys?")
 

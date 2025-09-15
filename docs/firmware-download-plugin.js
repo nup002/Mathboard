@@ -2,73 +2,85 @@
 (function () {
   // Plugin configuration
   const config = {
-    githubUser: 'YOUR_USERNAME',
-    githubRepo: 'YOUR_REPO',
+    githubUser: 'Summa-Cogni',
+    githubRepo: 'Mathpad',
     releaseTag: 'v1.0.0',
     layouts: [
-      'canadian_french',
       'canadian_multilingual',
-      'colemak',
       'croatian',
+      'czech',
       'czech_mac_ansi',
+      'czech_mac_iso',
       'danish',
-      'dutch',
+      'uk',
+      'us_ansi',
+      'us_international',
+      'estonian',
       'finnish',
       'french',
+      'french_afnor',
+      'bepo',
+      'belgian',
+      'canadian_french',
+      'swiss_fr',
+      'french_mac_iso',
       'german',
-      'german_mac',
+      'swiss_de',
+      'german_mac_iso',
       'hungarian',
       'icelandic',
       'italian',
+      'italian_mac_ansi',
+      'italian_mac_iso',
       'japanese',
-      'korean',
+      'latvian',
+      'lithuanian_azerty',
+      'lithuanian_qwerty',
       'norwegian',
-      'polish',
       'portuguese',
-      'russian',
+      'portuguese_mac_iso',
+      'brazilian_abnt2',
+      'romanian',
+      'serbian_latin',
       'slovak',
       'slovenian',
       'spanish',
+      'spanish_dvorak',
+      'spanish_latin_america',
       'swedish',
-      'swiss_french',
-      'swiss_german',
-      'turkish',
-      'uk',
-      'us',
-      'us_dvorak',
-      'us_international'
+      'turkish_f',
+      'turkish_q',
+      'colemak',
+      'dvorak',
+      'dvorak_fr',
+      'dvorak_programmer',
+      'norman',
+      'workman',
+      'workman_zxcvm'
     ]
   };
 
-  // Plugin CSS with dark mode support
+  // Plugin CSS using docsify-darklight-theme CSS variables
   const css = `
     .firmware-downloader {
       max-width: 800px;
       margin: 20px auto;
-      background: var(--base-background-color, white);
+      background: var(--firmware_download_plugin_container_background, white);
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px var(--firmware_download_plugin_container_shadow, rgba(0,0,0,0.1));
       overflow: hidden;
-      border: 1px solid var(--border-color, #e0e0e0);
-    }
-
-    /* Dark mode compatibility */
-    [data-theme="dark"] .firmware-downloader {
-      background: var(--base-background-color, #1c2128);
-      border-color: var(--border-color, #30363d);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border: 1px solid var(--firmware_download_plugin_container_border, #e0e0e0);
     }
 
     .firmware-header {
-      background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+      background: var(--firmware_download_plugin_header_color, white);
       color: white;
-      padding: 30px;
+      padding: 10px;
       text-align: center;
     }
 
     .firmware-header h2 {
       font-size: 2em;
-      margin-bottom: 10px;
       font-weight: 300;
     }
 
@@ -82,35 +94,24 @@
     }
 
     .firmware-search {
-      margin-bottom: 25px;
+      margin-bottom: 0px;
     }
 
     .firmware-search input {
       width: 100%;
       padding: 12px 16px;
       font-size: 1em;
-      border: 2px solid var(--border-color, #e0e0e0);
+      border: 2px solid var(--firmware_download_plugin_input_border, #e0e0e0);
       border-radius: 8px;
       outline: none;
       transition: all 0.3s ease;
-      background: var(--base-background-color, white);
-      color: var(--text-color-base, #333);
-    }
-
-    /* Dark mode input styling */
-    [data-theme="dark"] .firmware-search input {
-      background: var(--base-background-color, #0d1117);
-      color: var(--text-color-base, #c9d1d9);
-      border-color: var(--border-color, #30363d);
+      background: var(--firmware_download_plugin_input_background, white);
+      color: var(--firmware_download_plugin_input_color, #333);
     }
 
     .firmware-search input:focus {
       border-color: #3282b8;
       box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.1);
-    }
-
-    [data-theme="dark"] .firmware-search input:focus {
-      box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.2);
     }
 
     .firmware-grid {
@@ -121,10 +122,10 @@
     }
 
     .firmware-item {
-      background: var(--base-background-color, #f8f9fa);
-      border: 2px solid var(--border-color, #e9ecef);
+      background: var(--firmware_download_plugin_item_background, #f8f9fa);
+      border: 2px solid var(--firmware_download_plugin_item_border, #e9ecef);
       border-radius: 8px;
-      padding: 16px;
+      padding: 8px;
       transition: all 0.3s ease;
       cursor: pointer;
       display: flex;
@@ -132,38 +133,21 @@
       align-items: center;
     }
 
-    /* Dark mode item styling */
-    [data-theme="dark"] .firmware-item {
-      background: var(--base-background-color, #21262d);
-      border-color: var(--border-color, #30363d);
-    }
-
     .firmware-item:hover {
       border-color: #3282b8;
-      background: #e8f2f8;
+      background: var(--firmware_download_plugin_item_hover_background, #e8f2f8);
       transform: translateY(-1px);
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Dark mode hover styling */
-    [data-theme="dark"] .firmware-item:hover {
-      background: #1a4052;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     }
 
     .firmware-name {
       font-weight: 600;
       font-size: 1em;
-      color: var(--text-color-base, #0f4c75);
-    }
-
-    /* Dark mode text styling */
-    [data-theme="dark"] .firmware-name {
-      color: var(--text-color-base, #58a6ff);
+      color: var(--firmware_download_plugin_text_color, #0f4c75);
     }
 
     .firmware-download-btn {
-      background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+      background: linear-gradient(135deg, #0fac75 0%, #0f8c25 100%);
       color: white;
       border: none;
       padding: 8px 14px;
@@ -182,30 +166,21 @@
     .firmware-no-results {
       text-align: center;
       padding: 30px;
-      color: var(--text-color-tertiary, #666);
+      color: var(--firmware_download_plugin_text_secondary, #666);
       font-size: 1em;
       display: none;
-    }
-
-    /* Dark mode no results styling */
-    [data-theme="dark"] .firmware-no-results {
-      color: var(--text-color-tertiary, #8b949e);
     }
 
     @media (max-width: 600px) {
       .firmware-grid {
         grid-template-columns: 1fr;
       }
-
+      
       .firmware-content {
         padding: 20px;
       }
-
-      .firmware-header {
-        padding: 20px;
-      }
-
-      .firmware-header h2 {
+      
+      .firmware-header h1 {
         font-size: 1.5em;
       }
     }
@@ -213,20 +188,60 @@
 
   // Helper functions
   function formatLayoutName(layout) {
+    // Handle special cases for better formatting
+    const specialCases = {
+      'us_ansi': 'US ANSI (standard US layout)',
+      'us_international': 'US International',
+      'canadian_multilingual': 'Canadian Multilingual',
+      'canadian_french': 'Canadian French',
+      'czech_mac_ansi': 'Czech Mac ANSI',
+      'czech_mac_iso': 'Czech Mac ISO',
+      'french_afnor': 'French AFNOR',
+      'bepo': 'BÉPO',
+      'belgian': 'Belgian',
+      'swiss_fr': 'Swiss French',
+      'french_mac_iso': 'French Mac ISO',
+      'swiss_de': 'Swiss German',
+      'german_mac_iso': 'German Mac ISO',
+      'italian_mac_ansi': 'Italian Mac ANSI',
+      'italian_mac_iso': 'Italian Mac ISO',
+      'lithuanian_azerty': 'Lithuanian AZERTY',
+      'lithuanian_qwerty': 'Lithuanian QWERTY',
+      'portuguese_mac_iso': 'Portuguese Mac ISO',
+      'brazilian_abnt2': 'Brazilian ABNT2',
+      'serbian_latin': 'Serbian Latin',
+      'spanish_dvorak': 'Spanish Dvorak',
+      'spanish_latin_america': 'Spanish Latin America',
+      'turkish_f': 'Turkish F',
+      'turkish_q': 'Turkish Q',
+      'colemak': 'Colemak',
+      'dvorak': 'Dvorak',
+      'dvorak_fr': 'Dvorak French',
+      'dvorak_programmer': 'Dvorak Programmer',
+      'norman': 'Norman',
+      'workman': 'Workman',
+      'workman_zxcvm': 'Workman ZXCVM',
+      'uk': 'UK'
+    };
+
+    if (specialCases[layout]) {
+      return specialCases[layout];
+    }
+
     return layout.split('_')
                  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                  .join(' ');
   }
 
   function generateDownloadUrl(layout) {
-    return `https://github.com/${config.githubUser}/${config.githubRepo}/releases/download/${config.releaseTag}/mathpad_mp1a_${layout}_v1.0.0.uf2`;
+    return `https://github.com/${config.githubUser}/${config.githubRepo}/releases/download/firmware-${config.releaseTag}/mathpad_mp1a_${layout}_${config.releaseTag}.uf2`;
   }
 
   function downloadFirmware(layout) {
     const url = generateDownloadUrl(layout);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `mathpad_mp1a_${layout}_v1.0.0.uf2`;
+    link.download = `mathpad_mp1a_${layout}_${config.releaseTag}uf2`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -238,17 +253,20 @@
 
     container.innerHTML = `
       <div class="firmware-header">
-        <h2>MathPad MP1A Firmware</h2>
-        <p>Download the firmware that matches your keyboard layout</p>
-      </div>
-      <div class="firmware-content">
         <div class="firmware-search">
           <input type="text" placeholder="Search for your keyboard layout (e.g., US, German, French, Colemak...)" id="firmwareSearchInput">
         </div>
+      </div>
+      <div class="firmware-content">
         <div class="firmware-grid" id="firmwareGrid"></div>
         <div class="firmware-no-results" id="firmwareNoResults">
-          <p>No layouts found matching your search. Try a different term or browse all available layouts above.</p>
+          <p>No layouts found matching your search.</p>
         </div>
+      <div>
+        <p>${config.releaseTag}<br/>
+        <a href="https://github.com/${config.githubUser}/${config.githubRepo}/releases/tag/firmware-${config.releaseTag}">Release page</a><br/>
+        <a href="https://github.com/${config.githubUser}/${config.githubRepo}/tags">Older versions</a></p>
+      </div>
       </div>
     `;
 
@@ -301,60 +319,6 @@
       );
       renderLayouts(container, filteredLayouts);
     });
-
-    // Dynamic theme detection and updating
-    function updateTheme() {
-      const isDark =
-        document.documentElement.classList.contains('dark') ||
-        document.body.classList.contains('dark') ||
-        document.documentElement.getAttribute('data-theme') === 'dark' ||
-        document.body.getAttribute('data-theme') === 'dark' ||
-        // Check for docsify-darklight-theme specific indicators
-        window.getComputedStyle(document.body).getPropertyValue('--base-background-color').includes('#') ||
-        // Fallback: check if background is dark
-        (window.getComputedStyle(document.body).backgroundColor === 'rgb(13, 17, 23)') ||
-        (window.getComputedStyle(document.body).backgroundColor === 'rgb(22, 27, 34)');
-
-      if (isDark) {
-        container.classList.add('force-dark');
-      } else {
-        container.classList.remove('force-dark');
-      }
-    }
-
-    // Initial theme check
-    updateTheme();
-
-    // Watch for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' &&
-            (mutation.attributeName === 'class' ||
-             mutation.attributeName === 'data-theme')) {
-          updateTheme();
-        }
-      });
-    });
-
-    // Observe both html and body for theme changes
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class', 'data-theme']
-    });
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class', 'data-theme']
-    });
-
-    // Also listen for storage events (theme persistence)
-    window.addEventListener('storage', updateTheme);
-
-    // Listen for custom events that might indicate theme changes
-    window.addEventListener('darklighttheme', updateTheme);
-    window.addEventListener('themechange', updateTheme);
-
-    // Cleanup function (store observer reference for potential cleanup)
-    container.themeObserver = observer;
   }
 
   // Docsify plugin
