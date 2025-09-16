@@ -8,7 +8,7 @@ there are a few initial tasks that may have to be performed. Follow this short g
 <!-- tabs:start -->
 #### **Mac**
 
-1) Install [Mathpad Service](????????) - this enables Mathpad to insert Unicode symbols on Mac.
+1) Install [Mathpad Service](????????) - this small application enables Mathpad to insert Unicode symbols on Mac.
 2) Set the OS switch on the back of your Mathpad to the MAC position
 
 
@@ -43,9 +43,9 @@ There's no software to install on Linux, as most distros have built-in support f
 ## What is your keyboard layout?
 <!-- tabs:start -->
 
-#### **US QWERTY (standard layout in USA)**
+#### **US ANSI (standard layout in USA)**
 
-You're good to go! Mathpad supports US QWERTY out of the box. You can move on to [Getting Started](/get_started.md).
+You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](/get_started.md).
 
 #### **Any other layout**
 

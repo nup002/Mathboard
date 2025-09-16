@@ -7,12 +7,12 @@ for example when:
 - You want to use a feature in a new firmware release
 - You make your own modifications to the firmware
 
-**Updating the Mathpad firmware is safe and extremely simple**. It requires no previous experience or special 
+**Updating the Mathpad firmware is safe and very simple**. It requires no previous experience or special 
 tools. Just follow these three steps:
 
 ### Step 1: Download your firmware
 Head over to the [Firmware Download](firmware-download.md) page and download the firmware that matches your keyboard 
-layout. 
+layout.
 
 ### Step 2: Put Mathpad in firmware upload mode
 With your Mathpad plugged in, flip it over and use something long and thin (e.g. a pen) to press the 

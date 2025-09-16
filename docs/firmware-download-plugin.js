@@ -260,7 +260,7 @@
       <div class="firmware-content">
         <div class="firmware-grid" id="firmwareGrid"></div>
         <div class="firmware-no-results" id="firmwareNoResults">
-          <p>No layouts found matching your search.</p>
+          <p>No layouts found matching your search.<br/> See <a href="http://mathpad.summacogni.com/compatibility?id=supported-keyboard-layouts">Supported Keyboard Layouts<\a></p>
         </div>
       <div>
         <p>${config.releaseTag}<br/>

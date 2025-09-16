@@ -7,15 +7,14 @@ will work with your setup.
 # Operating Systems
 
 Mathpad works on:
- - **Windows 10 and 11** with `WinCompose` installed 
- - **macOS** with `Mathpad Service` installed
+ - **Windows 10 and 11** with `WinCompose` installed
+ - **Mac** with `Mathpad Service` installed (requires accessibility permissions)
  - **Linux distros with IBus** (includes Ubuntu, Debian, Fedora, CentOS, Raspbian, and many more)
 
-When using Windows PC, `WinCompose` is **required** for proper Unicode symbol input. If you cannot install WinCompose,
-for example due to not having administrator rights, you can use the 
-[portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) instead.
-
-When using a Mac, `Mathpad Service` is **required** for proper Unicode symbol input.
+>[!TIP]
+>If you cannot install WinCompose, for example due to not having administrator rights, you can use the 
+>[portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip) instead.
+>
 
 # Fonts
 Mathpad outputs Unicode mathematical symbols that may not display correctly if your system fonts don't include the 
@@ -37,16 +36,15 @@ To test if your fonts support mathematical symbols:
  - If you see boxes or question marks, you may need to install additional fonts
  - Different applications may use different fonts, so test in your intended software
 
-# Keyboard Layouts
+# Supported Keyboard Layouts
 
 Mathpad requires that the computer uses a **Latin-based keyboard layout**. This means layouts that use the 
 Latin alphabet (A-Z) as their primary character set, as opposed to Cyrillic, Arabic, Chinese, or other 
 non-Latin scripts. The layout can include additional accented characters and symbols, but the base alphabet must be 
 Latin.
 
-## Supported Keyboard Layouts
-
 ### North America
+ - US ANSI (Standard layout in the USA)
  - English (US International)
  - Canadian Multilingual (CSA)
  - French (Canada)
@@ -61,7 +59,6 @@ Latin.
  - French
  - French (AFNOR)
  - French (BÉPO)
- - French (Belgium)
  - French (Switzerland)
  - French (macOS, ISO)
  - German
@@ -111,6 +108,14 @@ Mathpad also supports these non-QWERTY layouts:
  - Workman  
  - Workman (ZXCVM)
 
+## If your Latin keyboard layout is not on the list of supported layouts
+It is possible that there exist certain Latin-based layouts that are not supported by Mathpad. In that case you have 
+two options:
+1) Install the Mathpad firmware version for whatever layout is the most similar to yours and hope it works
+2) Add your layout as a [Sendstring LUT header file](https://docs.qmk.fm/reference_keymap_extras#header-files) to the
+ QMK repository. Once your Pull Request has been accepted, request a new firmware build on the 
+ [Mathpad forum](https://www.summacogni.com/forum/viewforum.php?f=3&sid=c0af401a0636b960e1b51769f60db79d).
+
 ## Unsupported Layouts
 
 If you use an unsupported keyboard layout (non-Latin scripts like Arabic, Cyrillic, Chinese, etc.), Mathpad simply will 
@@ -137,11 +142,13 @@ the letters A, B, C, D, E, and F can be typed.
 ## Known Issues
 
 ### Windows
-- WinCompose must be running for proper Unicode symbol input
+- WinCompose must be running 
 
-### MacOS
+### Mac
+- Mathpad Service must be running
+- Mathpad Service must have been granted Accessibility and Input Monitoring permissions
 - On some macOS versions, certain mathematical symbols may require manual font installation
-- Dead key behavior may vary between different macOS versions
+
 
 ### Linux
 - IBus must be properly configured and running
