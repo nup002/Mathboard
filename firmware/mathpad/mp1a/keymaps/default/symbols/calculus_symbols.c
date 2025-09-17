@@ -111,7 +111,7 @@ const symbol_definition_t SYMBOL_FOURTH_ROOT = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_PARTIAL_DIFFERENTIAL = DEFINE_SYMBOL(
     partial_differential,
     0x2202,                  // Unicode: ∂
-    "\\partial", LATEX_NORMAL,
+    "\\partial", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     NULL, LOF_1SPACE
 );
@@ -119,7 +119,7 @@ const symbol_definition_t SYMBOL_PARTIAL_DIFFERENTIAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_NABLA = DEFINE_SYMBOL(
     nabla,
     0x2207,                  // Unicode: ∇
-    "\\nabla", LATEX_NORMAL,
+    "\\nabla", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     " nabla", LOF_1SPACE
 );
@@ -135,7 +135,7 @@ const symbol_definition_t SYMBOL_FRAC = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_MATRIX = DEFINE_SYMBOL(
     matrix,
     0x25A1,                  // Unicode: □ (using white square as approximation)
-    "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}", LATEX_NORMAL,
+    "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}", LATEX_1SPACE,
     "[\\matrix(@&)]", MOF_1SPACE_1BACKTRACK,
     "matrix{a # b ## c # d}", LOF_1SPACE
 );

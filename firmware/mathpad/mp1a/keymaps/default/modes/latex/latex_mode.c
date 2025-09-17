@@ -22,8 +22,8 @@ void send_symbol_latex(const symbol_definition_t* symbol) {
     }
     
     switch (symbol->latex_method) {
-        case LATEX_NORMAL:
-            send_string(symbol->latex_string);
+        case LATEX_1SPACE:
+            send_ltx_1space(symbol->latex_string);
             break;
         case LATEX_1BACKTRACK:
             send_and_backtrack_1(symbol->latex_string);
@@ -78,4 +78,14 @@ void send_and_backtrack_3(const char *string) {
 void send_and_backtrack_1(const char *string) {
     send_string(string);
     tap_code(KC_LEFT);
+}
+
+/**
+ * @brief Sends a string and one space.
+ *
+ * @param string The string to send.
+ */
+void send_ltx_1space(const char *string) {
+    send_string(string);
+    tap_code(KC_SPACE);
 }

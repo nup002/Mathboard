@@ -20,10 +20,10 @@
 
 // Define the different sending methods for LaTeX
 typedef enum {
-    LATEX_NORMAL,         // Just send the string as is
-    LATEX_1BACKTRACK,    // Send string and move cursor back 1 position
-    LATEX_3BACKTRACK,    // Send string and move cursor back 3 positions
-    LATEX_4BACKTRACK     // Send string and move cursor back 4 positions
+    LATEX_1SPACE,         // Just send the string and send 1 space
+    LATEX_1BACKTRACK,     // Send string and move cursor back 1 position
+    LATEX_3BACKTRACK,     // Send string and move cursor back 3 positions
+    LATEX_4BACKTRACK      // Send string and move cursor back 4 positions
 } latex_send_method_t;
 
 

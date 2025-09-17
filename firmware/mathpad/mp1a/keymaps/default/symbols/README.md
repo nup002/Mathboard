@@ -14,7 +14,7 @@ To add a new symbol:
 const symbol_definition_t SYMBOL_YOUR_SYMBOL = DEFINE_SYMBOL(
     your_symbol_name,         // Name used in code (lowercase, underscores)
     0x1234,                   // Unicode code point (find at unicode-table.com)
-    "\\yourlatex", LATEX_NORMAL,  // LaTeX command and sending method
+    "\\yourlatex", LATEX_1SPACE,  // LaTeX command and sending method
     NULL, MOF_1SPACE    // Microsoft Office string and sending method
 );
 ```
@@ -34,7 +34,7 @@ const symbol_definition_t SYMBOL_YOUR_SYMBOL = DEFINE_SYMBOL(
 - `misc_symbols.c` - Other mathematical and scientific symbols
 
 ### LaTeX sending methods
- - LATEX_NORMAL,        // Just send the string as is
+ - LATEX_1SPACE,        // Just send the string as is
  - LATEX_1BACKTRACK,    // Send string and move cursor back 1 position
  - LATEX_3BACKTRACK,    // Send string and move cursor back 3 positions
  - LATEX_4BACKTRACK     // Send string and move cursor back 4 positions

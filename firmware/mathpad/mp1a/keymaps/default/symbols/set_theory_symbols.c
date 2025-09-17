@@ -23,7 +23,7 @@
 const symbol_definition_t SYMBOL_UNION = DEFINE_SYMBOL(
     union_symbol,
     0x222A,                  // Unicode: ∪
-    "\\cup", LATEX_NORMAL,
+    "\\cup", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "union", LOF_1SPACE
 );
@@ -31,7 +31,7 @@ const symbol_definition_t SYMBOL_UNION = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_INTERSECTION = DEFINE_SYMBOL(
     intersection,
     0x2229,                  // Unicode: ∩
-    "\\cap", LATEX_NORMAL,
+    "\\cap", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "intersection", LOF_1SPACE
 );
@@ -39,7 +39,7 @@ const symbol_definition_t SYMBOL_INTERSECTION = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_ELEMENT_OF = DEFINE_SYMBOL(
     element_of,
     0x2208,                  // Unicode: ∈
-    "\\in", LATEX_NORMAL,
+    "\\in", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "in", LOF_1SPACE
 );
@@ -47,7 +47,7 @@ const symbol_definition_t SYMBOL_ELEMENT_OF = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_NOT_ELEMENT_OF = DEFINE_SYMBOL(
     not_element_of,
     0x2209,                  // Unicode: ∉
-    "\\notin", LATEX_NORMAL,
+    "\\notin", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "notin", LOF_1SPACE
 );
@@ -55,7 +55,7 @@ const symbol_definition_t SYMBOL_NOT_ELEMENT_OF = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_CONTAINS_AS_MEMBER = DEFINE_SYMBOL(
     contains_as_member,
     0x220B,                  // Unicode: ∋
-    "\\ni", LATEX_NORMAL,
+    "\\ni", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "owns", LOF_1SPACE
 );
@@ -63,7 +63,7 @@ const symbol_definition_t SYMBOL_CONTAINS_AS_MEMBER = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_EMPTY_SET = DEFINE_SYMBOL(
     empty_set,
     0x2205,                  // Unicode: ∅
-    "\\emptyset", LATEX_NORMAL,
+    "\\emptyset", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "emptyset", LOF_1SPACE
 );
@@ -71,7 +71,7 @@ const symbol_definition_t SYMBOL_EMPTY_SET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_POWER_SET = DEFINE_SYMBOL(
     power_set,
     0x2118,                  // Unicode: ℘
-    "\\wp", LATEX_NORMAL,
+    "\\wp", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "wp", LOF_1SPACE
 );
@@ -79,7 +79,7 @@ const symbol_definition_t SYMBOL_POWER_SET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_PROPER_SUBSET = DEFINE_SYMBOL(
     proper_subset,
     0x2282,                  // Unicode: ⊂
-    "\\subset", LATEX_NORMAL,
+    "\\subset", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "subset", LOF_1SPACE
 );
@@ -87,7 +87,7 @@ const symbol_definition_t SYMBOL_PROPER_SUBSET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
     not_proper_subset,
     0x2284,                  // Unicode: ⊄
-    "\\not\\subset", LATEX_NORMAL,
+    "\\not\\subset", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "nsubset", LOF_1SPACE
 );
@@ -95,7 +95,7 @@ const symbol_definition_t SYMBOL_NOT_PROPER_SUBSET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
     subset,
     0x2286,                  // Unicode: ⊆
-    "\\subseteq", LATEX_NORMAL,
+    "\\subseteq", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "subseteq", LOF_1SPACE
 );
@@ -103,7 +103,7 @@ const symbol_definition_t SYMBOL_SUBSET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_NOT_SUBSET = DEFINE_SYMBOL(
     not_subset,
     0x2288,                  // Unicode: ⊈
-    "\\not\\subseteq", LATEX_NORMAL,
+    "\\not\\subseteq", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "nsubseteq", LOF_1SPACE
 );
@@ -111,7 +111,7 @@ const symbol_definition_t SYMBOL_NOT_SUBSET = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_DISJOINT_UNION = DEFINE_SYMBOL(
     disjoint_union,
     0x2A06,                  // Unicode: ⨆
-    "\\bigsqcup", LATEX_NORMAL,
+    "\\bigsqcup", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     NULL, LOF_1SPACE
 ); // TODO: What do we do here for LOF?
@@ -119,7 +119,7 @@ const symbol_definition_t SYMBOL_DISJOINT_UNION = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_DIRECT_SUM = DEFINE_SYMBOL(
     direct_sum,
     0x2295,                  // Unicode: ⊕
-    "\\oplus", LATEX_NORMAL,
+    "\\oplus", LATEX_1SPACE,
     NULL, MOF_1SPACE,
     "oplus", LOF_1SPACE
 );
