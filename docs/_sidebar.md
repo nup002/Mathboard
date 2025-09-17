@@ -10,10 +10,12 @@
   * [Update Firmware](update_firmware.md "Update the firmware of your Mathpad")
   * [Troubleshooting](troubleshoot.md "Fix common problems")
 
-- Technical reference
-  * [Firmware Manual](firmware.md "Learn how to modify the Mathpad firmware")
-  * [Compatibility](compatibility.md "View OS and keyboard layout compatibility")
-
 - Downloads
   * [Firmware](firmware-download.md "Download Mathpad firmware")
   * [Software](software-download.md "Download Mathpad software")
+
+- Technical reference
+  * [Compatibility](compatibility.md "View OS and keyboard layout compatibility")
+  * [Firmware Prerequisites](firmware_prerequisites.md "Get ready to modify the Mathpad firmware")
+  * [Firmware Manual](firmware.md "Learn how to modify the Mathpad firmware")
+  * [Firmware Compilation](compile.md "Learn how to compile the Mathpad firmware")

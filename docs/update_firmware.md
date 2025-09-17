@@ -22,6 +22,6 @@ Reset button for half a second, then release it. The Reset button is located her
 
 ### Step 3: Drag and drop the firmware file
 When you release the Reset button, a folder named `RPI-RP2` will appear. If it does not appear automatically, find it 
-under "This PC" on Windows,  or ????? on Mac. Grab the firmware file you just downloaded, 
+under "This PC" on Windows, or ????? on Mac. Grab the firmware file you just downloaded, 
 and drag-and-drop (or copypaste) it to the `RPI-RP2` folder. Once the file has been transferred, the folder will close 
 automatically. You're done!
