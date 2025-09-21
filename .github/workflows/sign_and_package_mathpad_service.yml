@@ -1,0 +1,147 @@
+name: Sign and Package Mathpad Service
+
+on:
+  push:
+    tags:
+      - 'mathpad-service-v*'  # Trigger on mathpad-service version tags
+    paths:
+      - 'software/mac/mathpad-service/dist/**'  # Only run when dist files change
+  workflow_dispatch:  # Allow manual runs
+
+jobs:
+  sign-and-package:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Dependencies
+      run: |
+        # Install fileicon for setting DMG icon
+        brew install fileicon
+
+    - name: Import Code Signing Certificate
+      run: |
+        # Create temporary keychain
+        echo "${{ secrets.APPLE_DEVELOPER_ID_CERT }}" | base64 --decode > certificate.p12
+        security create-keychain -p "" build.keychain
+        security default-keychain -s build.keychain
+        security unlock-keychain -p "" build.keychain
+        
+        # Import certificate
+        security import certificate.p12 -k build.keychain -P "${{ secrets.APPLE_DEVELOPER_ID_CERT_PASSWORD }}" -T /usr/bin/codesign
+        security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
+        
+        # Clean up certificate file
+        rm certificate.p12
+
+    - name: Sign Installer App
+      run: |
+        cd software/mac/mathpad-service/dist
+        
+        # Sign the installer app bundle (deep signing for all contents including the mathpad-service executable inside)
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime --deep "Install.app"
+        
+        # Verify signing worked
+        codesign --verify --verbose "Install.app"
+        echo "✅ Install.app and embedded mathpad-service signed successfully"
+
+    - name: Create DMG
+      run: |
+        cd software/mac/mathpad-service
+        
+        # Create DMG from the dist folder (which contains Install.app)
+        hdiutil create -volname "Mathpad Service" -srcfolder dist -ov -format UDZO "mathpad-service-${{ github.ref_name }}.dmg"
+        
+        # Set the DMG icon
+        fileicon set "mathpad-service-${{ github.ref_name }}.dmg" ../applet.icns
+
+    - name: Sign DMG
+      run: |
+        cd software/mac/mathpad-service
+        
+        # Sign the DMG
+        codesign --force --sign "Developer ID Application" --timestamp "mathpad-service-${{ github.ref_name }}.dmg"
+        codesign --verify --verbose "mathpad-service-${{ github.ref_name }}.dmg"
+        echo "✅ DMG signed successfully"
+
+    - name: Notarize Installer App
+      run: |
+        cd software/mac/mathpad-service/dist
+        
+        # Create zip of the installer app
+        zip -r install-app.zip "Install.app"
+        
+        # Submit for notarization
+        xcrun notarytool submit install-app.zip \
+          --apple-id "${{ secrets.APPLE_ID }}" \
+          --password "${{ secrets.APPLE_ID_PASSWORD }}" \
+          --team-id "${{ secrets.APPLE_TEAM_ID }}" \
+          --wait \
+          --timeout 15m
+        
+        echo "✅ Install.app notarized"
+        rm install-app.zip
+
+    - name: Notarize DMG
+      run: |
+        cd software/mac/mathpad-service
+        
+        # Submit DMG for notarization
+        xcrun notarytool submit "mathpad-service-${{ github.ref_name }}.dmg" \
+          --apple-id "${{ secrets.APPLE_ID }}" \
+          --password "${{ secrets.APPLE_ID_PASSWORD }}" \
+          --team-id "${{ secrets.APPLE_TEAM_ID }}" \
+          --wait \
+          --timeout 15m
+
+    - name: Staple Notarization
+      run: |
+        cd software/mac/mathpad-service
+        
+        # Staple the notarization to the DMG
+        xcrun stapler staple "mathpad-service-${{ github.ref_name }}.dmg"
+        
+        # Verify stapling worked
+        xcrun stapler validate "mathpad-service-${{ github.ref_name }}.dmg"
+        echo "✅ DMG notarization stapled successfully"
+
+    - name: Final Security Verification
+      run: |
+        cd software/mac/mathpad-service
+        
+        # Final verification that everything is properly signed and notarized
+        echo "🔍 Verifying installer app..."
+        spctl --assess --verbose "dist/Install.app"
+        
+        echo "🔍 Verifying DMG..."
+        spctl --assess --type open --context context:primary-signature "mathpad-service-${{ github.ref_name }}.dmg"
+        
+        echo "✅ All components verified! DMG is ready for distribution."
+
+    - name: Upload DMG Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: mathpad-service-${{ github.ref_name }}.dmg
+        path: software/mac/mathpad-service/mathpad-service-${{ github.ref_name }}.dmg
+
+    - name: Create GitHub Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: software/mac/mathpad-service/mathpad-service-${{ github.ref_name }}.dmg
+        name: Mathpad Service ${{ github.ref_name }}
+        body: |
+          ## Mathpad Service ${{ github.ref_name }}
+          
+          Signed and notarized macOS background service for Mathpad.
+          
+          ### Installation
+          1. Download and open the DMG
+          2. Run "Install" 
+          3. Follow the installation prompts
+          
+          The service will be installed to `/usr/local/bin/mathpad-service`.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
