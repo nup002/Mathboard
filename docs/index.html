@@ -136,6 +136,41 @@
       margin-top: 3px;
       margin-bottom: 12px;
     }
+
+    /* Sidebar width customization */
+    .sidebar {
+      width: 200px !important;
+    }
+    
+    /* Adjust main content area to account for narrower sidebar */
+    .content {
+      left: 250px !important;
+    }
+    
+    /* Mobile responsiveness - hide sidebar toggle adjustments */
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        width: 250px !important;
+        transform: translateX(-250px);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .content {
+        left: 0 !important;
+      }
+    }
+    
+    /* Disable zoom on Mathpad logo in main content area only (not sidebar) */
+    .content img[src*="mathpad_logo"] {
+      cursor: default !important;
+      pointer-events: none !important;
+    }
+    
+    .content img[src*="mathpad_logo"]:hover {
+      cursor: default !important;
+      transform: none !important;
+
   </style>
 </head>
 <body>
@@ -145,7 +180,6 @@
   <script>
     window.$docsify = {
       name: 'Mathpad documentation',
-      repo: 'https://github.com/Summa-Cogni/Mathpad',
       auto2top: true,
       loadSidebar: true,
       subMaxLevel: 1,
@@ -153,8 +187,17 @@
       autoHeader: false,
       routerMode: 'history',
       catchPluginErrors: true,
-      logo: '_media/mathpad_logo_padded.svg',
+      logo: '_media/mathpad_logo.svg',
       mergeNavbar: true,
+      homepage: 'README.md',
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto', // or 'auto'
+        placeholder: 'Search documentation...',
+        noData: 'No Results!',
+        depth: 6,
+        hideOtherSidebarContent: false,
+      },
       tabs: {
         persist: true, // default
         sync: true, // default
@@ -216,6 +259,9 @@
 
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <!-- Search plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 
   <!-- docsify-tabs (latest v1.x.x) -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
@@ -294,6 +340,12 @@
     // Extend your existing Docsify plugins
     window.$docsify.plugins = [].concat(window.$docsify.plugins || [], function(hook) {
       // Keep your existing hook.doneEach function
+      hook.doneEach(function() {
+        // Initialize symbol filtering if on symbols page
+        if (window.location.hash.includes('symbols')) {
+          initializeSymbolFiltering();
+        }
+      });
 
       // Add new hook.afterEach for key replacement
       hook.afterEach(function(html) {
@@ -327,6 +379,64 @@
 
   <!-- Firmware downloader -->
   <script src="./firmware-download-plugin.js"></script>
+
+  <!-- Symbol filtering functionality -->
+  <script>
+    function initializeSymbolFiltering() {
+      // Wait a bit for the page to fully render
+      setTimeout(() => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const sections = document.querySelectorAll('h2, h3');
+        
+        if (filterButtons.length === 0) return;
+
+        // Add data-category attributes to sections based on their text content
+        sections.forEach(section => {
+          const text = section.textContent.toLowerCase();
+          let category = 'misc';
+          
+          if (text.includes('lowercase greek')) category = 'lowercase-greek';
+          else if (text.includes('uppercase greek')) category = 'uppercase-greek';
+          else if (text.includes('operator') || text.includes('arithmetic')) category = 'operators';
+          else if (text.includes('relation') || text.includes('comparison')) category = 'relations';
+          else if (text.includes('arrow')) category = 'arrows';
+          else if (text.includes('set') || text.includes('logic')) category = 'sets';
+          else if (text.includes('calculus') || text.includes('integral')) category = 'calculus';
+          else if (text.includes('accent')) category = 'accents';
+          
+          section.setAttribute('data-category', category);
+          
+          // Also mark the following content until next section
+          let nextElement = section.nextElementSibling;
+          while (nextElement && !nextElement.matches('h1, h2, h3')) {
+            nextElement.setAttribute('data-category', category);
+            nextElement = nextElement.nextElementSibling;
+          }
+        });
+
+        // Add click event listeners to filter buttons
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide sections based on category
+            const allElements = document.querySelectorAll('[data-category]');
+            allElements.forEach(element => {
+              if (category === 'all' || element.getAttribute('data-category') === category) {
+                element.style.display = '';
+              } else {
+                element.style.display = 'none';
+              }
+            });
+          });
+        });
+      }, 500);
+    }
+  </script>
 
 </body>
 </html>
