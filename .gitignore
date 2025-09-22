@@ -76,3 +76,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+software/.DS_Store
+software/mac/.DS_Store
+software/mac/mathpad-service/.DS_Store
