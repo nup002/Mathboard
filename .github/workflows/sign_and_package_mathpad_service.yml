@@ -33,11 +33,24 @@ jobs:
 
     - name: Extract Version
       run: |
-        cd software/mac/mathpad-service/dist/Install.app/Contents/Resources
+        # Check if the mathpad-service binary exists in the expected location
+        pwd
+        BINARY_PATH="software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service"
+        
+        if [ ! -f "$BINARY_PATH" ]; then
+          echo "Error: mathpad-service binary not found at $BINARY_PATH"
+          echo "Contents of dist directory:"
+          ls -la software/mac/mathpad-service/dist/ || echo "dist directory not found"
+          echo "Contents of Install.app:"
+          ls -la software/mac/mathpad-service/dist/Install.app/ || echo "Install.app not found"
+          echo "Contents of Resources:"
+          ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/ || echo "Resources directory not found"
+          exit 1
+        fi
         
         # Get version from the mathpad-service executable
-        VERSION_OUTPUT=$(./mathpad-service --version)
-        VERSION=$(echo "$VERSION_OUTPUT" | grep "Mathpad Unicode Service" | sed 's/Mathpad Unicode Service //')
+        VERSION_OUTPUT=$($BINARY_PATH --version)
+        VERSION=$(echo "$VERSION_OUTPUT" | grep "Mathpad Service v" | sed 's/Mathpad Service v//')
         
         echo "VERSION=$VERSION" >> $GITHUB_ENV
         echo "Detected version: $VERSION"
