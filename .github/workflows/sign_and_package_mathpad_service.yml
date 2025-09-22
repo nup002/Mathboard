@@ -3,7 +3,7 @@ name: Sign and Package Mathpad Service
 on:
   push:
     tags:
-      - 'mathpad-service-v*'  # Trigger on version tags
+      - 'v*'  # Trigger on version tags
     paths:
       - 'software/mac/mathpad-service/dist/**'  # Only run when dist files change
   workflow_dispatch:  # Allow manual runs
@@ -15,17 +15,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Extract Version
-      run: |
-        cd software/mac/mathpad-service/dist/Install.app/Contents/Resources
-        
-        # Get version from the mathpad-service executable
-        VERSION_OUTPUT=$(./mathpad-service --version)
-        VERSION=$(echo "$VERSION_OUTPUT" | grep "Mathpad Unicode Service" | sed 's/Mathpad Unicode Service //')
-        
-        echo "VERSION=$VERSION" >> $GITHUB_ENV
-        echo "Detected version: $VERSION"
 
     - name: Install Dependencies
       run: |
@@ -46,6 +35,17 @@ jobs:
         
         # Clean up certificate file
         rm certificate.p12
+
+    - name: Extract Version
+      run: |
+        cd software/mac/mathpad-service/dist/Install.app/Contents/Resources
+        
+        # Get version from the mathpad-service executable
+        VERSION_OUTPUT=$(./mathpad-service --version)
+        VERSION=$(echo "$VERSION_OUTPUT" | grep "Mathpad Unicode Service" | sed 's/Mathpad Unicode Service //')
+        
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+        echo "Detected version: $VERSION"
 
     - name: Sign Installer App
       run: |
