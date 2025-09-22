@@ -58,12 +58,22 @@ jobs:
       run: |
         cd software/mac/mathpad-service/dist
         
-        # Sign the installer app bundle (deep signing for all contents including the mathpad-service executable inside)
-        codesign --force --sign "Developer ID Application" --timestamp --options runtime --deep "Install.app"
+        # First, sign the mathpad-service executable specifically
+        echo "🔐 Signing mathpad-service executable..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service"
         
-        # Verify signing worked
+        # Verify the executable is signed
+        codesign --verify --verbose "Install.app/Contents/Resources/mathpad-service"
+        echo "✅ mathpad-service executable signed"
+        
+        # Then sign the entire app bundle (this will sign any remaining components)
+        echo "🔐 Signing Install.app bundle..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app"
+        
+        # Verify the entire app is signed
         codesign --verify --verbose "Install.app"
-        echo "✅ Install.app and embedded mathpad-service signed successfully"
+        codesign --verify --deep --strict --verbose=2 "Install.app"
+        echo "✅ Install.app bundle signed successfully"
 
     - name: Create DMG
       run: |
