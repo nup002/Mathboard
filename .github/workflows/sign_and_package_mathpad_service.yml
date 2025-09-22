@@ -1,12 +1,7 @@
 name: Sign and Package Mathpad Service
 
 on:
-  push:
-    tags:
-      - 'v*'  # Trigger on version tags
-    paths:
-      - 'software/mac/mathpad-service/dist/**'  # Only run when dist files change
-  workflow_dispatch:  # Allow manual runs
+  workflow_dispatch:
 
 jobs:
   sign-and-package:
