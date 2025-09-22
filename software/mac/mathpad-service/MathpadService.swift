@@ -8,8 +8,8 @@ import Carbon.HIToolbox
 
 struct ServiceInfo {
     static let version = "1.0.0"
-    static let buildDate = "2025-01-01"
-    static let identifier = "com.mathpad.unicode-service"
+    static let buildDate = "2025-22-09"
+    static let identifier = "com.mathpad.mathpad-service"
 
     static var fullVersionString: String {
         return "\(version) (built \(buildDate))"
@@ -18,7 +18,7 @@ struct ServiceInfo {
 
 // Add this function to handle version command
 func handleVersionCommand() {
-    print("Mathpad Unicode Service v\(ServiceInfo.version)")
+    print("Mathpad Service v\(ServiceInfo.version)")
     print("Build date: \(ServiceInfo.buildDate)")
     print("Identifier: \(ServiceInfo.identifier)")
     exit(0)
@@ -34,7 +34,7 @@ if CommandLine.arguments.count > 1 {
     case "--version", "-v", "version":
         handleVersionCommand()
     case "--help", "-h", "help":
-        print("Mathpad Unicode Service v\(ServiceInfo.version)")
+        print("Mathpad Service v\(ServiceInfo.version)")
         print("Usage:")
         print("  mathpad-service           Start the service")
         print("  mathpad-service --version Show version information")

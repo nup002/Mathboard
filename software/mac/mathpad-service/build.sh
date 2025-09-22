@@ -47,11 +47,4 @@ cp "build/${SERVICE_NAME}" "dist/${INSTALLER_NAME}.app/Contents/Resources/"
 # Set the installer app icon
 cp ../applet.icns "dist/${INSTALLER_NAME}.app/Contents/Resources/applet.icns"
 
-# Convert installer to DMG
-echo "Converting installer to DMG..."
-hdiutil create -volname "${DMG_NAME}" -srcfolder "./dist/${INSTALLER_NAME}.app" -ov -format UDZO "./dist/${DMG_NAME}.dmg"
-
-# Set the DMG icon
-fileicon set "./dist/${DMG_NAME}.dmg" ../applet.icns
-
 echo "All done."
