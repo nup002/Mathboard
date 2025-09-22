@@ -19,7 +19,7 @@ there are a few initial tasks that may have to be performed. Follow this short g
 2) Set the OS switch on the back of your Mathpad to the WINDOWS position
 
 > [!TIP]
-> If you cannot install WinCompose, for example if your computer is managed by at IT department and you 
+> If you cannot install WinCompose, for example if your computer is managed by an IT department and you 
 > lack administrator rights, use the [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe).
 > 
 > 
