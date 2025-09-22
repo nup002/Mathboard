@@ -87,7 +87,7 @@ void omega_dance(tap_dance_state_t *s, void *d) {
 void asymptotically_equal_dance(tap_dance_state_t *s, void *d) {
     const symbol_definition_t *symbols[] = {&SYMBOL_ASYMPTOTICALLY_EQUAL, &SYMBOL_CONGRUENT};
     symbol_dance(s, d, symbols, 2);
-} //TODO: 
+}
 
 void identically_equal_dance(tap_dance_state_t *s, void *d) {
     const symbol_definition_t *symbols[] = {&SYMBOL_IDENTICAL, &SYMBOL_NOT_IDENTICAL};

@@ -32,4 +32,7 @@ void send_and_backtrack_3(const char *string);
 // Function to send a string and move the caret 1 step backwards
 void send_and_backtrack_1(const char *string);
 
+// Function to send a string and 1 space
+void send_ltx_1space(const char *string);
+
 #endif /* LATEX_MODE_H */

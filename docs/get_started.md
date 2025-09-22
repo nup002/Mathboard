@@ -1,5 +1,12 @@
->[!TIP|label:Before You Continue]
->Make sure you have already followed the instructions in [First Setup](/first_setup.md).
+# Getting started
+
+> >[!TIP|label:Prerequisites Checklist]
+>Before you begin, make sure you have:
+>- ✅ Completed the [Initial Setup](init.md) guide
+>- ✅ The OS switch on the back matches your operating system
+>- ✅ Required software is installed and running (WinCompose/Mathpad Service)
+>
+>After this guide, you'll be comfortable using modifier keys to type mathematical symbols.
 >
 
 ## Understanding the Mathpad symbol keys
@@ -41,8 +48,8 @@ key on your Mathpad. Clicking this key will output the Greek letter Alpha.
 
 >[!NOTE|label:In Case Of Problems]
 >If instead of $\alpha$ you get a bunch of random symbols or nothing at all, make sure you have followed 
-> [First Setup](/first_setup.md). If you get '\alpha', you must set your Mathpad to Plaintext mode. If you still have 
-> problems, refer to [Troubleshooting](/troubleshoot.md)
+> [Initial Setup](init.md). If you get '\alpha', you must set your Mathpad to Plaintext mode. If you still have 
+> problems, refer to [Troubleshooting](troubleshoot.md)
 >
 
 Let's move on to something a bit more advanced. Locate the <keycombo>[η]</keycombo> key on your Mathpad, and click the 

@@ -1,10 +1,20 @@
+# Troubleshooting
+
 **Having trouble with your Mathpad? This page might help.**
 
+>[!TIP]
+>If you hold down all three modifier keys (blue, purple, and green) for at least 5 seconds and release them, Mathpad will 
+>type a lot of helpful information about itself that may aid with debugging. 
+> 
+
 ## Nothing Happens When I Click Any Key
-If no symbol at all is typed when you click any of the symbol keys, double check that the OS 
-switch on the back of your Mathpad matches the operating system of the computer it is plugged into. If your computer 
-is running Windows, ensure that WinCompose is running and using default settings. Refer to the 
-[First Setup](/first_setup.md) guide for more details. 
+If you get nothing at all when you click any of the symbol keys, do the following: 
+ 1) Check that the OS switch on the back of your Mathpad matches the operating system of the computer it is plugged into. 
+ 2) If you're using Windows, ensure that WinCompose is running and using default settings. 
+ 3) If you're on a Mac, ensure that Mathpad Service is installed and has been granted the Accessibility and 
+Input Monitoring privacy permissions.
+
+Refer to the [First Setup](/first_setup.md) guide for more details. 
 
 ## Mathpad Types Nonsense
 If your Mathpad types out nonsensical text or completely incorrect symbols, it is likely because your Mathpad's 
@@ -21,7 +31,10 @@ be displayed by your font. To fix this problem, switch to a font that supports m
 2. Verify you have installed the firmware that matches your keyboard layout
 3. Verify the OS switch on the back of Mathpad matches your operating system
 4. If using Windows, ensure WinCompose is installed and running
-5. If using Linux, ensure IBus is installed and running
-6. If using MacOS, ensure that Unicode Hex Input is added as an Input Source
+5. If using Mac, ensure that Mathpad Service is installed, running, and has been given accessibility permissions
+6. If using Linux, ensure IBus is installed and running
 7. Try disconnecting and reconnecting Mathpad
 8. Check that Unicode fonts are properly installed on your system
+
+## Still having problems?
+Ask your question in the [Mathpad Forum](https://www.summacogni.com/forum/viewforum.php?f=3&sid=c0af401a0636b960e1b51769f60db79d)

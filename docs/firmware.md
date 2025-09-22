@@ -1,186 +1,280 @@
-This page documents the Mathpad firmware. It is organized in four sections:
+# Firmware
+This page documents the Mathpad firmware. It is organized in three sections:
 1) Overview
-2) Setting up your development environment
-3) Making modifications
-4) Compiling
+2) Making modifications
+3) Troubleshooting
 
 ## Overview
 Mathpad's firmware is built on the [QMK](https://qmk.fm) input device library and written in the programming language C. 
-Previous experience with QMK or C is not a requirement to make modifications to the Mathpad firmware, but it certainly
-won't hurt, either.
 
-Since Mathpad is based on QMK, you can easily develop and compile the firmware on nearly all platforms, including 
-Windows.
+**Don't worry if you're new to this!** Previous experience with QMK or C is not required to make modifications to the Mathpad firmware. This guide will walk you through everything step-by-step.
 
-Mathpad's firmware is found in [/firmware/mathpad/mp1a/keymaps/default](https://github.com/Summa-Cogni/Mathpad/tree/Main/firmware/mathpad/mp1a/keymaps/default).
-There are some additional files in the folders above this one, but it is unlikely you will need to ever modify them. 
-We therefore focus our attention on the `keymaps/default` folder.
+Since Mathpad is based on QMK, you can easily develop and compile the firmware on nearly all platforms, including Windows.
+
+### What You'll Be Working With
+Mathpad's firmware is found in [/firmware/mathpad/mp1a/keymaps/default](https://github.com/Summa-Cogni/Mathpad/tree/Main/firmware/mathpad/mp1a/keymaps/default). There are some additional files in the folders above this one, but it is unlikely you will need to ever modify them. We therefore focus our attention on the `keymaps/default` folder.
 
 Within this folder there are (among others) the following files:
 - `globals.h` : Global variables
-- `keymap.c`: Defines which symbols are where on Mathpad
+- `info.c` and `info.h` : Code related to Mathpad information (build date, version number, etc)
+- `keymap.c`: Defines which symbols are where on the Mathpad
 - `mode.c`  : Functions related to mode-switching
-- `modifiers.c` : Functions related to modifier keys
+- `modifiers.c` and `modifiers.h` : Functions related to the modifier keys
 - `os_switch.c` : Functions related to the OS switch
+- `multitap.c` and `multitap.h` : Multitap symbol definitions
 - `normal_symbols_defs.c` : Logic definitions for all 'normal' (non-multitap) symbols
 - `multitap_symbols_defs.c` : Logic definitions for all multitap symbols
-- `unicode_symbols.c` : Definitions of all Unicode mode symbols
-- `latex.c` : Definitions of all LaTeX mode symbols
-- `microsoft_office.c` : Definitions of all Microsoft Office Equation Editor symbols
+- `os_switch.c` and `os_switch.h` : Functions related to the OS switch
 - `rules.mk` : QMK configuration options
 
-## Setting Up Your Development Environment
-This guide assumes some experience with the command line terminal and Git. You must have Git installed. If you do not,
-following [this guide](https://github.com/git-guides/install-git).
+There are two subfolders:
+- `modes` : Code related to the different Mathpad modes: LaTeX, Unicode, Microsoft Office, etc.
+- `symbols` : Symbol definitions
 
-### Step 1
-Begin by cloning the Mathpad repository to your machine. In a command line terminal, navigate to the folder where 
-you want the Mathpad repository to be cloned to, and type:
-```
-git clone https://github.com/Summa-Cogni/Mathpad.git
-```
+**⚠️ Important:** Only modify files in the `keymaps/default` folder and its subfolders. Modifying other files could break your Mathpad's functionality.
 
-This may take a while, since the Mathpad repository depends on QMK, which is therefore also cloned.
-
-### Step 2
-Install the QMK build environment by following the 
-'[Prepare Your Build Environment](https://docs.qmk.fm/newbs_getting_started#set-up-your-environment)' guide from 
-the QMK docs.
-
-### Step 3:
->[!TIP]
-> If you are on Windows, you must use the QMK MSYS terminal for all `qmk` commands.
->
-
-In a command line terminal (or QMK MSYS on Windows), run QMK setup and provide the path to the QMK folder in the Mathpad repository:
-```
-qmk setup -H <path to QMK folder>
-```
-
-For example, if you cloned the Mathpad folder to `C:\Users\Jake\Mathpad`, the command must be:
-```
-qmk setup -H "C:\Users\Jake\Mathpad\firmware\qmk_firmware"
-```
 
 ## Making Modifications
-This documentation cannot cover every possible modification someone may want to make to the Mathpad firmware, so 
-only a few common changes are documented:
-1) Replacing an existing symbol with a new symbol
-2) Making an existing symbol multitap-enabled
 
-### Replacing a symbol
-If there is a specific symbol on Mathpad you would prefer was different, this is easy to do but 
-requires a few steps. The new symbol must be defined for all the different modes (Unicode, LaTeX, etc), and 
-added to the keymap.
-
-**Step 1: Unicode**
-
-Locate the Unicode code of your symbol on an online Unicode list, e.g. 
-[compart.com](https://www.compart.com/en/unicode/). Add this code to the other `#define`'d symbols in `unicode.h`. 
-
-**Step 2: LaTeX**
-
-Find the LaTeX code for your symbol, for example from 
-[this list](https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf). Add this code to the other `#define`'d 
-symbols in `latex.h`. If the symbol requires any additional actions beyond just being typed, for example if you 
-need the caret to backtrack a few spaces after the symbol code has been typed, add the required actions to 
-`send_latex` in `latex.c`.
-
-**Step 3: Microsoft Office**
-
-Many symbols can be added to the equation editor of Microsoft Office as a Unicode symbol. If that is the case, you 
-do not need to add a special Microsoft Office definition for your symbol. But if your symbol requires a code to be 
-typed in order to appear correctly, you must add a new symbol definition to `microsoft_office.h`.
-
-**Step 4: Mode logic**
-
-Open `normal_symbols_defs.h` and declare a new function definition for your symbol. Then go to `normal_symbols_defs.c` 
-and define the function. Look at the other defined functions for examples of how to do it. The function defines 
-how the symbol is sent depending on which mode is active, and uses the symbol definitions you added in the three 
-first steps.
-
-**Step 5: Place the symbol in the keymap**
-
-In `keymap.c`, define a new keycode for your symbol in the enum `custom_keycodes` around line 43. Right below this enum 
-you find the lists that define which symbols are on which keys. Locate the symbol you wish to replace, and replace it 
-with the keycode you added to `custom_keycodes`. Finally, scroll down to the function `process_record_user` and add a new 
-case that switches on they keycode you added to `custom_keycodes`, and calls the symbol function you defined in 
-`normal_symbols_defs.c`.
-
-### Multitap-enabling a symbol
-If there is an existing symbol on the Mathpad that you would like to extend so that when you double-tap it you get 
-a different symbol, this section will show you how.
-
-It involves defining the new symbol, defining a multitap symbol for the existing symbol, and adding the multitap symbol
-to the keymap.
-
->[!TIP]
->QMK calls their multitapping functionality for 'Tap Dance'. You will therefore see a lot of references to this term.
-> Read more about Tap Dance [here](https://docs.qmk.fm/features/tap_dance).
+> >[!TIP|label:Before You Continue]
+> Make sure you have followed the instructions in [Firmware Prerequisites](/firmware_prerequisites.md) before 
+> trying to make any changes to the Mathpad firmware.
 >
 
-**Step 1**
+This section covers the most common modifications you might want to make to your Mathpad. We'll start with simple changes and work up to more complex ones.
 
-Add your new symbol by following step 1, 2, and 3 in [Replacing a Symbol](#replacing-a-symbol).
+### Before Making Changes
+1. **Test your current setup:** Make sure you can compile the existing firmware before making changes
+2. **Make one change at a time:** Don't modify multiple things at once
+3. **Keep notes:** Write down what you're changing so you can undo it if needed
 
-**Step 2: Make a new multitap symbol**
+### Testing Your Changes
 
-Go to `multitap.h` and add a new multitap keycode to the `tap_dance_keys` enum. If, for 
-example, you are multitap-enabling the Union symbol, you would name the new keycode `UNION_TD`.
+Before compiling the final firmware:
 
-Then, scroll down and define a new multitap function. In our example with the Union symbol, you would declare a 
-function named `void union_dance(tap_dance_state *s, void *d)`.
-Then go to `multitap_symbols_defs.c` and define the logic of the function. Look at the other defined functions for 
-examples of how to do it. The function defines how each of the multitap symbols are sent depending on which mode 
-is active, and uses the symbol definitions you added in the first step.
+1. **Check your syntax:** Make sure all brackets, commas, and semicolons are in place
+2. **Verify names match:** Ensure your symbol names, key codes, and function names are consistent
+3. **Start with small changes:** Test one modification at a time
 
-You must define the array of symbols that are sent when single, double, triple tapping, etc. It should be clear 
-from the multitude of examples in this file how to do it.
+### Modification 1: Replacing an Existing Symbol
 
-**Step 3: Place the multitap symbol in the keymap**
+This is the most common modification - swapping out a symbol you don't use for one you do.
 
-Open `keymap.c` and scroll down to around line 300. Add a new entry to `tap_dance_actions` with the multitap keycode 
-and multitap function you defined in step 2.
+**What this involves:** You'll define how your new symbol works in different modes (Unicode, LaTeX, etc.), assign it a code name, and place it on a key.
 
-Then scroll up to around line 100 and locate the original symbol keycode you are multitap-enabling. In this example 
-we are multitap-enabling the Union symbol, so the keycode we want to replace is `KC_UNION`, and we replace it with 
-`TD(UNION_TD)` which we defined earlier.
+>[!TIP]
+> This guide is also available as a [video tutorial](https://www.youtube.com/watch?v=fMBz1kDZXYk)
 
-## Compiling
-Compiling the firmware is quite simple and is done with a single command. In a command line terminal 
-(or in QMK MSYS on Windows), navigate to the `Mathpad/firmware` folder. Then, type a command depending on 
-the keyboard layout being used by the computer you will be using your Mathpad with:
-<!-- tabs:start -->
+#### Step 1: Define Your New Symbol
 
-#### **US ANSI**
+1. **Navigate to the symbols folder:** Open `keymaps/default/symbols/` in your file browser
 
-You're good to go! The default build layout is US ANSI and you just have to type:
-```shell
-make
+2. **Choose where to add your symbol:** Open any of the files ending with `_symbols.c` (like `logic_symbols.c`). These files group related symbols together.
+
+3. **Add your symbol definition:** Copy one of the existing symbol definitions and modify it. Here's the structure:
+
+```clike
+const symbol_definition_t SYMBOL_<NAME> = DEFINE_SYMBOL(
+    "<display_name>",                                       // Human-readable name
+    0x<unicode_code>,                                       // Unicode code point (with 0x prefix)
+    "<latex_command>", <latex_behavior>,                    // LaTeX definition
+    "<office_command>", <office_behavior>,                  // Microsoft Office definition (or NULL)
+    "<libreoffice_command>", <libreoffice_behavior>         // LibreOffice definition
+);
 ```
 
-#### **Any other layout**
-
-Locate your layout in the [list of QMK supported layouts](https://docs.qmk.fm/reference_keymap_extras#header-files). 
-In this table, locate the "Sendstring LUT Header" for your layout and note the part of its name after `sendstring_`. 
-As an example, if your layout is English UK, you will find that the corresponding LUT header is `sendstring_uk.h`, 
-and your layout name is therefore `uk`.
-
-Then type
-```shell
-make LAYOUT=<name of your layout>
+**Example:** Let's add the Aleph symbol (ℵ):
+```clike
+const symbol_definition_t SYMBOL_ALEPH = DEFINE_SYMBOL(
+    "aleph",  
+    0x2135,                     // Unicode code point for ℵ
+    "\\aleph", LATEX_1SPACE,    // In LaTeX, type \aleph then add a space
+    NULL, MOF_1SPACE,           // In MS Office, just use the Unicode symbol
+    "aleph", LOF_1SPACE         // In LibreOffice, type the word "aleph" then space
+);
 ```
 
-In our English UK example, the command would be 
-```shell
-make LAYOUT=uk
+**Understanding behavior codes:** These tell Mathpad what to do after typing the symbol:
+- `<MODE>_1SPACE`: Add one space after the symbol
+- `<MODE>_1BACKTRACK`: Move cursor back one position (useful for symbols with brackets)
+
+All available behavior codes are documented in `keymaps/default/symbols/symbols.h`.
+
+#### Step 2: Create a Key Code for Your Symbol
+
+1. **Open the keymap file:** Open `keymaps/default/keymap.c` in your text editor
+
+2. **Find the key codes section:** Look for `enum custom_keycodes` around line 34
+
+3. **Add your key code:** Add a new line before the closing bracket. Use a descriptive name:
+```clike
+enum custom_keycodes {
+    KC_SWITCH_MODE = SAFE_RANGE, 
+    KC_RIGHTKEY,                 
+    KC_CENTERKEY,                
+    // ... existing key codes ...
+    KC_REALS,
+    KC_COMPLEXES,
+    KC_ALEPH        // Your new key code (add comma to previous line!)
+};
 ```
 
-<!-- tabs:end -->
+4. **Connect your key code to your symbol:** Find the function `get_symbol_for_keycode` (around line 107) and add your mapping:
 
-Compilation can take quite a while, depending on whether it is the first time you are compiling, and how powerful your 
-hardware is.
+```clike
+static const symbol_definition_t* get_symbol_for_keycode(uint16_t keycode) {
+    switch (keycode) {
+        // ... existing mappings ...
+        case KC_COMPLEXES:
+            return &SYMBOL_COMPLEXES;
+        case KC_ALEPH:                    // Your key code
+            return &SYMBOL_ALEPH;         // Your symbol (note the & symbol!)
+            
+        default:
+            return NULL;
+    }
+}
+```
 
-If compilation succeeds, you will find the firmware file in `Mathpad/firmware/compiled` with the name 
-`summacogni_mathpad_mp1a_<layout name>.uf2`. To flash this firmware to your Mathpad, follow the guide in 
-[Update Firmware](/update_firmware.md) from Step 2.
+#### Step 3: Place Your Symbol on a Physical Key
+
+1. **Understand the key layout:** Each physical key on your Mathpad can hold up to 6 symbols (arranged in a 2x3 grid on each key). Here's how they're positioned:
+
+```
+Physical Mathpad Layout (4x3 grid):              Key layout (6 positions):
+    ┌─────┬─────┬─────┬─────┐                  ┌─────────────┐─────────────┐                   
+    │key00│key01│key02│key03│                  │   top_left  │  top_right  │     
+    ├─────┼─────┼─────┼─────┤                  │─────────────│─────────────│        
+    │key10│key11│key12│key13│                  │ center_left │ center_right│         
+    ├─────┼─────┼─────┼─────┤                  │─────────────│─────────────│       
+    │key20│key21│key22│key23│                  │ bottom_left │ bottom_right│        
+    └─────┴─────┴─────┴─────┘                  └─────────────┘─────────────┘        
+```
+
+2. **Find your target key:** In `keymap.c`, scroll down to around line 330. You'll see key definitions like `key13`, `key22`, etc.
+
+3. **Replace an existing symbol:** Choose which position on which key you want to use. For example, to put Aleph in the bottom-left position of key13:
+
+```clike
+static const key_layout_t key13 = {
+    .top_left = TD(PI_TD),
+    .center_left = KC_PARTIALDERIVATIVE,
+    .bottom_left = KC_ALEPH,            // Your new symbol here!
+    .top_right = KC_RHO,
+    .center_right = KC_NABLA,
+    .bottom_right = TD(EMPTY_SET_TD)
+};
+```
+
+**That's it!** To test your modifications, head over to the [Compilation Guide](/compile.md) and follow the instructions 
+to compile the code into a firmware file. Once successful, follow the [Firmware Update Guide](/update_firmware.md) to 
+flash your Mathpad with your new firmware.
+
+### Modification 2: Making a Symbol Multitap-Enabled
+
+Multitapping (called "Tap Dance" in QMK) lets you get different symbols by tapping the same key multiple times. For example, tap once for ∞, tap twice for ℵ.
+
+**What this involves:** You'll create a multitap behavior that cycles through multiple symbols, then replace the original symbol with your multitap version.
+
+#### Step 1: Define Your Additional Symbol
+
+First, follow Step 1 from "Replacing an Existing Symbol" to create any new symbols you want to add to the multitap sequence.
+
+#### Step 2: Create a Multitap Definition
+
+1. **Open the multitap file:** Open `keymaps/default/multitap.c`
+
+2. **Add your multitap function:** Copy an existing multitap function and modify it:
+
+```clike
+void <name>_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&<SYMBOL_1>, &<SYMBOL_2>, &<SYMBOL_N>};
+    symbol_dance(s, d, symbols, <number_of_symbols>);
+}
+```
+
+**Example:** To make infinity (∞) multitap to aleph (ℵ):
+```clike
+void infinity_dance(tap_dance_state_t *s, void *d) {
+    const symbol_definition_t *symbols[] = {&SYMBOL_INFINITY, &SYMBOL_ALEPH};
+    symbol_dance(s, d, symbols, 2);  // 2 symbols total
+}
+```
+
+
+3. **Declare your function:** Open `keymaps/default/multitap.h` and add your function declaration:
+
+```clike
+// ... existing declarations ...
+void times_dance(tap_dance_state_t *s, void *d);
+void plusminus_dance(tap_dance_state_t *s, void *d);
+void infinity_dance(tap_dance_state_t *s, void *d);  // Your new function
+
+#endif // MULTITAP_H
+```
+
+#### Step 3: Create a Multitap Key Code
+
+1. **Back in keymap.c:** Find the `enum tap_dance_keys` section (around line 217)
+
+2. **Add your multitap key code:**
+
+```clike
+enum tap_dance_keys {
+    // ... existing codes ...
+    TIMES_TD,                  
+    PLUSMINUS_TD,              
+    INFINITY_TD        // Your new multitap key code
+};
+```
+
+3. **Connect the key code to your function:** Find the `tap_dance_actions` array (around line 275) and add your mapping:
+
+```clike
+tap_dance_action_t tap_dance_actions[] = {
+    // ... existing mappings ...
+    [TIMES_TD] = ACTION_TAP_DANCE_FN (times_dance),
+    [PLUSMINUS_TD] = ACTION_TAP_DANCE_FN (plusminus_dance),
+    [INFINITY_TD] = ACTION_TAP_DANCE_FN (infinity_dance)  // Your mapping
+};
+```
+
+#### Step 4: Replace the Original Symbol
+
+1. **Find the original symbol:** Look through the key definitions to find where your original symbol (like `KC_INFINITY`) is placed
+
+2. **Replace with multitap version:** Change `KC_INFINITY` to `TD(INFINITY_TD)`:
+
+```clike
+static const key_layout_t key22 = {
+    .top_left = KC_CHI,
+    .center_left = TD(DOWN_TACK_TD),
+    .bottom_left = TD(INFINITY_TD),     // Changed from KC_INFINITY
+    .top_right = TD(PSI_TD),
+    .center_right = TD(DOUBLE_ARROW_TD),
+    .bottom_right = KC_FRACTION
+};
+```
+
+**How it works:** Now when you tap that key once, you get ∞. Tap twice quickly, and you get ℵ.
+
+**That's it!** To test your modifications, head over to the [Compilation Guide](/compile.md) and follow the instructions 
+to compile the code into a firmware file. Once successful, follow the [Firmware Update Guide](/update_firmware.md) to 
+flash your Mathpad with your new firmware.
+
+
+## Getting Help
+1. **Double-check this guide:** Re-read the relevant sections carefully
+2. **Check the QMK documentation:** Many issues are covered in [QMK docs](https://docs.qmk.fm/)
+3. **Ask for help:** Join the [Mathpad forum](https://www.summacogni.com/forum/) or 
+ [QMK Discord](https://discord.gg/qmk) with specific details about your problem.
+
+### Recovery
+
+If your Mathpad stops working after flashing new firmware:
+
+1. **Don't panic!** This is usually fixable
+2. **Try reflashing:** Flash a known-good firmware file
+
+Remember: Making mistakes is part of learning! Every experienced firmware modifier has broken things while learning. 
+The key is making small changes and testing frequently.

@@ -1,3 +1,5 @@
+# Output Modes
+
 The default output mode of Mathpad is Plaintext. In Plaintext mode, Mathpad outputs simple Unicode symbols. This mode 
 is the most versatile, and works with virtually all text editors. Mathpad is in Plaintext mode when the MODE key 
 lights white.

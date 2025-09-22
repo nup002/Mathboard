@@ -2,8 +2,8 @@ UNICODE_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 DIP_SWITCH_ENABLE = yes
 RGBLIGHT_ENABLE = yes
-CONSOLE_ENABLE = no
-RAW_ENABLE = yes # For MAC Unicode input
+CONSOLE_ENABLE=no
+RAW_ENABLE = yes
 
 # Main keymap files
 SRC += modifiers.c
