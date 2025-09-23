@@ -1,11 +1,11 @@
 #!/bin/bash
 # Build script for Mathpad Service
-# Also builds the installer app and converts it to a DMG
+# Also builds the installer app
 set -e  # Exit on any error
 
 DMG_NAME="Mathpad Service"
 INSTALLER_NAME="Install"
-SERVICE_NAME="mathpad-service"
+APP_NAME="mathpad-service.app"
 
 echo "MATHPAD SERVICE BUILD SCRIPT"
 
@@ -20,31 +20,62 @@ rm -rf dist/
 mkdir -p dist/
 
 # Compile mathpad-service
-echo "Compiling Mathpad Service..."
+# Create app bundle structure
+mkdir -p "build/${APP_NAME}/Contents/MacOS"
+mkdir -p "build/${APP_NAME}/Contents/Resources"
+
+# Compile the executable
+echo "Compiling mathpad-service..."
 swiftc \
-    -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk \
+    -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk \
     -framework Foundation \
     -framework IOKit \
     -framework CoreGraphics \
     -framework AppKit \
     MathpadService.swift \
-    -o "build/${SERVICE_NAME}"
+    -o "build/${APP_NAME}/Contents/MacOS/mathpad-service"
 
-# Set the custom executable icon (requires fileicon. Install with 'brew install fileicon')
-fileicon set "build/${SERVICE_NAME}" ../applet.icns
+# Create Info.plist
+echo "Creading Info.plist..."
+cat > "build/${APP_NAME}/Contents/Info.plist" << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>mathpad-service</string>
+    <key>CFBundleIconFile</key>
+    <string>applet</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.mathpad.mathpad-service</string>
+    <key>CFBundleName</key>
+    <string>Mathpad Service</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>LSBackgroundOnly</key>
+    <true/>
+    <key>LSUIElement</key>
+    <true/>
+</dict>
+</plist>
+EOF
+
+# Copy icon
+cp "../applet.icns" "build/${APP_NAME}/Contents/Resources/"
 
 echo "Mathpad Service compiled successfully."
 
 echo "Creating installer app bundle..."
 
-# Export installer script to app bundle
+# Export installer script to an app bundle
 osacompile -o "./dist/${INSTALLER_NAME}.app" "${INSTALLER_NAME}.applescript"
-
-# Copy the compiled binary to the app bundle
-echo "Copying compiled binary to app bundle..."
-cp "build/${SERVICE_NAME}" "dist/${INSTALLER_NAME}.app/Contents/Resources/"
 
 # Set the installer app icon
 cp ../applet.icns "dist/${INSTALLER_NAME}.app/Contents/Resources/applet.icns"
+
+# Copy app bundle to installer
+cp -R "build/${APP_NAME}" "dist/Install.app/Contents/Resources/"
 
 echo "All done."

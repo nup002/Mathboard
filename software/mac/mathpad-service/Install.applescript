@@ -15,28 +15,28 @@ Click Install to continue." buttons {"Cancel", "Install"} default button 2 with 
 			return
 		end if
 		
-		-- Set up user-specific paths (no admin required)
+		-- Set up paths for app installation
 		set userHome to POSIX path of (path to home folder)
-		set serviceBinPath to userHome & ".local/bin/"
+		set applicationsPath to userHome & "Applications/"
 		set serviceLogPath to userHome & ".local/var/log/"
 		set launchAgentPath to userHome & "Library/LaunchAgents/"
 		
-		set serviceBinary to serviceBinPath & "mathpad-service"
-		set startupScript to serviceBinPath & "start-mathpad-service"
+		set serviceAppPath to applicationsPath & "mathpad-service.app"
+		set serviceBinary to serviceAppPath & "/Contents/MacOS/mathpad-service"
 		set plistFile to launchAgentPath & "com.mathpad.service.plist"
 		
-		-- Get source binary path
+		-- Get source app bundle path
 		set appPath to path to me as string
 		set appPOSIXPath to POSIX path of appPath
-		set sourceBinaryPath to appPOSIXPath & "Contents/Resources/mathpad-service"
+		set sourceAppPath to appPOSIXPath & "Contents/Resources/mathpad-service.app"
 		
-		-- Check if source binary exists
+		-- Check if source app bundle exists
 		try
-			do shell script "test -f " & quoted form of sourceBinaryPath
+			do shell script "test -d " & quoted form of sourceAppPath
 		on error
-			display dialog "Error: Mathpad Service binary not found in application bundle.
+			display dialog "Error: Mathpad Service app bundle not found in installer.
 
-Expected location: " & sourceBinaryPath buttons {"OK"} default button 1 with title "Installation Error" with icon stop
+Expected location: " & sourceAppPath buttons {"OK"} default button 1 with title "Installation Error" with icon stop
 			return
 		end try
 		
@@ -45,7 +45,7 @@ Expected location: " & sourceBinaryPath buttons {"OK"} default button 1 with tit
 		set isRunning to false
 		
 		try
-			do shell script "test -f " & quoted form of serviceBinary
+			do shell script "test -d " & quoted form of serviceAppPath
 			set isInstalled to true
 		end try
 		
@@ -91,8 +91,7 @@ What would you like to do?"
 				
 				-- Remove files
 				try
-					do shell script "rm -f " & quoted form of serviceBinary
-					do shell script "rm -f " & quoted form of startupScript
+					do shell script "rm -rf " & quoted form of serviceAppPath
 					do shell script "rm -f " & quoted form of plistFile
 					do shell script "rm -f /tmp/mathpad_service.pid"
 					do shell script "rm -rf " & quoted form of serviceLogPath
@@ -114,46 +113,21 @@ What would you like to do?"
 		
 		-- Create directories (no admin required)
 		try
-			do shell script "mkdir -p " & quoted form of serviceBinPath & " " & quoted form of serviceLogPath & " " & quoted form of launchAgentPath
+			do shell script "mkdir -p " & quoted form of applicationsPath & " " & quoted form of serviceLogPath & " " & quoted form of launchAgentPath
 		on error errMsg
 			display dialog "Failed to create directories: " & errMsg buttons {"OK"} with icon stop
 			return
 		end try
 		
-		-- Install binary
-		try
-			do shell script "cp " & quoted form of sourceBinaryPath & " " & quoted form of serviceBinary
-			do shell script "chmod +x " & quoted form of serviceBinary
-		on error errMsg
-			display dialog "Failed to install service binary: " & errMsg buttons {"OK"} with icon stop
-			return
-		end try
-		
-		-- Create startup script
-		set startupScriptContent to "#!/bin/bash
-LOG_PATH=\"" & serviceLogPath & "mathpad-service.log\"
-ERROR_LOG_PATH=\"" & serviceLogPath & "mathpad-service.error.log\"
-PID_FILE=\"/tmp/mathpad-service.pid\"
-
-if pgrep -f \"mathpad-service\" > /dev/null; then
-    echo \"Mathpad service is already running\"
-    exit 0
-fi
-
-echo \"Starting Mathpad service...\"
-nohup \"" & serviceBinary & "\" > \"$LOG_PATH\" 2> \"$ERROR_LOG_PATH\" &
-SERVICE_PID=$!
-echo $SERVICE_PID > \"$PID_FILE\"
-echo \"Mathpad service started with PID: $SERVICE_PID\"
-"
-		
-		try
-			do shell script "echo " & quoted form of startupScriptContent & " > " & quoted form of startupScript
-			do shell script "chmod +x " & quoted form of startupScript
-		on error errMsg
-			display dialog "Failed to create startup script: " & errMsg buttons {"OK"} with icon stop
-			return
-		end try
+	-- Install app bundle
+	try
+		do shell script "cp -R " & quoted form of sourceAppPath & " " & quoted form of serviceAppPath
+		do shell script "chmod +x " & quoted form of serviceBinary
+	
+	on error errMsg
+		display dialog "Failed to install service app: " & errMsg buttons {"OK"} with icon stop
+		return
+	end try
 		
 		-- Create LaunchAgent plist for auto-start
 		set plistContent to "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -203,8 +177,7 @@ Are you ready to grant these permissions?" buttons {"Cancel Installation", "Star
 		if button returned of permissionChoice is "Cancel Installation" then
 			-- Clean up installed files since user cancelled
 			try
-				do shell script "rm -f " & quoted form of serviceBinary
-				do shell script "rm -f " & quoted form of startupScript
+				do shell script "rm -rf " & quoted form of serviceAppPath
 				do shell script "rm -f " & quoted form of plistFile
 			end try
 			
@@ -232,7 +205,7 @@ If you haven't seen the permission dialogs yet, they may appear while this dialo
 			
 			if button returned of permissionConfirm is "I could not grant permissions" then
 				set takeThereDialog to display dialog "You must go to System Preferences → Security and Privacy → Privacy and manually grant permissions.
-Add the file '" & serviceBinary & "' to Accessibility and Input Monitoring." buttons {"Take me there", "OK"} default button 1 with title "Permissions Needed" with icon caution
+Add 'mathpad-service' to Accessibility and Input Monitoring." buttons {"Take me there", "OK"} default button 1 with title "Permissions Needed" with icon caution
 				
 				-- Handle the "Take me there" button click
 				if button returned of takeThereDialog is "Take me there" then
@@ -312,10 +285,10 @@ end run
 -- Handler to get version from mathpad-service binary
 on getVersionFromBinary()
 	try
-		-- Get the path to the mathpad-service binary in Contents/Resources
+		-- Get the path to the mathpad-service binary inside the app bundle
 		set appPath to path to me as string
 		set appPOSIXPath to POSIX path of appPath
-		set sourceBinaryPath to appPOSIXPath & "Contents/Resources/mathpad-service"
+		set sourceBinaryPath to appPOSIXPath & "Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
 		
 		-- Run the binary with --version flag and capture output
 		set versionOutput to do shell script quoted form of sourceBinaryPath & " --version 2>/dev/null | head -1"
