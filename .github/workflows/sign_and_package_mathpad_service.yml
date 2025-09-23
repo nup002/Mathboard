@@ -61,7 +61,7 @@ jobs:
         # First, sign the mathpad-service executable specifically
         echo "🔐 Signing mathpad-service executable..."
         codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service"
-        
+    
         # Verify the executable is signed
         codesign --verify --verbose "Install.app/Contents/Resources/mathpad-service"
         echo "✅ mathpad-service executable signed"
@@ -74,6 +74,10 @@ jobs:
         codesign --verify --verbose "Install.app"
         codesign --verify --deep --strict --verbose=2 "Install.app"
         echo "✅ Install.app bundle signed successfully"
+        
+        # Restore the custom mathpad-service icon after signing
+        echo "Restoring the mathpad-service icon..."
+        fileicon set "Install.app/Contents/Resources/mathpad-service" ../../applet.icns
 
     - name: Create DMG
       run: |
