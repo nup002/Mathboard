@@ -55,7 +55,6 @@ class HybridUnicodeService {
     private let customUsagePage: Int = 0xFF60  // QMK Raw HID usage page
     private let unicodeUsage: Int = 0x61       // QMK Raw HID usage ID
     private let pidFilePath: String
-    private static var permissionRequested = false
 
     init() {
         // Create PID file path in temp directory
@@ -460,35 +459,34 @@ class HybridUnicodeService {
     private func requestPermissions() {
         print("[INFO] Requesting macOS permissions to appear in Privacy settings...")
 
-        // Prevent multiple permission requests
-        guard !HybridUnicodeService.permissionRequested else {
-            print("[DEBUG] Permission already requested, skipping")
-            return
-        }
-        
-        HybridUnicodeService.permissionRequested = true
+        // Request both permissions using the most direct approach
         requestAllPermissions()
     }
     
     private func requestAllPermissions() {
         print("[DEBUG] Requesting accessibility permission...")
         
-        // Check if we already have permission
-        let alreadyGranted = AXIsProcessTrusted()
-        if alreadyGranted {
-            print("[DEBUG] Accessibility permission already granted")
-            return
-        }
+        // Only request accessibility permission - this is all we need for injecting keystrokes
+        // We don't need Input Monitoring since we only receive HID data, not monitor keystrokes
         
-        // Only request accessibility permission once with prompt
-        print("[DEBUG] Requesting accessibility permission with prompt")
-        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
-        let accessibilityGranted = AXIsProcessTrustedWithOptions(options)
-        
-        if accessibilityGranted {
-            print("[DEBUG] Accessibility permission granted successfully")
-        } else {
-            print("[DEBUG] Accessibility permission not granted - user may need to enable manually")
+        // Request accessibility permission with prompt - try multiple times
+        for attempt in 1...3 {
+            print("[DEBUG] Accessibility permission attempt \(attempt)")
+            let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
+            let accessibilityGranted = AXIsProcessTrustedWithOptions(options)
+            print("[DEBUG] Accessibility permission status: \(accessibilityGranted)")
+            
+            if accessibilityGranted {
+                print("[DEBUG] Accessibility permission granted successfully")
+                break
+            }
+            
+            // Try to force the dialog by using accessibility features
+            self.attemptAccessibilityAction()
+            
+            if attempt < 3 {
+                Thread.sleep(forTimeInterval: 1.0)
+            }
         }
     }
     
