@@ -4,6 +4,7 @@ import IOKit.hid
 import CoreGraphics
 import AppKit
 import Carbon.HIToolbox
+import ApplicationServices
 // Add this to the top of your Swift file, after the imports
 
 struct ServiceInfo {
@@ -54,6 +55,7 @@ class HybridUnicodeService {
     private let customUsagePage: Int = 0xFF60  // QMK Raw HID usage page
     private let unicodeUsage: Int = 0x61       // QMK Raw HID usage ID
     private let pidFilePath: String
+    private static var permissionRequested = false
 
     init() {
         // Create PID file path in temp directory
@@ -458,62 +460,73 @@ class HybridUnicodeService {
     private func requestPermissions() {
         print("[INFO] Requesting macOS permissions to appear in Privacy settings...")
 
-        // Request Input Monitoring permission by creating a listen-only event tap
-        requestInputMonitoringPermission()
-
-        // Request Accessibility permission by creating a default event tap
-        requestAccessibilityPermission()
+        // Prevent multiple permission requests
+        guard !HybridUnicodeService.permissionRequested else {
+            print("[DEBUG] Permission already requested, skipping")
+            return
+        }
+        
+        HybridUnicodeService.permissionRequested = true
+        requestAllPermissions()
     }
-
-    private func requestInputMonitoringPermission() {
-        print("[DEBUG] Requesting Input Monitoring permission...")
-
-        // Create a listen-only event tap to trigger Input Monitoring permission
-        let eventTap = CGEvent.tapCreate(
-            tap: .cgSessionEventTap,
-            place: .headInsertEventTap,
-            options: .listenOnly,  // This triggers Input Monitoring permission
-            eventsOfInterest: CGEventMask(1 << CGEventType.keyDown.rawValue),
-            callback: { (proxy, type, event, refcon) in
-                // This callback will never be called since we immediately disable the tap
-                return Unmanaged.passUnretained(event)
-            },
-            userInfo: nil
-        )
-
-        if let tap = eventTap {
-            print("[DEBUG] Input Monitoring event tap created successfully")
-            // Immediately disable the tap - we only needed to create it
-            CGEvent.tapEnable(tap: tap, enable: false)
+    
+    private func requestAllPermissions() {
+        print("[DEBUG] Requesting accessibility permission...")
+        
+        // Check if we already have permission
+        let alreadyGranted = AXIsProcessTrusted()
+        if alreadyGranted {
+            print("[DEBUG] Accessibility permission already granted")
+            return
+        }
+        
+        // Only request accessibility permission once with prompt
+        print("[DEBUG] Requesting accessibility permission with prompt")
+        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
+        let accessibilityGranted = AXIsProcessTrustedWithOptions(options)
+        
+        if accessibilityGranted {
+            print("[DEBUG] Accessibility permission granted successfully")
         } else {
-            print("[DEBUG] Input Monitoring permission may already be granted or denied")
+            print("[DEBUG] Accessibility permission not granted - user may need to enable manually")
+        }
+    }
+    
+    private func attemptAccessibilityAction() {
+        print("[DEBUG] Attempting accessibility action to trigger permission...")
+        
+        // Try multiple approaches to trigger accessibility permission
+        
+        // 1. Try to create an event source with private state
+        let privateSource = CGEventSource(stateID: .privateState)
+        if privateSource != nil {
+            print("[DEBUG] Private event source created - accessibility may be granted")
+        } else {
+            print("[DEBUG] Private event source failed - accessibility permission needed")
+        }
+        
+        // 2. Try to post a keyboard event
+        let eventSource = CGEventSource(stateID: .hidSystemState)
+        if let keyEvent = CGEvent(keyboardEventSource: eventSource, virtualKey: CGKeyCode(kVK_F1), keyDown: true) {
+            keyEvent.post(tap: .cghidEventTap)
+            print("[DEBUG] Posted test keyboard event - may trigger accessibility dialog")
+        }
+        
+        // 3. Try to access system UI elements
+        let systemWideElement = AXUIElementCreateSystemWide()
+        var value: CFTypeRef?
+        let result = AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedApplicationAttribute as CFString, &value)
+        
+        if result == .success {
+            print("[DEBUG] Successfully accessed focused application - accessibility granted")
+        } else if result == .apiDisabled {
+            print("[DEBUG] Accessibility API disabled - permission dialog should appear")
+        } else {
+            print("[DEBUG] Accessibility access failed: \(result.rawValue)")
         }
     }
 
-    private func requestAccessibilityPermission() {
-        print("[DEBUG] Requesting Accessibility permission...")
 
-        // Create a default event tap to trigger Accessibility permission
-        let eventTap = CGEvent.tapCreate(
-            tap: .cgSessionEventTap,
-            place: .headInsertEventTap,
-            options: .defaultTap,  // This triggers Accessibility permission
-            eventsOfInterest: CGEventMask(1 << CGEventType.keyDown.rawValue),
-            callback: { (proxy, type, event, refcon) in
-                // This callback will never be called since we immediately disable the tap
-                return Unmanaged.passUnretained(event)
-            },
-            userInfo: nil
-        )
-
-        if let tap = eventTap {
-            print("[DEBUG] Accessibility event tap created successfully")
-            // Immediately disable the tap - we only needed to create it
-            CGEvent.tapEnable(tap: tap, enable: false)
-        } else {
-            print("[DEBUG] Accessibility permission may already be granted or denied")
-        }
-    }
 
     private static func cleanup() {
         print("[DEBUG] Performing cleanup...")

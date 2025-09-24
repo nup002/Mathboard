@@ -162,17 +162,13 @@ What would you like to do?"
 		end try
 		
 		-- PERMISSION CONFIRMATION DIALOG (NEW SECTION)
-		set permissionChoice to display dialog "Next, Mathpad Service needs to start and request permissions from macOS.
+		set permissionChoice to display dialog "Next, Mathpad Service needs to start and obtain a permission from macOS.
 
-When you click \"Start Service\", you will see two system dialogs.
+When you click \"Start Service\", you will see a system dialog asking for 'Accessibility Access' permission.
 
-They will be asking for:
-	• Keystroke Receiving permission
-	• Accessibility Access permission
+This permission is required for your Mathpad to inject Unicode characters into applications.
 
-These permissions are required for your Mathpad to work.
-
-Are you ready to grant these permissions?" buttons {"Cancel Installation", "Start Service"} default button 2 with title "✅ Files installed successfully" with icon note
+Are you ready to grant this permission?" buttons {"Cancel Installation", "Start Service"} default button 2 with title "✅ Files installed successfully" with icon note
 		
 		if button returned of permissionChoice is "Cancel Installation" then
 			-- Clean up installed files since user cancelled
@@ -188,50 +184,31 @@ Are you ready to grant these permissions?" buttons {"Cancel Installation", "Star
 		
 		-- User confirmed they're ready, now start the service
 		try
-			-- Load and start the service (this will trigger permission requests if not already granted)
+			-- Load and start the service (this will trigger permission request if not already granted)
 			do shell script "launchctl load " & quoted form of plistFile
 			
 			-- Give service a moment to start
 			delay 2
 			
 			-- Now ask user to confirm they've granted permissions
-			set permissionConfirm to display dialog "Mathpad Service has started and should have requested permissions.
+			set permissionConfirm to display dialog "Mathpad Service has started and should have requested permission.
 
-Please grant BOTH permissions:
-	• Keystroke Receiving
-	• Accessibility Access
+Please grant the permission 'Accessibility Access'.
 
-If you haven't seen the permission dialogs yet, they may appear while this dialog is open." buttons {"I could not grant permissions", "I have granted the permissions"} default button 2 with title "Grant Permissions" with icon note
+If you haven't seen the permission dialog yet, it may be behind this dialog." buttons {"I could not grant permission", "I have granted the permission"} default button 2 with title "Grant Permission" with icon note
 			
-			if button returned of permissionConfirm is "I could not grant permissions" then
-				set takeThereDialog to display dialog "You must go to System Preferences → Security and Privacy → Privacy and manually grant permissions.
-Add 'mathpad-service' to Accessibility and Input Monitoring." buttons {"Take me there", "OK"} default button 1 with title "Permissions Needed" with icon caution
+			if button returned of permissionConfirm is "I could not grant permission" then
+				set takeThereDialog to display dialog "You must go to System Preferences → Security and Privacy → Privacy and manually grant permission.
+Add 'mathpad-service' to Accessibility." buttons {"Take me there", "OK"} default button 1 with title "Permission Needed" with icon caution
 				
 				-- Handle the "Take me there" button click
 				if button returned of takeThereDialog is "Take me there" then
+					-- Use shell command to open System Preferences without AppleScript automation
 					try
-						-- For macOS Ventura (13.0) and later - opens System Settings
-						tell application "System Preferences"
-							activate
-							-- Navigate to Privacy & Security
-							reveal pane id "com.apple.preference.security"
-						end tell
+						do shell script "open 'x-apple.systempreferences:com.apple.preference.security'"
 					on error
-						try
-							-- For macOS Monterey (12.0) and earlier - opens System Preferences
-							tell application "System Preferences"
-								activate
-								-- Navigate to Security & Privacy → Privacy
-								reveal pane id "com.apple.preference.security"
-							end tell
-						on error
-							-- Fallback: just open System Preferences/Settings
-							try
-								tell application "System Preferences" to activate
-							on error
-								tell application "System Preferences" to activate
-							end try
-						end try
+						-- Fallback: just open System Preferences
+						do shell script "open '/System/Applications/System Preferences.app'"
 					end try
 				end if
 				
@@ -255,20 +232,20 @@ Add 'mathpad-service' to Accessibility and Input Monitoring." buttons {"Take me 
 		if isRunning then
 			set finalMessage to "Your Mathpad is now ready to be used.
 
-Remember to set your Mathpad's OS switch to the 'MAC' position."
+Remember to set the OS Switch on the back of your Mathpad to the 'MAC' position."
 		else
 			set finalMessage to "⚠️ Installation complete, but service verification failed.
 
 This might mean:
-	• Permissions were not fully granted
+	• Permission was not fully granted
 	• The service needs a restart
 
 Please check:
 1. System Preferences > Security & Privacy > Privacy
-2. Ensure both Input Monitoring and Accessibility show Mathpad Service as enabled
+2. Ensure Accessibility shows Mathpad Service as enabled
 3. Restart your computer if needed
 
-Mathpad Service should work once permissions are properly set."
+Mathpad Service should work once permission is properly set."
 		end if
 		
 		display dialog finalMessage buttons {"Done"} default button 1 with title "✅ Installation Complete" with icon note
