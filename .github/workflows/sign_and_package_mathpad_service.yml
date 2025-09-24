@@ -34,7 +34,7 @@ jobs:
     - name: Extract Version
       run: |
         # Check if the mathpad-service binary exists in the expected location
-        BINARY_PATH="software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service"
+        BINARY_PATH="software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
         
         if [ ! -f "$BINARY_PATH" ]; then
           echo "Error: mathpad-service binary not found at $BINARY_PATH"
@@ -44,6 +44,10 @@ jobs:
           ls -la software/mac/mathpad-service/dist/Install.app/ || echo "Install.app not found"
           echo "Contents of Resources:"
           ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/ || echo "Resources directory not found"
+          echo "Contents of mathpad-service.app:"
+          ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/ || echo "mathpad-service.app not found"
+          echo "Contents of MacOS:"
+          ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/ || echo "MacOS directory not found"
           exit 1
         fi
         
@@ -58,19 +62,19 @@ jobs:
       run: |
         cd software/mac/mathpad-service/dist
         
-        # First, sign the mathpad-service executable specifically
+        # First, sign the mathpad-service executable inside the app bundle
         echo "🔐 Signing mathpad-service executable..."
-        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service"
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
     
-        # Verify the executable is signed
-        codesign --verify --verbose "Install.app/Contents/Resources/mathpad-service"
-        echo "✅ mathpad-service executable signed"
+        # Then sign the mathpad-service.app bundle
+        echo "🔐 Signing mathpad-service.app bundle..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service.app"
         
-        # Restore the custom mathpad-service icon after signing
-        echo "Restoring the mathpad-service icon..."
-        fileicon set "Install.app/Contents/Resources/mathpad-service" ../../applet.icns
+        # Verify the mathpad-service.app is signed
+        codesign --verify --verbose "Install.app/Contents/Resources/mathpad-service.app"
+        echo "✅ mathpad-service.app bundle signed"
         
-        # Then sign the entire app bundle (this will sign any remaining components)
+        # Finally sign the entire Install.app bundle
         echo "🔐 Signing Install.app bundle..."
         codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app"
         
