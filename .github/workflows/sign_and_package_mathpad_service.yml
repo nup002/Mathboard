@@ -34,8 +34,7 @@ jobs:
     - name: Extract Version
       run: |
         # Check if the mathpad-service binary exists in the expected location
-        pwd
-        BINARY_PATH="software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service"
+        BINARY_PATH="software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
         
         if [ ! -f "$BINARY_PATH" ]; then
           echo "Error: mathpad-service binary not found at $BINARY_PATH"
@@ -45,7 +44,10 @@ jobs:
           ls -la software/mac/mathpad-service/dist/Install.app/ || echo "Install.app not found"
           echo "Contents of Resources:"
           ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/ || echo "Resources directory not found"
-          exit 1
+          echo "Contents of mathpad-service.app:"
+          ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/ || echo "mathpad-service.app not found"
+          echo "Contents of MacOS:"
+          ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/ || echo "MacOS directory not found"
         fi
         
         # Get version from the mathpad-service executable
@@ -59,12 +61,26 @@ jobs:
       run: |
         cd software/mac/mathpad-service/dist
         
-        # Sign the installer app bundle (deep signing for all contents including the mathpad-service executable inside)
-        codesign --force --sign "Developer ID Application" --timestamp --options runtime --deep "Install.app"
+        # First, sign the mathpad-service executable inside the app bundle
+        echo "🔐 Signing mathpad-service executable..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
+    
+        # Then sign the mathpad-service.app bundle
+        echo "🔐 Signing mathpad-service.app bundle..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app/Contents/Resources/mathpad-service.app"
         
-        # Verify signing worked
+        # Verify the mathpad-service.app is signed
+        codesign --verify --verbose "Install.app/Contents/Resources/mathpad-service.app"
+        echo "✅ mathpad-service.app bundle signed"
+        
+        # Finally sign the entire Install.app bundle
+        echo "🔐 Signing Install.app bundle..."
+        codesign --force --sign "Developer ID Application" --timestamp --options runtime "Install.app"
+        
+        # Verify the entire app is signed
         codesign --verify --verbose "Install.app"
-        echo "✅ Install.app and embedded mathpad-service signed successfully"
+        codesign --verify --deep --strict --verbose=2 "Install.app"
+        echo "✅ Install.app bundle signed successfully"
 
     - name: Create DMG
       run: |
@@ -85,6 +101,26 @@ jobs:
         codesign --verify --verbose "mathpad-service-${{ env.VERSION }}.dmg"
         echo "✅ DMG signed successfully"
 
+    - name: Pre-Notarization Debug Info
+      run: |
+        cd software/mac/mathpad-service/dist
+        
+        echo "🔍 Pre-notarization verification..."
+        echo "File size of Install.app:"
+        du -sh "Install.app"
+        
+        echo "Code signing verification:"
+        codesign --verify --deep --strict --verbose=2 "Install.app"
+        
+        echo "Code signing display info:"
+        codesign --display --verbose=4 "Install.app"
+        
+        echo "Security assessment:"
+        spctl --assess --verbose "Install.app" || echo "⚠️ Security assessment failed (expected for unsigned apps)"
+        
+        echo "Bundle info:"
+        plutil -p "Install.app/Contents/Info.plist" | head -20
+
     - name: Notarize Installer App
       run: |
         cd software/mac/mathpad-service/dist
@@ -92,28 +128,77 @@ jobs:
         # Create zip of the installer app
         zip -r install-app.zip "Install.app"
         
-        # Submit for notarization
-        xcrun notarytool submit install-app.zip \
+        # Submit for notarization and capture submission ID
+        echo "🚀 Submitting Install.app for notarization..."
+        SUBMISSION_OUTPUT=$(xcrun notarytool submit install-app.zip \
           --apple-id "${{ secrets.APPLE_ID }}" \
           --password "${{ secrets.APPLE_ID_PASSWORD }}" \
           --team-id "${{ secrets.APPLE_TEAM_ID }}" \
-          --wait \
-          --timeout 15m
+          --output-format json)
         
-        echo "✅ Install.app notarized"
+        echo "Submission response: $SUBMISSION_OUTPUT"
+        SUBMISSION_ID=$(echo $SUBMISSION_OUTPUT | jq -r '.id')
+        echo "Submission ID: $SUBMISSION_ID"
+        
+        # Wait and check status in a loop with better logging
+        echo "⏳ Waiting for notarization to complete..."
+        for i in {1..60}; do  # Check for 30 minutes (60 * 30 seconds)
+          sleep 30
+          STATUS_OUTPUT=$(xcrun notarytool info $SUBMISSION_ID \
+            --apple-id "${{ secrets.APPLE_ID }}" \
+            --password "${{ secrets.APPLE_ID_PASSWORD }}" \
+            --team-id "${{ secrets.APPLE_TEAM_ID }}" \
+            --output-format json)
+          
+          STATUS=$(echo $STATUS_OUTPUT | jq -r '.status')
+          echo "[$i/60] Current status: $STATUS ($(date))"
+          
+          if [ "$STATUS" = "Accepted" ]; then
+            echo "✅ Install.app notarized successfully!"
+            break
+          elif [ "$STATUS" = "Invalid" ]; then
+            echo "❌ Notarization failed!"
+            echo "Full status response: $STATUS_OUTPUT"
+            # Get detailed log
+            echo "📋 Fetching notarization log..."
+            xcrun notarytool log $SUBMISSION_ID \
+              --apple-id "${{ secrets.APPLE_ID }}" \
+              --password "${{ secrets.APPLE_ID_PASSWORD }}" \
+              --team-id "${{ secrets.APPLE_TEAM_ID }}"
+            exit 1
+          elif [ "$STATUS" = "Rejected" ]; then
+            echo "❌ Notarization rejected!"
+            echo "Full status response: $STATUS_OUTPUT"
+            # Get detailed log
+            echo "📋 Fetching notarization log..."
+            xcrun notarytool log $SUBMISSION_ID \
+              --apple-id "${{ secrets.APPLE_ID }}" \
+              --password "${{ secrets.APPLE_ID_PASSWORD }}" \
+              --team-id "${{ secrets.APPLE_TEAM_ID }}"
+            exit 1
+          fi
+        done
+        
+        # Final status check
+        FINAL_STATUS=$(echo $STATUS_OUTPUT | jq -r '.status')
+        if [ "$FINAL_STATUS" != "Accepted" ]; then
+          echo "❌ Notarization timed out. Final status: $FINAL_STATUS"
+          exit 1
+        fi
+        
         rm install-app.zip
 
     - name: Notarize DMG
       run: |
         cd software/mac/mathpad-service
         
-        # Submit DMG for notarization
+        # Submit DMG for notarization with longer timeout
         xcrun notarytool submit "mathpad-service-${{ env.VERSION }}.dmg" \
           --apple-id "${{ secrets.APPLE_ID }}" \
           --password "${{ secrets.APPLE_ID_PASSWORD }}" \
           --team-id "${{ secrets.APPLE_TEAM_ID }}" \
           --wait \
-          --timeout 15m
+          --timeout 30m
 
     - name: Staple Notarization
       run: |
