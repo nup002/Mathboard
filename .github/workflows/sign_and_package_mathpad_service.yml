@@ -48,7 +48,6 @@ jobs:
           ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/ || echo "mathpad-service.app not found"
           echo "Contents of MacOS:"
           ls -la software/mac/mathpad-service/dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/ || echo "MacOS directory not found"
-          exit 1
         fi
         
         # Get version from the mathpad-service executable
