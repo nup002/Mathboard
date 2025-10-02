@@ -11,8 +11,7 @@
 If you get nothing at all when you click any of the symbol keys, do the following: 
  1) Check that the OS switch on the back of your Mathpad matches the operating system of the computer it is plugged into. 
  2) If you're using Windows, ensure that WinCompose is running and using default settings. 
- 3) If you're on a Mac, ensure that Mathpad Service is installed and has been granted the Accessibility and 
-Input Monitoring privacy permissions.
+ 3) If you're on a Mac, ensure that Mathpad Service is installed and has been granted  Accessibility permission.
 
 Refer to the [Initial Setup](/init.md) guide for more details. 
 
