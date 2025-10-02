@@ -5,10 +5,10 @@
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; text-align: center; margin: 10px 0;">
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">
-    <h1><a href="#/first_setup.md" style="text-decoration: none; font-size: 4rem;">🛠️</a>
-    <h3><a href="#/first_setup.md" style="text-decoration: none;">Get prepared</a></h3>
+    <h1><a href="#/init.md" style="text-decoration: none; font-size: 4rem;">🛠️</a>
+    <h3><a href="#/init.md" style="text-decoration: none;">Get prepared</a></h3>
     <p>Get your Mathpad up and running on your system by following the short 
-    <a href="#/first_setup.md" style="text-decoration: none;">First Setup guide</a>.</p>
+    <a href="#/init.md" style="text-decoration: none;">Initial Setup guide</a>.</p>
   </div>
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">
     <h1><a href="#/get_started.md" style="text-decoration: none; font-size: 4rem;">📖</a></h1>
@@ -20,13 +20,12 @@
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">
     <h1><a href="#/multitap.md" style="text-decoration: none; font-size: 4rem;">🤓</a></h1>
     <h3><a href="#/multitap.md" style="text-decoration: none;">Become a pro</a></h3>
-    <p>Get familiar with all the symbols that Mathpad lets you type. Customize its behavior to fit your 
-        needs. </p>
+    <p>Get familiar with <a href="#/symbols.md" style="text-decoration: none;">all the symbols</a> you can type on Mathpad. Access hidden symbols and change output modes. </p>
   </div>
   
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">
-    <h1><a href="#/assembly_manual.md" style="text-decoration: none; font-size: 4rem;">⚙️</a></h1>
-    <h3><a href="#/assembly_manual.md" style="text-decoration: none;">Step it up a notch</a></h3>
-    <p>Dive into the technical documentation and learn how to modify or assemble a Mathpad from scratch.</p>
+    <h1><a href="#/firmware_prerequisites.md" style="text-decoration: none; font-size: 4rem;">⚙️</a></h1>
+    <h3><a href="#/firmware_prerequisites.md" style="text-decoration: none;">Step it up a notch</a></h3>
+    <p>Dive into the technical documentation and learn how to customize your Mathpad to fit your needs.</p>
   </div>
 </div>

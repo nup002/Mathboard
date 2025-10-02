@@ -14,11 +14,11 @@ If you get nothing at all when you click any of the symbol keys, do the followin
  3) If you're on a Mac, ensure that Mathpad Service is installed and has been granted the Accessibility and 
 Input Monitoring privacy permissions.
 
-Refer to the [First Setup](/first_setup.md) guide for more details. 
+Refer to the [Initial Setup](/init.md) guide for more details. 
 
 ## Mathpad Types Nonsense
 If your Mathpad types out nonsensical text or completely incorrect symbols, it is likely because your Mathpad's 
-firmware does not match your computer's keyboard layout. Refer to [First Setup](/first_setup.md)
+firmware does not match your computer's keyboard layout. Refer to [Initial Setup](#/init?id=what-is-your-keyboard-layout).
 
 ## Symbols Appear as Question Marks, Empty Boxes, or Normal Letters
 This problem is not caused by Mathpad, but by the font you are using. Some fonts simply does not define the 
