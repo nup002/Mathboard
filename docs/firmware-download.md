@@ -1,2 +1,2 @@
-# Download Mathpad firmware
+# Mathpad firmware
 <!-- firmware-download -->
