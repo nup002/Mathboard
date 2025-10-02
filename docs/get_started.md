@@ -4,9 +4,9 @@
 >Before you begin, make sure you have:
 >- ✅ Completed the [Initial Setup](init.md) guide
 >- ✅ The OS switch on the back matches your operating system
->- ✅ Required software is installed and running (WinCompose/Mathpad Service)
+>- ✅ [Required software](#/software-download) is installed and running (WinCompose/Mathpad Service)
 >
->After this guide, you'll be comfortable using modifier keys to type mathematical symbols.
+>After this guide, you'll be comfortable using your Mathpad to type mathematical symbols.
 >
 
 ## Understanding the Mathpad symbol keys
@@ -68,9 +68,12 @@ Finally, type $\mathbb{C}$ by keeping the [R] and [B] modifier keys pressed whil
   </div>
 </div>
 
-Look at you tapping away! Here's a few more key combinations you can try. See [Symbols](/symbols.md) for all symbols 
-and how to type them.
-- $\delta$ : <keycombo>[B]+[γ]</keycombo>
-- $\int$ : <keycombo>[C]+[λ]</keycombo>
-- $\gg$ : <keycombo>[R][C]+[η]</keycombo>
-- $\bigoplus$ : <keycombo>[R][B]+[ν]</keycombo>
+Look at you tapping away! Here's a few more key combinations you can try. See the [Symbols Reference](/symbols.md) for all symbols 
+supported by Mathpad, and how to type them.
+
+|             |                                 |
+|:-----------:|:-------------------------------:|
+|  $\delta$   |  <keycombo>[B]+[γ]</keycombo>   |
+|   $\int$    |  <keycombo>[C]+[λ]</keycombo>   |
+|    $\gg$    | <keycombo>[R][C]+[η]</keycombo> |
+| $\bigoplus$ | <keycombo>[R][B]+[ν]</keycombo> |
