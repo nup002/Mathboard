@@ -49,16 +49,14 @@ You're good to go! Mathpad supports US ANSI out of the box. You can move on to [
 
 #### **Any other layout**
 
-You must update the firmware of your Mathpad to match the keyboard layout of your computer.
+**You must update your Mathpad's firmware to match your computer's keyboard layout.** 
+1) Follow the instructions in the [Firmware Update Guide](update_firmware.md)
+2) Once you've updated your Mathpad's firmware, move on to [Getting Started](/get_started.md).
 
-If you do not know your keyboard layout, you can follow the short guide in 
-[compatibility](/compatibility.md#how-to-check-your-layout). Your keyboard layout is usually defined in the 
-"Input devices" or "Language and Region" settings.
-
-Once you know your keyboard layout, follow the instructions in the [Firmware Update Guide](update_firmware.md)
-
-Once you've updated your Mathpad's firmware, head over to [Getting Started](/get_started.md).
-
+> [!TIP]
+>Your keyboard layout is usually defined in the "Input devices" or "Language and Region" settings. Check out this 
+> [guide](/compatibility.md#how-to-check-your-layout) if you need some extra help.
+> 
 <!-- tabs:end -->
 
 > [!NOTE|label:Why Layout Matching Is Required]
