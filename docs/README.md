@@ -1,5 +1,5 @@
 <p style="text-align: center"><img src="_media/mathpad_logo.svg"></p>
-<h3><p style="text-align: center;">A mathematical keypad for students and professionals</p></h3>
+<h3><p style="text-align: center;">The mathematical keypad for students and professionals</p></h3>
 
 
 
@@ -20,7 +20,9 @@
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">
     <h1><a href="#/multitap.md" style="text-decoration: none; font-size: 4rem;">🤓</a></h1>
     <h3><a href="#/multitap.md" style="text-decoration: none;">Become a pro</a></h3>
-    <p>Get familiar with <a href="#/symbols.md" style="text-decoration: none;">all the symbols</a> you can type on Mathpad. Access hidden symbols and change output modes. </p>
+    <p>Get familiar with <a href="#/symbols.md" style="text-decoration: none;">all the symbols</a> you can type on Mathpad.
+        Access <a href="#/multitap.md" style="text-decoration: none;">hidden symbols</a> 
+        and switch <a href="#/modes.md" style="text-decoration: none;">output modes</a>. </p>
   </div>
   
   <div style="flex: 1; padding: 10px; min-width: 250px; max-width: 400px;">

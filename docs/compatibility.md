@@ -7,8 +7,8 @@ will work with your setup.
 # Operating Systems
 
 Mathpad works on:
- - **Windows 10 and 11** with [WinCompose](#/software-download?id=wincompose) installed
- - **Mac** with [Mathpad Service](#/software-download?id=mathpad-service) installed (requires accessibility permissions)
+ - **Windows 10 and 11** with [WinCompose](/software-download.md#wincompose) installed
+ - **Mac** with [Mathpad Service](/software-download.md#mathpad-service) installed (requires accessibility permissions)
  - **Linux distros with IBus** (includes Ubuntu, Debian, Fedora, CentOS, Raspbian, and many more)
 
 >[!TIP]
