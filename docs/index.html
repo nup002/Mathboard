@@ -19,6 +19,17 @@
   href="//cdn.jsdelivr.net/npm/prism-themes@1/themes/prism-one-light.min.css"
   />
   <style>
+    /* Search input box */
+    .search input {
+      font-size: 16px; /* Adjust this value */
+      width: 80%; /* 80% of container width */
+      height: 30px;
+      padding: 0px 0px;
+    }
+    /* Search placeholder text */
+    .search input::placeholder {
+      font-size: 16px; /* Adjust this value */
+    }
     .key-modifier {
       display: inline-block;
       padding: 0px 6px;
@@ -193,7 +204,7 @@
       search: {
         maxAge: 86400000, // Expiration time, the default one day
         paths: 'auto', // or 'auto'
-        placeholder: 'Search documentation...',
+        placeholder: 'Search the docs',
         noData: 'No Results!',
         depth: 6,
         hideOtherSidebarContent: false,
