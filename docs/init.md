@@ -3,12 +3,12 @@
 **Mathpad works straight out of the box in many cases.** But depending on your operating system and keyboard layout, 
 there are a few initial tasks that may have to be performed. Follow this short guide to get your Mathpad up and running.
 
-## What's your computer?
+## What operating system do you use?
 
 <!-- tabs:start -->
 #### **Mac**
 
-1) Install [Mathpad Service](????????) - this small application enables Mathpad to insert Unicode symbols on Mac.
+1) Install [Mathpad Service](https://github.com/Summa-Cogni/Mathpad/releases/download/mathpad-service-v1.0.0/mathpad-service-1.0.0.dmg) - this small application enables Mathpad to insert Unicode symbols on Mac.
 2) Set the OS switch on the back of your Mathpad to the MAC position
 
 
@@ -20,7 +20,7 @@ there are a few initial tasks that may have to be performed. Follow this short g
 
 > [!TIP]
 > If you cannot install WinCompose, for example if your computer is managed by an IT department and you 
-> lack administrator rights, use the [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.11/WinCompose-Setup-0.9.11.exe).
+> lack administrator rights, use the [portable executable](https://github.com/samhocevar/wincompose/releases/download/v0.9.10/WinCompose-NoInstall-0.9.10.zip).
 > 
 > 
 
