@@ -1,7 +1,7 @@
 # Output Modes
 
 The default output mode of Mathpad is Plaintext. In Plaintext mode, Mathpad outputs simple Unicode symbols. This mode 
-is the most versatile, and works with virtually all text editors. Mathpad is in Plaintext mode when the MODE key 
+is the most versatile, and works with virtually all text editors. Mathpad is in Plaintext mode when the Mode key 
 lights white.
 
 > [!TIP]
@@ -9,12 +9,12 @@ lights white.
 >
 
 If you are instead working in the typesetting language LaTeX, or using the equation editors of Microsoft Office or 
-LibreOffice, you'll want to switch modes by clicking the MODE key:
+LibreOffice, you'll want to switch modes by clicking the Mode key:
 
 <img src="_media/mode_labelled.png" style="width: 100%; max-width: 500px;">
 
 ## LaTeX mode
-**Set LaTeX mode by clicking the MODE key until it lights magenta.**
+**Set LaTeX mode by clicking the Mode key until it lights magenta.**
 
 In LaTeX mode, Mathpad will type LaTeX codes. Test it here:
 
@@ -55,7 +55,7 @@ In LaTeX mode, Mathpad will type LaTeX codes. Test it here:
 </style>
 
 > [!TIP]
-> You can always get Mathpad back to Plaintext mode by holding down the MODE key for one second and releasing it.
+> You can always get Mathpad back to Plaintext mode by holding down the Mode key for one second and releasing it.
 >
 
 

@@ -34,7 +34,7 @@ of symbols, and the [C] modifier key selects the CENTER row.
 
 ## Give it a shot!
 >[!TIP|label:Before You Continue]
->Set your Mathpad to Plaintext mode by holding down the black MODE key (top right) for one second.
+>Set your Mathpad to Plaintext mode by holding down the black Mode key (top right) for one second.
 >
 Let's get you comfortable with the Mathpad symbol system by practicing some key combinations. 
 
