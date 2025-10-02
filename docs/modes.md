@@ -4,6 +4,10 @@ The default output mode of Mathpad is Plaintext. In Plaintext mode, Mathpad outp
 is the most versatile, and works with virtually all text editors. Mathpad is in Plaintext mode when the MODE key 
 lights white.
 
+> [!TIP]
+> Change the mode key brightness by tapping it while holding down the purple or green modifier keys.
+>
+
 If you are instead working in the typesetting language LaTeX, or using the equation editors of Microsoft Office or 
 LibreOffice, you'll want to switch modes by clicking the MODE key:
 
