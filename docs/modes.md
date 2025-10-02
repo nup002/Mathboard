@@ -61,11 +61,11 @@ In LaTeX mode, Mathpad will type LaTeX codes. Test it here:
 
 
 ## Microsoft Office Equation Editor mode
-**Set Microsoft Office mode by clicking the MODE key until it lights orange.** 
+**Set Microsoft Office mode by clicking the Mode key until it lights blue.** 
 
 In this mode, Mathpad will type codes 
 that works specifically with the equation editor that is built into many Microsoft Office applications, such as Word.
 
 
 ## LibreOffice Equation Editor mode
-**Set LibreOffice mode by clicking the MODE key until it lights cyan.**
+**Set LibreOffice mode by clicking the Mode key until it lights green.**
