@@ -4,14 +4,14 @@
   <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
     <tr>
       <td align="center" width="33%" style="border: none;">
-        <a href="https://summa-cogni.github.io/Mathpad/#/">
+        <a href="https://mathpad.summacogni.com">
           <img src=".github/images/documentation_banner.svg" alt="Documentation">
         </a><br>
         <p>Learn more about Mathpad with the 
-        <a href="https://summa-cogni.github.io/Mathpad/#/">Official Documentation</a>.</p>
+        <a href="https://mathpad.summacogni.com">Official Documentation</a>.</p>
       </td>
       <td align="center" width="33%" style="border: none;">
-        <a href="https://discord.gg/dgD6cMCUhD">
+        <a href="https://www.summacogni.com/forum/viewforum.php?f=3&sid=dd5691a11e42b75db93c227916b067e8">
           <img src=".github/images/forum_banner.svg" alt="Forum">
         </a><br>
         <p>Chat with other users and ask your questions in the
