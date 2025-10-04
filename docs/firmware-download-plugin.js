@@ -4,7 +4,7 @@
   const config = {
     githubUser: 'Summa-Cogni',
     githubRepo: 'Mathpad',
-    releaseTag: 'v1.0.0',
+    releaseTag: 'v1.1.0',
     layouts: [
       'canadian_multilingual',
       'croatian',
@@ -363,7 +363,7 @@
       firmwareDownloadPlugin.config({
         githubUser: 'Summa-Cogni',
         githubRepo: 'Mathpad',
-        releaseTag: 'v1.0.0'
+        releaseTag: 'v1.1.0'
       });
       firmwareDownloadPlugin.configured = true;
     }
