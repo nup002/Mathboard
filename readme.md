@@ -50,10 +50,10 @@ E = mc²<br>
 </font> </p>
 
 ## Where to buy
-Mathpad will very soon be available on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad). Click the link and subscribe to be notified when it's available!
+Mathpad is available for purchase right now on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad).
 
 ## Compatibility
-Mathpad works on Windows, Apple macOS, and virtually all Unix systems.
+Mathpad works on Windows, macOS, and virtually all Unix systems.
 
 Several output modes are supported. Plaintext outputs standard Unicode symbols and can be used practically anywhere you can type regular text. LaTeX is 
 of course also supported, as well as the equation editors of Microsoft Office and LibreOffice.
@@ -66,13 +66,12 @@ of course also supported, as well as the equation editors of Microsoft Office an
 
 Mathpad works on all computers with Latin keyboard layouts. This includes nearly all western layouts, including 
 US ANSI, UK, French AZERTY, DVORAK, and many more. For a full list of all supported keyboard layouts, 
-see [this list](https://summa-cogni.github.io/Mathpad/#/compatibility?id=keyboard-layouts).
+see [this list](https://mathpad.summacogni.com/#/compatibility?id=supported-keyboard-layouts).
 
 ## Firmware releases
-Official releases will be located in [releases](https://github.com/Summa-Cogni/Mathpad/releases). The firmware is under development 
-and therefore no official release exists yet.
+Official releases are located in [releases](https://github.com/Summa-Cogni/Mathpad/releases). The most recent version can always be found [here](https://mathpad.summacogni.com/#/firmware-download).
 
-If you wish to build the firmware binaries yourself, follow [this guide](https://summa-cogni.github.io/Mathpad/#/firmware) from the official documentation.
+If you wish to build the firmware binaries yourself, follow [this guide](https://mathpad.summacogni.com/#/firmware_prerequisites) from the official documentation.
 
 ## Licenses
 <p align="center">
