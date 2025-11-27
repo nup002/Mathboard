@@ -48,7 +48,6 @@ If your computer uses the standard US keyboard layout, you're all set! Just use 
 - You'll see lots of text scrolling by - this is normal!
 - First-time compilation takes longer (10-30 minutes)
 - Subsequent compilations are faster (2-10 minutes)
-- Your computer's fan might run faster due to the processing
 
 **If successful:**
 - You'll see a message like "Linking: summacogni_mathpad_mp1a_default.elf"
