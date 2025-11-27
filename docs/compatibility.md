@@ -43,10 +43,6 @@ Latin alphabet (A-Z) as their primary character set, as opposed to Cyrillic, Ara
 non-Latin scripts. The layout can include additional accented characters and symbols, but the base alphabet must be 
 Latin.
 
->[!WARNING|label:Missing support]
->Lithuanian QWERTY and Slovak are currently not supported due to a bug in QMK. See [this issue](https://github.com/qmk/qmk_firmware/issues/25696).
->
-
 ### North America
  - US ANSI (Standard layout in the USA)
  - English (US International)
@@ -87,10 +83,10 @@ Latin.
  - Hungarian
  - Latvian
  - Lithuanian (ĄŽERTY)
- - ~~Lithuanian (QWERTY)~~ (Will be supported when QMK bug is fixed)
+ - Lithuanian (QWERTY)
  - Romanian
  - Serbian (Latin)
- - ~~Slovak~~ (Will be supported when QMK bug is fixed)
+ - Slovak
  - Slovenian
 
 ### Other Regions

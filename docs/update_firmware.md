@@ -21,9 +21,9 @@ Restart button for at least half a second, then release it. The Restart button i
 <img src="_media/bottom_labelled.svg" style="width: 100%; max-width: 500px;">
 
 ### Step 3: Drag and drop the firmware file
-When you release the Restart button, a folder named `RPI-RP2` should appear automatically on your computer. Grab the 
-firmware file you just downloaded, and drag-and-drop (or copy-paste) it to the `RPI-RP2` folder. Once the file has 
-been transferred, the folder will close automatically. You're done!
+When you release the Restart button, a folder named `RPI-RP2` with a two files inside should appear automatically on 
+your computer. Grab the firmware file you just downloaded, and drag-and-drop (or copy-paste) it to the `RPI-RP2` 
+folder. Once the file has been transferred, the folder will close automatically. You're done!
 
 > [!TIP|label:No RPI-RP2 folder]
 > If the `RPI-RP2` folder does not appear, try keeping the Restart button pressed longer before releasing it. You 

@@ -59,7 +59,7 @@ many keys pressed at the same time.
 **If successful:**
 - You'll see a message like "Linking: summacogni_mathpad_mp1a_default.elf"
 - A new file will appear in `Mathpad/firmware/compiled/`
-- The file will be named something like `summacogni_mathpad_mp1a_<layout>.uf2`
+- The file will be named something like `mathpad_mp1a_<layout>_<version>.uf2`
 
 **If there are errors:**
 - Compilation will stop and show error messages
