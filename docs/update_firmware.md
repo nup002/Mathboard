@@ -14,14 +14,23 @@ tools. Just follow these three steps:
 Head over to the [Firmware Download](firmware-download.md) page and download the firmware that matches your keyboard 
 layout.
 
-### Step 2: Put Mathpad in firmware upload mode
+### Step 2: Put your Mathpad in firmware upload mode
 With your Mathpad plugged in, flip it over and use something long and thin (e.g. a pen) to press the 
 Restart button for at least half a second, then release it. The Restart button is located here:
 
 <img src="_media/bottom_labelled.svg" style="width: 100%; max-width: 500px;">
 
 ### Step 3: Drag and drop the firmware file
-When you release the Restart button, a folder named `RPI-RP2` will appear on your computer. If it does not appear 
-automatically, find it under "This PC" on Windows, or "Computer" on Mac. Grab the firmware file you just downloaded, 
-and drag-and-drop (or copy-paste) it to the `RPI-RP2` folder. Once the file has been transferred, the folder will close 
-automatically. You're done!
+When you release the Restart button, a folder named `RPI-RP2` should appear automatically on your computer. Grab the 
+firmware file you just downloaded, and drag-and-drop (or copy-paste) it to the `RPI-RP2` folder. Once the file has 
+been transferred, the folder will close automatically. You're done!
+
+> [!TIP|label:No RPI-RP2 folder]
+> If the `RPI-RP2` folder does not appear, try keeping the Restart button pressed longer before releasing it. You 
+> should also look under "This PC" on Windows, or "Computer" on Mac.
+>
+
+> [!TIP]
+> The Mathpad is **not** a storage device like a USB memory stick - do not expect to find the firmware file in the 
+> `RPI-RP2` folder after you have uploaded it.
+>
