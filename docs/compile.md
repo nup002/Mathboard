@@ -42,6 +42,13 @@ If your computer uses the standard US keyboard layout, you're all set! Just use 
    make LAYOUT=uk
    ```
 
+## Special options
+`make STICKY_MODIFIERS=true` 
+Use this option if you find it challenging to press the modifier keys and the symbol keys at the same time. When true, the 
+modifier keys will remain activated even after you release them. Only once you type a symbol do they deactivate. This 
+allows you to click the modifier keys one after another, before finally clicking a symbol key without having to keep 
+many keys pressed at the same time.
+
 ### What to Expect
 
 **During compilation:**
