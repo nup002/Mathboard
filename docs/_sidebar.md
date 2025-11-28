@@ -7,6 +7,7 @@
   * [Symbols Reference](symbols.md "A comprehensive list of all Mathpad symbols")
   * [Multitap Feature](multitap.md "Access hidden symbols")
   * [Output Modes](modes.md "Switch between Plaintext, LaTeX, and more")
+  * [Update Firmware](update_firmware.md "Update the firmware of your Mathpad")
   * [Troubleshooting](troubleshoot.md "Fix common problems")
   * [Compatibility](compatibility.md "View OS and keyboard layout compatibility")
 
@@ -18,4 +19,3 @@
   * [Firmware Prerequisites](firmware_prerequisites.md "Get ready to modify the Mathpad firmware")
   * [Firmware Manual](firmware.md "Learn how to modify the Mathpad firmware")
   * [Firmware Compilation](compile.md "Learn how to compile the Mathpad firmware")
-  * [Update Firmware](update_firmware.md "Update the firmware of your Mathpad")
