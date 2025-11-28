@@ -47,6 +47,11 @@ There's no software to install on Linux, as most distros have built-in support f
 
 You're good to go! Mathpad supports US ANSI out of the box. You can move on to [Getting Started](/get_started.md).
 
+> [!TIP]
+> You may still want to update your Mathpad's firmware to the newest version to benefit from 
+> new features and bugfixes. Do so by following the instructions in the [Firmware Update Guide](update_firmware.md).
+> 
+
 #### **Any other layout**
 
 **You must update your Mathpad's firmware to match your computer's keyboard layout.** 
