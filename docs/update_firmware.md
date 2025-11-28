@@ -7,6 +7,11 @@ for example when:
 - You want to use a feature in a new firmware release
 - You make your own modifications to the firmware
 
+> [!TIP|label: Get your current firmware version]
+> In a text editor, keep all the modifier keys ([R], [C] and [B]) pressed for at least 5 seconds, then release them.
+> Your Mathpad will type a lot of information about itself, including its firmware version.
+> 
+
 **Updating the Mathpad firmware is safe and very simple**. It requires no previous experience or special 
 tools. Just follow these three steps:
 
