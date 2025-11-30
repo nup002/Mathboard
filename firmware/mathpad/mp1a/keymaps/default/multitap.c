@@ -18,6 +18,8 @@
 // take typically depend on which mode is active.
 
 #include "multitap.h"
+#include "modifiers.h"
+#include "globals.h"
 #include "symbols/symbol_categories.h"
 
 // Helper function to handle tap dance actions
@@ -30,6 +32,13 @@ void symbol_dance(tap_dance_state_t *s, void *d, const symbol_definition_t **sym
         send_symbol(symbols[symbol_count - 1]);
     }
     reset_tap_dance(s);
+    // If the special 'sticky modifiers' mode is enabled, sending a symbol resets the layer to the default
+    if (STICKY_MODIFIERS) {
+        layer_clear();
+        rightkey_toggled = false;
+        midkey_toggled = false;
+        bottomkey_toggled = false;
+    }
 }
 
 // Greek symbols
