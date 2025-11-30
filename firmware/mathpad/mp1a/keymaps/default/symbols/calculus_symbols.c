@@ -23,7 +23,7 @@
 const symbol_definition_t SYMBOL_SUM = DEFINE_SYMBOL(
     sum,
     0x2211,                  // Unicode: ∑
-    "\\sum_{}^{}", LATEX_3BACKTRACK,
+    "\\sum_{}^{}", LATEX_4BACKTRACK,
     "\\sum_a^b", MOF_1SPACE_DELETE_LIMS,
     "sum from{} to{}", LOF_6BACKTRACK
 ); //TODO: LOF brackets are autocompleted
@@ -31,7 +31,7 @@ const symbol_definition_t SYMBOL_SUM = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_N_ARY_PRODUCT = DEFINE_SYMBOL(
     n_ary_product,
     0x220F,                  // Unicode: ∏
-    "\\prod_{}^{}", LATEX_3BACKTRACK,
+    "\\prod_{}^{}", LATEX_4BACKTRACK,
     "\\prod_a^b", MOF_1SPACE_DELETE_LIMS,
     "prod from{} to{}", LOF_6BACKTRACK
 );
@@ -39,7 +39,7 @@ const symbol_definition_t SYMBOL_N_ARY_PRODUCT = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_INTEGRAL = DEFINE_SYMBOL(
     integral,
     0x222B,                  // Unicode: ∫
-    "\\int_{}^{}", LATEX_3BACKTRACK,
+    "\\int_{}^{}", LATEX_4BACKTRACK,
     "\\int_a^b", MOF_1SPACE_DELETE_LIMS,
     "int from{} to{}", LOF_6BACKTRACK
 );
@@ -47,7 +47,7 @@ const symbol_definition_t SYMBOL_INTEGRAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_DOUBLE_INTEGRAL = DEFINE_SYMBOL(
     double_integral,
     0x222C,                  // Unicode: ∬
-    "\\iint_{}^{}", LATEX_3BACKTRACK,
+    "\\iint_{}^{}", LATEX_4BACKTRACK,
     "\\iint_a^b", MOF_1SPACE_DELETE_LIMS,
     "iint from{} to{}", LOF_6BACKTRACK
 );
@@ -55,7 +55,7 @@ const symbol_definition_t SYMBOL_DOUBLE_INTEGRAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_TRIPLE_INTEGRAL = DEFINE_SYMBOL(
     triple_integral,
     0x222D,                  // Unicode: ∭
-    "\\iiint_{}^{}", LATEX_3BACKTRACK,
+    "\\iiint_{}^{}", LATEX_4BACKTRACK,
     "\\iiint_a^b", MOF_1SPACE_DELETE_LIMS,
     "iiint from{} to{}", LOF_6BACKTRACK
 );
@@ -63,7 +63,7 @@ const symbol_definition_t SYMBOL_TRIPLE_INTEGRAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_LINE_INTEGRAL = DEFINE_SYMBOL(
     line_integral,
     0x222E,                  // Unicode: ∮
-    "\\oint_{}^{}", LATEX_3BACKTRACK,
+    "\\oint_{}^{}", LATEX_4BACKTRACK,
     "\\oint_a^b", MOF_1SPACE_DELETE_LIMS,
     "lint from{} to{}", LOF_6BACKTRACK
 );
@@ -71,7 +71,7 @@ const symbol_definition_t SYMBOL_LINE_INTEGRAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_SURFACE_INTEGRAL = DEFINE_SYMBOL(
     surface_integral,
     0x222F,                  // Unicode: ∯
-    "\\oiint_{}^{}", LATEX_3BACKTRACK,
+    "\\oiint_{}^{}", LATEX_4BACKTRACK,
     "\\oiint_a^b", MOF_1SPACE_DELETE_LIMS,
     "llint from{} to{}", LOF_6BACKTRACK
 );
@@ -79,7 +79,7 @@ const symbol_definition_t SYMBOL_SURFACE_INTEGRAL = DEFINE_SYMBOL(
 const symbol_definition_t SYMBOL_VOLUME_INTEGRAL = DEFINE_SYMBOL(
     volume_integral,
     0x2230,                  // Unicode: ∰
-    "\\oiiint_{}^{}", LATEX_3BACKTRACK,
+    "\\oiiint_{}^{}", LATEX_4BACKTRACK,
     "\\oiiint_a^b", MOF_1SPACE_DELETE_LIMS,
     "lllint from{} to{}", LOF_6BACKTRACK
 );

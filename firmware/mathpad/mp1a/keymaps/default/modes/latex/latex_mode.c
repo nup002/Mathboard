@@ -40,7 +40,7 @@ void send_symbol_latex(const symbol_definition_t* symbol) {
 /**
  * @brief Sends a string and moves the caret 4 steps backwards.
  *
- * This is commonly used when sending a LaTeX code that ends with '{}_{}', in order
+ * This is commonly used when sending a LaTeX code that ends with '{}_{}' or '{}^{}', in order
  * to place the caret inside the first curly braces.
  *
  * @param string The string to send.
