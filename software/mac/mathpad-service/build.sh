@@ -19,6 +19,13 @@ echo "Cleaning previous dist..."
 rm -rf dist/
 mkdir -p dist/
 
+# Extract version info from Swift file
+VERSION=$(grep 'static let version = ' MathpadService.swift | sed 's/.*= "\(.*\)".*/\1/')
+BUILD_DATE=$(grep 'static let buildDate = ' MathpadService.swift | sed 's/.*= "\(.*\)".*/\1/')
+
+echo "Version: $VERSION"
+echo "Build Date: $BUILD_DATE"
+
 # Compile mathpad-service
 # Create app bundle structure
 mkdir -p "build/${APP_NAME}/Contents/MacOS"
@@ -53,7 +60,7 @@ cat > "build/${APP_NAME}/Contents/Info.plist" << EOF
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleVersion</key>
-    <string>1.0.0</string>
+    <string>$VERSION</string>
     <key>LSBackgroundOnly</key>
     <true/>
     <key>LSUIElement</key>
