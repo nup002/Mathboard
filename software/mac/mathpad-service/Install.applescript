@@ -103,10 +103,38 @@ What would you like to do?"
 				my dismountAndQuit()
 				return
 			else
-				-- Continue with reinstall
+				-- Continue with reinstall - properly stop service first
 				try
 					do shell script "launchctl unload " & quoted form of plistFile
+				on error
+					-- LaunchAgent might not be loaded, continue
+				end try
+				
+				try
 					do shell script "pkill -f mathpad-service"
+					-- Wait for process to fully terminate
+					delay 2
+					-- Verify it's stopped
+					try
+						do shell script "pgrep -f mathpad-service"
+						-- If we get here, process is still running
+						display dialog "Warning: Could not stop the running service. The old version may remain active until you restart your Mac." buttons {"Continue Anyway", "Cancel"} default button 2 with title "Service Still Running" with icon caution
+						if button returned of result is "Cancel" then
+							my dismountAndQuit()
+							return
+						end if
+					on error
+						-- Process is stopped, good to continue
+					end try
+				on error
+					-- No running process to kill, continue
+				end try
+				
+				-- Remove old app to ensure clean install
+				try
+					do shell script "rm -rf " & quoted form of serviceAppPath
+				on error
+					-- File might not exist or be locked, continue
 				end try
 			end if
 		end if
