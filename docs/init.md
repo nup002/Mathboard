@@ -8,7 +8,7 @@ there are a few initial tasks that may have to be performed. Follow this short g
 <!-- tabs:start -->
 #### **Mac**
 
-1) Install [Mathpad Service](https://github.com/Summa-Cogni/Mathpad/releases/download/mathpad-service-v1.0.0/mathpad-service-1.0.0.dmg) - this small application enables Mathpad to insert Unicode symbols on Mac.
+1) Install [Mathpad Service](https://github.com/Summa-Cogni/Mathpad/releases/download/mathpad-service-v1.1.0/mathpad-service-1.1.0.dmg) - this small application enables Mathpad to insert Unicode symbols on Mac.
 2) Set the OS switch on the back of your Mathpad to the MAC position
 
 
