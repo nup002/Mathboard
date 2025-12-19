@@ -103,10 +103,47 @@ What would you like to do?"
 				my dismountAndQuit()
 				return
 			else
-				-- Continue with reinstall
+				-- Continue with reinstall - properly stop service first
 				try
 					do shell script "launchctl unload " & quoted form of plistFile
+				on error
+					-- LaunchAgent might not be loaded, continue
+				end try
+				
+				try
 					do shell script "pkill -f mathpad-service"
+					-- Wait for process to fully terminate
+					delay 2
+					-- Verify it's stopped
+					try
+						do shell script "pgrep -f mathpad-service"
+						-- If we get here, process is still running
+						display dialog "Warning: Could not stop the running service. The old version may remain active until you restart your Mac." buttons {"Continue Anyway", "Cancel"} default button 2 with title "Service Still Running" with icon caution
+						if button returned of result is "Cancel" then
+							my dismountAndQuit()
+							return
+						end if
+					on error
+						-- Process is stopped, good to continue
+					end try
+				on error
+					-- No running process to kill, continue
+				end try
+				
+				-- Remove old app to ensure clean install
+				try
+					do shell script "rm -rf " & quoted form of serviceAppPath
+				on error
+					-- File might not exist or be locked, continue
+				end try
+				
+				-- Attempt to reset accessibility permissions for clean reinstall
+				set permissionReset to false
+				try
+					do shell script "tccutil reset Accessibility com.mathpad.mathpad-service"
+					set permissionReset to true
+				on error errMsg
+					-- tccutil failed - likely needs admin privileges or unsupported macOS version
 				end try
 			end if
 		end if
@@ -162,13 +199,30 @@ What would you like to do?"
 		end try
 		
 		-- PERMISSION CONFIRMATION DIALOG (NEW SECTION)
-		set permissionChoice to display dialog "Next, Mathpad Service needs to start and obtain a permission from macOS.
+		set permissionMessage to "Next, Mathpad Service needs to start and obtain a permission from macOS.
 
 When you click \"Start Service\", you will see a system dialog asking for 'Accessibility Access' permission.
 
-This permission is required for your Mathpad to inject Unicode characters into applications.
+This permission is required for your Mathpad to inject Unicode characters into applications."
 
-Are you ready to grant this permission?" buttons {"Cancel Installation", "Start Service"} default button 2 with title "✅ Files installed successfully" with icon note
+		-- Add reinstall-specific message if this was a reinstall
+		if isInstalled then
+			if permissionReset then
+				set permissionMessage to permissionMessage & "
+
+✅ Old accessibility permissions have been automatically cleared. You will need to grant permission for the new version."
+			else
+				set permissionMessage to permissionMessage & "
+
+⚠️ Since this is a reinstall, you MUST grant permission again even if you previously had it enabled. You may need to manually remove the old entry from System Preferences > Security & Privacy > Privacy > Accessibility first."
+			end if
+		end if
+
+		set permissionMessage to permissionMessage & "
+
+Are you ready to grant this permission?"
+
+		set permissionChoice to display dialog permissionMessage buttons {"Cancel Installation", "Start Service"} default button 2 with title "✅ Files installed successfully" with icon note
 		
 		if button returned of permissionChoice is "Cancel Installation" then
 			-- Clean up installed files since user cancelled
