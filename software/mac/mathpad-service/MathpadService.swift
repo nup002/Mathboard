@@ -177,16 +177,20 @@ class HybridUnicodeService {
             return
         }
 
-        // Extract Unicode hex digits
+        // Extract Unicode codepoint as 4-byte big-endian integer
         let unicodeBytes = Array(UnsafeBufferPointer(start: data.advanced(by: 1), count: 4))
 
-        guard let hexString = String(bytes: unicodeBytes, encoding: .utf8),
-              let codepoint = UInt32(hexString, radix: 16) else {
-            print("Failed to parse Unicode from bytes: \(unicodeBytes)")
+        guard unicodeBytes.count == 4 else {
+            print("Failed to parse Unicode from bytes: \(unicodeBytes) (expected 4 bytes)")
             return
         }
+        
+        let codepoint = (UInt32(unicodeBytes[0]) << 24) |
+                        (UInt32(unicodeBytes[1]) << 16) |
+                        (UInt32(unicodeBytes[2]) << 8) |
+                         UInt32(unicodeBytes[3])
 
-        print("Parsed Unicode: '\(hexString)' -> U+\(String(codepoint, radix: 16, uppercase: true))")
+        print("Parsed Unicode: bytes \(unicodeBytes) -> U+\(String(codepoint, radix: 16, uppercase: true))")
 
         // Inject the character directly
         injectUnicodeCharacter(codepoint: codepoint)
