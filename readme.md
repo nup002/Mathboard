@@ -1,5 +1,5 @@
 # Mathpad
-### ➡️[Get yours](https://www.crowdsupply.com/summa-cogni/mathpad)⬅️ on Crowd Supply
+### Get yours on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad) or [Tindie](https://www.tindie.com/products/summacogni/mathpad/)
 <div align="center">
   <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
     <tr>
@@ -50,7 +50,15 @@ E = mc²<br>
 </font> </p>
 
 ## Where to buy
-Mathpad is available for purchase right now on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad).
+Mathpad is available now on [Crowd Supply](https://www.crowdsupply.com/summa-cogni/mathpad) and [Tindie](https://www.tindie.com/products/summacogni/mathpad/).
+
+### Which site should I use?
+- USA customers: Buy from Crowd Supply
+- International customers: Buy from Tindie
+
+### Why the price difference?
+Crowd Supply is a US-based reseller that handles distribution but must factor in import tariffs and retail margins, which increases the price. Tindie is a marketplace where I sell directly to you with lower platform fees and no US import tariffs for international buyers, resulting in a lower price.
+
 
 ## Compatibility
 Mathpad works on Windows, macOS, and virtually all Unix systems.
