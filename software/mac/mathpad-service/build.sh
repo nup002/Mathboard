@@ -30,11 +30,12 @@ echo "Build Date: $BUILD_DATE"
 # Create app bundle structure
 mkdir -p "build/${APP_NAME}/Contents/MacOS"
 mkdir -p "build/${APP_NAME}/Contents/Resources"
+mkdir -p "build/${APP_NAME}/Contents/Frameworks"
 
-# Compile the executable
+# Compile the executable with deployment target for older macOS
 echo "Compiling mathpad-service..."
 swiftc \
-    -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk \
+    -target x86_64-apple-macosx10.13 \
     -framework Foundation \
     -framework IOKit \
     -framework CoreGraphics \
@@ -42,8 +43,50 @@ swiftc \
     MathpadService.swift \
     -o "build/${APP_NAME}/Contents/MacOS/mathpad-service"
 
+# Embed Swift runtime libraries for older macOS versions
+echo "Embedding Swift runtime libraries..."
+
+# Find Swift library path from Xcode toolchain
+SWIFT_LIB_PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx"
+
+if [ ! -d "$SWIFT_LIB_PATH" ]; then
+    # Try xcode-select path as fallback
+    SWIFT_LIB_PATH="$(xcode-select -p)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx"
+fi
+
+if [ ! -f "$SWIFT_LIB_PATH/libswiftCore.dylib" ]; then
+    echo "ERROR: Could not find Swift libraries at $SWIFT_LIB_PATH"
+    echo "Make sure Xcode is installed and selected with: xcode-select --switch /Applications/Xcode.app"
+    exit 1
+fi
+
+echo "Found Swift libraries at: $SWIFT_LIB_PATH"
+
+# Automatically detect and copy Swift libraries the binary depends on
+echo "Detecting and copying required Swift libraries..."
+otool -L "build/${APP_NAME}/Contents/MacOS/mathpad-service" | \
+    grep '@rpath/libswift' | \
+    awk '{print $1}' | \
+    sed 's/@rpath\///' | \
+    while read lib; do
+        if [ -f "$SWIFT_LIB_PATH/$lib" ]; then
+            echo "  Copying $lib"
+            cp "$SWIFT_LIB_PATH/$lib" "build/${APP_NAME}/Contents/Frameworks/"
+        else
+            echo "  ERROR: Required library $lib not found!"
+            exit 1
+        fi
+    done
+
+# Verify rpath is set correctly
+echo "Verifying rpath..."
+if ! otool -l "build/${APP_NAME}/Contents/MacOS/mathpad-service" | grep -q "@executable_path/../Frameworks"; then
+    echo "Adding rpath..."
+    install_name_tool -add_rpath "@executable_path/../Frameworks" "build/${APP_NAME}/Contents/MacOS/mathpad-service"
+fi
+
 # Create Info.plist
-echo "Creading Info.plist..."
+echo "Creating Info.plist..."
 cat > "build/${APP_NAME}/Contents/Info.plist" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -74,8 +117,16 @@ cp "../applet.icns" "build/${APP_NAME}/Contents/Resources/"
 
 echo "Mathpad Service compiled successfully."
 
-echo "Creating installer app bundle..."
+# Verify the embedded libraries
+echo ""
+echo "Embedded Swift libraries:"
+ls -lh "build/${APP_NAME}/Contents/Frameworks/"
+echo ""
+echo "Total app size:"
+du -sh "build/${APP_NAME}"
 
+echo ""
+echo "Creating installer app bundle..."
 # Export installer script to an app bundle
 osacompile -o "./dist/${INSTALLER_NAME}.app" "${INSTALLER_NAME}.applescript"
 

@@ -8,8 +8,8 @@ import ApplicationServices
 // Add this to the top of your Swift file, after the imports
 
 struct ServiceInfo {
-    static let version = "1.1.0"
-    static let buildDate = "2025-19-12"
+    static let version = "1.2.0-pre0"
+    static let buildDate = "2026-13-01"
     static let identifier = "com.mathpad.mathpad-service"
 
     static var fullVersionString: String {
