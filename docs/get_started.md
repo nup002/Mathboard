@@ -73,7 +73,7 @@ supported by Mathpad, and how to type them.
 
 |             |                                 |
 |:-----------:|:-------------------------------:|
-|  $\delta$   |  <keycombo>[B]+[γ]</keycombo>   |
+|  $\sqcup$   |  <keycombo>[B]+[π]</keycombo>   |
 |   $\int$    |  <keycombo>[C]+[λ]</keycombo>   |
 |    $\gg$    | <keycombo>[R][C]+[η]</keycombo> |
 | $\bigoplus$ | <keycombo>[R][B]+[ν]</keycombo> |
