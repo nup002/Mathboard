@@ -47,7 +47,14 @@ jobs:
         echo "== Minimum OS per slice =="
         check_minos () {  # $1=arch  $2=expected
           local got
-          got=$(vtool -arch "$1" -show-build "$BIN" | awk '/minos/ {print $2}')
+          # arm64 always carries LC_BUILD_VERSION, so vtool -show-build finds "minos" directly.
+          # x86_64 at a pre-10.14 floor is old enough that ld emits the legacy
+          # LC_VERSION_MIN_MACOSX command instead, which -show-build does not report on -
+          # fall back to reading its "version" field via otool in that case.
+          got=$(vtool -arch "$1" -show-build "$BIN" 2>/dev/null | awk '/minos/ {print $2}')
+          if [ -z "$got" ]; then
+            got=$(otool -l -arch "$1" "$BIN" | awk '/LC_VERSION_MIN_MACOSX/{f=1; next} f && /version/ {print $2; exit}')
+          fi
           echo "$1 minos=$got (expected $2)"
           [ "$got" = "$2" ] || { echo "::error::$1 min-OS is $got, expected $2"; exit 1; }
         }
