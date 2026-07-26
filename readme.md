@@ -15,7 +15,7 @@
           <img src=".github/images/forum_banner.svg" alt="Forum">
         </a><br>
         <p>Chat with other users and ask your questions in the
-        <a href="https://www.summacogni.com/forum/viewforum.php?f=3&sid=dd5691a11e42b75db93c227916b067e8">Mathpad Forum</a>.</p>
+        <a href="https://www.summacogni.com/forum/viewforum.php?f=3&sid=dd5691a11e42b75db93c227916b067e8">Forum</a>.</p>
       </td>
       <td align="center" width="33%" style="border: none;">
         <a href="https://x.com/SummaCogni">
