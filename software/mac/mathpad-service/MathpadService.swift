@@ -9,7 +9,7 @@ import ApplicationServices
 
 struct ServiceInfo {
     static let version = "1.1.0"
-    static let buildDate = "2025-19-12"
+    static let buildDate = "2025-12-19"
     static let identifier = "com.mathpad.mathpad-service"
 
     static var fullVersionString: String {

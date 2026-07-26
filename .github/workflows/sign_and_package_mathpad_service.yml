@@ -2,19 +2,63 @@ name: Sign and Package Mathpad Service
 
 on:
   workflow_dispatch:
+    inputs:
+      create_release:
+        description: "Also publish a GitHub Release from this build"
+        type: boolean
+        default: false
+      release_tag:
+        description: "Tag for the release, e.g. v1.1.0 (only needed if publishing)"
+        type: string
+        required: false
+
+permissions:
+  contents: write
 
 jobs:
   sign-and-package:
-    runs-on: macos-latest
-    
+    runs-on: macos-15
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Install Dependencies
       run: |
         # Install fileicon for setting DMG icon
         brew install fileicon
+
+    - name: Build Mathpad Service
+      run: |
+        cd software/mac/mathpad-service
+        chmod +x build.sh
+        ./build.sh
+
+    - name: Validate built binary (arch, min-OS, plist, launch)
+      run: |
+        cd software/mac/mathpad-service
+        BIN="dist/Install.app/Contents/Resources/mathpad-service.app/Contents/MacOS/mathpad-service"
+
+        echo "== Architectures =="
+        lipo -info "$BIN"
+        lipo -info "$BIN" | grep -q "arm64"  || { echo "::error::missing arm64 slice";  exit 1; }
+        lipo -info "$BIN" | grep -q "x86_64" || { echo "::error::missing x86_64 slice"; exit 1; }
+
+        echo "== Minimum OS per slice =="
+        check_minos () {  # $1=arch  $2=expected
+          local got
+          got=$(vtool -arch "$1" -show-build "$BIN" | awk '/minos/ {print $2}')
+          echo "$1 minos=$got (expected $2)"
+          [ "$got" = "$2" ] || { echo "::error::$1 min-OS is $got, expected $2"; exit 1; }
+        }
+        check_minos arm64  11.0
+        check_minos x86_64 10.14.4
+
+        echo "== Info.plist lint =="
+        plutil -lint "dist/Install.app/Contents/Resources/mathpad-service.app/Contents/Info.plist"
+
+        echo "== Launch smoke test =="
+        "$BIN" --version
 
     - name: Import Code Signing Certificate
       run: |
@@ -225,27 +269,22 @@ jobs:
         echo "✅ All components verified! DMG is ready for distribution."
 
     - name: Upload DMG Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: mathpad-service-${{ env.VERSION }}.dmg
         path: software/mac/mathpad-service/mathpad-service-${{ env.VERSION }}.dmg
 
     - name: Create GitHub Release
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v1
+      if: ${{ inputs.create_release }}
+      uses: softprops/action-gh-release@v2
       with:
+        tag_name: ${{ inputs.release_tag }}
         files: software/mac/mathpad-service/mathpad-service-${{ env.VERSION }}.dmg
         name: Mathpad Service ${{ env.VERSION }}
         body: |
           ## Mathpad Service ${{ env.VERSION }}
-          
-          Signed and notarized macOS background service for Mathpad.
-          
-          ### Installation
-          1. Download and open the DMG
-          2. Run "Install" 
-          3. Follow the installation prompts
-          
-          The service will be installed to `/usr/local/bin/mathpad-service`.
+
+          Signed and notarized universal (arm64 + x86_64) macOS build.
+          Supports macOS 10.14.4 (Intel) / 11.0 (Apple Silicon) and later.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

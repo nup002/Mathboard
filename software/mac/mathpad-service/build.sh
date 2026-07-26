@@ -31,16 +31,28 @@ echo "Build Date: $BUILD_DATE"
 mkdir -p "build/${APP_NAME}/Contents/MacOS"
 mkdir -p "build/${APP_NAME}/Contents/Resources"
 
-# Compile the executable
+# Compile the executable (universal), using the runner's active SDK.
+#  - x86_64 supports Intel Macs back to macOS 10.14.4 (Swift ABI/runtime floor)
+#  - arm64 floor is macOS 11.0 (Apple Silicon did not exist earlier)
 echo "Compiling mathpad-service..."
-swiftc \
-    -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk \
-    -framework Foundation \
-    -framework IOKit \
-    -framework CoreGraphics \
-    -framework AppKit \
-    MathpadService.swift \
-    -o "build/${APP_NAME}/Contents/MacOS/mathpad-service"
+SDK_PATH="$(xcrun --show-sdk-path --sdk macosx)"
+SWIFT_FLAGS=(
+    -sdk "$SDK_PATH"
+    -framework Foundation
+    -framework IOKit
+    -framework CoreGraphics
+    -framework AppKit
+)
+
+swiftc "${SWIFT_FLAGS[@]}" -target arm64-apple-macos11 \
+    MathpadService.swift -o "build/mathpad-service-arm64"
+swiftc "${SWIFT_FLAGS[@]}" -target x86_64-apple-macos10.14.4 \
+    MathpadService.swift -o "build/mathpad-service-x86_64"
+
+lipo -create -output "build/${APP_NAME}/Contents/MacOS/mathpad-service" \
+    "build/mathpad-service-arm64" "build/mathpad-service-x86_64"
+
+rm -f "build/mathpad-service-arm64" "build/mathpad-service-x86_64"
 
 # Create Info.plist
 echo "Creading Info.plist..."
@@ -61,6 +73,8 @@ cat > "build/${APP_NAME}/Contents/Info.plist" << EOF
     <string>APPL</string>
     <key>CFBundleVersion</key>
     <string>$VERSION</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.14.4</string>
     <key>LSBackgroundOnly</key>
     <true/>
     <key>LSUIElement</key>
